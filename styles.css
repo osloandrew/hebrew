@@ -20,6 +20,12 @@ body {
   background: white;
 }
 
+.difficulty {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 16px;
+}
+
 .question {
   font-size: 1.5rem;
   font-weight: bold;

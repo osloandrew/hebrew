@@ -1,65 +1,45 @@
-const sentences = [
-  {
-    hebrew: "שלום, איך אתה?",
-    transliteration: "Shalom, eikh atah?",
-    english: "Hello, how are you?",
-    difficulty: "A1",
-  },
-  {
-    hebrew: "האם אתה מדבר עברית?",
-    transliteration: "Ha'im atah medaber ivrit?",
-    english: "Do you speak Hebrew?",
-    difficulty: "A1",
-  },
-  {
-    hebrew: "אני רוצה להזמין קפה בבקשה",
-    transliteration: "Ani rotzeh lehazmin kafe bevakasha",
-    english: "I want to order a coffee, please",
-    difficulty: "A1",
-  },
-  {
-    hebrew: "הילד משחק בפארק עם הכלב שלו",
-    transliteration: "Hayeled mesachek b'park im hakelev shelo",
-    english: "The boy is playing in the park with his dog",
-    difficulty: "A2",
-  },
-  {
-    hebrew: "אם הייתי יודע, הייתי אומר לך",
-    transliteration: "Im hayiti yodea, hayiti omer lekha",
-    english: "If I had known, I would have told you",
-    difficulty: "B2",
-  },
-  {
-    hebrew: "המשפחה שלי חוגגת את ראש השנה",
-    transliteration: "Hamishpacha sheli chogeghet et Rosh Hashana",
-    english: "My family celebrates Rosh Hashanah",
-    difficulty: "A2",
-  },
-  {
-    hebrew: "העיר ירושלים היא עיר עתיקה מאוד",
-    transliteration: "Ha'ir Yerushalayim hi ir atika meod",
-    english: "The city of Jerusalem is very ancient",
-    difficulty: "B1",
-  },
-  {
-    hebrew: "השמש זורחת במזרח ושוקעת במערב",
-    transliteration: "Ha-shemesh zorachat ba-mizrach ve-shokaat ba-ma'arav",
-    english: "The sun rises in the east and sets in the west",
-    difficulty: "A2",
-  },
-];
+let sentences = [];
+
+fetch("hebrewwords.csv")
+  .then((response) => response.text())
+  .then((data) => {
+    const rows = data.split("\n").slice(1); // Remove header row
+    sentences = rows
+      .map((row) => {
+        const cols = row.match(/(?:"([^"]+)")|([^,]+)/g); // Properly handles commas inside quotes
+        if (cols && cols.length >= 9) {
+          return {
+            hebrew: cols[6].replace(/^"|"$/g, "").trim(), // sentenceHebrew
+            transliteration: cols[7].replace(/^"|"$/g, "").trim(), // sentenceTransliteration
+            english: cols[8].replace(/^"|"$/g, "").trim(), // sentenceEnglish
+            difficulty: cols[1].replace(/^"|"$/g, "").trim(), // CEFR
+          };
+        }
+      })
+      .filter(Boolean); // Remove any undefined entries
+    startGame();
+  })
+  .catch((error) => console.error("Error loading CSV:", error));
 
 let score = 0;
-let availableSentences = [...sentences];
-let currentSentence = getNextSentence();
+let availableSentences = [];
+let currentSentence = null;
 
 document.addEventListener("DOMContentLoaded", () => {
-  loadSentence();
+  if (sentences.length > 0) {
+    startGame();
+  }
 });
+
+function startGame() {
+  availableSentences = [...sentences];
+  currentSentence = getNextSentence();
+  loadSentence();
+}
 
 function getNextSentence() {
   if (availableSentences.length === 0) {
-    availableSentences = [...sentences]; // Reset the list when all questions are answered
+    availableSentences = [...sentences]; // Reset when all questions are answered
   }
   return availableSentences.splice(
     Math.floor(Math.random() * availableSentences.length),
@@ -67,10 +47,23 @@ function getNextSentence() {
   )[0];
 }
 
+function adjustPunctuation(sentence) {
+  // Match any Hebrew text followed by punctuation
+  return sentence.replace(/^([\u0590-\u05FF\s,]+)([.?!])$/, "$2$1").trim();
+}
+
 function loadSentence() {
-  document.getElementById("hebrew-text").textContent = currentSentence.hebrew;
+  if (!currentSentence) return;
+
+  // Ensure punctuation is on the left side
+  const adjustedHebrew = adjustPunctuation(currentSentence.hebrew);
+
+  document.getElementById("hebrew-text").textContent = adjustedHebrew;
   document.getElementById("transliteration").textContent =
     currentSentence.transliteration;
+  document.getElementById(
+    "difficulty"
+  ).textContent = `CEFR Level: ${currentSentence.difficulty}`;
 
   const answersDiv = document.getElementById("answers");
   answersDiv.innerHTML = "";
