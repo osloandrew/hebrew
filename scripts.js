@@ -89,6 +89,10 @@ function loadSentence() {
 
   speakHebrew(currentSentence.hebrewWithNiqqud); // Auto-play with niqqud version
 
+  document.getElementById(
+    "difficulty"
+  ).textContent = `Difficulty: ${currentSentence.difficulty}`;
+
   const answersDiv = document.getElementById("answers");
   answersDiv.innerHTML = "";
 
@@ -137,12 +141,20 @@ function checkAnswer(answer, button) {
     (Math.max(score, 0) / 10) * 100
   }%`;
 
+  // **Add a small delay before level change for better user experience**
   if (score >= 10) {
-    changeLevel(1);
+    setTimeout(() => {
+      changeLevel(1);
+    }, 1500); // 1.5-second delay before level transition
+    return;
   } else if (score <= -5 && currentLevel !== "A1") {
-    changeLevel(-1);
+    setTimeout(() => {
+      changeLevel(-1);
+    }, 1500); // 1.5-second delay before level transition
+    return;
   }
 
+  // **Otherwise, just load a new sentence normally**
   setTimeout(() => {
     answerButtons.forEach((btn) =>
       btn.classList.remove("correct", "incorrect")
