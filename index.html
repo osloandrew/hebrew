@@ -9,6 +9,10 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=stylus_note"
+    />
     <script defer src="scripts.js"></script>
   </head>
   <body>
@@ -19,12 +23,13 @@
       <div class="card">
         <div class="status-bar">
           <button id="toggle-transliteration" class="toggle-btn">
-            <span class="material-icons">translate</span>
+            <span class="material-symbols-outlined"> stylus_note </span>
           </button>
           <button id="replay-audio" class="speaker-icon">
             <span class="material-icons">volume_up</span>
           </button>
         </div>
+        <h2 id="hebrew-text-cursive" class="cursive"></h2>
         <h2 id="hebrew-text" class="question"></h2>
         <h2 id="hebrew-text-niqqud" class="question hidden"></h2>
         <p id="transliteration" class="transliteration hidden"></p>

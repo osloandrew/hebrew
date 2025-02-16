@@ -1,4 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Noto+Sans:wght@400;700&display=swap");
+@font-face {
+  font-family: "Motek";
+  src: url("Resources/Fonts/Motek.ttf") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 
 .audio-button {
   background: none;
@@ -12,10 +18,13 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  padding: 16px;
-  font-family: "Noto Serif", serif;
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  font-family: "Noto Sans", sans;
   background-color: #f4f4f4;
+  overflow: hidden;
 }
 
 .card {
@@ -26,6 +35,18 @@ body {
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   background: white;
+}
+
+.cursive {
+  font-family: "Motek", sans-serif;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  color: gray;
+  direction: rtl;
+  unicode-bidi: plaintext;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  margin: 0px 0px 0px 0px;
 }
 
 .difficulty {
@@ -51,7 +72,7 @@ body {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
-  font-family: "Noto Serif", serif;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .button.correct {
@@ -83,7 +104,7 @@ body {
 .question {
   font-size: 2.5rem;
   font-weight: 400;
-  margin: 15px 0px 15px 0px;
+  margin: 0px 0px 15px 0px;
   font-family: "Bellefair", serif;
   direction: rtl;
   unicode-bidi: plaintext;

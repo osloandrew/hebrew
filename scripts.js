@@ -12,8 +12,12 @@ fetch("hebrewwords.csv")
         const cols = row.match(/(?:"([^"]+)")|([^,]+)/g); // Properly handles commas inside quotes
         if (cols && cols.length >= 9) {
           return {
-            hebrewWithNiqqud: cols[6].replace(/^"|"$/g, "").trim(), // Keep original with niqqud
-            hebrew: removeNiqqud(cols[6].replace(/^"|"$/g, "").trim()), // Also store without niqqud
+            hebrewWithNiqqud: adjustPunctuation(
+              cols[6].replace(/^"|"$/g, "").trim()
+            ),
+            hebrew: adjustPunctuation(
+              removeNiqqud(cols[6].replace(/^"|"$/g, "").trim())
+            ),
             transliteration: cols[7].replace(/^"|"$/g, "").trim(),
             english: cols[8].replace(/^"|"$/g, "").trim(),
             difficulty: cols[1].replace(/^"|"$/g, "").trim(),
@@ -75,13 +79,17 @@ function loadSentence() {
 
   const showNiqqud = localStorage.getItem("showNiqqud") === "true"; // Retrieve preference
 
+  const hebrewTextElement = document.getElementById("hebrew-text");
+  const hebrewTextCursiveElement = document.getElementById(
+    "hebrew-text-cursive"
+  );
+
   if (showNiqqud) {
-    document.getElementById("hebrew-text").textContent =
-      currentSentence.hebrewWithNiqqud; // Show with niqqud
-    document.getElementById("hebrew-text").dataset.niqqud = "true";
+    hebrewTextElement.textContent = currentSentence.hebrewWithNiqqud;
+    hebrewTextCursiveElement.textContent = currentSentence.hebrew;
   } else {
-    document.getElementById("hebrew-text").textContent = currentSentence.hebrew; // Show without niqqud
-    document.getElementById("hebrew-text").dataset.niqqud = "false";
+    hebrewTextElement.textContent = currentSentence.hebrew;
+    hebrewTextCursiveElement.textContent = currentSentence.hebrew;
   }
 
   document.getElementById("replay-audio").onclick = () =>
@@ -180,12 +188,14 @@ document
     const hebrewTextElement = document.getElementById("hebrew-text");
 
     if (hebrewTextElement.dataset.niqqud === "true") {
-      hebrewTextElement.textContent = currentSentence.hebrew; // Show without niqqud
+      hebrewTextElement.textContent = adjustPunctuation(currentSentence.hebrew);
       hebrewTextElement.dataset.niqqud = "false";
-      localStorage.setItem("showNiqqud", "false"); // Store preference
+      localStorage.setItem("showNiqqud", "false");
     } else {
-      hebrewTextElement.textContent = currentSentence.hebrewWithNiqqud; // Show with niqqud
+      hebrewTextElement.textContent = adjustPunctuation(
+        currentSentence.hebrewWithNiqqud
+      );
       hebrewTextElement.dataset.niqqud = "true";
-      localStorage.setItem("showNiqqud", "true"); // Store preference
+      localStorage.setItem("showNiqqud", "true");
     }
   });
