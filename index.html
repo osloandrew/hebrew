@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hebrew Learning</title>
     <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
     <script defer src="scripts.js"></script>
   </head>
   <body>
@@ -15,11 +19,14 @@
       <div class="card">
         <div class="status-bar">
           <button id="toggle-transliteration" class="toggle-btn">
-            Latin
+            <span class="material-icons">translate</span>
           </button>
-          <button id="replay-audio" class="speaker-icon">🔊</button>
+          <button id="replay-audio" class="speaker-icon">
+            <span class="material-icons">volume_up</span>
+          </button>
         </div>
         <h2 id="hebrew-text" class="question"></h2>
+        <h2 id="hebrew-text-niqqud" class="question hidden"></h2>
         <p id="transliteration" class="transliteration hidden"></p>
         <div id="answers" class="answers"></div>
       </div>

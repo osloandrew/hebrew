@@ -12,10 +12,11 @@ fetch("hebrewwords.csv")
         const cols = row.match(/(?:"([^"]+)")|([^,]+)/g); // Properly handles commas inside quotes
         if (cols && cols.length >= 9) {
           return {
-            hebrew: cols[6].replace(/^"|"$/g, "").trim(), // sentenceHebrew
-            transliteration: cols[7].replace(/^"|"$/g, "").trim(), // sentenceTransliteration
-            english: cols[8].replace(/^"|"$/g, "").trim(), // sentenceEnglish
-            difficulty: cols[1].replace(/^"|"$/g, "").trim(), // CEFR
+            hebrewWithNiqqud: cols[6].replace(/^"|"$/g, "").trim(), // Keep original with niqqud
+            hebrew: removeNiqqud(cols[6].replace(/^"|"$/g, "").trim()), // Also store without niqqud
+            transliteration: cols[7].replace(/^"|"$/g, "").trim(),
+            english: cols[8].replace(/^"|"$/g, "").trim(),
+            difficulty: cols[1].replace(/^"|"$/g, "").trim(),
           };
         }
       })
@@ -54,6 +55,10 @@ function getNextSentence() {
   )[0];
 }
 
+function removeNiqqud(text) {
+  return text.replace(/[֑-ׇ]/g, ""); // Removes all Hebrew niqqud marks
+}
+
 function adjustPunctuation(sentence) {
   return sentence.replace(/^([\u0590-\u05FF\s]+)([.?!])$/, "$1$2").trim();
 }
@@ -67,18 +72,22 @@ function speakHebrew(text) {
 
 function loadSentence() {
   if (!currentSentence) return;
-  const adjustedHebrew = adjustPunctuation(currentSentence.hebrew);
-  document.getElementById("hebrew-text").textContent = adjustedHebrew;
-  document.getElementById("transliteration").textContent =
-    currentSentence.transliteration;
-  document.getElementById(
-    "difficulty"
-  ).textContent = `CEFR Level: ${currentSentence.difficulty}`;
+
+  const showNiqqud = localStorage.getItem("showNiqqud") === "true"; // Retrieve preference
+
+  if (showNiqqud) {
+    document.getElementById("hebrew-text").textContent =
+      currentSentence.hebrewWithNiqqud; // Show with niqqud
+    document.getElementById("hebrew-text").dataset.niqqud = "true";
+  } else {
+    document.getElementById("hebrew-text").textContent = currentSentence.hebrew; // Show without niqqud
+    document.getElementById("hebrew-text").dataset.niqqud = "false";
+  }
 
   document.getElementById("replay-audio").onclick = () =>
-    speakHebrew(adjustedHebrew);
+    speakHebrew(currentSentence.hebrewWithNiqqud); // Always speak the niqqud version
 
-  speakHebrew(adjustedHebrew); // Automatically read the sentence on load
+  speakHebrew(currentSentence.hebrewWithNiqqud); // Auto-play with niqqud version
 
   const answersDiv = document.getElementById("answers");
   answersDiv.innerHTML = "";
@@ -153,10 +162,18 @@ function changeLevel(direction) {
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  document
-    .getElementById("toggle-transliteration")
-    .addEventListener("click", () => {
-      document.getElementById("transliteration").classList.toggle("hidden");
-    });
-});
+document
+  .getElementById("toggle-transliteration")
+  .addEventListener("click", () => {
+    const hebrewTextElement = document.getElementById("hebrew-text");
+
+    if (hebrewTextElement.dataset.niqqud === "true") {
+      hebrewTextElement.textContent = currentSentence.hebrew; // Show without niqqud
+      hebrewTextElement.dataset.niqqud = "false";
+      localStorage.setItem("showNiqqud", "false"); // Store preference
+    } else {
+      hebrewTextElement.textContent = currentSentence.hebrewWithNiqqud; // Show with niqqud
+      hebrewTextElement.dataset.niqqud = "true";
+      localStorage.setItem("showNiqqud", "true"); // Store preference
+    }
+  });
