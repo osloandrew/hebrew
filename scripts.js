@@ -18,7 +18,6 @@ fetch("hebrewwords.csv")
             hebrew: adjustPunctuation(
               removeNiqqud(cols[6].replace(/^"|"$/g, "").trim())
             ),
-            transliteration: cols[7].replace(/^"|"$/g, "").trim(),
             english: cols[8].replace(/^"|"$/g, "").trim(),
             difficulty: cols[1].replace(/^"|"$/g, "").trim(),
           };

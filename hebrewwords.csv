@@ -1,299 +1,299 @@
 wordEnglish,CEFR,gender,number,wordHebrew,wordTransliteration,sentenceHebrew,sentenceTransliteration,sentenceEnglish
-father,A1,masc,sing,אב,av,הָאָב בַּבַּיִת.,Ha-av ba-bayit.,The father is at home.
-prototype,B2,masc,sing,אב טיפוס,av tipús,,,
 dad,A1,masc,sing,אבא,ába,אַבָּא שֶׁלִּי עוֹבֵד.,Aba sheli oved.,My dad is working.
+after,A1,,,אחרי,aħaréi,אַחֲרֵי הַשִּׁעוּר אֲנִי אוֹכֵל.,Acharei ha-shiur ani ochel.,"After the lesson, I eat."
+eating,A2,fem,sing,אכילה,aħilá,אֲכִילָה בְּרִיאָה חֲשׁוּבָה לַבְּרִיאוּת.,Achila bri’a chashuva la-briyut.,Healthy eating is important for health.
+sister,A1,fem,sing,אחות,aħót,אַחְוֹתִי לוֹמֶדֶת בְּבֵית־הַסֵּפֶר.,Achoti lomedet be-beit ha-sefer.,My sister studies at school.
+"person, human",A1,masc,sing,אדם,adám,אָדָם הוֹלֵךְ בָּרְחוֹב.,Adam holech ba-rechov.,A person is walking on the street.
+love (noun),A1,fem,sing,אהבה,ahavá,אַהֲבָה הִיא דָּבָר טוֹב.,Ahava hi davar tov.,Love is a good thing.
+together,A1,,,ביחד,byáħad,אֲנַחְנוּ מְשַׂחֲקִים יַחְדָּו.,Anáchnu mesachakím byáchad.,We're playing together.
+synagogue,A1,masc,sing,בית כנסת,béit knéset,אֲנַחְנוּ הוֹלְכִים לְבֵית הַכְּנֶסֶת בַּשַּׁבָּת.,Anáħnu holkhím l’béit knéset b’Shabát.,We go to the synagogue on Shabbat.
+we,A1,all,plur,אנחנו,anáħnu,אֲנַחְנוּ הוֹלְכִים לַיָּם.,Anáħnu holkhím la-yám.,We're going to the beach.
+"pool, pond",A1,fem,sing,בריכה,breħá,אֲנַחְנוּ הוֹלְכִים לַבְּרֵיכָה בַּקַּיִץ.,Anáħnu holkhím labreħá bakáyitz.,We go to the pool in the summer.
+"coffee house, cafe",A1,masc,sing,בית קפה,béit kafé,אֲנַחְנוּ נִפְגָּשִׁים בְּבֵית קָפֶה.,Anáħnu nifgashím b’béit kafé.,We're meeting at the café.
+dinner,A1,fem,sing,ארוחת ערב,aruħát érev,אֲנַחְנוּ אוֹכְלִים אֲרוּחַת עֶרֶב בְּשֶׁבַע.,Anáħnu okhlím aruħát érev be-shéva.,We eat dinner at seven.
+"in, with",A1,,,ב ,b',אֲנִי בַּבַּיִת.,Ani bábayit.,I'm at home.
+"land, country",A1,fem,sing,ארץ,érets,אֲנִי גָּר בְּאֶרֶץ יָפָה.,Ani gar b’érets yafá.,I live in a beautiful country.
+afterwards,A1,,,אחר כך,aħár káħ,אֲנִי הוֹלֵךְ הַבַּיְתָה אַחַר כָּךְ.,Ani holech ha-bayta achar kach.,I'm going home later.
+after,A1,,,אחר,aħár,אֲנִי הוֹלֵךְ לִישׁוֹן אַחַר הַסֶּרֶט.,Ani holech lishon achar ha-seret.,I go to sleep after the movie.
+clothes,A1,masc,plur,בגדים,bgadím,אֲנִי קוֹנֶה בְּגָדִים חֲדָשִׁים.,Ani koné bgadím ħadashím.,I'm buying new clothes.
+letter in the alphabet,A1,fem,sing,אות,ot,אֲנִי כּוֹתֵב אוֹת עַל הַנְּיָר.,Aní kotév ot al ha-niyár.,I write a letter on the paper.
+onion,A1,masc,sing,בצל,batsál,אֲנִי לֹא אוֹהֵב בָּצָל.,Ani lo ohev batsál.,I don’t like onions.
+university,A2,fem,sing,אוניברסיטה,univérsita,אֲנִי לוֹמֵד בָּאוּנִיבֶרְסִיטָה בִּירוּשָׁלַיִם.,Ani lomed ba-universita bi-Yerushalayim.,I study at a university in Jerusalem.
+alphabet,A1,masc,sing,אלפבית,alefbét,אֲנִי לוֹמֵד אֶת הָאַלְפָבֵּית הָעִבְרִי.,Aní loméd et ha-alefbét ha-ivrí.,I'm learning the Hebrew alphabet.
+them,A1,masc,plur,אותם,otám,אֲנִי מַכִּיר אוֹתָם.,Ani makir otam.,I know them.
+"sign, signal",A2,masc,sing,אות,ot,אֲנִי מְחַכֶּה לְאוֹת מִמְּךָ.,Ani mechake le-ot mimecha.,I'm waiting for a sign from you.
+English (language),A1,fem,sing,אנגלית,anglít,אֲנִי מְדַבֵּר אַנְגְּלִית טוֹב.,Aní medabér anglít tov.,I speak English well.
+information,A2,fem,sing,אינפורמציה,informátsya,אֲנִי מְחַפֵּשׂ אִינְפוֹרְמַצְיָה עַל הָעִיר.,Ani mehapés informatsya al ha-ir.,I'm looking for information about the city.
+internet,A1,masc,sing,אינטרנט,ínternet,אֲנִי מִשְׁתַּמֵּשׁ בָּאִינְטֶרְנֵט כָּל יוֹם.,Ani mishtamesh ba-internet kol yom.,I use the internet every day.
+meat,A1,masc,sing,בשר,basár,אֲנִי אוֹכֵל בָּשָׂר עִם אוֹרֶז.,Ani ochel basár im óréz.,I eat meat with rice.
+egg,A1,fem,sing,ביצה,beitsá,אֲנִי אוֹכֵל בֵּיצָה לַאֲרוּחַת בֹּקֶר.,Ani ochel beitsá l’aruħat bóker.,I'm eating an egg for breakfast.
+rice,A1,masc,sing,אורז,órez,אֲנִי אוֹכֵל אוֹרֶז.,Ani ochel orez.,I am eating rice.
+banana,A1,fem,sing,בננה,banána,אֲנִי אוֹהֵב בָּנָנָה.,Ani ohev banána.,I like bananas.
+object marker,A1,,,את,et,אֲנִי אוֹהֵב אֶת הַסֶּרֶט הַזֶּה.,Ani ohev et haséret hazé.,I like this movie.
+I,A1,,,אני,aní,אֲנִי אוֹהֵב קָפֶה.,Aní ohév kafé.,I like coffee.
+"nut, walnut",A2,masc,sing,אגוז,egóz,אֲנִי אוֹהֵב לֶאֱכֹל אֱגוֹזִים.,Ani ohev le’echol egozim.,I like eating nuts.
+meal,A1,fem,sing,ארוחה,aruħá,אֲנִי אוֹכֵל שָׁלֹשׁ אֲרוּחוֹת בַּיּוֹם.,Aní okhél shalósh aruħót ba-yóm.,I eat three meals a day.
+afternoon,A1,masc,sing,אחר הצהריים,aħár hatsohoráim,אֲנִי פּוֹגֵשׁ חָבֵר אַחַר הַצָּהֳרַיִם.,Ani pogesh chaver achar ha-tsohorayim.,I meet a friend in the afternoon.
+"but, however",A1,,,אבל,avál,"אֲנִי רוֹצֶה גְּלִידָה, אֲבָל אֵין.","Ani rotze glida, aval ein.","I want ice cream, but there is none."
+without,A1,,,בלי,bli,אֲנִי רוֹצֶה קָפֶה בְּלִי סֻכָּר.,Ani rotzé kafé bli sukar.,I want coffee without sugar.
+"other, another",A1,,,אחר,aħér,אֲנִי רוֹצֶה סֵפֶר אַחֵר.,Ani rotze sefer acher.,I want another book.
+post office,A1,masc,sing,בית דואר,béit dó'ar,אֲנִי שׁוֹלֵחַ מִכְתָּב בְּבֵית־הַדּוֹאַר.,Ani sholéaħ mikhtáv b’béit dó’ar.,I'm sending a letter at the post office.
+hotel,A1,masc,sing,בית מלון,béit malón,אֲנִי יָשֵׁן בְּבֵית־מָלוֹן בְּתֵל־אָבִיב.,Ani yashén b’béit malón b’Tel Aviv.,I sleep in a hotel in Tel Aviv.
+United States,A1,fem,plur,ארצות הברית,artsót habrít,אַרְצוֹת הַבְּרִית הִיא מְדִינָה גְּדוֹלָה.,Artsót habrít hi mediná gdolá.,The United States is a big country.
+breakfast,A1,fem,sing,ארוחת בוקר,aruħát bóker,אֲרוּחַת הַבֹּקֶר שֶׁלִּי הִיא לֶחֶם עִם גְּבִינָה.,Aruħát ha-bóker shelí hi léħem im gviná.,My breakfast is bread with cheese.
+lunch,A1,fem,sing,ארוחת צהריים,aruħát tsohoráyim,אֲרוּחַת הַצָּהֳרַיִם שֶׁלִּי הִיא אוֹרֶז עִם עוֹף.,Aruħát ha-tsohoráyim shelí hi órez im óf.,My lunch is rice with chicken.
+you,A1,fem,sing,את,at,אַתְּ גָּרָה בְּתֵל־אָבִיב?,At gará b'Tel Aviv?,Do you live in Tel Aviv?
+you,A1,masc,sing,אתה,atá,אַתָּה עוֹבֵד פֹּה?,Atá oved po?,Do you work here?
+or,A1,,,או,o,אַתָּה רוֹצֶה תֵּה אוֹ קָפֶה?,Ata rotze te o kafe?,Do you want tea or coffee?
+goose,A2,masc,sing,אווז,aváz,בָּאֲגַם יֵשׁ אֲוָזִים לְבָנִים.,Ba-agam yesh avazim levanim.,There are white geese in the lake.
+morning,A1,masc,sing,בוקר,bóker,בֹּקֶר טוֹב!,Bóker tov!,Good morning!
+zero,A1,masc,,אפס,éfes,אֶפֶס וְעוֹד אֶחָד זֶה אֶחָד.,Éfes ve-od éħad ze éħad.,Zero plus one is one.
+possible,A1,,,אפשר,efshár,אֶפְשָׁר לָשֶׁבֶת פֹּה?,Efshár lashévet pó?,Can I sit here?
+how,A1,,,איך,éiħ,אֵיךְ אַתָּה מַרְגִּישׁ?,Eich ata margish?,How do you feel?
+where,A1,,,איפה,efó,אֵיפֹה הַבַּיִת שֶׁלְּךָ?,Eifo ha-bayit shelcha?,Where is your house?
+there's no,A1,,,אין,ein,אֵין חָלָב בַּמְּקָרֵר.,Ein chalav ba-mekarer.,There is no milk in the fridge.
+"which, what",A1,masc,sing,איזה,éize,אֵיזֶה צֶבַע אַתָּה אוֹהֵב?,Eize tzéva ata ohev?,Which color do you like?
+yesterday,A1,,,אתמול,etmól,אֶתְמוֹל הָיָה יוֹם יָפֶה.,Etmól hayá yom yafé.,Yesterday was a beautiful day.
+"earth, soil",A1,fem,sing,אדמה,adamá,הָאֲדָמָה חוּמָה.,Ha-adama chuma.,The soil is brown.
+nose,A1,masc,sing,אף,af,הָאַף שֶׁלִּי קָר.,Ha-af shelí kar.,My nose is cold.
+pear,A1,masc,sing,אגס,agás,הָאַגָּס טָעִים.,Ha-agas ta'im.,The pear is tasty.
+father,A1,masc,sing,אב,av,הָאָב בַּבַּיִת.,Ha-av ba-bayit.,The father is at home.
+air,A1,masc,sing,אוויר,avír,האֲוִיר קַר הַיּוֹם.,Ha-avir kar ha-yom.,The air is cold today.
+"airplane, plane (rare)",A2,masc,sing,אוירון,avirón,הָאוּוִירוֹן טָס מֵעַל הָעִיר.,Ha-aviron tas me’al ha-ir.,The airplane is flying over the city.
+springtime,A1,masc,sing,אביב,avív,הָאָבִיב יָפֶה.,Ha-aviv yafe.,Spring is beautiful.
+"closet, cabinet",A1,masc,sing,ארון ,arón,הַבְּגָדִים שֶׁלִּי בָּאָרוֹן.,Ha-bgadím shelí ba-arón.,My clothes are in the closet.
+mother,A1,fem,sing,אם,ém,הָאֵם שֶׁלִּי עוֹבֶדֶת בְּבֵית־חוֹלִים.,Ha-ém shelí ovédet be-béit ħolím.,My mother works at a hospital.
+hall,A2,masc,sing,אולם,ulám,הָאֵרוּעַ יִתְקַיֵּם בְּאוּלָם גָּדוֹל.,Ha-eru’a yitkayem be-ulam gadol.,The event will take place in a large hall.
+American,A1,,,אמריקאי,amerikái,הֶחָבֵר שֶׁלִּי אַמֶרִיקָאִי.,Ha-ħavér shelí amerikái.,My friend is American.
+slow,A2,,,איטי,ití,הָאִינְטֶרְנֵט בַּבַּיִת שֶׁלִּי מְאֹד אִטִּי.,Ha-internet ba-bayit sheli me’od iti.,The internet in my house is very slow.
+"man, husband",A1,masc,sing,איש,ish,הָאִישׁ גָּבוֹהַּ.,Ha-ish gavoha.,The man is tall.
+food,A1,masc,sing,אוכל,óħel,הָאוֹכֶל טָעִים.,Ha-ochel ta'im.,The food is tasty.
+baker,A2,masc,sing,אופה,ofé,הָאוֹפֶה מֵכִין לֶחֶם טָרִי כָּל יוֹם.,Ha-ofe mechin lechem tari kol yom.,The baker prepares fresh bread every day.
+artist,A1,masc,sing,אומן,omán,הָאוֹמָן מְצַיֵּר.,Ha-oman metzayer.,The artist is painting.
+guest,A2,masc,sing,אורח,oréaħ,הָאוֹרֵחַ הִגִּיעַ מוּקְדָּם לַמְּסִבָּה.,Ha-oreach higi’a mukdam la-mesiba.,The guest arrived early to the party.
+bus,A1,masc,sing,אוטובוס,otobús,הָאוֹטוֹבּוּס מַגִּיעַ.,Ha-otobus magia.,The bus is arriving.
+"loved one, favorite",A2,,,אהוב,ahúv,הַסֵּפֶר הַזֶּה אָהוּב עָלַי מְאֹד.,Ha-sefer ha-ze ahuv alai me’od.,This book is very dear to me.
+gray,A1,,,אפור,afór,הַשָּׁמַיִם הַיּוֹם אֲפוּרִים.,Ha-shamáyim ha-yóm aforím.,The sky is gray today.
+red,A1,,,אדום,adóm,הַתַּפּוּחַ אָדֹם.,Ha-tapuach adom.,The apple is red.
+snowman,A2,masc,sing,איש שלג,ish shéleg,הַיְלָדִים בָּנוּ אִישׁ שֶׁלֶג בַּגִּינָּה.,Ha-yeladim banu ish sheleg ba-gina.,The children built a snowman in the garden.
+bath,A1,fem,sing,אמבטיה,ambátya,הַיֶּלֶד נִכְנָס לָאַמְבַּטְיָה.,Ha-yéled nikhnás la-ambátya.,The child gets into the bathtub.
+bicycle,A1,masc,dual,אופניים,ofanáyim,הַיֶּלֶד רוֹכֵב עַל אוֹפַנַּיִם.,Ha-yeled rokev al ofanayim.,The boy is riding a bicycle.
+duck,A1,masc,sing,ברווז,barváz,הַבַּרְוָז שׁוֹחֶה בָּאֲגַם.,Habarváz soché ba'agám.,The duck is swimming in the lake.
+between,A1,,,בין,béin,הַבַּיִת שֶׁלִּי בֵּין הַחֲנוּת לְבֵית־הַסֵּפֶר.,Habáyit shelí béin hachanút l’béit séfer.,My house is between the store and the school.
+house,A1,masc,sing,בית,báyit,הַבַּיִת שֶׁלִּי גָּדוֹל.,Habáyit shelí gadól.,My house is big.
+bank,A1,masc,sing,בנק,bank,הַכֶּסֶף שֶׁלִּי בַּבָּנְק.,Hakesef shelí babank.,My money is in the bank.
+okay,A1,,,בסדר,bseder,הַכֹּל בְּסֵדֶר!,Hakól bséder!,Everything is fine!
+god,A1,masc,sing,אלוהים,elohím,הַרְבֵּה אֲנָשִׁים מַאֲמִינִים בֵּאלֹהִים.,Harbé anashím ma’aminím be’elohím.,Many people believe in God.
+hospital,A1,masc,sing,בית חולים,béit ħolím,הָרוֹפֵא עוֹבֵד בְּבֵית חוֹלִים.,Harofé oved b’béit ħolím.,The doctor works at the hospital.
+inside,A1,,,בפנים,bifním,"הַסֵּפֶר בִּפְנִים, עַל הַשּׁוּלְחָן.","Hasefer bifním, al hashulħán.","The book is inside, on the table."
+school,A1,masc,sing,בית ספר,béit séfer,הַיְלָדִים לוֹמְדִים בְּבֵית סֵפֶר.,Hayeladím lomdím b’béit séfer.,The children study at school.
+island,A2,masc,sing,אי,i,הֵם נָסְעוּ לַחֻפְשָׁה בְּאִי קָטָן.,Hem nas’u le-chufsha be-i katan.,They went on vacation to a small island.
+"woman, wife",A1,fem,sing,אשה,ishá,הִיא אִשָּׁה חֲכָמָה.,Hi ishá ħakamá.,She is a smart woman.
+eat,A1,,,אכל,aħál,הוּא אָכַל אֲרוּחַת בֹּקֶר.,Hu achal aruchat boker.,He ate breakfast.
+"love, like",A1,,,אהב,aháv,הוּא אָהַב אֶת הַסֵּפֶר.,Hu ahav et ha-sefer.,He loved the book.
+truly,A1,,,אמן,amén,הוּא אָמַר אָמֵן אַחֲרֵי הַתְּפִלָּה.,Hu amár amén aħré ha-tefilá.,He said amen after the prayer.
+"say, tell",A1,,,אמר,amár,הוּא אָמַר לִי שָׁלוֹם.,Hu amár li shalóm.,He said hello to me.
+come,A1,,,בא,ba,הוּא בָּא לְבֵית־הַסֵּפֶר.,Hu ba l’béit séfer.,He's coming to school.
+human being,A1,masc,sing,בן אדם,ben adám,הוּא בֶּן אָדָם טוֹב.,Hu ben adám tov.,He's a good person.
+"so, then",A1,,,אז,az,"הוּא הָיָה עָיֵף, אָז הוּא יָשַׁן.","Hu haya ayef, az hu yashan.","He was tired, so he slept."
+Italian,A2,,,איטלקי,italkí,הוּא אוֹכֵל אוֹכֶל אִיטַלְקִי בַּמִּסְעָדָה.,Hu ochel ochel italki be-mis’ada.,He's eating Italian food at the restaurant.
+me,A1,,,אותי,oti,הוּא אוֹהֵב אוֹתִי.,Hu ohev oti.,He loves me.
+if,A1,,,אם,im,"אִם יוֹרֵד גֶּשֶׁם, אֲנִי נִשְׁאָר בַּבַּיִת.","Im yoréd gésem, aní nish’ár ba-báyit.","If it rains, I'm staying at home."
+mom,A1,fem,sing,אמא,íma,אִמָּא שֶׁלִּי מְבַשֶּׁלֶת אוֹכֶל טָעִים.,Íma shelí mevashélet ókhel ta’ím.,My mom cooks delicious food.
+email,A2,masc,sing,אימייל,ímeil,שָׁלַחְתִּי לְךָ אֵימֵייל אֶתְמוֹל.,Shalachti lecha imeil etmol.,I sent you an email yesterday.
+please,A1,,,בבקשה,bvakasha,"תֵּן לִי מַיִם, בְּבַקָּשָׁה.","Ten li máyim, bvakashá.","Give me water, please."
+thousand,A1,masc,plur,אלף,élef,יֵשׁ אֶלֶף אֲנָשִׁים בָּעִיר.,Yesh élef anashím ba-ír.,There are a thousand people in the city.
+fire,A1,fem,sing,אש,esh,יֵשׁ אֵשׁ בַּמְּדוּרָה.,Yesh esh bam’durá.,There is fire in the bonfire.
+stone,A2,fem,sing,אבן,éven,יֵשׁ אֶבֶן גְּדוֹלָה בַּגַּן.,Yesh even gdolá ba-gan.,There is a big stone in the garden.
+dust,A2,masc,sing,אבק,avák,יֵשׁ הַרְבֵּה אָבָק בַּחֶדֶר הַזֶּה.,Yesh harbé avak ba-cheder ha-ze.,There is a lot of dust in this room.
+brother,A1,masc,sing,אח,aħ,יֵשׁ לִי אָח קָטָן.,Yesh li ach katan.,I have a little brother.
+four,A1,fem,plur,ארבע,arbá,יֵשׁ לִי אַרְבַּע חֲתוּלִים.,Yesh li arbá ħatulím.,I have four cats.
+daughter,A1,fem,sing,בת,bat,יֵשׁ לִי בַּת אַחַת.,Yesh li bat aħát.,I have one daughter.
+cousin,A1,masc,sing,בן דוד,ben dod,יֵשׁ לִי בֶּן־דוֹד בְּנְיוּ־יוֹרְק.,Yesh li ben dod b’New York.,I have a cousin in New York.
+son,A1,masc,sing,בן,ben,יֵשׁ לִי בֵּן אֶחָד.,Yesh li ben eħád.,I have one son.
+finger,A1,fem,sing,אצבע,etsbá,יֵשׁ לִי חָמֵשׁ אֶצְבָּעוֹת בְּכָל יָד.,Yesh li ħamésh etzba’ót be-kol yad.,I have five fingers on each hand.
+one,A1,masc,sing,אחד,eħád,יֵשׁ לִי תַּפּוּחַ אֶחָד.,Yesh li tapuach echad.,I have one apple.
+one,A1,fem,sing,אחת,aħát,יֵשׁ לִי יַלְדָּה אַחַת.,Yesh li yalda achat.,I have one girl.
+motorcycle,A2,masc,sing,אופנוע,ofanóa,יֵשׁ לוֹ אוֹפַּנּוֹעַ חָדָשׁ וּמָהִיר.,Yesh lo ofanoa chadash ve-mahir.,He has a new and fast motorcycle.
+light (noun),A1,masc,sing,אור,or,יֵשׁ אוֹר בַּחֶדֶר.,Yesh or ba-cheder.,There is light in the room.
+as a rule,A2,,,בדרך כלל,bdéreħ klal,בְּדֶרֶךְ כְּלָל הוּא לֹא מְאַחֵר.,,"As a rule, he is not late."
+beer,A2,fem,sing,בירה,bíra,אַתָּה רוֹצֶה לִשְׁתּוֹת בִּירָה?,,Do you want to drink beer?
+don't,A2,,,אל,al,אַל תֵּלֵךְ לְבַדֶּךָ בַּלַּיְלָה.,,Don't walk alone at night.
+garment,A2,masc,sing,בגד,béged,כָּל בֶּגֶד שֶׁהוּא לוֹבֵשׁ מְיֻחָד.,,Every garment he wears is unique.
+cemetery,A2,masc,sing,בית קברות,béit kvarót,הַסָּבְתָא קְבוּרָה בְּבֵית הַקְּבָרוֹת.,,Grandmother is buried in the cemetery.
+choose,A2,,,בחר,baħár,הוּא בָּחַר אֶת הַמָּנָה הָאֲהוּבָה עָלָיו.,,He chose his favorite dish.
+collect,A2,,,אסף,asáf,הוּא אָסַף כַּמָּה סֵפֶרִים מֵהַסִּפְרִיָּה.,,He collected some books from the library.
+intentionally,A2,,,בכוונה,b'ħavaná,הוּא עָשָׂה אֶת זֶה בְּכַוָּנָה.,,He did it intentionally.
+allergic,A2,,,אלרגי,alérgi,הוּא אַלֶּרְגִּי לָאֱגוֹזִים.,,He is allergic to nuts.
+because of,A2,,,בגלל,biglál,הוּא אֵיחֵר בִּגְלַל הַפַּקָּקִים.,,He was late because of the traffic.
+clear,A2,,,ברור,barúr,הַהֶסְבֵּר שֶׁלּוֹ הָיָה בָּרוּר.,,His explanation was clear.
+swimsuit,A2,masc,sing,בגד ים,béged yam,אֲנִי קָנִיתִי בֶּגֶד יָם חָדָשׁ.,,I bought a new swimsuit.
+without,A2,,,בלעדי,bil'adéi,"אֵין לִי זֶה, אֲבָל לְבַדִּי זֶה אִי אֶפְשָׁרִי.",,"I don’t have this, but alone it’s impossible."
+album,A2,masc,sing,אלבום,albóm,יֵשׁ לִי אַלְבּוֹם תְּמוּנוֹת מֵהַטִּיּוּל.,,I have a photo album from the trip.
+problem,A2,fem,sing,בעיה,biayá,יֵשׁ לִי בְּעָיָה עִם הַמַּחְשֵׁב.,,I have a problem with the computer.
+peanut,A2,masc,sing,בוטן,bóten,אֲנִי אוֹהֵב בָּטְנִים קָלוּיִים.,,I love roasted peanuts.
+allergy,A2,fem,sing,אלרגיה,alérgya,אֲנִי סוֹבֵל מֵאַלֶּרְגִּיָּה לְאַבְקַת פֵּרוּחִים.,,I suffer from a pollen allergy.
+bookshelf,A2,masc,sing,ארון ספרים,arón sfarím,הָאָרוֹן סְפָרִים שֶׁלִּי מָלֵא בְּסֵפֶרֵי מֶתֶחַ.,,My bookshelf is full of mystery books.
+"choice, election",A2,fem,sing,בחירה,bħirá,הַבְּחִירָה שֶׁלִּי הָיְתָה קָשָׁה.,,My choice was difficult.
+wallet,A2,masc,sing,ארנק,arnák,הַאֲרְנָק שֶׁלִּי אָבַד בַּקָּנְיוֹן.,,My wallet was lost in the mall.
+"health, healthiness",A2,fem,sing,בריאות,briút,הַבְּרִיאוּת שֶׁלָּנוּ חֲשׁוּבָה מְאוֹד.,,Our health is very important.
+bake,A2,,,אפה,afá,הִיא אָפְתָה עוּגָה לַיּוֹם הַהוּלֶדֶת.,,She baked a cake for the birthday.
+bagel,A2,masc,sing,בייגל,béigel,הִיא אוֹהֶבֶת לֶאֱכֹל בֵּייגֶּל עִם גְּבִינָה.,,She likes eating a bagel with cheese.
+blessing,A2,fem,sing,ברכה,braħá,הִיא אֲמָרָה לִי בְּרָכָה לְפָנֵי הָאֹכֶל.,,She said a blessing before eating.
+request,A2,fem,sing,בקשה,bakashá,הִיא עָשְׂתָה בַּקָּשָׁה לִקְבָּלַת עֲבוֹדָה.,,She submitted a job application.
+"certainly, surely",A2,,,בוודאי,bvadái ,הִיא תָּבוֹא לְבַדַּאי לַחֲתֻנָּה.,,She will definitely come to the wedding.
+"prohibited, forbidden",A2,,,אסור,asúr,אָסוּר לְעָשֵׁן בַּמִּסְעָדָה.,,Smoking is prohibited in the restaurant.
+beaver,A2,masc,sing,בונה,boné,הַבּוֹנֶה בּוֹנֶה סָכָּה עַל הַנָּהָר.,,The beaver is building a dam on the river.
+building,A2,masc,sing,בניין,binyán,הַבִּנְיָן גָּבוֹהַּ וּמַרְשִׁים.,,The building is tall and impressive.
+capital,A2,fem,sing,בירה,birá,הַבִּירָה שֶׁל פּוֹלִין הִיא וַרְשָׁה.,,The capital of Poland is Warsaw.
+outside,A2,,,בחוץ,baħúts,הַיֶּלֶד מְשַׂחֵק בַּחוּץ.,,The child is playing outside.
+duckling,A2,masc,sing,ברווזון,barvazón,הַבַּרְוָזוֹן שׁוֹחֶה בָּאֲגַם.,,The duckling is swimming in the lake.
+"lightning, shine",A2,masc,sing,ברק,barák,הַבָּרָק הָאִיר אֶת הַשָּׁמַיִם.,,The lightning lit up the sky.
+lion,A2,masc,sing,אריה,aryé,הָאַרְיֵה נִמְצָא בַּגַּן הַחַיּוֹת.,,The lion is in the zoo.
+base,A2,masc,sing,בסיס,basís,הַבָּסִיס הַצְּבָאִי נִמְצָא בַּמִּדְבָּר.,,The military base is located in the desert.
+for free,A2,,,בחינם,bħinám,הַכַּרְטִיסִים לַסֶּרֶט הָיוּ בְּחִנָּם.,,The movie tickets were free.
+"hole, pit",A2,masc,sing,בור,bór,הַבּוֹר עָמֹק וְמָלֵא מַיִם.,,The pit is deep and full of water.
+stamp,A2,masc,sing,בול,bul,הַדּוֹאַר שָׁלַח לִי בּוּל חָדָשׁ.,,The post office sent me a new stamp.
+prison,A2,masc,sing,בית סוהר,béit sóhar,הָאִסִּיר שָׁהָה בְּבֵית הַסֹּהַר.,,The prisoner stayed in prison.
+stadium,A2,masc,sing,אצטדיון,itstadyón,הָאִיצְטַדְיוֹן מָלֵא בְּאוֹהֲדִים.,,The stadium is full of fans.
+"just, exactly",A2,,,בדיוק,bdiyúk,הַשָּׁעָה בְּדִיּוּק שֵׁשׁ.,,The time is exactly six.
+toilet,A2,fem,sing,אסלה,aslá,הָאַסְלָה בַּחֶדֶר שֶׁמִּמּוּל.,,The toilet is in the room across.
+court,A2,masc,sing,בית משפט,béit mishpát,הַמִּשְׁפָּט נֶעֱרַךְ בְּבֵית הַמִּשְׁפָּט הָעִירוֹנִי.,,The trial was held in the city courthouse.
+truth,A2,fem,sing,אמת,emét,הָאֱמֶת תָּמִיד חֲשׁוּבָה.,,The truth is always important.
+build,A2,,,בנה,baná,הַפּוֹעֵל בָּנָה בַּיִת חָדָשׁ.,,The worker built a new house.
+"US, the",A2,fem,plur,ארה״ב,"arhá""v",בְּאַרְה״ב יֵשׁ הַרְבֵּה עֵרִים גְּדוֹלוֹת.,,There are many big cities in the US.
+possibility,A2,fem,sing,אפשרות,efsharút,יֵשׁ אֶפְשָׁרוּת לְנָסִיעָה מָחָר.,,There is a possibility of traveling tomorrow.
+animal (rare),A2,masc,sing,בעל חיים,báal ħayím,בַּגַּן חַיּוֹת יֵשׁ בַּעַל חַיִּים מְיֻחָד.,,There is a special animal in the zoo.
+especially,A2,,,במיוחד,bimyuħád,הַסֵּפֶר הַזֶּה מְיֻחָד בִּמְיֻחָד.,,This book is especially unique.
+blond,A2,,,בלונדיני,blondíni,הַיֶּלֶד הַזֶּה בְּלוֹנְדִּינִי וְיַפֶה.,,This boy is blond and handsome.
+healthy,A2,,,בריא,barí,הָאוֹכֶל הַזֶּה בָּרִיא מְאוֹד.,,This food is very healthy.
+basic,A2,masc,sing,בסיסי,bsisí,הַרְעָיוֹן הַזֶּה בְּסִיסִי מְאוֹד.,,This idea is very basic.
+"true, truthful",A2,,,אמיתי,amití,זֶה סִפּוּר אֲמִתִּי וְלֹא בְּדִיּוֹן.,,"This is a true story, not fiction."
+most (formal),A2,,,ביותר,byotér,זֶה הַמָּקוֹם הַיָּפֶה בְּיוֹתֵר שֶׁרָאִיתִי.,,This is the most beautiful place I have seen.
+plushie,A2,fem,sing,בובה,bubá,הַבֻּבָּה הַזֹּאת מְאֹד רַכָּה.,,This plushie is very soft.
+bar,A2,masc,sing,בר,bar,הַלַּיְלָה נֵצֵא לַבָּר הֶחָדָשׁ.,,"Tonight, we will go to the new bar."
+on the way,A2,,,בדרך,badéreħ,אֲנַחְנוּ כְּבָר בַּדֶּרֶךְ לָשִׂיחָה.,,We are already on the way to the meeting.
+pharmacy,A2,masc,sing,בית מרקחת,béit mirkáħat,הָלַכְנוּ לְבֵית הַמִּרְקַחַת לִקְנוֹת תְּרוּפָה.,,We went to the pharmacy to buy medicine.
+welcome,A2,masc,sing,ברוך הבא,barúħ habá,בָּרוּךְ הַבָּא לְבֵיתִי!,,Welcome to my home!
+welcome,A2,fem,plur,ברוכות הבאות,bruħót habaót,בְּרוּכוֹת הַבָּאוֹת לַכִּנּוּס.,,Welcome to the conference.
+welcome,A2,masc,plur,ברוכים הבאים,bruħím habaím,בְּרוּכִים הַבָּאִים לַמּוֹפָע.,,Welcome to the show.
+welcome,A2,fem,sing,ברוכה הבאה,bruħá habaá,בְּרוּכָה הַבָּאָה לַחֲתֻנָּה.,,Welcome to the wedding.
+prototype,B2,masc,sing,אב טיפוס,av tipús,,,
 loss (of an item),A2,fem,sing,אבדה,avedá,,,
 devastation,C1,masc,sing,אבדון,avadón,,,
 evolution,B2,fem,sing,אבולוציה,evolútsya,,,
-springtime,A1,masc,sing,אביב,avív,הָאָבִיב יָפֶה.,Ha-aviv yafe.,Spring is beautiful.
-"but, however",A1,,,אבל,avál,"אֲנִי רוֹצֶה גְּלִידָה, אֲבָל אֵין.","Ani rotze glida, aval ein.","I want ice cream, but there is none."
-stone,A2,fem,sing,אבן,éven,יֵשׁ אֶבֶן גְּדוֹלָה בַּגַּן.,Yesh even gdolá ba-gan.,There is a big stone in the garden.
 gemstone,B2,fem,sing,אבן יקרה,éven ykará,,,
 stumbling stone,C1,fem,sing,אבן נגף,éven négef,,,
 lithium,C2,masc,sing,אבנן,avnán,,,
 chicken pox,B2,fem,plur,"אבעבועות רוח",avabuót rúaħ,,,
-dust,A2,masc,sing,אבק,avák,יֵשׁ הַרְבֵּה אָבָק בַּחֶדֶר הַזֶּה.,Yesh harbé avak ba-cheder ha-ze.,There is a lot of dust in this room.
 powder,B1,fem,sing,אבקה,avká,,,
 "legend, myth",B1,fem,sing,אגדה,agadá,,,
-"nut, walnut",A2,masc,sing,אגוז,egóz,אֲנִי אוֹהֵב לֶאֱכֹל אֱגוֹזִים.,Ani ohev le’echol egozim.,I like eating nuts.
-pear,A1,masc,sing,אגס,agás,הָאַגָּס טָעִים.,Ha-agas ta'im.,The pear is tasty.
 "steam, vapor",B1,masc,sing,אד,ed,,,
-red,A1,,,אדום,adóm,הַתַּפּוּחַ אָדֹם.,Ha-tapuach adom.,The apple is red.
 lord,B2,masc,sing,אדון,adón,,,
 my lord,B2,masc,sing,אדוני,adonái,,,
-"person, human",A1,masc,sing,אדם,adám,אָדָם הוֹלֵךְ בָּרְחוֹב.,Adam holech ba-rechov.,A person is walking on the street.
-"earth, soil",A1,fem,sing,אדמה,adamá,הָאֲדָמָה חוּמָה.,Ha-adama chuma.,The soil is brown.
 architect,B1,masc,sing,אדריכל,adriħál,,,
 architecture,B2,fem,sing,אדריכלות,adriħalút,,,
-"love, like",A1,,,אהב,aháv,הוּא אָהַב אֶת הַסֵּפֶר.,Hu ahav et ha-sefer.,He loved the book.
-love (noun),A1,fem,sing,אהבה,ahavá,אַהֲבָה הִיא דָּבָר טוֹב.,Ahava hi davar tov.,Love is a good thing.
-"loved one, favorite",A2,,,אהוב,ahúv,הַסֵּפֶר הַזֶּה אָהוּב עָלַי מְאֹד.,Ha-sefer ha-ze ahuv alai me’od.,This book is very dear to me.
-or,A1,,,או,o,אַתָּה רוֹצֶה תֵּה אוֹ קָפֶה?,Ata rotze te o kafe?,Do you want tea or coffee?
 objective,B2,,,אובייקטיבי,obyektívi,,,
-goose,A2,masc,sing,אווז,aváz,בָּאֲגַם יֵשׁ אֲוָזִים לְבָנִים.,Ba-agam yesh avazim levanim.,There are white geese in the lake.
-air,A1,masc,sing,אוויר,avír,האֲוִיר קַר הַיּוֹם.,Ha-avir kar ha-yom.,The air is cold today.
 atmosphere,B1,fem,sing,אווירה,avirá,,,
-bus,A1,masc,sing,אוטובוס,otobús,הָאוֹטוֹבּוּס מַגִּיעַ.,Ha-otobus magia.,The bus is arriving.
 autonomy,B2,fem,sing,אוטונומיה,otonómya,,,
 enemy,B1,masc,sing,אויב,oyév,,,
-"airplane, plane (rare)",A2,masc,sing,אוירון,avirón,הָאוּוִירוֹן טָס מֵעַל הָעִיר.,Ha-aviron tas me’al ha-ir.,The airplane is flying over the city.
-food,A1,masc,sing,אוכל,óħel,הָאוֹכֶל טָעִים.,Ha-ochel ta'im.,The food is tasty.
 ultimate,B2,,,אולטימטיבי,ultimatívi,,,
-hall,A2,masc,sing,אולם,ulám,הָאֵרוּעַ יִתְקַיֵּם בְּאוּלָם גָּדוֹל.,Ha-eru’a yitkayem be-ulam gadol.,The event will take place in a large hall.
 "studio, ulpan, Hebrew school",B1,masc,sing,אולפן,ulpán,,,
-artist,A1,masc,sing,אומן,omán,הָאוֹמָן מְצַיֵּר.,Ha-oman metzayer.,The artist is painting.
 craftsman,B1,masc,sing,אומן,umán,,,
 "craft, skill",B1,fem,sing,אומנות,umanút,,,
-university,A2,fem,sing,אוניברסיטה,univérsita,אֲנִי לוֹמֵד בָּאוּנִיבֶרְסִיטָה בִּירוּשָׁלַיִם.,Ani lomed ba-universita bi-Yerushalayim.,I study at a university in Jerusalem.
 collection,B1,masc,sing,אוסף,ósef,,,
-baker,A2,masc,sing,אופה,ofé,הָאוֹפֶה מֵכִין לֶחֶם טָרִי כָּל יוֹם.,Ha-ofe mechin lechem tari kol yom.,The baker prepares fresh bread every day.
 opposition,B2,fem,sing,אופוזיציה,opozítsya,,,
 optimistic,B1,,,אופטימי,optími,,,
 optimal,B2,,,אופטימלי,optimáli,,,
 "way, manner",B1,masc,sing,אופן,ófen,,,
-motorcycle,A2,masc,sing,אופנוע,ofanóa,יֵשׁ לוֹ אוֹפַּנּוֹעַ חָדָשׁ וּמָהִיר.,Yesh lo ofanoa chadash ve-mahir.,He has a new and fast motorcycle.
-bicycle,A1,masc,dual,אופניים,ofanáyim,הַיֶּלֶד רוֹכֵב עַל אוֹפַנַּיִם.,Ha-yeled rokev al ofanayim.,The boy is riding a bicycle.
 option,B2,fem,sing,אופציה,óptsia,,,
 opera,B1,fem,sing,אופרה,ópera,,,
 treasure,B1,masc,sing,אוצר,otsár,,,
 ocean,B1,masc,sing,אוקיינוס,okyanós,,,
-light (noun),A1,masc,sing,אור,or,יֵשׁ אוֹר בַּחֶדֶר.,Yesh or ba-cheder.,There is light in the room.
 organic,B2,,,אורגני,orgáni,,,
-rice,A1,masc,sing,אורז,órez,אֲנִי אוֹכֵל אוֹרֶז.,Ani ochel orez.,I am eating rice.
-guest,A2,masc,sing,אורח,oréaħ,הָאוֹרֵחַ הִגִּיעַ מוּקְדָּם לַמְּסִבָּה.,Ha-oreach higi’a mukdam la-mesiba.,The guest arrived early to the party.
 orthodox,B2,,,אורתודוקסי,ortodóksi,,,
-letter in the alphabet,A1,fem,sing,אות,ot,אֲנִי כּוֹתֵב אוֹת עַל הַנְּיָר.,Aní kotév ot al ha-niyár.,I write a letter on the paper.
-"sign, signal",A2,masc,sing,אות,ot,אֲנִי מְחַכֶּה לְאוֹת מִמְּךָ.,Ani mechake le-ot mimecha.,I'm waiting for a sign from you.
-me,A1,,,אותי,oti,הוּא אוֹהֵב אוֹתִי.,Hu ohev oti.,He loves me.
-them,A1,masc,plur,אותם,otám,אֲנִי מַכִּיר אוֹתָם.,Ani makir otam.,I know them.
-"so, then",A1,,,אז,az,"הוּא הָיָה עָיֵף, אָז הוּא יָשַׁן.","Hu haya ayef, az hu yashan.","He was tired, so he slept."
-brother,A1,masc,sing,אח,aħ,יֵשׁ לִי אָח קָטָן.,Yesh li ach katan.,I have a little brother.
-one,A1,masc,sing,אחד,eħád,יֵשׁ לִי תַּפּוּחַ אֶחָד.,Yesh li tapuach echad.,I have one apple.
 unity,B1,fem,sing,אחדות,aħdút,,,
 brotherhood,B2,fem,sing,אחווה,aħavá,,,
-sister,A1,fem,sing,אחות,aħót,אַחְוֹתִי לוֹמֶדֶת בְּבֵית־הַסֵּפֶר.,Achoti lomedet be-beit ha-sefer.,My sister studies at school.
-after,A1,,,אחר,aħár,אֲנִי הוֹלֵךְ לִישׁוֹן אַחַר הַסֶּרֶט.,Ani holech lishon achar ha-seret.,I go to sleep after the movie.
-"other, another",A1,,,אחר,aħér,אֲנִי רוֹצֶה סֵפֶר אַחֵר.,Ani rotze sefer acher.,I want another book.
-afternoon,A1,masc,sing,אחר הצהריים,aħár hatsohoráim,אֲנִי פּוֹגֵשׁ חָבֵר אַחַר הַצָּהֳרַיִם.,Ani pogesh chaver achar ha-tsohorayim.,I meet a friend in the afternoon.
-afterwards,A1,,,אחר כך,aħár káħ,אֲנִי הוֹלֵךְ הַבַּיְתָה אַחַר כָּךְ.,Ani holech ha-bayta achar kach.,I'm going home later.
 responsible,B1,,,אחראי,aħrai,,,
-after,A1,,,אחרי,aħaréi,אַחֲרֵי הַשִּׁעוּר אֲנִי אוֹכֵל.,Acharei ha-shiur ani ochel.,"After the lesson, I eat."
 responsibility,B1,fem,sing,אחריות,aħarayút,,,
-one,A1,fem,sing,אחת,aħát,יֵשׁ לִי יַלְדָּה אַחַת.,Yesh li yalda achat.,I have one girl.
 atomic,B2,,,אטומי,atomí,,,
-island,A2,masc,sing,אי,i,הֵם נָסְעוּ לַחֻפְשָׁה בְּאִי קָטָן.,Hem nas’u le-chufsha be-i katan.,They went on vacation to a small island.
 loss (of an item),B2,masc,sing,איבוד,ibúd,,,
 ideal (noun),B2,masc,sing,אידיאל,ideál,,,
 ideal (adjective),B2,,,אידיאלי,ideali,,,
 Yiddish,B1,fem,sing,אידיש,ídish,,,
 threat,B2,masc,sing,איום,iyum,,,
-"which, what",A1,masc,sing,איזה,éize,אֵיזֶה צֶבַע אַתָּה אוֹהֵב?,Eize tzéva ata ohev?,Which color do you like?
-slow,A2,,,איטי,ití,הָאִינְטֶרְנֵט בַּבַּיִת שֶׁלִּי מְאֹד אִטִּי.,Ha-internet ba-bayit sheli me’od iti.,The internet in my house is very slow.
-Italian,A2,,,איטלקי,italkí,הוּא אוֹכֵל אוֹכֶל אִיטַלְקִי בַּמִּסְעָדָה.,Hu ochel ochel italki be-mis’ada.,He's eating Italian food at the restaurant.
-how,A1,,,איך,éiħ,אֵיךְ אַתָּה מַרְגִּישׁ?,Eich ata margish?,How do you feel?
 "terror, horror",B2,fem,sing,אימה,éima,,,
-email,A2,masc,sing,אימייל,ímeil,שָׁלַחְתִּי לְךָ אֵימֵייל אֶתְמוֹל.,Shalachti lecha imeil etmol.,I sent you an email yesterday.
 empire,B2,fem,sing,אימפריה,imperyá,,,
-there's no,A1,,,אין,ein,אֵין חָלָב בַּמְּקָרֵר.,Ein chalav ba-mekarer.,There is no milk in the fridge.
-internet,A1,masc,sing,אינטרנט,ínternet,אֲנִי מִשְׁתַּמֵּשׁ בָּאִינְטֶרְנֵט כָּל יוֹם.,Ani mishtamesh ba-internet kol yom.,I use the internet every day.
 "internet, online",B1,,,אינטרנטי,internéti,,,
-information,A2,fem,sing,אינפורמציה,informátsya,אֲנִי מְחַפֵּשׂ אִינְפוֹרְמַצְיָה עַל הָעִיר.,Ani mehapés informatsya al ha-ir.,I'm looking for information about the city.
 "prohibition, ban",B2,masc,sing,איסור,isúr,,,
-where,A1,,,איפה,efó,אֵיפֹה הַבַּיִת שֶׁלְּךָ?,Eifo ha-bayit shelcha?,Where is your house?
 "event, function",B1,masc,sing,אירוע,erúa,,,
-"man, husband",A1,masc,sing,איש,ish,הָאִישׁ גָּבוֹהַּ.,Ha-ish gavoha.,The man is tall.
 businessman,B1,masc,sing,"איש עסקים",ish asakím,,,
-snowman,A2,masc,sing,איש שלג,ish shéleg,הַיְלָדִים בָּנוּ אִישׁ שֶׁלֶג בַּגִּינָּה.,Ha-yeladim banu ish sheleg ba-gina.,The children built a snowman in the garden.
 "pupil, little man",B2,masc,sing,אישון,ishón,,,
 "personal, private",B1,,,אישי,ishí,,,
 personality,B2,fem,sing,אישיות,ishiyút,,,
-eating,A2,fem,sing,אכילה,aħilá,אֲכִילָה בְּרִיאָה חֲשׁוּבָה לַבְּרִיאוּת.,Achila bri’a chashuva la-briyut.,Healthy eating is important for health.
-eat,A1,,,אכל,aħál,הוּא אָכַל אֲרוּחַת בֹּקֶר.,Hu achal aruchat boker.,He ate breakfast.
-don't,A2,,,אל,al,אַל תֵּלֵךְ לְבַדֶּךָ בַּלַּיְלָה.,,Don't walk alone at night.
 "god, strength",B1,masc,sing,אל,el,,,
-album,A2,masc,sing,אלבום,albóm,יֵשׁ לִי אַלְבּוֹם תְּמוּנוֹת מֵהַטִּיּוּל.,,I have a photo album from the trip.
-god,A1,masc,sing,אלוהים,elohím,הַרְבֵּה אֲנָשִׁים מַאֲמִינִים בֵּאלֹהִים.,Harbé anashím ma’aminím be’elohím.,Many people believe in God.
 "god, our",B2,masc,sing,אלוהינו,elohéinu,,,
 violent,B1,,,אלים,alím,,,
 violence,B1,fem,sing,אלימות,alimút,,,
 verbal abuse,B2,fem,sing,אלימות מילולית,alimút milulít,,,
 mute,C1,masc,sing,אלם,ilém,,,
-thousand,A1,masc,plur,אלף,élef,יֵשׁ אֶלֶף אֲנָשִׁים בָּעִיר.,Yesh élef anashím ba-ír.,There are a thousand people in the city.
-alphabet,A1,masc,sing,אלפבית,alefbét,אֲנִי לוֹמֵד אֶת הָאַלְפָבֵּית הָעִבְרִי.,Aní loméd et ha-alefbét ha-ivrí.,I'm learning the Hebrew alphabet.
-allergic,A2,,,אלרגי,alérgi,הוּא אַלֶּרְגִּי לָאֱגוֹזִים.,,He is allergic to nuts.
-allergy,A2,fem,sing,אלרגיה,alérgya,אֲנִי סוֹבֵל מֵאַלֶּרְגִּיָּה לְאַבְקַת פֵּרוּחִים.,,I suffer from a pollen allergy.
-if,A1,,,אם,im,"אִם יוֹרֵד גֶּשֶׁם, אֲנִי נִשְׁאָר בַּבַּיִת.","Im yoréd gésem, aní nish’ár ba-báyit.","If it rains, I'm staying at home."
-mother,A1,fem,sing,אם,ém,הָאֵם שֶׁלִּי עוֹבֶדֶת בְּבֵית־חוֹלִים.,Ha-ém shelí ovédet be-béit ħolím.,My mother works at a hospital.
-mom,A1,fem,sing,אמא,íma,אִמָּא שֶׁלִּי מְבַשֶּׁלֶת אוֹכֶל טָעִים.,Íma shelí mevashélet ókhel ta’ím.,My mom cooks delicious food.
-bath,A1,fem,sing,אמבטיה,ambátya,הַיֶּלֶד נִכְנָס לָאַמְבַּטְיָה.,Ha-yéled nikhnás la-ambátya.,The child gets into the bathtub.
 "belief, faith",B1,fem,sing,אמונה,emuná,,,
 saying,B1,fem,sing,אמירה,amirá,,,
-"true, truthful",A2,,,אמיתי,amití,זֶה סִפּוּר אֲמִתִּי וְלֹא בְּדִיּוֹן.,,"This is a true story, not fiction."
-truly,A1,,,אמן,amén,הוּא אָמַר אָמֵן אַחֲרֵי הַתְּפִלָּה.,Hu amár amén aħré ha-tefilá.,He said amen after the prayer.
 art,B1,fem,sing,אמנות,omanút,,,
 artistic,B2,,,אמנותי,omanutí,,,
 truly,B2,,,אמנם,omnám,,,
 empathy,B2,fem,sing,אמפתיה,empatiá,,,
-"say, tell",A1,,,אמר,amár,הוּא אָמַר לִי שָׁלוֹם.,Hu amár li shalóm.,He said hello to me.
-American,A1,,,אמריקאי,amerikái,הֶחָבֵר שֶׁלִּי אַמֶרִיקָאִי.,Ha-ħavér shelí amerikái.,My friend is American.
-truth,A2,fem,sing,אמת,emét,הָאֱמֶת תָּמִיד חֲשׁוּבָה.,,The truth is always important.
-English (language),A1,fem,sing,אנגלית,anglít,אֲנִי מְדַבֵּר אַנְגְּלִית טוֹב.,Aní medabér anglít tov.,I speak English well.
 selfish,C1,,,אנוכי,anoħí,,,
 humanity,B2,fem,sing,אנושׁות,enoshút,,,
 human,B1,masc,sing,אנושי,enoshí,,,
-we,A1,all,plur,אנחנו,anáħnu,אֲנַחְנוּ הוֹלְכִים לַיָּם.,Anáħnu holkhím la-yám.,We're going to the beach.
 antisemitic,B1,,,אנטישמי,antishémi,,,
-I,A1,,,אני,aní,אֲנִי אוֹהֵב קָפֶה.,Aní ohév kafé.,I like coffee.
 energy,B1,fem,sing,אנרגיה,energiya,,,
-"prohibited, forbidden",A2,,,אסור,asúr,אָסוּר לְעָשֵׁן בַּמִּסְעָדָה.,,Smoking is prohibited in the restaurant.
 strategy,B2,fem,sing,אסטרטגיה,astratégya,,,
 prisoner,B1,masc,sing,אסיר,asír,,,
 Islam,B1,masc,sing,אסלאם,islám,,,
 Islamic,B2,,,אסלאמי,islámi,,,
-toilet,A2,fem,sing,אסלה,aslá,הָאַסְלָה בַּחֶדֶר שֶׁמִּמּוּל.,,The toilet is in the room across.
-collect,A2,,,אסף,asáf,הוּא אָסַף כַּמָּה סֵפֶרִים מֵהַסִּפְרִיָּה.,,He collected some books from the library.
 "prohibit, imprison",B1,,,אסר,asár,,,
-nose,A1,masc,sing,אף,af,הָאַף שֶׁלִּי קָר.,Ha-af shelí kar.,My nose is cold.
-bake,A2,,,אפה,afá,הִיא אָפְתָה עוּגָה לַיּוֹם הַהוּלֶדֶת.,,She baked a cake for the birthday.
-gray,A1,,,אפור,afór,הַשָּׁמַיִם הַיּוֹם אֲפוּרִים.,Ha-shamáyim ha-yóm aforím.,The sky is gray today.
 even,B1,,,אפילו,afilú,,,
-zero,A1,masc,,אפס,éfes,אֶפֶס וְעוֹד אֶחָד זֶה אֶחָד.,Éfes ve-od éħad ze éħad.,Zero plus one is one.
 effect,B2,masc,sing,אפקט,efékt,,,
 effective,B2,,,אפקטיבי,efektívi,,,
 ash,B1,masc,sing,אפר,éfer,,,
-possible,A1,,,אפשר,efshár,אֶפְשָׁר לָשֶׁבֶת פֹּה?,Efshár lashévet pó?,Can I sit here?
-possibility,A2,fem,sing,אפשרות,efsharút,יֵשׁ אֶפְשָׁרוּת לְנָסִיעָה מָחָר.,,There is a possibility of traveling tomorrow.
 possible,B1,,,אפשרי,efsharí,,,
-finger,A1,fem,sing,אצבע,etsbá,יֵשׁ לִי חָמֵשׁ אֶצְבָּעוֹת בְּכָל יָד.,Yesh li ħamésh etzba’ót be-kol yad.,I have five fingers on each hand.
 thimble,C1,masc,sing,אצבעון,etsbaón,,,
-stadium,A2,masc,sing,אצטדיון,itstadyón,הָאִיצְטַדְיוֹן מָלֵא בְּאוֹהֲדִים.,,The stadium is full of fans.
 academic,B2,,,אקדמי,akadémi,,,
 academy,B2,fem,sing,אקדמיה,akadémya,,,
 climate,B1,masc,sing,אקלים,aklím,,,
-four,A1,fem,plur,ארבע,arbá,יֵשׁ לִי אַרְבַּע חֲתוּלִים.,Yesh li arbá ħatulím.,I have four cats.
-"US, the",A2,fem,plur,ארה״ב,"arhá""v",בְּאַרְה״ב יֵשׁ הַרְבֵּה עֵרִים גְּדוֹלוֹת.,,There are many big cities in the U.S.
-meal,A1,fem,sing,ארוחה,aruħá,אֲנִי אוֹכֵל שָׁלֹשׁ אֲרוּחוֹת בַּיּוֹם.,Aní okhél shalósh aruħót ba-yóm.,I eat three meals a day.
-breakfast,A1,fem,sing,ארוחת בוקר,aruħát bóker,אֲרוּחַת הַבֹּקֶר שֶׁלִּי הִיא לֶחֶם עִם גְּבִינָה.,Aruħát ha-bóker shelí hi léħem im gviná.,My breakfast is bread with cheese.
-dinner,A1,fem,sing,ארוחת ערב,aruħát érev,אֲנַחְנוּ אוֹכְלִים אֲרוּחַת עֶרֶב בְּשֶׁבַע.,Anáħnu okhlím aruħát érev be-shéva.,We eat dinner at seven.
-lunch,A1,fem,sing,ארוחת צהריים,aruħát tsohoráyim,אֲרוּחַת הַצָּהֳרַיִם שֶׁלִּי הִיא אוֹרֶז עִם עוֹף.,Aruħát ha-tsohoráyim shelí hi órez im óf.,My lunch is rice with chicken.
-"closet, cabinet",A1,masc,sing,ארון ,arón,הַבְּגָדִים שֶׁלִּי בָּאָרוֹן.,Ha-bgadím shelí ba-arón.,My clothes are in the closet.
-bookshelf,A2,masc,sing,ארון ספרים,arón sfarím,הָאָרוֹן סְפָרִים שֶׁלִּי מָלֵא בְּסֵפֶרֵי מֶתֶחַ.,,My bookshelf is full of mystery books.
 cedar,B1,masc,sing,ארז,érez,,,
-lion,A2,masc,sing,אריה,aryé,הָאַרְיֵה נִמְצָא בַּגַּן הַחַיּוֹת.,,The lion is in the zoo.
 architecture,B2,fem,sing,ארכיטקטורה,arħitektúra,,,
-wallet,A2,masc,sing,ארנק,arnák,הַאֲרְנָק שֶׁלִּי אָבַד בַּקָּנְיוֹן.,,My wallet was lost in the mall.
-"land, country",A1,fem,sing,ארץ,érets,אֲנִי גָּר בְּאֶרֶץ יָפָה.,Ani gar b’érets yafá.,I live in a beautiful country.
-United States,A1,fem,plur,ארצות הברית,artsót habrít,אַרְצוֹת הַבְּרִית הִיא מְדִינָה גְּדוֹלָה.,Artsót habrít hi mediná gdolá.,The United States is a big country.
-fire,A1,fem,sing,אש,esh,יֵשׁ אֵשׁ בַּמְּדוּרָה.,Yesh esh bam’durá.,There is fire in the bonfire.
-"woman, wife",A1,fem,sing,אשה,ishá,הִיא אִשָּׁה חֲכָמָה.,Hi ishá ħakamá.,She is a smart woman.
 "visa, permit",B1,fem,sing,אשרה,ashrá,,,
-you,A1,fem,sing,את,at,אַתְּ גָּרָה בְּתֵל־אָבִיב?,At gará b'Tel Aviv?,Do you live in Tel Aviv?
-object marker,A1,,,את,et,אֲנִי אוֹהֵב אֶת הַסֶּרֶט הַזֶּה.,Ani ohev et haséret hazé.,I like this movie.
 atheism,B2,masc,sing,אתאיזם,ateízm,,,
-you,A1,masc,sing,אתה,atá,אַתָּה עוֹבֵד פֹּה?,Atá oved po?,Do you work here?
-yesterday,A1,,,אתמול,etmól,אֶתְמוֹל הָיָה יוֹם יָפֶה.,Etmól hayá yom yafé.,Yesterday was a beautiful day.
-"in, with",A1,,,ב ,b',אֲנִי בַּבַּיִת.,Ani bábayit.,I'm at home.
-come,A1,,,בא,ba,הוּא בָּא לְבֵית־הַסֵּפֶר.,Hu ba l’béit séfer.,He's coming to school.
 bummer,B1,fem,sing,באסה,bása,,,
-please,A1,,,בבקשה,bvakasha,"תֵּן לִי מַיִם, בְּבַקָּשָׁה.","Ten li máyim, bvakashá.","Give me water, please."
-garment,A2,masc,sing,בגד,béged,כָּל בֶּגֶד שֶׁהוּא לוֹבֵשׁ מְיֻחָד.,,Every garment he wears is unique.
-swimsuit,A2,masc,sing,בגד ים,béged yam,אֲנִי קָנִיתִי בֶּגֶד יָם חָדָשׁ.,,I bought a new swimsuit.
-clothes,A1,masc,plur,בגדים,bgadím,אֲנִי קוֹנֶה בְּגָדִים חֲדָשִׁים.,Ani koné bgadím ħadashím.,I'm buying new clothes.
-because of,A2,,,בגלל,biglál,הוּא אֵיחֵר בִּגְלַל הַפַּקָּקִים.,,He was late because of the traffic.
 loneliness,B1,fem,sing,בדידות,bdidút,,,
-"just, exactly",A2,,,בדיוק,bdiyúk,הַשָּׁעָה בְּדִיּוּק שֵׁשׁ.,,The time is exactly six.
-on the way,A2,,,בדרך,badéreħ,אֲנַחְנוּ כְּבָר בַּדֶּרֶךְ לָשִׂיחָה.,,We are already on the way to the meeting.
-as a rule,A2,,,בדרך כלל,bdéreħ klal,בְּדֶרֶךְ כְּלָל הוּא לֹא מְאַחֵר.,,"As a rule, he is not late."
 beast,B1,fem,sing,בהמה,behemá,,,
-plushie,A2,fem,sing,בובה,bubá,הַבֻּבָּה הַזֹּאת מְאֹד רַכָּה.,,This plushie is very soft.
 lonely,B1,masc,sing,בּוֹדֵד,bodéd,,,
-"certainly, surely",A2,,,בוודאי,bvadái ,הִיא תָּבוֹא לְבַדַּאי לַחֲתֻנָּה.,,She will definitely come to the wedding.
-peanut,A2,masc,sing,בוטן,bóten,אֲנִי אוֹהֵב בָּטְנִים קָלוּיִים.,,I love roasted peanuts.
-stamp,A2,masc,sing,בול,bul,הַדּוֹאַר שָׁלַח לִי בּוּל חָדָשׁ.,,The post office sent me a new stamp.
-beaver,A2,masc,sing,בונה,boné,הַבּוֹנֶה בּוֹנֶה סָכָּה עַל הַנָּהָר.,,The beaver is building a dam on the river.
-morning,A1,masc,sing,בוקר,bóker,בֹּקֶר טוֹב!,Bóker tov!,Good morning!
-"hole, pit",A2,masc,sing,בור,bór,הַבּוֹר עָמֹק וְמָלֵא מַיִם.,,The pit is deep and full of water.
-outside,A2,,,בחוץ,baħúts,הַיֶּלֶד מְשַׂחֵק בַּחוּץ.,,The child is playing outside.
-for free,A2,,,בחינם,bħinám,הַכַּרְטִיסִים לַסֶּרֶט הָיוּ בְּחִנָּם.,,The movie tickets were free.
-"choice, election",A2,fem,sing,בחירה,bħirá,הַבְּחִירָה שֶׁלִּי הָיְתָה קָשָׁה.,,My choice was difficult.
-choose,A2,,,בחר,baħár,הוּא בָּחַר אֶת הַמָּנָה הָאֲהוּבָה עָלָיו.,,He chose his favorite dish.
 "isolation, quarantine",B1,masc,sing,בידוד,bidúd,,,
 biology,B1,fem,sing,ביולוגיה,biyológya,,,
-most (formal),A2,,,ביותר,byotér,זֶה הַמָּקוֹם הַיָּפֶה בְּיוֹתֵר שֶׁרָאִיתִי.,,This is the most beautiful place I have seen.
-together,A1,,,ביחד,byáħad,אֲנַחְנוּ מְשַׂחֲקִים יַחְדָּו.,Anáchnu mesachakím byáchad.,We're playing together.
-bagel,A2,masc,sing,בייגל,béigel,הִיא אוֹהֶבֶת לֶאֱכֹל בֵּייגֶּל עִם גְּבִינָה.,,She likes eating a bagel with cheese.
 stage,B1,fem,sing,בימה,bimá,,,
-between,A1,,,בין,béin,הַבַּיִת שֶׁלִּי בֵּין הַחֲנוּת לְבֵית־הַסֵּפֶר.,Habáyit shelí béin hachanút l’béit séfer.,My house is between the store and the school.
 medium,B1,masc,sing,בינוני,benoní,,,
 international,B1,,,בינלאומי,beinl'umí,,,
-egg,A1,fem,sing,ביצה,beitsá,אֲנִי אוֹכֵל בֵּיצָה לַאֲרוּחַת בֹּקֶר.,Ani ochel beitsá l’aruħat bóker.,I'm eating an egg for breakfast.
-beer,A2,fem,sing,בירה,bíra,אַתָּה רוֹצֶה לִשְׁתּוֹת בִּירָה?,,Do you want to drink beer?
-capital,A2,fem,sing,בירה,birá,הַבִּירָה שֶׁל פּוֹלִין הִיא וַרְשָׁה.,,The capital of Poland is Warsaw.
-house,A1,masc,sing,בית,báyit,הַבַּיִת שֶׁלִּי גָּדוֹל.,Habáyit shelí gadól.,My house is big.
-post office,A1,masc,sing,בית דואר,béit dó'ar,אֲנִי שׁוֹלֵחַ מִכְתָּב בְּבֵית־הַדּוֹאַר.,Ani sholéaħ mikhtáv b’béit dó’ar.,I'm sending a letter at the post office.
 lower house,B1,,,"בית הנבחרים",béit hanivħarím,,,
-hospital,A1,masc,sing,בית חולים,béit ħolím,הָרוֹפֵא עוֹבֵד בְּבֵית חוֹלִים.,Harofé oved b’béit ħolím.,The doctor works at the hospital.
 factory,B1,masc,sing,בית חרושת,béit ħaróshet,,,
-synagogue,A1,masc,sing,בית כנסת,béit knéset,אֲנַחְנוּ הוֹלְכִים לְבֵית הַכְּנֶסֶת בַּשַּׁבָּת.,Anáħnu holkhím l’béit knéset b’Shabát.,We go to the synagogue on Shabbat.
-hotel,A1,masc,sing,בית מלון,béit malón,אֲנִי יָשֵׁן בְּבֵית־מָלוֹן בְּתֵל־אָבִיב.,Ani yashén b’béit malón b’Tel Aviv.,I sleep in a hotel in Tel Aviv.
-pharmacy,A2,masc,sing,בית מרקחת,béit mirkáħat,הָלַכְנוּ לְבֵית הַמִּרְקַחַת לִקְנוֹת תְּרוּפָה.,,We went to the pharmacy to buy medicine.
-court,A2,masc,sing,בית משפט,béit mishpát,הַמִּשְׁפָּט נֶעֱרַךְ בְּבֵית הַמִּשְׁפָּט הָעִירוֹנִי.,,The trial was held in the city courthouse.
-prison,A2,masc,sing,בית סוהר,béit sóhar,הָאִסִּיר שָׁהָה בְּבֵית הַסֹּהַר.,,The prisoner stayed in prison.
-school,A1,masc,sing,בית ספר,béit séfer,הַיְלָדִים לוֹמְדִים בְּבֵית סֵפֶר.,Hayeladím lomdím b’béit séfer.,The children study at school.
-cemetery,A2,masc,sing,בית קברות,béit kvarót,הַסָּבְתָא קְבוּרָה בְּבֵית הַקְּבָרוֹת.,,Grandmother is buried in the cemetery.
-"coffee house, cafe",A1,masc,sing,בית קפה,béit kafé,אֲנַחְנוּ נִפְגָּשִׁים בְּבֵית קָפֶה.,Anáħnu nifgashím b’béit kafé.,We're meeting at the café.
-intentionally,A2,,,בכוונה,b'ħavaná,הוּא עָשָׂה אֶת זֶה בְּכַוָּנָה.,,He did it intentionally.
 every,B1,,,בכל,beħól,,,
 anyway,B1,,,"בכל אופן",beħól ófen,,,
-blond,A2,,,בלונדיני,blondíni,הַיֶּלֶד הַזֶּה בְּלוֹנְדִּינִי וְיַפֶה.,,This boy is blond and handsome.
-without,A1,,,בלי,bli,אֲנִי רוֹצֶה קָפֶה בְּלִי סֻכָּר.,Ani rotzé kafé bli sukar.,I want coffee without sugar.
-without,A2,,,בלעדי,bil'adéi,"אֵין לִי זֶה, אֲבָל לְבַדִּי זֶה אִי אֶפְשָׁרִי.",,"I don’t have this, but alone it’s impossible."
-especially,A2,,,במיוחד,bimyuħád,הַסֵּפֶר הַזֶּה מְיֻחָד בִּמְיֻחָד.,,This book is especially unique.
-son,A1,masc,sing,בן,ben,יֵשׁ לִי בֵּן אֶחָד.,Yesh li ben eħád.,I have one son.
-human being,A1,masc,sing,בן אדם,ben adám,הוּא בֶּן אָדָם טוֹב.,Hu ben adám tov.,He's a good person.
-cousin,A1,masc,sing,בן דוד,ben dod,יֵשׁ לִי בֶּן־דוֹד בְּנְיוּ־יוֹרְק.,Yesh li ben dod b’New York.,I have a cousin in New York.
 builder,B1,masc,sing,בנאי,banái,,,
-build,A2,,,בנה,baná,הַפּוֹעֵל בָּנָה בַּיִת חָדָשׁ.,,The worker built a new house.
 "regarding, about",B1,,,בנושא‎,benosé,,,
-building,A2,masc,sing,בניין,binyán,הַבִּנְיָן גָּבוֹהַּ וּמַרְשִׁים.,,The building is tall and impressive.
 "city hall, town hall",B1,,,"בניין עירייה",binyán iriyá,,,
-banana,A1,fem,sing,בננה,banána,אֲנִי אוֹהֵב בָּנָנָה.,Ani ohev banána.,I like bananas.
-bank,A1,masc,sing,בנק,bank,הַכֶּסֶף שֶׁלִּי בַּבָּנְק.,Hakesef shelí babank.,My money is in the bank.
 central bank,B1,masc,sing,בנק מרכזי,bank merkazí,,,
-okay,A1,,,בסדר,bseder,הַכֹּל בְּסֵדֶר!,Hakól bséder!,Everything is fine!
-base,A2,masc,sing,בסיס,basís,הַבָּסִיס הַצְּבָאִי נִמְצָא בַּמִּדְבָּר.,,The military base is located in the desert.
-basic,A2,masc,sing,בסיסי,bsisí,הַרְעָיוֹן הַזֶּה בְּסִיסִי מְאוֹד.,,This idea is very basic.
-problem,A2,fem,sing,בעיה,biayá,יֵשׁ לִי בְּעָיָה עִם הַמַּחְשֵׁב.,,I have a problem with the computer.
 problematic,B1,,,בעייתי,biayatí,,,
-animal (rare),A2,masc,sing,בעל חיים,báal ħayím,בַּגַּן חַיּוֹת יֵשׁ בַּעַל חַיִּים מְיֻחָד.,,There is a special animal in the zoo.
-inside,A1,,,בפנים,bifním,"הַסֵּפֶר בִּפְנִים, עַל הַשּׁוּלְחָן.","Hasefer bifním, al hashulħán.","The book is inside, on the table."
-onion,A1,masc,sing,בצל,batsál,אֲנִי לֹא אוֹהֵב בָּצָל.,Ani lo ohev batsál.,I don’t like onions.
 aloud,B1,,,בקול רם,bkól ram,,,
 control,B2,fem,sing,בקרה,bakará,,,
 climate control,B2,fem,sing,בקרת אקלים,bakarát aklím,,,
-request,A2,fem,sing,בקשה,bakashá,הִיא עָשְׂתָה בַּקָּשָׁה לִקְבָּלַת עֲבוֹדָה.,,She submitted a job application.
-bar,A2,masc,sing,בר,bar,הַלַּיְלָה נֵצֵא לַבָּר הֶחָדָשׁ.,,"Tonight, we will go to the new bar."
 "outside, wilderness",B1,,,בר,bar,,,
 "pure, clean",B1,,,בר,bar,,,
 lucky,B1,,,בר מזל,bar mazál,,,
-duck,A1,masc,sing,ברווז,barváz,הַבַּרְוָז שׁוֹחֶה בָּאֲגַם.,Habarváz soché ba'agám.,The duck is swimming in the lake.
-duckling,A2,masc,sing,ברווזון,barvazón,הַבַּרְוָזוֹן שׁוֹחֶה בָּאֲגַם.,,The duckling is swimming in the lake.
 blessed,B1,,,ברוך,barúħ,,,
-welcome,A2,masc,sing,ברוך הבא,barúħ habá,בָּרוּךְ הַבָּא לְבֵיתִי!,,Welcome to my home!
-welcome,A2,fem,sing,ברוכה הבאה,bruħá habaá,בְּרוּכָה הַבָּאָה לַחֲתֻנָּה.,,Welcome to the wedding.
-welcome,A2,fem,plur,ברוכות הבאות,bruħót habaót,בְּרוּכוֹת הַבָּאוֹת לַכִּנּוּס.,,Welcome to the conference.
-welcome,A2,masc,plur,ברוכים הבאים,bruħím habaím,בְּרוּכִים הַבָּאִים לַמּוֹפָע.,,Welcome to the show.
-clear,A2,,,ברור,barúr,הַהֶסְבֵּר שֶׁלּוֹ הָיָה בָּרוּר.,,His explanation was clear.
 iron,B1,masc,sing,ברזל,barzél,,,
-healthy,A2,,,בריא,barí,הָאוֹכֶל הַזֶּה בָּרִיא מְאוֹד.,,This food is very healthy.
-"health, healthiness",A2,fem,sing,בריאות,briút,הַבְּרִיאוּת שֶׁלָּנוּ חֲשׁוּבָה מְאוֹד.,,Our health is very important.
 health-related,B1,,,בריאותי,b'ri'utí,,,
-"pool, pond",A1,fem,sing,בריכה,breħá,אֲנַחְנוּ הוֹלְכִים לַבְּרֵיכָה בַּקַּיִץ.,Anáħnu holkhím labreħá bakáyitz.,We go to the pool in the summer.
 "covenant, alliance",B1,fem,sing,ברית,brit,,,
-blessing,A2,fem,sing,ברכה,braħá,הִיא אֲמָרָה לִי בְּרָכָה לְפָנֵי הָאֹכֶל.,,She said a blessing before eating.
-"lightning, shine",A2,masc,sing,ברק,barák,הַבָּרָק הָאִיר אֶת הַשָּׁמַיִם.,,The lightning lit up the sky.
-meat,A1,masc,sing,בשר,basár,אֲנִי אוֹכֵל בָּשָׂר עִם אוֹרֶז.,Ani ochel basár im óréz.,I eat meat with rice.
-daughter,A1,fem,sing,בת,bat,יֵשׁ לִי בַּת אַחַת.,Yesh li bat aħát.,I have one daughter.
 virgin,,masc,sing,בתול,batúl,,,
 virgin,,fem,sing,בתולה,betulá,,,
 "proud, gay",,,,גאה,geé,,,
