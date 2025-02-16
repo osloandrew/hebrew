@@ -5,26 +5,61 @@ const badChime = new Audio("Resources/Audio/badChime.wav");
 
 fetch("hebrewwords.csv")
   .then((response) => response.text())
-  .then((data) => {
-    const rows = data.split("\n").slice(1); // Remove header row
-    sentences = rows
-      .map((row) => {
-        const cols = row.match(/(?:"([^"]+)")|([^,]+)/g); // Properly handles commas inside quotes
-        if (cols && cols.length >= 9) {
-          return {
-            hebrewWithNiqqud: adjustPunctuation(
-              cols[6].replace(/^"|"$/g, "").trim()
-            ),
-            hebrew: adjustPunctuation(
-              removeNiqqud(cols[6].replace(/^"|"$/g, "").trim())
-            ),
-            english: cols[8].replace(/^"|"$/g, "").trim(),
-            difficulty: cols[1].replace(/^"|"$/g, "").trim(),
-          };
+  .then((csvText) => {
+    Papa.parse(csvText, {
+      header: true, // Automatically uses the first row as column names
+      skipEmptyLines: true, // Ignore empty lines
+      complete: (result) => {
+        console.log(`Total rows parsed: ${result.data.length}`);
+
+        // Ensure column names exist
+        if (
+          !result.meta.fields.includes("sentenceHebrew") ||
+          !result.meta.fields.includes("sentenceEnglish") ||
+          !result.meta.fields.includes("CEFR")
+        ) {
+          console.error(
+            "Error: One or more required columns are missing from the CSV!"
+          );
+          return;
         }
-      })
-      .filter(Boolean); // Remove any undefined entries
-    startGame();
+
+        let validRows = 0;
+        let skippedRows = 0;
+
+        sentences = result.data
+          .map((row, index) => {
+            const hebrewWithNiqqud = row.sentenceHebrew?.trim() || "";
+            const hebrew = removeNiqqud(hebrewWithNiqqud);
+            const english = row.sentenceEnglish?.trim() || "";
+            const difficulty = row.CEFR?.trim() || "";
+
+            // Ensure only complete rows are included
+            if (!hebrew || !english || !difficulty) {
+              console.warn(
+                `Skipping row ${index + 1}: Missing required fields.`
+              );
+              skippedRows++;
+              return null;
+            }
+
+            validRows++;
+            return {
+              hebrewWithNiqqud: adjustPunctuation(hebrewWithNiqqud),
+              hebrew: adjustPunctuation(hebrew),
+              english: english,
+              difficulty: difficulty,
+            };
+          })
+          .filter(Boolean); // Remove null entries but keep valid ones
+
+        console.log(`✅ Total valid sentences loaded: ${validRows}`);
+        console.log(`⚠️ Total sentences skipped: ${skippedRows}`);
+
+        startGame();
+      },
+      error: (error) => console.error("Error parsing CSV:", error),
+    });
   })
   .catch((error) => console.error("Error loading CSV:", error));
 
@@ -59,7 +94,7 @@ function getNextSentence() {
 }
 
 function removeNiqqud(text) {
-  return text.replace(/[֑-ׇ]/g, ""); // Removes all Hebrew niqqud marks
+  return text.replace(/[\u0591-\u05C7]/g, ""); // Removes Hebrew niqqud, but keeps Maqaf (־)
 }
 
 function adjustPunctuation(sentence) {
