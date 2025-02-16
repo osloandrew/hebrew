@@ -58,6 +58,13 @@ function adjustPunctuation(sentence) {
   return sentence.replace(/^([\u0590-\u05FF\s]+)([.?!])$/, "$1$2").trim();
 }
 
+function speakHebrew(text) {
+  window.speechSynthesis.cancel(); // Stops any ongoing speech
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = "he-IL";
+  window.speechSynthesis.speak(utterance);
+}
+
 function loadSentence() {
   if (!currentSentence) return;
   const adjustedHebrew = adjustPunctuation(currentSentence.hebrew);
@@ -67,6 +74,11 @@ function loadSentence() {
   document.getElementById(
     "difficulty"
   ).textContent = `CEFR Level: ${currentSentence.difficulty}`;
+
+  document.getElementById("replay-audio").onclick = () =>
+    speakHebrew(adjustedHebrew);
+
+  speakHebrew(adjustedHebrew); // Automatically read the sentence on load
 
   const answersDiv = document.getElementById("answers");
   answersDiv.innerHTML = "";
@@ -140,3 +152,11 @@ function changeLevel(direction) {
     startGame();
   }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  document
+    .getElementById("toggle-transliteration")
+    .addEventListener("click", () => {
+      document.getElementById("transliteration").classList.toggle("hidden");
+    });
+});

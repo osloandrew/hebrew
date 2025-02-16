@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap");
 
+.audio-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -93,4 +100,30 @@ body {
   display: flex;
   justify-content: space-between;
   width: 100%;
+}
+
+.pronunciation-bar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.toggle-btn {
+  padding: 4px 8px;
+  background: #ddd;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "Noto Serif", serif;
+}
+
+.speaker-icon {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
 }
