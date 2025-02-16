@@ -25,8 +25,10 @@ fetch("hebrewwords.csv")
   .catch((error) => console.error("Error loading CSV:", error));
 
 let score = 0;
+let currentLevel = "A1"; // Start at A1 level
 let availableSentences = [];
 let currentSentence = null;
+const levels = ["A1", "A2", "B1", "B2", "C1", "C2"];
 
 document.addEventListener("DOMContentLoaded", () => {
   if (sentences.length > 0) {
@@ -35,10 +37,11 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function startGame() {
-  availableSentences = [...sentences];
+  availableSentences = sentences.filter((s) => s.difficulty === currentLevel);
   currentSentence = getNextSentence();
   loadSentence();
   document.getElementById("progress-bar").style.width = "0%"; // Ensure progress bar is empty at start
+  document.getElementById("score").textContent = `Score: ${score}`; // Ensure score is shown as 0
 }
 
 function getNextSentence() {
@@ -52,16 +55,12 @@ function getNextSentence() {
 }
 
 function adjustPunctuation(sentence) {
-  // Ensure punctuation is placed at the end of the last line
   return sentence.replace(/^([\u0590-\u05FF\s]+)([.?!])$/, "$1$2").trim();
 }
 
 function loadSentence() {
   if (!currentSentence) return;
-
-  // Ensure punctuation is on the left side
   const adjustedHebrew = adjustPunctuation(currentSentence.hebrew);
-
   document.getElementById("hebrew-text").textContent = adjustedHebrew;
   document.getElementById("transliteration").textContent =
     currentSentence.transliteration;
@@ -99,11 +98,12 @@ function checkAnswer(answer, button) {
       (s) => s !== currentSentence
     );
   } else {
-    score = Math.max(score - 1, 0);
+    if (!(currentLevel === "A1" && score === 0)) {
+      score--;
+    }
     button.classList.add("incorrect");
     badChime.play();
 
-    // Highlight the correct answer
     answerButtons.forEach((btn) => {
       if (btn.textContent === currentSentence.english) {
         btn.classList.add("correct");
@@ -113,8 +113,14 @@ function checkAnswer(answer, button) {
 
   document.getElementById("score").textContent = `Score: ${score}`;
   document.getElementById("progress-bar").style.width = `${
-    (score / 10) * 100
+    (Math.max(score, 0) / 10) * 100
   }%`;
+
+  if (score >= 10) {
+    changeLevel(1);
+  } else if (score <= -5 && currentLevel !== "A1") {
+    changeLevel(-1);
+  }
 
   setTimeout(() => {
     answerButtons.forEach((btn) =>
@@ -122,5 +128,15 @@ function checkAnswer(answer, button) {
     );
     currentSentence = getNextSentence();
     loadSentence();
-  }, 1500); // Increased delay to 1.5s to allow users to see the correct answer
+  }, 1500);
+}
+
+function changeLevel(direction) {
+  let currentIndex = levels.indexOf(currentLevel);
+  let newIndex = currentIndex + direction;
+  if (newIndex >= 0 && newIndex < levels.length) {
+    currentLevel = levels[newIndex];
+    score = 0; // Reset score when changing level
+    startGame();
+  }
 }

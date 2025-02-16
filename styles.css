@@ -24,20 +24,7 @@ body {
 
 .difficulty {
   font-size: 0.9rem;
-  color: #666;
   margin-bottom: 16px;
-}
-
-.question {
-  font-size: 2.5rem;
-  font-weight: 400;
-  margin-bottom: 8px;
-  font-family: "Bellefair", serif;
-
-  direction: rtl;
-  unicode-bidi: plaintext;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
 }
 
 .transliteration {
@@ -77,7 +64,7 @@ body {
   background-color: #ddd;
   border-radius: 5px;
   overflow: hidden;
-  margin-top: 16px;
+  margin-bottom: 16px;
 }
 
 .progress-bar {
@@ -87,7 +74,23 @@ body {
   transition: width 0.3s;
 }
 
+.question {
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin: 8px 0px 8px 0px;
+  font-family: "Bellefair", serif;
+  direction: rtl;
+  unicode-bidi: plaintext;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
 .score {
-  margin-top: 8px;
   font-size: 0.9rem;
+}
+
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
