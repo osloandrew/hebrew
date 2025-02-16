@@ -19,7 +19,6 @@ body {
 }
 
 .card {
-  width: 100%;
   max-width: 400px;
   padding: 24px;
   text-align: center;
