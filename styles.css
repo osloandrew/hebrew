@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap");
+
 body {
   display: flex;
   flex-direction: column;
@@ -5,7 +7,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   padding: 16px;
-  font-family: Arial, sans-serif;
+  font-family: "Noto Serif", serif;
   background-color: #f4f4f4;
 }
 
@@ -27,14 +29,19 @@ body {
 }
 
 .question {
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 2.5rem;
+  font-weight: 400;
   margin-bottom: 8px;
+  font-family: "Bellefair", serif;
+
+  direction: rtl;
+  unicode-bidi: plaintext;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .transliteration {
   font-size: 0.9rem;
-  font-style: italic;
   margin-bottom: 16px;
 }
 
@@ -51,6 +58,7 @@ body {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
+  font-family: "Noto Serif", serif;
 }
 
 .button.correct {
@@ -65,7 +73,6 @@ body {
 
 .progress-container {
   width: 100%;
-  max-width: 400px;
   height: 10px;
   background-color: #ddd;
   border-radius: 5px;
@@ -75,6 +82,7 @@ body {
 
 .progress-bar {
   height: 100%;
+  width: 0%; /* Ensure it starts empty */
   background-color: #4caf50;
   transition: width 0.3s;
 }

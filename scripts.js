@@ -1,5 +1,8 @@
 let sentences = [];
 
+const goodChime = new Audio("Resources/Audio/goodChime.wav");
+const badChime = new Audio("Resources/Audio/badChime.wav");
+
 fetch("hebrewwords.csv")
   .then((response) => response.text())
   .then((data) => {
@@ -35,6 +38,7 @@ function startGame() {
   availableSentences = [...sentences];
   currentSentence = getNextSentence();
   loadSentence();
+  document.getElementById("progress-bar").style.width = "0%"; // Ensure progress bar is empty at start
 }
 
 function getNextSentence() {
@@ -48,8 +52,8 @@ function getNextSentence() {
 }
 
 function adjustPunctuation(sentence) {
-  // Match any Hebrew text followed by punctuation
-  return sentence.replace(/^([\u0590-\u05FF\s,]+)([.?!])$/, "$2$1").trim();
+  // Ensure punctuation is placed at the end of the last line
+  return sentence.replace(/^([\u0590-\u05FF\s]+)([.?!])$/, "$1$2").trim();
 }
 
 function loadSentence() {
@@ -85,15 +89,26 @@ function loadSentence() {
 }
 
 function checkAnswer(answer, button) {
+  const answerButtons = document.querySelectorAll(".button");
+
   if (answer === currentSentence.english) {
     score++;
     button.classList.add("correct");
+    goodChime.play();
     availableSentences = availableSentences.filter(
       (s) => s !== currentSentence
     );
   } else {
     score = Math.max(score - 1, 0);
     button.classList.add("incorrect");
+    badChime.play();
+
+    // Highlight the correct answer
+    answerButtons.forEach((btn) => {
+      if (btn.textContent === currentSentence.english) {
+        btn.classList.add("correct");
+      }
+    });
   }
 
   document.getElementById("score").textContent = `Score: ${score}`;
@@ -102,8 +117,10 @@ function checkAnswer(answer, button) {
   }%`;
 
   setTimeout(() => {
-    button.classList.remove("correct", "incorrect");
+    answerButtons.forEach((btn) =>
+      btn.classList.remove("correct", "incorrect")
+    );
     currentSentence = getNextSentence();
     loadSentence();
-  }, 1000);
+  }, 1500); // Increased delay to 1.5s to allow users to see the correct answer
 }
