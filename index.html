@@ -5,9 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hebrew Learning</title>
     <link rel="stylesheet" href="styles.css" />
+    <script defer src="scripts.js"></script>
   </head>
   <body>
-    <div id="root"></div>
-    <script src="scripts.js" type="module"></script>
+    <div class="container">
+      <div class="card">
+        <h2 id="hebrew-text" class="question"></h2>
+        <p id="transliteration" class="transliteration"></p>
+        <div id="answers" class="answers"></div>
+      </div>
+      <div class="progress-container">
+        <div id="progress-bar" class="progress-bar"></div>
+      </div>
+      <p id="score" class="score">Score: 0</p>
+    </div>
   </body>
 </html>

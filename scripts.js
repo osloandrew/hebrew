@@ -1,6 +1,3 @@
-import { useState, useEffect } from "react";
-import "styles.css";
-
 const sentences = [
   {
     hebrew: "שלום, איך אתה?",
@@ -34,83 +31,52 @@ const sentences = [
   },
 ];
 
-export default function HebrewLearning() {
-  const [currentSentence, setCurrentSentence] = useState(sentences[0]);
-  const [score, setScore] = useState(0);
-  const [feedback, setFeedback] = useState("");
+let score = 0;
+let currentSentence = sentences[0];
 
-  useEffect(() => {
-    const nextSentence = sentences.find(
+document.addEventListener("DOMContentLoaded", () => {
+  loadSentence();
+});
+
+function loadSentence() {
+  document.getElementById("hebrew-text").textContent = currentSentence.hebrew;
+  document.getElementById("transliteration").textContent =
+    currentSentence.transliteration;
+
+  const answersDiv = document.getElementById("answers");
+  answersDiv.innerHTML = "";
+
+  let answerOptions = sentences
+    .map((s) => s.english)
+    .filter((ans) => ans !== currentSentence.english);
+  answerOptions = answerOptions.sort(() => 0.5 - Math.random()).slice(0, 3);
+  answerOptions.push(currentSentence.english);
+  answerOptions = answerOptions.sort(() => 0.5 - Math.random());
+
+  answerOptions.forEach((option) => {
+    const button = document.createElement("button");
+    button.textContent = option;
+    button.classList.add("button");
+    button.onclick = () => checkAnswer(option);
+    answersDiv.appendChild(button);
+  });
+}
+
+function checkAnswer(answer) {
+  if (answer === currentSentence.english) {
+    score++;
+  } else {
+    score = Math.max(score - 1, 0);
+  }
+
+  document.getElementById("score").textContent = `Score: ${score}`;
+  document.getElementById("progress-bar").style.width = `${
+    (score / 10) * 100
+  }%`;
+
+  currentSentence =
+    sentences.find(
       (s) => s.difficulty === Math.min(Math.max(Math.floor(score / 2), 1), 4)
-    );
-    setCurrentSentence(nextSentence || sentences[0]);
-  }, [score]);
-
-  const getShuffledAnswers = (sentence) => {
-    const correctAnswer = sentence.english;
-    let shuffled = sentences
-      .map((s) => s.english)
-      .filter((ans) => ans !== correctAnswer);
-    shuffled = shuffled.sort(() => 0.5 - Math.random()).slice(0, 3);
-    shuffled.push(correctAnswer);
-    return shuffled.sort(() => 0.5 - Math.random());
-  };
-
-  const [answerOptions, setAnswerOptions] = useState(
-    getShuffledAnswers(currentSentence)
-  );
-
-  useEffect(() => {
-    setAnswerOptions(getShuffledAnswers(currentSentence));
-  }, [currentSentence]);
-
-  const checkAnswer = (answer) => {
-    if (answer === currentSentence.english) {
-      setFeedback("correct");
-      setScore(score + 1);
-    } else {
-      setFeedback("incorrect");
-      setScore(Math.max(score - 1, 0));
-    }
-    setTimeout(() => {
-      setFeedback("");
-      const nextSentence = sentences.find(
-        (s) => s.difficulty === Math.min(Math.max(Math.floor(score / 2), 1), 4)
-      );
-      setCurrentSentence(nextSentence || sentences[0]);
-    }, 1000);
-  };
-
-  return (
-    <div className="container">
-      <div className="card">
-        <h2 className="question">{currentSentence.hebrew}</h2>
-        <p className="transliteration">{currentSentence.transliteration}</p>
-        <div className="answers">
-          {answerOptions.map((option, index) => (
-            <button
-              key={index}
-              onClick={() => checkAnswer(option)}
-              className={`button ${
-                feedback && option === currentSentence.english
-                  ? "correct"
-                  : feedback && option !== currentSentence.english
-                  ? "incorrect"
-                  : ""
-              }`}
-            >
-              {option}
-            </button>
-          ))}
-        </div>
-      </div>
-      <div className="progress-container">
-        <div
-          className="progress-bar"
-          style={{ width: `${(score / 10) * 100}%` }}
-        ></div>
-      </div>
-      <p className="score">Score: {score}</p>
-    </div>
-  );
+    ) || sentences[0];
+  loadSentence();
 }
