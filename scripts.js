@@ -70,9 +70,13 @@ let currentSentence = null;
 const levels = ["A1", "A2", "B1", "B2", "C1", "C2"];
 
 document.addEventListener("DOMContentLoaded", () => {
-  if (sentences.length > 0) {
-    startGame();
-  }
+  document
+    .getElementById("difficulty-select")
+    .addEventListener("change", (event) => {
+      currentLevel = event.target.value;
+      startGame();
+    });
+  startGame();
 });
 
 function startGame() {
@@ -131,9 +135,7 @@ function loadSentence() {
 
   speakHebrew(currentSentence.hebrewWithNiqqud); // Auto-play with niqqud version
 
-  document.getElementById(
-    "difficulty"
-  ).textContent = `Difficulty: ${currentSentence.difficulty}`;
+  document.getElementById("difficulty-select").value = currentLevel;
 
   const answersDiv = document.getElementById("answers");
   answersDiv.innerHTML = "";
