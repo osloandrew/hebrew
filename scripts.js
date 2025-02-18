@@ -74,6 +74,9 @@ document.addEventListener("DOMContentLoaded", () => {
     .getElementById("difficulty-select")
     .addEventListener("change", (event) => {
       currentLevel = event.target.value;
+      score = 0; // Reset score
+      document.getElementById("score").textContent = `Score: ${score}`;
+      document.getElementById("progress-bar").style.width = "0%"; // Reset progress bar
       startGame();
     });
   startGame();
@@ -188,12 +191,10 @@ function checkAnswer(answer, button) {
   // **Add a small delay before level change for better user experience**
   if (score >= 10) {
     setTimeout(() => {
-      changeLevel(1);
-    }, 1500); // 1.5-second delay before level transition
-    return;
-  } else if (score <= -5 && currentLevel !== "A1") {
-    setTimeout(() => {
-      changeLevel(-1);
+      score = 0;
+      document.getElementById("score").textContent = `Score: ${score}`;
+      document.getElementById("progress-bar").style.width = "0%";
+      startGame();
     }, 1500); // 1.5-second delay before level transition
     return;
   }
