@@ -1,4 +1,10 @@
 let sentences = [];
+let availableSentences = []; // Tracks sentences remaining in the current cycle
+let incorrectSentences = []; // Stores sentences answered incorrectly
+let currentSentence = null;
+let score = 0;
+let currentLevel = "A1"; // Default level
+const levels = ["A1", "A2", "B1", "B2", "C1", "C2"];
 
 const goodChime = new Audio("Resources/Audio/goodChime.wav");
 const badChime = new Audio("Resources/Audio/badChime.wav");
@@ -63,12 +69,6 @@ fetch("hebrewwords.csv")
   })
   .catch((error) => console.error("Error loading CSV:", error));
 
-let score = 0;
-let currentLevel = "A1"; // Start at A1 level
-let availableSentences = [];
-let currentSentence = null;
-const levels = ["A1", "A2", "B1", "B2", "C1", "C2"];
-
 document.addEventListener("DOMContentLoaded", () => {
   document
     .getElementById("difficulty-select")
@@ -84,20 +84,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function startGame() {
   availableSentences = sentences.filter((s) => s.difficulty === currentLevel);
+  incorrectSentences = []; // Reset incorrect sentence tracking
+  shuffleArray(availableSentences);
   currentSentence = getNextSentence();
   loadSentence();
-  document.getElementById("progress-bar").style.width = "0%"; // Ensure progress bar is empty at start
-  document.getElementById("score").textContent = `Score: ${score}`; // Ensure score is shown as 0
 }
 
 function getNextSentence() {
   if (availableSentences.length === 0) {
-    availableSentences = [...sentences]; // Reset when all questions are answered
+    if (incorrectSentences.length === 0) {
+      // All sentences answered correctly -> reset
+      availableSentences = sentences.filter(
+        (s) => s.difficulty === currentLevel
+      );
+      shuffleArray(availableSentences);
+    } else {
+      // Keep incorrect answers in the pool until the user gets them right
+      availableSentences = [...incorrectSentences];
+      incorrectSentences = [];
+      shuffleArray(availableSentences);
+    }
   }
-  return availableSentences.splice(
-    Math.floor(Math.random() * availableSentences.length),
-    1
-  )[0];
+  return availableSentences.shift();
 }
 
 function removeNiqqud(text) {
@@ -159,6 +167,13 @@ function loadSentence() {
   });
 }
 
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
 function checkAnswer(answer, button) {
   const answerButtons = document.querySelectorAll(".button");
 
@@ -166,15 +181,15 @@ function checkAnswer(answer, button) {
     score++;
     button.classList.add("correct");
     goodChime.play();
-    availableSentences = availableSentences.filter(
-      (s) => s !== currentSentence
-    );
   } else {
     if (!(currentLevel === "A1" && score === 0)) {
       score--;
     }
     button.classList.add("incorrect");
     badChime.play();
+
+    // Keep sentence in the pool if answered incorrectly
+    incorrectSentences.push(currentSentence);
 
     answerButtons.forEach((btn) => {
       if (btn.textContent === currentSentence.english) {
@@ -188,14 +203,19 @@ function checkAnswer(answer, button) {
     (Math.max(score, 0) / 10) * 100
   }%`;
 
-  // **Add a small delay before level change for better user experience**
   if (score >= 10) {
     setTimeout(() => {
       score = 0;
       document.getElementById("score").textContent = `Score: ${score}`;
       document.getElementById("progress-bar").style.width = "0%";
-      startGame();
-    }, 1500); // 1.5-second delay before level transition
+    }, 1500);
+  }
+
+  // **If all sentences at this level were answered correctly, reset sentence pool**
+  if (availableSentences.length === 0 && incorrectSentences.length === 0) {
+    setTimeout(() => {
+      startGame(true); // Resets the sentence list, but NOT the score
+    }, 1500);
     return;
   }
 

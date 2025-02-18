@@ -16,34 +16,50 @@
 .answers {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Creates a 2x2 grid */
-  gap: 8px;
+  gap: 12px;
   width: 100%; /* Ensures full width */
 }
 
 .button {
-  padding: 12px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  font-family: "Noto Sans", sans-serif;
-  width: 100%; /* Ensures equal width */
-  text-align: center; /* Centers text */
   display: flex;
-  align-items: center; /* Centers text vertically */
-  justify-content: center; /* Centers text horizontally */
-  min-height: 70px; /* Ensures a consistent height */
+  justify-content: center;
+  align-items: center;
+  padding: 14px 18px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-family: "Noto Serif", serif;
+  font-weight: normal;
+  text-align: center;
+  min-height: 100px;
+  min-width: 120px;
+  max-width: 100%;
+  background-color: #f2f2f2;
+  color: #333;
+
+  /* Soft raised effect */
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15);
 }
 
+/* Hover effect - slightly lifted */
+.button:hover {
+  background-color: #e6e6e6;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Correct and Incorrect Answer Feedback */
 .button.correct {
   background-color: #4caf50;
   color: white;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
 }
 
 .button.incorrect {
   background-color: #f44336;
   color: white;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
 }
 
 body {
@@ -129,6 +145,7 @@ body {
   margin: 0px 0px 15px 0px;
   font-family: "Bellefair", serif;
   direction: rtl;
+  line-height: 2.25rem;
   unicode-bidi: plaintext;
   word-wrap: break-word;
   overflow-wrap: break-word;
