@@ -38,6 +38,7 @@
   max-width: 100%;
   background-color: #f2f2f2;
   color: #333;
+  line-height: 1.5rem;
 
   /* Soft raised effect */
   box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15);
@@ -95,12 +96,11 @@ body {
   unicode-bidi: plaintext;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  margin: 10px 0px 0px 0px;
+  margin: 10px 0px 2.5px 0px;
 }
 
 .difficulty {
   font-size: 0.9rem;
-  margin-bottom: 16px;
 }
 
 .difficulty-container {
@@ -110,7 +110,7 @@ body {
 }
 
 .difficulty-dropdown {
-  padding: 6px;
+  padding: 2px 6px 2px 6px;
   font-size: 1rem;
   border-radius: 4px;
   border: 1px solid #ccc;
@@ -129,7 +129,6 @@ body {
   background-color: #ddd;
   border-radius: 5px;
   overflow: hidden;
-  margin-bottom: 16px;
 }
 
 .progress-bar {
@@ -159,6 +158,7 @@ body {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  margin: 10px 0px;
 }
 
 .pronunciation-bar {
