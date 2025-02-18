@@ -101,7 +101,7 @@ function getNextSentence() {
 }
 
 function removeNiqqud(text) {
-  return text.replace(/[\u0591-\u05C7]/g, ""); // Removes Hebrew niqqud, but keeps Maqaf (־)
+  return text.replace(/[\u05B0-\u05BC\u05C1\u05C2\u05C4\u05C5]/g, "");
 }
 
 function adjustPunctuation(sentence) {
@@ -207,16 +207,6 @@ function checkAnswer(answer, button) {
     currentSentence = getNextSentence();
     loadSentence();
   }, 1500);
-}
-
-function changeLevel(direction) {
-  let currentIndex = levels.indexOf(currentLevel);
-  let newIndex = currentIndex + direction;
-  if (newIndex >= 0 && newIndex < levels.length) {
-    currentLevel = levels[newIndex];
-    score = 0; // Reset score when changing level
-    startGame();
-  }
 }
 
 document
