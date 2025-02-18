@@ -86,26 +86,26 @@ function startGame() {
   availableSentences = sentences.filter((s) => s.difficulty === currentLevel);
   incorrectSentences = []; // Reset incorrect sentence tracking
   shuffleArray(availableSentences);
-  currentSentence = getNextSentence();
+  updateAvailableCount();
+  currentSentence = availableSentences.shift(); // ✅ Assign & remove first sentence properly
   loadSentence();
 }
 
 function getNextSentence() {
   if (availableSentences.length === 0) {
-    if (incorrectSentences.length === 0) {
-      // All sentences answered correctly -> reset
+    if (incorrectSentences.length > 0) {
+      availableSentences = [...incorrectSentences];
+      incorrectSentences = [];
+    } else {
       availableSentences = sentences.filter(
         (s) => s.difficulty === currentLevel
       );
-      shuffleArray(availableSentences);
-    } else {
-      // Keep incorrect answers in the pool until the user gets them right
-      availableSentences = [...incorrectSentences];
-      incorrectSentences = [];
-      shuffleArray(availableSentences);
     }
+    shuffleArray(availableSentences);
   }
-  return availableSentences.shift();
+
+  // ✅ Prevent infinite loop scenario
+  return availableSentences.length > 0 ? availableSentences.shift() : null;
 }
 
 function removeNiqqud(text) {
@@ -174,6 +174,12 @@ function shuffleArray(array) {
   }
 }
 
+function updateAvailableCount() {
+  document.getElementById("available-count").textContent = `Remaining: ${
+    availableSentences.length + incorrectSentences.length
+  }`;
+}
+
 function checkAnswer(answer, button) {
   const answerButtons = document.querySelectorAll(".button");
 
@@ -181,14 +187,26 @@ function checkAnswer(answer, button) {
     score++;
     button.classList.add("correct");
     goodChime.play();
+
+    if (answer === currentSentence.english) {
+      if (availableSentences.includes(currentSentence)) {
+        availableSentences = availableSentences.filter(
+          (s) => s !== currentSentence
+        );
+      }
+    } else {
+      if (!incorrectSentences.includes(currentSentence)) {
+        incorrectSentences.push(currentSentence);
+      }
+    }
+
+    updateAvailableCount(); // ✅ Call update only once, not twice
   } else {
     if (!(currentLevel === "A1" && score === 0)) {
       score--;
     }
     button.classList.add("incorrect");
     badChime.play();
-
-    // Keep sentence in the pool if answered incorrectly
     incorrectSentences.push(currentSentence);
 
     answerButtons.forEach((btn) => {
@@ -203,6 +221,8 @@ function checkAnswer(answer, button) {
     (Math.max(score, 0) / 10) * 100
   }%`;
 
+  updateAvailableCount(); // ✅ Now updates IMMEDIATELY after selecting an answer
+
   if (score >= 10) {
     setTimeout(() => {
       score = 0;
@@ -211,15 +231,13 @@ function checkAnswer(answer, button) {
     }, 1500);
   }
 
-  // **If all sentences at this level were answered correctly, reset sentence pool**
   if (availableSentences.length === 0 && incorrectSentences.length === 0) {
     setTimeout(() => {
-      startGame(true); // Resets the sentence list, but NOT the score
+      startGame(true);
     }, 1500);
     return;
   }
 
-  // **Otherwise, just load a new sentence normally**
   setTimeout(() => {
     answerButtons.forEach((btn) =>
       btn.classList.remove("correct", "incorrect")
