@@ -88,10 +88,21 @@ body {
   background: white;
 }
 
+.coffee-btn img {
+  max-height: 30px; /* Matches LinkedIn button height */
+  width: auto;
+}
+
 .container {
   max-width: 800px;
   margin: auto;
   padding: 20px;
+}
+
+.copyright {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
 }
 
 .cursive {
@@ -129,21 +140,24 @@ footer {
   background-color: #d2dce5;
   color: #0d3a69;
   font-family: "Noto Sans", sans-serif;
-  padding: 20px 0px 10px 0px;
+  padding: 20px 0;
   text-align: center;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
 footer p {
   font-size: 14px;
   margin: 5px 0;
 }
 
-footer .links {
+.footer-links {
   display: flex;
+  align-items: center; /* Ensures both buttons align */
   justify-content: center;
-  gap: 10px;
-  margin-top: 10px;
+  gap: 15px; /* Space between buttons */
+  flex-wrap: wrap;
 }
 
 footer a {
@@ -154,6 +168,12 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
+}
+
+.footer-icon {
+  height: 30px; /* Ensure uniform height */
+  width: auto; /* Keep aspect ratio */
+  margin-right: 8px;
 }
 
 h1,
@@ -179,6 +199,20 @@ header p {
   font-weight: 600;
   margin: 0px 0px 0px 0px;
   text-transform: uppercase;
+}
+
+.linkedin-btn {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border: 1px solid #0a66c2;
+  border-radius: 4px;
+  padding: 5px 12px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.linkedin-btn:hover {
+  background-color: #f0f0f0;
 }
 
 .transliteration {
