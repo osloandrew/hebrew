@@ -245,13 +245,16 @@ function checkAnswer(answer, button) {
     return;
   }
 
-  setTimeout(() => {
-    answerButtons.forEach((btn) =>
-      btn.classList.remove("correct", "incorrect")
-    );
-    currentSentence = getNextSentence();
-    loadSentence();
-  }, 1500);
+  setTimeout(
+    () => {
+      answerButtons.forEach((btn) =>
+        btn.classList.remove("correct", "incorrect")
+      );
+      currentSentence = getNextSentence();
+      loadSentence();
+    },
+    answer === currentSentence.english ? 900 : 2400
+  );
 }
 
 document
