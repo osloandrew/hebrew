@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Noto+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100..900&display=swap");
+
 @font-face {
   font-family: "Motek";
   src: url("Resources/Fonts/Motek.ttf") format("woff");
@@ -64,6 +67,8 @@
 }
 
 body {
+  background-color: #f4f4f4;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -85,6 +90,12 @@ body {
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   background: white;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
 }
 
 .cursive {
@@ -116,6 +127,64 @@ body {
   border: 1px solid #ccc;
   font-family: "Noto Sans", sans-serif;
   cursor: pointer;
+}
+
+footer {
+  background-color: #d2dce5;
+  color: #0d3a69;
+  font-family: "Noto Sans", sans-serif;
+  padding: 20px 0px 10px 0px;
+  text-align: center;
+  width: 100%;
+}
+
+footer p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+footer .links {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+footer a {
+  color: #3c88d4;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+h1,
+h2 {
+  font-family: "Grenze Gotisch", serif;
+}
+
+header {
+  background-color: #d2dce5;
+  color: #0d3a69;
+  font-family: "Noto Sans", sans-serif;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+}
+
+header h1 {
+  font-family: "Grenze Gotisch", serif;
+  font-size: 50px;
+  margin: 30px 0px 0px 0px;
+}
+
+header p {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0px 0px 0px 0px;
+  text-transform: uppercase;
 }
 
 .transliteration {
