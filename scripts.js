@@ -151,9 +151,16 @@ function loadSentence() {
   const answersDiv = document.getElementById("answers");
   answersDiv.innerHTML = "";
 
+  let punctuationType = currentSentence.english.trim().slice(-1); // Gets the last character (e.g., ".", "?", "!")
   let answerOptions = sentences
-    .map((s) => s.english)
-    .filter((ans) => ans !== currentSentence.english);
+    .filter(
+      (s) =>
+        s.difficulty === currentSentence.difficulty &&
+        s.english !== currentSentence.english &&
+        s.english.trim().slice(-1) === punctuationType // Match punctuation
+    )
+    .map((s) => s.english);
+
   answerOptions = answerOptions.sort(() => 0.5 - Math.random()).slice(0, 3);
   answerOptions.push(currentSentence.english);
   answerOptions = answerOptions.sort(() => 0.5 - Math.random());
