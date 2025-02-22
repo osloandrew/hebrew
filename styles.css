@@ -112,6 +112,7 @@ body {
   color: gray;
   direction: rtl;
   unicode-bidi: plaintext;
+  line-height: 2rem;
   word-wrap: break-word;
   overflow-wrap: break-word;
   margin: 10px 0px 2.5px 0px;
