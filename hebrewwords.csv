@@ -66,8 +66,8 @@ and,A1,,ו,v,אֲנִי אוֹהֵב לֶחֶם וְגְבִינָה.,I like bre
 animal (common),A1,fem,חיה,ħayá,הַחַיָּה הַזֹּאת גְּדוֹלָה.,This animal is big.
 animal (rare),B1,masc,בעל חיים,báal ħayím,בַּעַל חַיִּים זָר נִרְאָה בַּיַּעַר.,A rare animal was seen in the forest.
 annex,C1,verb,סיפח,sipéakh,,
-answer,A2,verb,ענה,aná,הַתַּלְמִיד עָנָה לַשְּׁאֵלָה.,The student answered the question.
 answer,A2,fem,תשובה,tshuvá,הַמּוֹרֶה נָתַן לַתַּלְמִיד תְּשׁוּבָה עַל הַשְּׁאֵלָה.,The teacher gave the student an answer to the question.
+answer,A2,verb,ענה,aná,הַתַּלְמִיד עָנָה לַשְּׁאֵלָה.,The student answered the question.
 antibody,B2,masc,נוגדן,nogdán,,
 antisemitic,B1,adjective,אנטישמי,antishémi,דֵּעָה אַנְטִישֶׁמִית הִיא מַסּוּכֶּנֶת.,An antisemitic opinion is dangerous.
 anxiety,B2,fem,חרדה,kharadá,,
@@ -79,8 +79,8 @@ apple,A1,masc,תפוח,tapúaħ,אֲנִי אוֹכֵל תַּפּוּחַ אָ�
 April,A1,masc,אפריל,apríl,בְּאַפְרִיל הַפְּרָחִים פּוֹרְחִים.,"In April, the flowers bloom."
 Arabic (language),A2,fem,ערבית,aravít,הִיא לוֹמֶדֶת עֲרָבִית בָּאוּנִיבֶרְסִיטָה.,She is learning Arabic at the university.
 architect,B1,masc,אדריכל,adriħál,הָאַדְרִיכָל תִּכְנֵן בֵּית מִשְׁפָּחָה חָדָשׁ.,The architect designed a new family house.
-architecture,B2,fem,אדריכלות,adriħalút,הָאַדְרִיכָלוּת הַמּוֹדֶרְנִית מְשַׁלֶּבֶת חוֹמְרוֹת יְחִידִיִּים.,Modern architecture integrates unique materials.
 architecture,B2,fem,ארכיטקטורה,arħitektúra,אַרְכִיטֶקְטוּרָה קְלַאסִית מְשַׁמֶּרֶת סִגְנוֹנוֹת הִיסְטוֹרִיִּים.,Classical architecture preserves historical styles.
+architecture,B2,fem,אדריכלות,adriħalút,הָאַדְרִיכָלוּת הַמּוֹדֶרְנִית מְשַׁלֶּבֶת חוֹמְרוֹת יְחִידִיִּים.,Modern architecture integrates unique materials.
 "area, region",A2,masc,אזור,ezór,הָאֵזוֹר הַזֶּה מְלֵא בְּהָרִים וּנְהָרוֹת.,This area is full of mountains and rivers.
 "area, surface",B1,masc,שטח,shétaħ,הַשֵּׁטַח הַזֶּה גָּדוֹל מְאוֹד.,This area is very large.
 "argue, debate",B2,verb,התווכח,hitvakéaħ,,
@@ -139,6 +139,7 @@ be born,A2,verb,נולד,nolád,הַתִּינוֹק נוֹלַד בְּבֵית
 be created,B2,verb,יוצר,yutsár,,
 be expressed,B2,verb,בוטא,buta,,
 be found,A2,verb,נמצא,nimtsá,הַכִּסֵּא נִמְצָא בַּסָּלוֹן.,The chair is in the living room.
+be legislated,C1,verb,נחקק,nékh'kák,,
 be sorry,B1,verb,הצטער,hitstaér,הִצְטַעַרְתִּי שֶׁאָמַרְתִּי אֶת זֶה.,I was sorry that I said that.
 beach,A1,masc,חוף,ħof,הַחוֹף הַזֶּה יָפֶה מְאוֹד.,This beach is very beautiful.
 bean,A2,fem,שעועית,sheuít,הִיא בִּשְּׁלָה מָרָק עִם שְׁעוּעִית.,She cooked soup with beans.
@@ -151,8 +152,8 @@ beast,B1,fem,בהמה,behemá,הַבֶּהֱמָה הַזֹּאת גְּדוֹל
 beaver,A2,masc,בונה,boné,הַבּוֹנֶה בּוֹנֶה סָכָּה עַל הַנָּהָר.,The beaver is building a dam on the river.
 because,A1,,כי,ki,אֲנִי עָיֵף כִּי לֹא יָשַׁנְתִּי.,I am tired because I didn’t sleep.
 because of,A2,,בגלל,biglál,הוּא אֵיחֵר בִּגְלַל הַפַּקָּקִים.,He was late because of the traffic.
-become,B1,,הפך,hafáħ,הַשֶּׁמֶשׁ הָפְכָה אֶת הַשָּׁמַיִם לַכְּתוּמִים.,The sun turned the sky orange.
 become,B1,,נעשה,naasá,"בְּתוֹךְ הַמְּטוֹס הַגָּדוֹל, הַמַּצָּב נַעֲשָׂה לָחָץ.","Inside the big airplane, the situation became stressful."
+become,B1,,הפך,hafáħ,הַשֶּׁמֶשׁ הָפְכָה אֶת הַשָּׁמַיִם לַכְּתוּמִים.,The sun turned the sky orange.
 bed,A1,fem,מיטה,mitá,הַמִּיטָּה שֶׁלִּי נָקִיָּה.,My bed is clean.
 bedroom,A2,masc,חדר שינה‎,ħadár shená,אֲנִי אוֹהֵב לִישׁוֹן בְּחֶדֶר הַשֵּׁנָה.,I like to sleep in the bedroom.
 beer,A2,fem,בירה,bíra,אַתָּה רוֹצֶה לִשְׁתּוֹת בִּירָה?,Do you want to drink beer?
@@ -224,6 +225,7 @@ budget,B2,masc,תקציב,taktsív,,
 build,A2,verb,בנה,baná,הַפּוֹעֵל בָּנָה בַּיִת חָדָשׁ.,The worker built a new house.
 builder,B1,masc,בנאי,banái,הַבַּנַּאי בָּנָה בַּיִת חָדָשׁ בָּעִיר.,The builder constructed a new house in the city.
 building,A2,masc,בניין,binyán,הַבִּנְיָן גָּבוֹהַּ וּמַרְשִׁים.,The building is tall and impressive.
+bulldozer,B2,masc,דחפור,dakhpór,,
 bummer,B1,fem,באסה,bása,בָּאסָה! אֵין קָפֶה בַּמִּשְׂרָד.,Bummer! There's no coffee in the office.
 "burden, cargo",B2,masc,משא,masá,,
 bus,A1,masc,אוטובוס,otobús,הָאוֹטוֹבּוּס מַגִּיעַ.,The bus is arriving.
@@ -305,8 +307,8 @@ city,A1,fem,עיר,ir,הָעִיר הַזֹּאת יָפָה.,This city is beaut
 "city hall, town hall",B1,,"בניין עירייה",binyán iriyá,הָעִירִיָּה נִמְצֵאת בְּמֶרְכַּז הָעִיר.,The city hall is located in the city center.
 "class, grade",A1,fem,כיתה,kitá,הַכִּתָּה שֶׁלִּי גְּדוֹלָה.,My class is big.
 claustrophobia,B2,fem,קלאוסטרופוביה,klaustrofóbya,,
-clean,B1,verb,ניקה,niká,הוּא נִיקָּה אֶת הַבַּיִת לִפְנֵי הָאוֹרְחִים.,He cleaned the house before the guests arrived.
 clean,A2,adjective,נקי,nakí,הַחֶדֶר נָקִי וּמְסֻדָּר.,The room is clean and tidy.
+clean,B1,verb,ניקה,niká,הוּא נִיקָּה אֶת הַבַּיִת לִפְנֵי הָאוֹרְחִים.,He cleaned the house before the guests arrived.
 cleanliness,B1,masc,נִקָיוֹן,nikayón,הַנִּקָּיוֹן חָשׁוּב לְבֵית בָּרִיא.,Cleanliness is important for a healthy home.
 clear,A2,adjective,ברור,barúr,הַהֶסְבֵּר שֶׁלּוֹ הָיָה בָּרוּר.,His explanation was clear.
 climate,B1,masc,אקלים,aklím,הָאַקְלִים בָּאָרֶץ הַזֹּאת חַם וְיוֹבֵשׁ.,The climate in this country is hot and dry.
@@ -328,8 +330,8 @@ coffee,A1,masc,קפה,kafé,אֲנִי שׁוֹתֶה קָפֶה חַם.,I am dr
 "coffee house, cafe",A1,masc,בית קפה,béit kafé,אֲנַחְנוּ נִפְגָּשִׁים בְּבֵית קָפֶה.,We're meeting at the café.
 "coin, currency",B1,masc,מטבע,matbéa,הוּא אָסַף מַטְבְּעוֹת יְשָׁנוֹת.,He collected old coins.
 "coinage, idiom, metaphor",B2,masc,מטבע לשון,matbéa lashon,,
-cold,A2,masc,קור,kor,בַּחֹרֶף הַקּוֹר חָזָק מְאוֹד.,"In winter, the cold is very strong."
 cold,A1,adjective,קר,kar,הַחוֹרֶף קָר מְאוֹד.,Winter is very cold.
+cold,A2,masc,קור,kor,בַּחֹרֶף הַקּוֹר חָזָק מְאוֹד.,"In winter, the cold is very strong."
 collar,B2,masc,צווארון,tsavarón,,
 collect,A2,verb,אסף,asáf,הוּא אָסַף כַּמָּה סֵפֶרִים מֵהַסִּפְרִיָּה.,He collected some books from the library.
 collection,B1,masc,אוסף,ósef,לָאוֹסֵף הַזֶּה יֵשׁ שֹׁוִי רָב.,This collection has great value.
@@ -340,7 +342,7 @@ colorful,B1,adjective,צבעוני,tsivoní,הַתַּמְצוּרוֹת הָי�
 combat,B2,masc,קרב,krav,,
 come,A1,verb,בא,ba,הוּא בָּא לְבֵית־הַסֵּפֶר.,He's coming to school.
 comfort,B2,fem,נוחות,noħút,,
-"comic, comedic, comical",B1,adjective,קומי,kómi,,
+"comic, comedic, comical",B1,adjective,קומי,kómi,הַסֶּרֶט הָיָה קוֹמִי וְהִצְחִיק אֶת הַצּוֹפִים.,The movie was comical and made the audience laugh.
 command,B2,masc,צו,tsav,,
 "commander, minister",B1,masc,שר,sar,הַשַּׂר הֶחְלִיט עַל מְדִינִיּוֹת חֲדָשָׁה.,The minister decided on a new policy.
 commandment,B2,fem,מצווה,mitsvá,,
@@ -355,10 +357,10 @@ community,B1,fem,קהילה,k'hilá,הַקְּהִילָה מְתַכְנֶנֶ�
 "company, society",A2,fem,חברה,ħevrá,הִיא עוֹבֶדֶת בְּחֶבְרָה גְּדוֹלָה.,She works in a big company.
 complete,A2,verb,שלם,shalém,הַתִּקּוּן הַזֶּה שָׁלֵם וְלֹא חָסֵר דָּבָר.,This repair is complete and nothing is missing.
 computer,A2,masc,מחשב,maħshév,הַמַּחְשֵׁב הֶחָדָשׁ שֶׁלִּי מָהִיר.,My new computer is fast.
-concentrate (intransitive),B1,verb,התרכז,hitrakéz,,
+concentrate (intransitive),B1,verb,התרכז,hitrakéz,"אֲנִי לֹא יָכוֹל לְדַבֵּר עַכְשָׁיו, אֲנִי מִתְרַכֵּז בַּעֲבוֹדָה.","I can't talk right now, I am concentrating on work."
 concentrate (transitive),B2,verb,ריכז,rikéz,,
-concentrated,B1,adjective,מרוכז,m'rukáz,,
-concentration,B1,masc,ריכוז,rikúz,,
+concentrated,B1,adjective,מרוכז,m'rukáz,הַתַּלְמִיד הָיָה מְרֻכָּז בַּמִּבְחָן.,The student was concentrated on the exam.
+concentration,B1,masc,ריכוז,rikúz,הַרִכּוּז בַּמִּבְחָן חָשׁוּב כְּדֵי לְהַצְלִיחַ.,Concentration during the exam is important for success.
 "concept, notion",B2,masc,מושג,muság,,
 condition,B1,masc,תנאי,tnái,אֵין תְּנָאִים טוֹבִים לִלְמִידָה בַּכִּתָּה הַזֹּאת.,There are no good conditions for learning in this classroom.
 "conductor, winner",B2,masc,מנצח,mnatséaħ,,
@@ -366,6 +368,7 @@ congratulations,A2,phrase,מזל טוב,mazál tov,מַזָּל טוֹב לָכ�
 "congregation, assembly",B1,fem,כנסת,knéset,הַכְּנֶסֶת מַחֲלִיטָה עַל חוּקִים חֲדָשִׁים.,The congregation decides on new laws.
 connected,B2,adjective,מחובר,mħubár,,
 conspiracy,B2,fem,קונספירציה,konspirátsya,,
+constitution,B2,fem,חוקה,khuká,,
 "contact, connection",A2,masc,קשר,késher,הַקֶּשֶׁר בֵּינֵיהֶם חָזָק מְאוֹד.,The connection between them is very strong.
 contain,B2,verb,הכיל,heħíl,,
 container,B1,masc,מכל,mħál,הַמֵּכַל הַזֶּה מָלֵא בְּמַיִם.,This container is full of water.
@@ -463,6 +466,7 @@ dictatorship,B2,fem,דיקטטורה,diktatura,הַדִּיקְטָטוּרָה 
 dictionary,A1,masc,מלון,milón,הַמִּלּוֹן נָחוּץ לִי.,I need the dictionary.
 difference,B1,masc,שוני,shóni,יֵשׁ שׁוֹנִי רַבִּים בֵּין הַתַּרְבּוּיוֹת.,There are many differences between cultures.
 different,A2,adjective,שונה,shoné,הַסֵּפֶר הַזֶּה שׁוֹנֶה מִכָּל הַסִּדְרָה.,This book is different from the rest of the series.
+dig,B2,verb,חפר,khafár,,
 digit,B1,fem,ספרה,sifrá,הַסִּפְרָה הָרִאשׁוֹנָה הִיא 1.,The first digit is 1.
 digital,B1,adjective,דיגיטלי,digitáli,זֶה מִשְּׂחָק דִּיגִּיטָלִי.,This is a digital game.
 dimension,B2,masc,ממד,memád,,
@@ -504,6 +508,7 @@ dryer,B2,masc,מייבש,meyabésh,,
 drying machine,B2,masc,מייבש כביסה,meyabésh kvísa,,
 duck,A1,masc,ברווז,barváz,הַבַּרְוָז שׁוֹחֶה בָּאֲגַם.,The duck is swimming in the lake.
 duckling,A2,masc,ברווזון,barvazón,הַבַּרְוָזוֹן שׁוֹחֶה בָּאֲגַם.,The duckling is swimming in the lake.
+"duration, extent",B2,masc,משך,méshekh,,
 dust,A2,masc,אבק,avák,יֵשׁ הַרְבֵּה אָבָק בַּחֶדֶר הַזֶּה.,There is a lot of dust in this room.
 each,B2,,מדי,midéi,,
 eagle,B2,masc,עיט,áyit,הָעַיִט צָד בַּשָּׁמַיִם בְּחִפּוּשׂ אַתָּרֶף.,The eagle hunts in the sky searching for prey.
@@ -529,8 +534,8 @@ eight,A1,adjective,שמונה,shmoná,אֲנַחְנוּ שְׁמוֹנָה יְ
 electric,B1,adjective,חשמלי,ħashmalí,הַתַּנּוּר הַזֶּה חַשְׁמַלִּי וְלֹא עוֹבֵד עַל גָּז.,This oven is electric and does not run on gas.
 electric shaver,B2,fem,מכונת גילוח,meħonát gilúaħ,,
 electricity,A2,masc,חשמל,ħashmál,הַחַשְׁמַל נִכְבָּה בַּלַּיְלָה.,The electricity went out at night.
-element,B2,masc,אלמנט,element,,
 element,B1,masc,יסוד,yesód,הַמַּיִם הֵם יְסוֹד חַיּוּנִי לְכָל חַי.,Water is an essential element for all living things.
+element,B2,masc,אלמנט,element,,
 elevator,A2,fem,מעלית,maalít,הַמַּעֲלִית נִתְקָעָה בַּקּוֹמָה הַשְּׁלִישִׁית.,The elevator got stuck on the third floor.
 email,A2,masc,אימייל,ímeil,שָׁלַחְתִּי לְךָ אֵימֵייל אֶתְמוֹל.,I sent you an email yesterday.
 emergency,B1,masc,חירום,ħerúm,"בְּמִקְרֵה חֵרוּם חַיָּבִים לְהִתְקַשֵּׁר לַמַּדְ""א.","In case of emergency, you must call the ambulance."
@@ -578,6 +583,8 @@ everything,A1,,הכל,hakól,הַכֹּל בְּסֵדֶר.,Everything is fine.
 evolution,B2,fem,אבולוציה,evolútsya,הַתֵּאוֹרְיָה שֶׁל אַבוֹלוּצְיָה שִׁנְּתָה אֶת הַהֲבָנָה הַמַּדָּעִית.,The theory of evolution changed scientific understanding.
 "exactly, just",A2,adverb,בדיוק,bdiyúk,הַשָּׁעָה בְּדִיּוּק שֵׁשׁ.,The time is exactly six.
 "example, model",B2,masc,משל,mashál,,
+"excavating, excavation",B1,fem,חפירה,khafirá,בְּאֵת חֲפִירָה גִּלּוּ עַתִּיקוֹת.,They discovered ancient artifacts through excavation.
+excavator,C1,masc,מחפר,makhpér,,
 "excommunication, taboo",C1,masc,חרם,ħerem,,
 excuse me,A1,fem,סליחה,sliħá,"סְלִיחָה, אֵיפֹה הַשֵּׁרוּתִים?","Excuse me, where is the bathroom?"
 exist,A2,verb,קיים,kayám,הַבְּנִיָּה הַזֹּאת קַיֶּמֶת כְּבָר מֵאָה שָׁנִים.,This building has existed for a hundred years.
@@ -816,8 +823,8 @@ himself,B1,masc,עצמו,atsmó,הוּא דִּמָּה לְעַצְמוֹ מָ�
 his,A1,masc,שלו,sheló,הַכּוֹבַע הַזֶּה שֶׁלּוֹ.,This hat is his.
 history,A2,fem,היסטוריה,história,הִיסְטוֹרְיָה הִיא מַקְצוֹעַ מְעַנְיֵן.,History is an interesting subject.
 history,B1,fem,תולדות,toldót,הַתּוֹלְדוֹת שֶׁלָּנוּ מְלֵאוֹת בַּאֲרֻעִים חֲשׁוּבִים.,Our history is full of important events.
-hit,B2,verb,היכה,hiká,,
 hit,A2,fem,מכה,maká,הַיֶּלֶד נָפַל וְקִבֵּל מַכָּה בַּבֶּרֶךְ.,The boy fell and got a hit on his knee.
+hit,B2,verb,היכה,hiká,,
 "hole, pit",A2,masc,בור,bór,הַבּוֹר עָמֹק וְמָלֵא מַיִם.,The pit is deep and full of water.
 holiday,A1,masc,חג,ħag,הַחַג בָּא.,The holiday is coming.
 hollow,B2,adjective,חלול,ħalúl,,
@@ -827,8 +834,8 @@ hollow,B2,adjective,חלול,ħalúl,,
 "home, homeward",A1,,הביתה,habáyta,אֲנִי הוֹלֵךְ הַבַּיְתָה.,I am going home.
 homeless person,B2,masc,חסר בית,khasár báyit,,
 homework,A1,masc,שיעורי בית,shiuréi habáyit,יֵשׁ לִי הַרְבֵּה שִׁעוּרֵי בַּיִת.,I have a lot of homework.
-hope,B1,verb,קיווה,kivá,הוּא קִוָּה לְתַפְקִיד טוֹב יוֹתֵר.,He hoped for a better job.
 hope,A2,fem,תקווה,tikvá,יֵשׁ לִי תִּקְוָה שֶׁכֹּל יִהְיֶה טוֹב.,I have hope that everything will be okay.
+hope,B1,verb,קיווה,kivá,הוּא קִוָּה לְתַפְקִיד טוֹב יוֹתֵר.,He hoped for a better job.
 horizon,A2,masc,אופק,ófek,הָאׂופֶק כָּחוּל וְיָפֶה.,The horizon is blue and beautiful.
 horizontal,B2,adjective,אופקי,ofkí,,
 horizontality,C1,fem,אופקיות,ofkiyút,,
@@ -961,8 +968,8 @@ kippa,A2,fem,כיפה,kipá,הוּא חָבַשׁ כִּפָּה בַּבֵּי�
 kiss,A2,verb,נישק,nishék,הוּא נִשֵּׁק אֶת חֲבֵרָתוֹ בָּרְחוֹב.,He kissed his girlfriend in the street.
 kiss,A2,fem,נשיקה,neshiká,הַנְּשִׁיקָה הָיְתָה אֲרֻכָּה וְנֶהְדֶּרֶת.,The kiss was long and amazing.
 kitchen,A1,masc,מטבח,mitbáħ,הַמִּטְבָּח נָקִי מְאוֹד.,The kitchen is very clean.
-kitten,B1,masc,גור חתולים,gur ħatulím,הַגּוּר חֲתוּלִים שִׂחֵק בַּחֶבֶל.,The kitten played with the string.
 kitten,A2,masc,חתלתול,ħatal'túl,הַחֲתַלְתּוּל שִׂחֵק עִם כַּדּוּר קָטָן.,The kitten played with a small ball.
+kitten,B1,masc,גור חתולים,gur ħatulím,הַגּוּר חֲתוּלִים שִׂחֵק בַּחֶבֶל.,The kitten played with the string.
 knife,A1,all,סכין,sakín,סַכִּין חַדָּה קוֹצֶצֶת יָפֶה.,A sharp knife cuts well.
 know,A2,verb,ידע,yadá,הִיא יָדְעָה אֶת הַתְּשׁוּבָה לַשְּׁאֵלָה.,She knew the answer to the question.
 laboratory,B1,fem,מעבדה,mabadá,הַמַּעְבָּדָה מְצִיעָה נִסּוּיִים מְשֻׁכְלָלִים.,The laboratory offers advanced experiments.
@@ -981,8 +988,8 @@ laundry,B1,fem,כביסה,kvisá,הַכְּבִיסָה נִגְמְרָה וּ�
 law,A2,masc,חוק,ħok,הַחוֹק חָשׁוּב לְכֻלָּם.,The law is important for everyone.
 lawyer,B2,masc,עורך דין,oréħ din,,
 lead,B2,,הנהיג,hinhíg,,
-leader,C1,masc,דבר,dabár,,
 leader,B1,masc,מנהיג,manhíg,הַמַּנְהִיג הוֹלִיךְ אֶת הָעָם בְּבִטָּחוֹן.,The leader guided the people with confidence.
+leader,C1,masc,דבר,dabár,,
 leadership,B2,fem,מנהיגות,manhigút,,
 "learn, study",A1,verb,למד,lamád,הוּא לָמַד עִבְרִית בַּבֵּית־סֵפֶר.,He studied Hebrew at school.
 "leave, come out",A2,verb,יצא,yatsá,הוּא יָצָא מֵהַבַּיִת בַּבֹּקֶר.,He left the house in the morning.
@@ -991,6 +998,10 @@ left side,A2,masc,שמאל,simól,הַיָּד הַשְּׂמָאלִית שֶׁ
 leftist,B2,masc,שמאלני,simolaní,,
 "legal, lawful",B2,masc,חוקי,ħukí,,
 "legend, myth",B1,fem,אגדה,agadá,הַסִּפּוּר הַזֶּה הוּא אַגָּדָה מָתוֹקָה.,This story is a sweet legend.
+legislate,B2,verb,חוקק,khokék,,
+legislate,C1,verb,חקק,khakák,,
+legislation,B2,fem,חקיקה,khakiká,,
+legislative,C1,adjective,מחוקק,m'khokék,,
 lemon,A2,masc,לימון,limón,הִיא סָחֲטָה לִימוֹן לַתֵּה.,She squeezed a lemon into the tea.
 "lentil, lens",B1,fem,עדשה,adashá,הַמִּשְׁקָפַיִם הַחֲדָשִׁים שֶׁלִּי יֵשׁ לָהֶם עֲדָשׁוֹת דַּקוֹת.,My new glasses have thin lenses.
 "lesson, moral (formal)",B2,,לקח,lékakh,,
@@ -1006,8 +1017,8 @@ light,A1,masc,אור,or,יֵשׁ אוֹר בַּחֶדֶר.,There is light in th
 light year,B2,fem,שנת אור,shnát or,,
 "light, easy",A1,,קל,kal,הַסֵּפֶר קַל לְהָבִין.,The book is easy to understand.
 "lightning, shine",A2,masc,ברק,barák,הַבָּרָק הָאִיר אֶת הַשָּׁמַיִם.,The lightning lit up the sky.
-"like, as",A2,,כ,k',הוּא עוֹשֶׂה כְּמוֹ שֶׁאָמַרְתִּי.,He does it like I said.
 "like, as",A1,,כמו,k'mó,הִיא שָׂחֲתָה כְּמוֹ דָּג.,She swam like a fish.
+"like, as",A2,,כ,k',הוּא עוֹשֶׂה כְּמוֹ שֶׁאָמַרְתִּי.,He does it like I said.
 line,A2,masc,קו,kav,הָיוּ רַק שְׁנֵי אֲנָשִׁים בַּקַּו.,There were only two people in the line.
 line of lattitude,B2,masc,"קו רוחב",kav róħav,,
 link,B1,masc,קישור,kishur,אֲנִי שׁוֹלֵחַ לְךָ קִישּׁוּר לַתְּמוּנָה.,I am sending you a link to the picture.
@@ -1043,8 +1054,12 @@ lunar,B2,adjective,ירחי,yreħi,,
 lunch,A1,fem,ארוחת צהריים,aruħát tsohoráyim,אֲרוּחַת הַצָּהֳרַיִם שֶׁלִּי הִיא אוֹרֶז עִם עוֹף.,My lunch is rice with chicken.
 lung,B2,fem,ריאה,reá,,
 machine,A2,fem,מכונה,meħoná,הַמְּכוֹנָה עוֹבֶדֶת לְלֹא תַּקָּלוֹת.,The machine is working without problems.
-magic,B2,fem,קוסמות,kosmút,,
 magic,B1,masc,קסם,késem,הַיֶּלֶד אָהַב לִרְאוֹת קְסָמִים.,The child loved watching magic tricks.
+magic,B2,fem,קוסמות,kosmút,,
+magnet,B2,masc,מגנט,magnét,,
+magnetic,B2,adjective,מגנטי,magnéti,,
+magnetic tape,C1,masc,סרט מגנטי,séret magnéti,,
+magnetism,C1,fem,מגנטיות,magnétiut,,
 mail,A2,masc,דואר,dóar,אֲנִי הוֹלֵךְ לַדֹּאַר לִשְׁלוֹחַ מִכְתָּב.,I am going to the post office to send a letter.
 main,B1,adjective,עיקרי,ikarí,הַנּוֹשֵׂא הָעִקָּרִי שֶׁל הַפְּגִישָׁה הָיָה הַחִנּוּךְ.,The main topic of the meeting was education.
 main,B1,adjective,ראשי,rashí,זֶה הַכְּנִיסָה הָרָאשִׁית לַבִּנְיָן.,This is the main entrance to the building.
@@ -1101,7 +1116,7 @@ militaristic,B2,adjective,צבאני,tsvaaní,,
 military,A2,masc,צבא,tsavá,הַצָּבָא הִתְאַמֵּן בַּשָּׂדֶה.,The army trained in the field.
 military,B1,adjective,צבאי,tsvaí,הַבָּסִיס הַצְּבָאִי מִתְפַּעֵל כָּל הַיּוֹם.,The military base operates all day.
 milk,A1,masc,חלב,ħaláv,יֵשׁ חָלָב בַּמְּקָרֵר.,There is milk in the fridge.
-Milky Way,B1,masc,שביל החלב,shvil hekhaláv,,
+Milky Way,B1,masc,שביל החלב,shvil hekhaláv,שְׁבִיל הַחֲלָב נִרְאֶה בְּלַיְלָה בָּרוּר מְאוֹד.,The Milky Way is clearly visible at night.
 "mind, understanding",B2,fem,דעת,dáat,"כְּדֵי לְהַבִּין נוֹשֵׂא עָמוֹק, צָרִיךְ לִרְאוֹת אוֹתוֹ בְּדַעַת פְּתוּחָה.","To truly understand a topic, one must approach it with an open mind."
 "minor, underage",B1,masc,קטין,katín,הַנַּעַר עֲדַיִן קָטִין לְפִי הַחוֹק.,The boy is still a minor according to the law.
 minority,B1,masc,מיעוט,mi'út,הַמִּעוּט בָּאָרֶץ מְחַפֵּשׂ שִׁוְיוֹן.,The minority in the country seeks equality.
@@ -1112,6 +1127,8 @@ mirror,A2,masc,ראי,rií,הִיא הִסְתַּכְּלָה בַּרְאִי 
 misspelling,B2,fem,שגיאת כתיב,shgi'át ktiv,,
 mistake,A2,fem,טעות,ta'út,"אֲנִי מְצַטֵּעַר, זוֹ הָיְתָה טָעוּת.","I'm sorry, that was a mistake."
 "mistakenly, by mistake",A2,adverb,בטעות,beta'út,בְּטָעוּת הִנַּחְתִּי אֶת הַמַּפְתְּחוֹת בַּמְּקָרֵר.,I mistakenly put the keys in the fridge.
+moat,C1,masc,חפיר,khafír,,
+mole,B2,fem,חפרפרת,khafarpéret,,
 mom,A1,fem,אמא,íma,אִמָּא שֶׁלִּי מְבַשֶּׁלֶת אוֹכֶל טָעִים.,My mom cooks delicious food.
 moment,A1,masc,רגע,réga,"רֶגַע אֶחָד, אֲנִי בָּא!","One moment, I'm coming!"
 Monday,A1,masc,יום שני,yom shení,בַּיוֹם שֵׁנִי אֲנִי הוֹלֵךְ לַבֵּית־סֵפֶר.,"On Monday, I go to school."
@@ -1119,6 +1136,8 @@ Monday,A1,masc,יום שני,yom shení,בַּיוֹם שֵׁנִי אֲנִי �
 monkey,A1,masc,קוף,kof,הַקּוֹף מְקַפֵּץ עַל הָעֵץ.,The monkey jumps on the tree.
 month,A1,masc,חודש,ħódesh,חֹדֶשׁ פֶּבְרוּאָר קָצָר.,The month of February is short.
 moon,A2,masc,ירח,yaréaħ,הַיָּרֵחַ זוֹרֵחַ בַּלַּיְלָה.,The moon shines at night.
+moral,B1,masc,מוסר,musár,הַמּוּסָר הָעִקָּרִי שֶׁל הַסִּפּוּר הוּא לְהַאֲמִין בְּעַצְמְךָ.,The main moral of the story is to believe in yourself.
+moral of the story,B2,masc,מוסר השכל,musár haskél,,
 more,A1,,יותר,yotér,אֲנִי רוֹצֶה יוֹתֵר גְּלִידָה.,I want more ice cream.
 morning,A1,masc,בוקר,bóker,בֹּקֶר טוֹב!,Good morning!
 mortality,B2,fem,תמותה,tmutá,,
@@ -1128,7 +1147,10 @@ moth,B2,masc,עש,ásh,,
 mother,A1,fem,אם,ém,הָאֵם שֶׁלִּי עוֹבֶדֶת בְּבֵית־חוֹלִים.,My mother works at a hospital.
 "motion, move",B2,fem,תזוזה,tizuzá,,
 motorcycle,A2,masc,אופנוע,ofanóa,יֵשׁ לוֹ אוֹפַּנּוֹעַ חָדָשׁ וּמָהִיר.,He has a new and fast motorcycle.
+Mount of Olives,B1,masc,הר הזיתים,har hazeitím,הַר הַזֵּיתִים מִצְטַיֵּן בְּנוֹף מְיֻחָד.,The Mount of Olives has a unique landscape.
+Mount Sinai,A2,masc,הר סיני,har sinay,מֹשֶׁה עָלָה לְהַר סִינַי וְקִבֵּל אֶת הַתּוֹרָה.,Moses went up Mount Sinai and received the Torah.
 mountain,A1,masc,הר,har,הַר גָּבוֹהַּ בַּצָּפוֹן.,The mountain is high in the north.
+mountainous,B2,adjective,הררי,hararí,,
 mourner's kaddish,B2,masc,קדיש,kadish,,
 mouth,A1,masc,פה,pe,"פִּתְאוֹם, הוּא פָּתַח אֶת הַפֶּה.","Suddenly, he opened his mouth."
 movement,B1,fem,תנועה,tnuá,הַתְּנוּעָה בַּכְּבִישׁ הָיְתָה כְּבֵדָה מְאוֹד.,The traffic was very heavy on the road.
@@ -1154,8 +1176,8 @@ mythology,B2,fem,מיתולוגיה,mitologia,,
 "naked, nude",B1,adjective,ערום,aróm,הַיֶּלֶד הָיָה עֵירֹם בַּחֲדָר הָאָמְבַּטְיָה.,The child was naked in the bathroom.
 "nakedness, nudity",B2,masc,עירום,erom,,
 name,A1,masc,שם,shem,הַשֵּׁם שֶׁלִּי יַעֲקֹב.,My name is Yaakov.
-"nation, people",B2,masc,לאום,lióm,,
 "nation, people",A1,masc,עם,am,הַעַם חָגַג אֶת הַחַג.,The nation celebrated the holiday.
+"nation, people",B2,masc,לאום,lióm,,
 national,B2,adjective,לאומי,liumí,,
 native language,B2,fem,שפת אם,sfat em,,
 natural,A2,adjective,טבעי,tiví,הַמָּזוֹן הַזֶּה טִבְעִי לְגַמְרֵי.,This food is completely natural.
@@ -1213,13 +1235,13 @@ olive,A2,masc,זית,záyit,בְּכָל אֲרוּחָה אֲנִי אוֹכֵ�
 olive oil,A2,masc,שמן זית,shémen záyit,אֲנִי מוֹרִיד שֶׁמֶן זַיִת לַסָּלָט.,I add olive oil to the salad.
 on the way,A2,,בדרך,badéreħ,אֲנַחְנוּ כְּבָר בַּדֶּרֶךְ לָשִׂיחָה.,We are already on the way to the meeting.
 "on, about",A1,preposition,על,al,הַסֵּפֶר מְדַבֵּר עַל הִסְטוֹרְיָה.,The book is about history.
-one,A1,masc,אחד,eħád,יֵשׁ לִי תַּפּוּחַ אֶחָד.,I have one apple.
 one,A1,fem,אחת,aħát,יֵשׁ לִי יַלְדָּה אַחַת.,I have one girl.
+one,A1,masc,אחד,eħád,יֵשׁ לִי תַּפּוּחַ אֶחָד.,I have one apple.
 one-sided,B2,adjective,חד צדדי,ħad tsdadí,,
 onion,A1,masc,בצל,batsál,אֲנִי לֹא אוֹהֵב בָּצָל.,I don’t like onions.
 only,A1,,רק,rak,אֲנִי רוֹצֶה רַק מַיִם.,I want only water.
-open,A1,adjective,פתוח,patúaħ,הַחֲנוּת פְּתוּחָה עַד עֶשֶׂר.,The store is open until ten.
 open,A1,verb,פתח,patáħ,הוּא פָּתַח אֶת הַדֶּלֶת לְאוֹרְחִים.,He opened the door for the guests.
+open,A1,adjective,פתוח,patúaħ,הַחֲנוּת פְּתוּחָה עַד עֶשֶׂר.,The store is open until ten.
 opera,B1,fem,אופרה,ópera,הָיִיתִי בְּאוֹפֵּרָה וְהַמּוּסִיקָה הָיְתָה מַדְהִימָה.,"I went to the opera, and the music was amazing."
 operating system,B2,fem,מערכת הפעלה,maaréħet hafalá,,
 opinion,A2,fem,דעה,deá,יֵשׁ לִי דֵּעָה טוֹבָה.,I have a good opinion.
@@ -1265,8 +1287,8 @@ paradox,B2,masc,פרדוקס,paradoks,,
 parallel,B1,adjective,מקביל,makbíl,הַכְּבִישׁ הַזֶּה מַקְבִּיל לַנַּהָר.,This road is parallel to the river.
 parasol,B2,fem,שמשייה,shimshiyá,,
 parent,A2,masc,הורה,horé,כָּל הוֹרֶה אוֹהֵב אֶת הַיְּלָדִים שֶׁלּוֹ.,Every parent loves their children.
-park,B1,verb,חנה,ħaná,הוּא חָנָה בַּחֲנָיוֹן הַגָּדוֹל לְיַד הַקָּנְיוֹן.,He parked in the big parking lot near the mall.
 park,A1,masc,פרק,park,יֵשׁ פַּארְק גָּדוֹל לְיַד הַבַּיִת.,There is a big park near the house.
+park,B1,verb,חנה,ħaná,הוּא חָנָה בַּחֲנָיוֹן הַגָּדוֹל לְיַד הַקָּנְיוֹן.,He parked in the big parking lot near the mall.
 parking lot,B1,masc,חניון,ħanyón,הַחֲנָיוֹן מָלֵא בִּמְכוֹנִיּוֹת.,The parking lot is full of cars.
 parliament,B1,masc,פרלמנט,parlamént,הַפַּרְלָמֶנְט מִתְכַּנֵּס לְדִיּוּן חָשׁוּב.,The parliament is convening for an important discussion.
 "part, piece",A2,masc,חלק,ħélek,הוּא אָכַל חֵלֶק מֵהָעוּגָה.,He ate a part of the cake.
@@ -1280,8 +1302,8 @@ pasta,A1,fem,פסטה,pastá,הַפַּסְטָה טְרִיָּה וּטְעִ�
 pastry,A2,masc,מאפה,maafé,הַמַּאֲפֶה עָשׂוּי מִקֶּמַח וְחָמְאָה.,The pastry is made of flour and butter.
 "path, way, trail",A2,masc,שביל,sh'víl,הַשְּׁבִיל הַזֶּה מוֹבִיל לַיַּעַר.,This path leads to the forest.
 patience,B1,fem,סבלנות,savlanút,סַבְלָנוּת הִיא מִדָּה חֲשׁוּבָה בְּחַיִּים.,Patience is an important quality in life.
-patient,B2,masc,מטופל,mtupál,,
 patient,B1,adjective,סבלני,savlaní,הוּא אָדָם סַבְלָנִי וְתָמִיד מַקְשִׁיב לַאֲחֵרִים.,He is a patient person and always listens to others.
+patient,B2,masc,מטופל,mtupál,,
 "pay attention, notice",A2,verb,"שם לב",sam lev,תִּשְׂים לֵב לִמִּלִּים שֶׁהוּא אוֹמֵר.,Pay attention to the words he is saying.
 "pay, make peace",A2,verb,שילם,shilém,הוּא שִׁילֵּם עַל הָאֲרוּחָה.,He paid for the meal.
 payment,A2,masc,תשלום,tashlúm,הוּא שִׁילֵּם אֶת הַתַּשְׁלוּם בְּכַּרְטִיס אַשְׁרַאי.,He paid the payment with a credit card.
@@ -1327,8 +1349,8 @@ pizza,A1,fem,פיצה‎,pítsa,הַפִּיצָּה חַמָּה וּמְתוּ
 place,A1,masc,מקום,makóm,זֶה מָקוֹם יָפֶה מְאוֹד.,This is a very beautiful place.
 plague,B2,masc,דבר,déver,הַדֶּבֶר הִתְפַּשֵּׁט בְּיָמֵי הַבֵּינוֹנַיִם וְגָרַם לְמוֹת רַבִּים.,The plague spread during the Middle Ages and caused many deaths.
 planet,B2,masc,כוכב לכת,koħáv léħet,,
-plant,A2,verb,נטע,natá',הַגַּנָּן נִטֵּעַ עֵצִים בַּגַּן.,The gardener planted trees in the garden.
 plant,A2,masc,צמח,tsémaħ,בַּחֶדֶר גָּדֵל צֶמַח קָטָן.,A small plant is growing in the room.
+plant,A2,verb,נטע,natá',הַגַּנָּן נִטֵּעַ עֵצִים בַּגַּן.,The gardener planted trees in the garden.
 plantation,B2,masc,מטע,matá',,
 plastic,A2,masc,פלסטיק,plástik,הַכּוֹס הַזֹּאת עֲשׂוּיָה מִפְּלַסְטִיק.,This cup is made of plastic.
 plate,A1,fem,צלחת,tsaláħat,אֲנִי שָׂם אֶת הָאוֹכֶל עַל הַצַּלַּחַת.,I put the food on the plate.
@@ -1397,10 +1419,10 @@ programming language,B2,fem,שפת תכנות,sfát tiħnút,,
 "prohibit, imprison",B1,verb,אסר,asár,הַמִּשְׁטָרָה אָסְרָה עָלָיו לָצֵאת מֵהָאָרֶץ.,The police prohibited him from leaving the country.
 "prohibited, forbidden",A2,adjective,אסור,asúr,אָסוּר לְעָשֵׁן בַּמִּסְעָדָה.,Smoking is prohibited in the restaurant.
 "prohibition, ban",B2,masc,איסור,isúr,,
-project,B2,masc,מיזם,meizám,,
 project,A2,masc,פרויקט,proyékt,הַתַּלְמִידִים עָבְדוּ עַל פְּרוֹיֶקְט מְיֻחָד.,The students worked on a special project.
-promise,B1,fem,הבטחה,havtaħá,הוּא נָתַן הַבְטָחָה לַחֲבֵרוֹ.,He made a promise to his friend.
+project,B2,masc,מיזם,meizám,,
 promise,B1,verb,הבטיח,hivtíakh,הוּא הִבְטִיחַ לִשְׁמוֹר עַל הַסּוֹד.,He promised to keep the secret.
+promise,B1,fem,הבטחה,havtaħá,הוּא נָתַן הַבְטָחָה לַחֲבֵרוֹ.,He made a promise to his friend.
 "proper, kosher",A2,adjective,כשר,kashér,הָאוֹכֶל בַּמִּסְעָדָה כָּשֵׁר.,The food in the restaurant is kosher.
 protect,A2,verb,הגן,hegén,הָאָב הִגִּין עַל בָּנָיו.,The father protected his children.
 "protection, defense",B1,fem,הגנה,haganá,הַהֲגָנָה עַל הַטֶּבַע חֲשׁוּבָה לְדוֹרוֹת הַבָּאִים.,The protection of nature is important for future generations.
@@ -1411,22 +1433,24 @@ prototype,B2,masc,אב טיפוס,av tipús,כָּל מָכוֹן טֶכְנוֹ
 psychological,B2,adjective,פסיכולוגי,p'sikhológi,,
 psychologist,B2,masc,פסיכולוג,p'sikhológ,,
 psychology,B2,fem,פסיכולוגיה,psikhologya,,
-public,B1,masc,ציבור,tsibúr,,
-public,B1,adjective,ציבורי,tsiburí,,
+public,B1,masc,ציבור,tsibúr,הַצִּבּוּר נִמְצָא בָּאוּלָם לִשְׁמֹעַ אֶת הַנְּאוּם.,The public gathered in the hall to hear the speech.
+public,B1,adjective,ציבורי,tsiburí,הַגַּן הַצִּבּוּרִי פָּתוּחַ לְכָל הָאוֹרְחִים.,The public park is open to all visitors.
+"pull, attract",B2,verb,משך,mashákh,,
 "pupil, little man",B2,masc,אישון,ishón,,
 pure,C1,adjective,זך,zaħ,,
-"pure, clean",B1,adjective,בר,bar,,
+"pure, clean",B1,adjective,בר,bar,הַמַּיִם בַּנַּהָר בָּרִים וְנְקִיִּים.,The water in the river is pure and clean.
 purity,B2,fem,זכות,zakút,,
 purple,A1,masc,סגול,sagól,הַחֻלְצָה שֶׁלִּי סָגוֹלָה.,My shirt is purple.
+push,B1,verb,דחף,dakháf,הוּא דָּחַף אֶת הַדֶּלֶת בְּכֹחַ.,He pushed the door forcefully.
 "put, place",A1,verb,שם,sam,הוּא שָׂם אֶת הַכּוֹס עַל הַשּׁוּלְחָן.,He put the glass on the table.
 queen,A1,fem,מלכה,malká,הַמַּלְכָּה חָכְמָה.,The queen is wise.
 question,A1,fem,שאלה,shielá,יֵשׁ לִי שְׁאֵלָה לַמּוֹרֶה.,I have a question for the teacher.
 "quick, agile",B2,adjective,זריז,zaríz,,
-quickly,B1,adv,במהרה,bim'herá,,
+quickly,B1,adv,במהרה,bim'herá,נֵצֵא לַטִּיּוּל בְּמְהֵרָה.,We will go on the trip quickly.
 quiet,A2,adjective,שקט,shakét,הַבַּיִת שֶׁלָּנוּ שָׁקֵט בַּלַּיְלָה.,Our house is quiet at night.
 "quiet, silence",A2,masc,שקט,shéket,"אַתָּה יָכוֹל לִדְבֵּר בִּשֶּׁקֶט, בְּבַקָּשָׁה.","Can you speak quietly, please?"
+"quote, quotation",B1,masc,ציטוט,tsitút,הַמַּאֲמָר הֵבִיא צִטּוּט מִן הַסֵּפֶר הַיָּשָׁן.,The article included a quote from an old book.
 "quote, quotation",B2,fem,מובאה,muva'á,,
-"quote, quotation",B1,masc,ציטוט,tsitút,,
 "quote, quotation",B2,fem,ציטטה,tsitáta,,
 rabbi,A2,masc,רב,rav,הָרַב דִּבֵּר בְּבֵית הַכְּנֶסֶת.,The rabbi spoke in the synagogue.
 rabbinical,C1,adjective,רבני,rabani,,
@@ -1440,16 +1464,16 @@ radius,B2,masc,רדיוס,rádyus,,
 rain (literary),B2,masc,מטר,matár,,
 rain (ordinary),A1,masc,גשם,géshem,בַּחוּץ יֵשׁ גֶּשֶׁם חָזָק.,There is heavy rain outside.
 rainy,A2,adjective,גשום,gashúm,הַיּוֹם גָּשׁוּם וְקַר בַּחוּץ.,Today is rainy and cold outside.
-rare,B1,adjective,נדיר,nadír,,
+rare,B1,adjective,נדיר,nadír,זֶה מְאוֹד נָדִיר לִרְאוֹת חַיָּה כָּזוֹ בַּטֶּבַע.,It is very rare to see such an animal in the wild.
 rarely,B2,adverb,לעיתים רחוקות,leitím reħokót,,
 raspberry,B2,masc,פטל אדום,pétel adóm,,
+reaction,B1,fem,תגובה,tguvá,הַתְּגוּבָה שֶׁלּוֹ הָיְתָה מַפְתִּיעָה.,His reaction was surprising.
 reaction,B2,fem,הגבה,hagava,,
-reaction,B1,fem,תגובה,tguvá,,
 "read, call",A1,verb,קרא,kará,קָרָאתי סֵפֶר מְעַנְיֵן.,I read an interesting book.
 reader,A2,masc,קורא,koré,הַקּוֹרֵא סִיֵּם אֶת הַסֵּפֶר בְּיוֹם אֶחָד.,The reader finished the book in one day.
 reading,A2,fem,קריאה,kiriá,הַקְּרִיאָה שֶׁלָּהּ מְהִירָה וּבָרוּרָה.,Her reading is fast and clear.
 ready,A2,masc,מוכן,muħán,הַמִּטְבָּח מוּכָן לַאֹרֵחַ.,The kitchen is ready to host.
-reality,B1,fem,מציאות,mtsiút,,
+reality,B1,fem,מציאות,mtsiút,הַמְּצִיאוּת לֹא תָּמִיד כְּמוֹ שֶׁאַנוּ חוֹשְׁבִים.,Reality is not always as we think.
 really,A2,adverb,ממש,mamásh,הַסֶּרֶט הַזֶּה מַמָּשׁ מְעַנְיֵן.,This movie is really interesting.
 "reason, cause",A2,fem,סיבה,sibá,אֵין לִי סִבָּה לְהִדָּאֵג.,I have no reason to worry.
 recipe,B2,masc,רצפט,retsépt,,
@@ -1458,35 +1482,35 @@ recommendation,A2,fem,המלצה,hamlatsá,יֵשׁ לִי הַמְלָצָה ל
 recommended,A2,adjective,מומלץ,mumláts,הַסֵּפֶר הַזֶּה מוּמְלָץ לִקְרִיאָה.,This book is recommended for reading.
 recruit (noun),B2,masc,טירון,tirón,,
 recycle,B2,verb,מיחזר,mikhzér,,
-recycling,B1,masc,מיחזור,mikhzúr,,
+recycling,B1,masc,מיחזור,mikhzúr,אֲנַחְנוּ מְיַחְזְרִים נַיָּר וּפְלַסְטִיק לְתוֹעֶלֶת הַסְּבִיבָה.,We recycle paper and plastic for the benefit of the environment.
 red,A1,adjective,אדום,adóm,הַתַּפּוּחַ אָדֹם.,The apple is red.
 red carpet,B2,masc,שטיח אדום,shatíaħ adóm,,
 "Red Sea, the",A2,masc,ים סוף,yam suf,יָם סוּף נִמְצָא לְיַד אֵילַת.,The Red Sea is near Eilat.
 reed,B2,masc,סוף,suf,,
-"regarding, about",B1,preposition,בנושא‎,benosé,,
+"regarding, about",B1,preposition,בנושא‎,benosé,אֲנִי רוֹצֶה לְדַבֵּר אִתְּךָ בְּנוֹשֵׂא הָעֲבוֹדָה.,I want to talk to you regarding work.
 regime,B2,masc,משטר,mishtár,,
-registration,B1,masc,רישום,rishúm,,
+registration,B1,masc,רישום,rishúm,הָרִישׁוּם לַקּוּרְס נִסְגַּר בְּתוֹךְ שָׁבוּעַ.,Registration for the course closes in a week.
 regret,B2,verb,התחרט,hitcharét,,
 regret,B2,fem,חרטה,ħaratá,,
 "relation, relationship",B2,masc,יחס,yáħas,,
-relationship,B1,fem,מערכת יחסים,maaréħet yáħas,,
+relationship,B1,fem,מערכת יחסים,maaréħet yáħas,הַמַּעֲרֶכֶת יְחָסִים שֶׁלָּהֶם מְסֻבֶּכֶת.,Their relationship is complicated.
 "relative, family member",A2,masc,קרוב,karóv,"הַקָּרוֹב שֶׁלִּי גָּר בְּחוּ""ל.",My relative lives abroad.
 "relaxed, calm",A2,adjective,רגוע,ragúa,הַיֶּלֶד רָגוּעַ אַחֲרֵי הַטִּיּוּל.,The child is calm after the hike.
 religion,A2,fem,דת,dat,הַדָּת שֶׁלּוֹ יְהוּדִית.,His religion is Judaism.
 religious,A2,adjective,דתי,datí,הַמּוֹרֶה שֶׁלִּי דָּתִי.,My teacher is religious.
 remark,B2,fem,התבטאות,hitbat'út,,
 remember,A2,verb,זכר,zakhár,הִיא זָכְרָה אֶת הַשִּׁיר מִיַּלְדוּתָהּ.,She remembered the song from her childhood.
-republic,B1,fem,רפובליקה,repúblika,,
+republic,B1,fem,רפובליקה,repúblika,הָרֶפּוּבְּלִיקָה מְנַהֶלֶת בְּחִירוֹת דֵּמוֹקְרָטִיּוֹת.,The republic holds democratic elections.
 republican,B2,adjective,רפובליקני,republikáni,,
 request,A2,fem,בקשה,bakashá,הִיא עָשְׂתָה בַּקָּשָׁה לִקְבָּלַת עֲבוֹדָה.,She submitted a job application.
 research,B2,masc,תחקיר,taħkír,,
 residence,B2,masc,משכן,mishkán,,
-respect,B1,masc,כבוד,kavód,,
+respect,B1,masc,כבוד,kavód,חָשׁוּב לְהַפְגִּין כָּבוֹד לַאֲחֵרִים.,It is important to show respect to others.
 respect,B2,verb,כיבד,kibed,,
 responsibility,B1,fem,אחריות,aħarayút,לִכְלוֹ אֶחְרָיוּת הִיא תַּכְלִית הַבְּגִירוּת.,Taking responsibility is the essence of maturity.
 responsible,B1,adjective,אחראי,aħrai,הַמְּנַהֵל אַחְרָאִי עַל הַפְּרוֹיֶקְט הַזֶּה.,The manager is responsible for this project.
-rest,B2,masc,מנוח,manóaħ,,
 rest,A2,verb,נח,naħ,בְּשַׁבָּת נָחְנוּ בַּבַּיִת.,"On Saturday, we rested at home."
+rest,B2,masc,מנוח,manóaħ,,
 restaurant,A1,fem,מסעדה,misadá,הַמִּסְעָדָה מָלֵאָה בְּנָשִׁים וַאֲנָשִׁים.,The restaurant is full of men and women.
 resurrection,B2,fem,תחיית,tħiyát,,
 revival,B2,fem,תחייה,tħiyá,,
@@ -1505,25 +1529,25 @@ robbery,B2,,שוד,shod,,
 Rome,A1,fem,רומא,róma,רוֹמָא הִיא עִיר בְּאִיטַלְיָה.,Rome is a city in Italy.
 room,A1,masc,חדר,ħéder,זֶה חֶדֶר גָּדוֹל.,This is a big room.
 "rooster, chicken",A2,masc,תרנגול,tarngól,הַתַּרְנְגוֹל קוֹרֵא בַּבֹּקֶר.,The rooster crows in the morning.
-root,B1,masc,שורש,shóresh,,
+root,B1,masc,שורש,shóresh,הַשּׁוֹרֶשׁ שֶׁל הָעֵץ מַחֲזִיק אוֹתוֹ בָּאֲדָמָה.,The tree’s root holds it firmly in the ground.
 rope,A2,masc,חבל,ħével,הַיֶּלֶד קָשַׁר חֶבֶל בַּחָצֵר.,The boy tied a rope in the yard.
 row,B2,verb,שט,shat,,
-rule,B1,masc,כלל,klal,,
+rule,B1,masc,כלל,klal,כָּל כְּלָל בְּחֹק חָשׁוּב.,Every rule in the law is important.
 rule,B2,verb,שלט,shalát,,
 ruler,B2,masc,שליט,shalít,,
-"ruling, law",B1,masc,דין,din,,
+"ruling, law",B1,masc,דין,din,הַדַּיָּן קָבַע אֶת הַדִּין.,The judge determined the ruling.
 Russia,A1,fem,רוסיה,rúsya,אֲנִי גָּר בְּרוּסְיָה.,I live in Russia.
-Russian,A2,adjective,רוסי,rusí,הַתַּלְמִיד הַזֶּה רוּסִי.,That student is Russian.
 Russian,A2,fem,רוסית,rusít,הִיא מְדַבֶּרֶת רוּסִית טוֹב.,She speaks Russian well.
+Russian,A2,adjective,רוסי,rusí,הַתַּלְמִיד הַזֶּה רוּסִי.,That student is Russian.
 sad,A1,adjective,עצוב,atsúv,הַיֶּלֶד עָצוּב כִּי אִבֵּד אֶת הַכַּדּוּר.,The boy is sad because he lost his ball.
-sadness,B1,masc,עצב,étsev,,
+sadness,B1,masc,עצב,étsev,הָעֶצֶב שֶׁלִּי גָּדַל לְאַחַר הַפֵּרוּד.,My sadness grew after the breakup.
 "safe, secure",A2,adjective,בטוח,batúakh,הַיֶּלֶד מַרְגִּישׁ בָּטוּחַ בַּבַּיִת.,The child feels safe at home.
-safety,B1,fem,בטיחות,b'tikhút,,
+safety,B1,fem,בטיחות,b'tikhút,בָּטִיחוּת הַיְּלָדִים חֲשׁוּבָה מְאוֹד.,Children's safety is very important.
 sailor,B2,masc,מלחא,malaħa,,
 salad,A1,masc,סלט,salát,הַסָּלָט עָשׂוּי מִיְרָקוֹת טְרִיִּים.,The salad is made of fresh vegetables.
 sale (formal),C1,masc,מכר,mécher,,
-salesman,B1,masc,מוכר,moħér,,
-saleswoman,B1,fem,מוכרת,moħeret,,
+salesman,B1,masc,מוכר,moħér,הַמּוֹכֵר הִצִּיעַ לִי הֲנָחָה עַל הַמּוּצָר.,The salesman offered me a discount on the product.
+saleswoman,B1,fem,מוכרת,moħeret,הַמּוֹכֶרֶת בַּחֲנוּת הָיְתָה חַיּוּכִית וְעֵזְרָה לִי.,The saleswoman at the store was friendly and helped me.
 salt,A1,masc,מלח,mélaħ,שַׂמְתִּי מֶלַח בַּמָּרָק.,I put salt in the soup.
 salty,A2,adjective,מלוח,malúaħ,הָאֹכֶל מָלוּחַ מְאוֹד.,The food is very salty.
 sand,A2,masc,חול,ħol,הָאֲנָשִׁים הָלְכוּ יַחֵף עַל הַחוֹל.,The people walked barefoot on the sand.
@@ -1540,7 +1564,7 @@ scene,B2,fem,סצנה,s'tséna,,
 school,A1,masc,בית ספר,béit séfer,הַיְלָדִים לוֹמְדִים בְּבֵית סֵפֶר.,The children study at school.
 school year,B2,fem,שנת לימודים,shnát limudím,,
 schwa,B2,masc,שווא,shva,,
-science,B1,masc,מדע,madá,,
+science,B1,masc,מדע,madá,הַמַּדָּע מִתְקַדֵּם בִּקְצָב מָהִיר.,Science is advancing at a fast pace.
 scientific,B2,adjective,מדעי,madaí,,
 scientist,B2,masc,מדען,madán,,
 sculptor,B2,masc,פסל,pasál,,
@@ -1548,17 +1572,17 @@ sculptor,B2,masc,פסל,pasál,,
 "sea, ocean",A1,masc,ים,yam,הַיָּם גָּדוֹל וְכָחוֹל.,The sea is big and blue.
 seal,B2,masc,כלב ים,kélev yam,,
 seaman,B2,masc,ימאי,yamaí,,
-search (noun),B1,masc,חיפוש,ħipús,,
+search (noun),B1,masc,חיפוש,ħipús,הַחִפּוּשׂ בְּתוֹךְ הַסֵּפֶר לָקַח זְמַן.,The search inside the book took time.
 search engine,B2,masc,מנוע חיפוש,mnóa ħipús,,
 season,A2,fem,עונה,oná,הָעֹנָה הַאָהוּבָה עָלַי הִיא אָבִיב.,My favorite season is spring.
-second,A1,adjective,שני,shení,זֶה הַיּוֹם הַשֵּׁנִי.,Today is Monday.
 second,A1,fem,שנייה,shniyá,הַשְּׁנִיָּה עוֹבֶרֶת מַהֵר.,The second passes quickly.
+second,A1,adjective,שני,shení,זֶה הַיּוֹם הַשֵּׁנִי.,Today is Monday.
 secret,A2,masc,סוד,sod,הַדָּבָר הַזֶּה נִשְׁמָע כְּסוֹד.,This thing sounds like a secret.
-secret,B1,adjective,סודי,sodí,,
+secret,B1,adjective,סודי,sodí,הַמִּכְתָּב הָיָה סוֹדִי וְלֹא נִתַּן לִפְרָסֵם אוֹתוֹ.,The letter was secret and could not be published.
 secretary,B2,masc,מזכיר,mazkír,,
-secular,B1,adjective,חילוני,ħiloni,,
+secular,B1,adjective,חילוני,ħiloni,הוּא מִשְׁפָּחָה מֵהַצַּד הַחִלּוֹנִי.,He comes from a secular family.
 security,B2,adjective,ביטחוני,bitkhoní,,
-"security, certainty",B1,masc,ביטחון,bitakhón,,
+"security, certainty",B1,masc,ביטחון,bitakhón,יֵשׁ לָנוּ בִּטָּחוֹן בַּהַחְלָטָה הַזֹּאת.,We have confidence in this decision.
 "security, proof of ownership",B2,masc,נייר ערך,nyár éreħ,,
 seder plate,B2,fem,קערת פסח,kaarát pésaħ,,
 see,A1,verb,ראה ,raá ,הוּא רָאָה צִפּוֹר בַּשָּׁמַיִם.,He saw a bird in the sky.
@@ -1566,32 +1590,32 @@ self,B2,masc,עצם,étsem,,
 self-confidence,B2,masc,ביטחון עצמי,bitakhón atsmí,,
 selfish,C1,adjective,אנוכי,anoħí,,
 sell,A2,verb,מכר,makhár,הוּא מָכַר אֶת הָרֶכֶב הַיָּשָׁן.,He sold the old car.
-semester,B1,masc,סמסטר,seméster,,
+semester,B1,masc,סמסטר,seméster,הַסֶּמֶסְטֶר הַבָּא יָתְחִיל בְּחָדֶשׁ אַפְּרִיל.,The next semester will start in April.
 senator,B2,masc,סנאטור,senator,,
-sense,B1,masc,חוש,ħúsh,,
+sense,B1,masc,חוש,ħúsh,יֵשׁ לִי חוּשׁ חָזָק לְמוּסִיקָה.,I have a strong sense for music.
 sensitive,A2,masc,רגיש,ragísh,הָעוֹר שֶׁלִּי רָגִישׁ לַשֶּׁמֶשׁ.,My skin is sensitive to the sun.
 sensor,B2,masc,חיישן,ħaishán,,
 sentence,A2,masc,משפט,mishpát,הַמִּשְׁפָּט שֶׁכָּתַבְתִּי עָרוּךְ טוֹב.,The sentence I wrote is well-structured.
 September,A1,masc,ספטמבר,septémber,סֶפְּטֶמבֶּר הוּא הַתְּחִלָּה שֶׁל הַסְּתָיו.,September is the beginning of autumn.
 servant,B2,masc,משרת,msharét,,
-serve,B1,verb,שירת,sherét,,
+serve,B1,verb,שירת,sherét,הַמֶּלְצָר שֵׁרֵת אוֹתָנוּ בְּאָדִיבוּת.,The waiter served us politely.
 "server, janitor",B2,masc,שרת,sharát,,
 service,A2,masc,שירות,sheirút,הַשֵּׁרוּת בַּמִּסְעָדָה הָיָה מְעוּלֶה.,The service in the restaurant was excellent.
 "services, restroom, bathroom",A1,masc,שירותים,sherutím,הַשֵּׁרוּתִים נִמְצָאִים בַּקּוֹמָה הָרִאשׁוֹנָה.,The restrooms are on the first floor.
 settlement,B2,masc,יישוב,yishúv,,
 seven,A1,fem,שבע,shéva,יֵשׁ לָהּ שֶׁבַע חָבֵרוֹת.,She has seven friends.
 "several, a few",A1,adjective,כמה,káma,יֵשׁ לִי כַּמָּה סְפָרִים בַּתִּיק.,I have a few books in the bag.
-"sex, gender",B1,masc,מין,min,,
+"sex, gender",B1,masc,מין,min,מִין הָאָדָם מִתְפַּתֵּחַ בְּמַהֵרָה.,The human species is evolving quickly.
 sexual,B2,adjective,מיני,miní,,
-shallow,B1,adjective,רדוד,radúd,,
+shallow,B1,adjective,רדוד,radúd,הַנַּהָר בָּאֵזוֹר הַזֶּה רָדוּד וְאֵינוֹ מְסֻכָּן לִשְׂחִיָּה.,The river in this area is shallow and not dangerous for swimming.
 "share, stock",B2,fem,מניה,mnaya,,
 she,A1,fem,היא,hi,הִיא אוֹהֶבֶת גְּלִידָה.,She loves ice cream.
 shekel,A1,masc,שקל,shékel,הַסֵּפֶר עוֹלֶה עֶשֶׂר שְׁקָלִים.,The book costs ten shekels.
 shelf,B2,masc,מדף,madáf,,
-"shelter, refuge",B1,masc,מקלט,miklát,,
-shield,B1,masc,מגן,magén,,
+"shelter, refuge",B1,masc,מקלט,miklát,בָּעִיר יֵשׁ מַקְלֵטִים לְמִקְרֵי חֵרוּם.,The city has shelters for emergencies.
+shield,B1,masc,מגן,magén,הַחַיָּל נָשָׂא מָגֵן כְּדֵי לְהִתְגּוֹנֵן.,The soldier carried a shield for protection.
 ship,A2,fem,ספינה,sfiná,הַסְּפִינָה הִגִּיעָה לַנָּמֵל.,The ship arrived at the port.
-"shipment, delivery",B1,,משלוח,mishlóaħ,,
+"shipment, delivery",B1,,משלוח,mishlóaħ,הַמִּשְׁלוֹחַ יַגִּיעַ בְּתוֹךְ שְׁבוּעַ.,The shipment will arrive within a week.
 shirt,A1,fem,חולצה,ħultsá,הַחוּלְצָה שֶׁלִּי כְּחוּלָה.,My shirt is blue.
 shoe,A1,fem,נעל,náal,הִיא קָנְתָה נַעַל חֲדָשָׁה.,She bought a new shoe.
 shopping mall,A2,masc,קניון,kanyon,הַקַּנְיוֹן הַזֶּה גָּדוֹל וְיֵשׁ בּוֹ הַרְבֵּה חֲנוּיּוֹת.,This shopping mall is big and has many stores.
@@ -1601,16 +1625,16 @@ shower,A1,fem,מקלחת,mikláħat,אֲנִי הוֹלֵךְ לַמִּקְלַ
 "shutdown, lockdown",B2,masc,סגר,séger,,
 sick,A2,adjective,חולה,ħolé,הַיֶּלֶד חוֹלֶה וְנִשְׁאַר בַּבַּיִת.,The child is sick and stayed at home.
 "sickly, unhealthy",B2,adjective,חולני,ħolaní,,
-"sickness, disease",B1,fem,מחלה,maħalá,,
+"sickness, disease",B1,fem,מחלה,maħalá,הַשָּׁפַעַת הִיא מַחֲלָה שְׁכִיחָה בְּתוֹךְ הַחֹרֶף.,The flu is a common illness in winter.
 side,A2,masc,צד,tsad,הָאוֹטוֹ נָע לִכָּל צַד.,The car moves in every direction.
-"sight, appearance",B1,masc,מראה,maré,,
+"sight, appearance",B1,masc,מראה,maré,הַמַּרְאָה שֶׁלָּהּ הָיְתָה מְיֻחֶדֶת וְיָפָה.,Her appearance was unique and beautiful.
 sign,A1,masc,שלט,shélet,הַשֶּׁלֶט עַל הַדֶּלֶת.,The sign is on the door.
 "sign, signal",A2,masc,אות,ot,אֲנִי מְחַכֶּה לְאוֹת מִמְּךָ.,I'm waiting for a sign from you.
 silk,B2,masc,משי,meshi,,
 silky,B2,adjective,משיי,mishyí,,
 "silverware, cutlery",A2,masc,סכו״,sakúm,"בַּמִּסְעָדָה יֵשׁ סַכּוּ""ם נָקִי.",The restaurant has clean cutlery.
 simple,A2,adjective,פשוט,pashút,הַתִּשְׁבּוֹץ הַזֶּה פָּשׁוּט.,This crossword puzzle is simple.
-simplicity,B1,fem,פשטות,pashtút,,
+simplicity,B1,fem,פשטות,pashtút,אֲנִי אוֹהֵב אֶת הַפַּשְׁטוּת שֶׁל הַחַיִּים בַּכְּפָר.,I love the simplicity of life in the village.
 simplification,B2,masc,פישוט,pishút,,
 sing,A1,verb,שר,shar,הוּא שָׁר שִׁיר חָדָשׁ.,He sings a new song.
 sister,A1,fem,אחות,aħót,אַחְוֹתִי לוֹמֶדֶת בְּבֵית־הַסֵּפֶר.,My sister studies at school.
@@ -1623,11 +1647,11 @@ skin,A2,masc,עור,or,עׂור הַיֶּלֶד רַךְ.,The child's skin is s
 skyline,B2,masc,קו רקיע,kav rakía,,
 skyscraper,B2,masc,גורד שחקים,goréd shakím,,
 slave,A2,masc,עבד,éved,הָעֶבֶד עָבַד בְּשָׂדוֹת הַחוּטִים.,The slave worked in the cotton fields.
-slavery,B1,fem,עבדות,avdút,,
-sleep,A2,verb,ישן,yashán,הוּא יָשַׁן עַל הַסַּפָּה.,He slept on the couch.
+slavery,B1,fem,עבדות,avdút,"הָעַבְדוּת בֻּטְּלָה בָּעֶבֶר, אֲבָל עֲוֵלָה עֲדַיִן קַיֶּמֶת.","Slavery was abolished in the past, but injustice still exists."
 sleep,A2,fem,שינה,sheiná,"אַחֲרֵי יוֹם עָמוּס, שֵׁנָה טוֹבָה חֲשׁוּבָה מְאוֹד.","After a busy day, good sleep is very important."
+sleep,A2,verb,ישן,yashán,הוּא יָשַׁן עַל הַסַּפָּה.,He slept on the couch.
 slice,A2,fem,פרוסה,prusá,אֲנִי רוֹצֶה פְּרוּסָה שֶׁל לֶחֶם.,I want a slice of bread.
-"slice, cut, piece, chunk",B1,masc,נתח,nétaħ,,
+"slice, cut, piece, chunk",B1,masc,נתח,nétaħ,אֲנִי רוֹצֶה נִתַּח בָּשָׂר גָּדוֹל.,I want a large slice of meat.
 slow,A2,adjective,איטי,ití,הָאִינְטֶרְנֵט בַּבַּיִת שֶׁלִּי אִטִּי מְאֹד.,The internet in my house is very slow.
 slowly,A2,adverb,לאט,liát,הוּא דִּבֵּר לְאַט כְּדֵי שֶׁנָּבִין.,He spoke slowly so we would understand.
 small,A1,adjective,קטן,katán,הַבַּיִת קָטָן אֲבָל נָעִים.,The house is small but cozy.
@@ -1635,86 +1659,86 @@ smartphone,A2,masc,סמארטפון,smártfon,הוּא מְשַׁתֵּף תְּ
 smell,A2,verb,הריח,heríakh,הוּא הֵרִיחַ אֶת הַפֶּרַח וְחָיֵיךְ.,He smelled the flower and smiled.
 smell,A2,masc,ריח,réakh,יֵשׁ רֵיחַ נָעִים בַּגָּן.,There is a pleasant smell in the garden.
 smile,A2,verb,חייך,khiyékh,הַתִּינוֹק חִיֵּךְ לְאִמּוֹ.,The baby smiled at his mother.
-smiley,B1,adjective,חייכן,khaykhan,,
+smiley,B1,adjective,חייכן,khaykhan,הַתִּינוֹק חִיְּכָן מְאוֹד.,The baby is very smiley.
 smoke,A2,verb,עישן,ishén,הוּא עִישֵּׁן בַּמִּרְפֶּסֶת.,He smoked on the balcony.
-smoke,B1,masc,עשן,ashán,,
+smoke,B1,masc,עשן,ashán,הָעָשָׁן מִן הָאֲרֻבָּה כִּסָּה אֶת הַשָּׁמַיִם.,The smoke from the chimney covered the sky.
 smoking,A2,masc,עישון,ishún,הָעִישּׁוּן מַזִּיק לַבְּרִיאוּת.,Smoking is harmful to health.
 snake,A1,masc,נחש,naħásh,הַנָּחָשׁ הִתְחַבֵּא בָּעֵשֶׂב.,The snake hid in the grass.
 snot,B2,fem,נזלת,nazélet,,
-snow,C1,verb,השליג,hishlíg,,
 snow,A2,masc,שלג,shéleg,הַשֶּׁלֶג נָפַל עַל הָרְחוֹב.,The snow fell on the street.
+snow,C1,verb,השליג,hishlíg,,
 snowboard,B2,masc,גלשן שלג,galshán shéleg,,
 snowman,A2,masc,איש שלג,ish shéleg,הַיְלָדִים בָּנוּ אִישׁ שֶׁלֶג בַּגִּינָּה.,The children built a snowman in the garden.
 so much,A2,adverb,כל כך,kol kaħ,לָמָּה אַתָּה מִתְלּוֹנֵן כָּל כָּךְ?,Why are you complaining so much?
 "so, then",A1,,אז,az,"הוּא הָיָה עָיֵף, אָז הוּא יָשַׁן.","He was tired, so he slept."
 soap,A1,masc,סבון,sabón,אֲנִי רוֹחֵץ יָדַיִם בְּסַבּוֹן.,I wash my hands with soap.
 "soccer, football",A2,masc,כדורגל,kadurégel,הַכַּדּוּרֶגֶל הוּא סְפּוֹרְט פּוֹפּוּלָרִי.,Soccer is a popular sport.
-social,B1,adjective,חברתי,khevratí,,
-sociology,B1,fem,סוציולוגיה,sotsyológya,,
+social,B1,adjective,חברתי,khevratí,הַפְעִילוּת הַחֶבְרָתִית בְּבֵית הַסֵּפֶר מְשַׁפֶּרֶת אֶת הַיְּדִידוּת.,Social activities at school improve friendships.
+sociology,B1,fem,סוציולוגיה,sotsyológya,בַּקּוּרְס לָמַדְנוּ עַל סוֹצְיוֹלוֹגְיָה.,"In the course, we learned about sociology."
 sock,A1,all,גרב,gérev,הַגֶּרֶב שֶׁלִּי אָבַד.,My sock got lost.
 sodium,B2,masc,נתרן,natrán,,
 soft,A2,adjective,רך,raħ,הַכָּרִית שֶׁלִּי רַכָּה וְנוֹחָה.,My pillow is soft and comfortable.
-software,B1,fem,תכנה,toħná,,
-solar system,B1,fem,מערכת שמש,maaréħet shémesh,,
+software,B1,fem,תכנה,toħná,הַתָּכְנָה הַזֹּאת עוֹזֶרֶת בַּעֲבוֹדָה הַיּוֹמִית.,This software helps with daily work.
+solar system,B1,fem,מערכת שמש,maaréħet shémesh,הַמַּעֲרֶכֶת שֶׁמֶשׁ כּוֹלֶלֶת כַּמָּה כּוֹכָבִים.,The solar system includes several planets.
 soldier,A2,masc,חייל,ħayál,הַחַיָּל הָלַךְ לַבָּסִיס.,The soldier went to the base.
 solid,B2,adjective,מוצק,mutsák,,
-solution,B1,masc,פתרון,pitrón,,
+solution,B1,masc,פתרון,pitrón,הַמּוֹרֶה הִסְבִּיר אֶת הַפִּתְרוֹן בִּפְשׁוּט.,The teacher explained the solution clearly.
 something,A1,,משהו,máshehu,יֵשׁ לִי מַשֶּׁהוּ לְהַגִּיד.,I have something to say.
-sometimes,B1,,לעיתים,litim,,
+sometimes,B1,adverb,לעיתים,litim,לְעִתִּים אֲנִי קוֹרֵא סִפְרִים.,Sometimes I read books.
 son,A1,masc,בן,ben,יֵשׁ לִי בֵּן אֶחָד.,I have one son.
 "song, poem",A1,masc,שיר,shir,הַשִּׁיר הַזֶּה יָפֶה.,This song is beautiful.
-soon,B1,adv,בהקדם,behekdém,,
 soon,A2,adv,בקרוב,b'karóv,בְּקָרוֹב נִפָּגֵשׁ שׁוּב.,We will meet again soon.
+soon,B1,adv,בהקדם,behekdém,בְּהֶקְדֵּם נָסַע לַתֵּאָטְרוֹן.,We will travel to the theater soon.
 sorcerer,B2,masc,מכשף,mħashéf,,
-sorrow,B1,masc,צער,tsáar,,
+sorrow,B1,masc,צער,tsáar,הוּא הִרְגִּישׁ צַעַר גָּדוֹל אַחֲרֵי הַפֵּרוּד.,He felt great sorrow after the breakup.
 sound wave,B2,masc,גל קול,gal kol,גַּלֵּי הַקּוֹל נֶעֱצָרִים בַּקִּירִים עֲבֵהִים.,Sound waves are absorbed by thick walls.
 "sound, voice",A1,masc,קול,kol,הַקוֹל שֶׁלָּהּ רַךְ וְנָעִים.,Her voice is soft and pleasant.
 soup,A1,masc,מרק,marák,אֲנִי אוֹהֵב מָרָק חַם.,I like hot soup.
 sour,A2,adjective,חמוץ,ħamúts,הַתַּפּוּז הַזֶּה חָמוּץ מְאוֹד.,This orange is very sour.
 south,A1,masc,דרום,daróm,הַדָּרוֹם חַם בַּקַּיִץ.,The south is hot in the summer.
-southern,B1,adjective,דרומי,dromí,,
+southern,B1,adjective,דרומי,dromí,הָעִיר בְּאֵר שֶׁבַע נִמְצֵאת בַּחֵלֶק הַדְּרוֹמִי שֶׁל הָאָרֶץ.,The city of Be'er Sheva is located in the southern part of the country.
 souvenir,B2,fem,מזכרת,mazkéret,,
 "sovereign, master",B2,masc,ריבון,ribón,,
 space station,B2,fem,"תחנת חלל",taħanát ħalál,,
-"space, area",B1,masc,מרחב,merħáv,,
-"space, outer space",B1,masc,חלל,ħalál,,
+"space, area",B1,masc,מרחב,merħáv,הַמֶּרְחָב בָּאוּלָם גָּדוֹל מְאוֹד.,The space in the hall is very large.
+"space, outer space",B1,masc,חלל,ħalál,חָלָל הַיְּקוּם מָלֵא כּוֹכָבִים.,Outer space is full of stars.
 spaceship,B2,fem,חללית,ħalalít,,
 Spain,A1,fem,ספרד,sfarád,סְפָרַד נִמְצֵאת בְּאֵירוֹפָּה.,Spain is located in Europe.
 Spanish,A1,fem,ספרדית,sfaradít,הִיא לוֹמֶדֶת סְפָרַדִּית.,She is learning Spanish.
 spark,B2,masc,ניצוץ,nitsóts,,
 speak,A1,verb,דיבר,dibér,הוּא דִּיבֵּר עִם הַמּוֹרֶה.,He spoke with the teacher.
-speaker (machine),B1,masc,רמקול,ramkól,,
+speaker (machine),B1,masc,רמקול,ramkól,הָרַמְקוֹל הַחָדָשׁ נָתַן צְלִיל חָזָק וּבָרוּר.,The new speaker produced a loud and clear sound.
 "special, unique",A2,adjective,מיוחד,miyuħád,הַסֵּפֶר הַזֶּה מְיֻחָד מְאוֹד.,This book is very special.
-speed,B1,fem,מהירות,mhirút,,
-spelling,B1,masc,כתיב,ktív,,
+speed,B1,fem,מהירות,mhirút,הַמְּכוֹנִית נָסְעָה בְּמְהִירוּת גְּבוֹהָה.,The car was moving at high speed.
+spelling,B1,masc,כתיב,ktív,הַכְּתִיב הַנָּכוֹן חָשׁוּב בִּכְתִיבָה.,Correct spelling is important in writing.
 spinal column,B2,masc,עמוד השדרה,amúd hashidrá,,
 spine,B2,fem,שדרה,shidrá,,
 "spirit, ghost",B2,all,רוח,rúaħ,,
-spiritual,B1,adjective,רוחני,ruħaní,,
+spiritual,B1,adjective,רוחני,ruħaní,הַמּוּסִיקָה מַשְׁפִּיעָה עָלַי בָּאֹפֶן רוּחָנִי.,Music affects me in a spiritual way.
 split,B2,masc,פילוג,pilúg,,
 spoon,A2,fem,כף,kaf,הִיא שָׂמָה כַּף סֻכָּר בַּתֵּה.,She put a spoonful of sugar in the tea.
 sport,A1,masc,ספורט,sport,הִיא מְתַמֶּרֶן בְּסְפּוֹרְט כָּל בֹּקֶר.,She trains in sports every morning.
 springtime,A1,masc,אביב,avív,הָאָבִיב יָפֶה.,Spring is beautiful.
 "sprouting, growth",B2,fem,צמיחה,tsmiħá,,
-spy,B1,masc,מרגל,meragel,,
+spy,B1,masc,מרגל,meragel,הַמְּרַגֵּל עָבַד בִּשְׁבִיל הַמֶּמְשָׁלָה.,The spy worked for the government.
 spy,B2,verb,ריגל,rigél,,
-"square, plaza",B1,fem,כיכר,kikár,,
-squeeze,B1,verb,סחט,sakhát,,
+"square, plaza",B1,fem,כיכר,kikár,בְּתוֹךְ הַכִּכָּר נִמְצָאת מִזְרָקָה.,There is a fountain in the center of the plaza.
+squeeze,B1,verb,סחט,sakhát,הוּא סָחַט מִיץ תַּפּוּזִים בַּבֹּקֶר.,He squeezed orange juice in the morning.
 stab,C1,verb,דקר,dakár,,
 stadium,A2,masc,אצטדיון,itstadyón,הָאִיצְטַדְיוֹן מָלֵא בְּאוֹהֲדִים.,The stadium is full of fans.
-stage,B1,fem,בימה,bimá,,
+stage,B1,fem,בימה,bimá,הַזַּמָּר עָמַד עַל הַבִּימָה וְשָׁר.,The singer stood on the stage and sang.
 stain,C1,masc,רבב,r'váv,,
 "stair, step",B2,fem,מדרגה,madregá,,
 stamp,A2,masc,בול,bul,הַדּוֹאַר שָׁלַח לִי בּוּל חָדָשׁ.,The post office sent me a new stamp.
 star,A2,masc,כוכב,koħáv,הַכּוֹכָבִים זוֹהֲרִים בַּלַּיְלָה.,The stars shine at night.
-Star of David,B1,masc,מגן דוד,magén davíd,,
+Star of David,B1,masc,מגן דוד,magén davíd,מָגֵן דָּוִד הוּא סֵמֶל יְהוּדִי מֻכָּר.,The Star of David is a well-known Jewish symbol.
 starfish,B2,masc,כוכב ים,koħáv yam,,
-start,A2,verb,התחיל,hitħíl,הַשִּׁיעוּר הִתְחִיל בְּשָׁעָה עֶשֶׂר.,The lesson started at 10 o’clock.
 start,A1,fem,התחלה,hatkhalá,זֹאת הִתְחָלָה טוֹבָה.,This is a good start.
+start,A2,verb,התחיל,hitħíl,הַשִּׁיעוּר הִתְחִיל בְּשָׁעָה עֶשֶׂר.,The lesson started at 10 o’clock.
 static,B2,adjective,סטטי,státi,,
 static electricity,B2,masc,חשמל סטטי,khashmal stati,,
 station,A2,fem,תחנה,taħaná,הָאוֹטוֹבּוּס עָצַר בַּתַּחֲנָה.,The bus stopped at the station.
-status,B1,masc,סטטוס,státus,,
+status,B1,masc,סטטוס,státus,הַסְּטָטוּס שֶׁלּוֹ בַּחֶבְרָה גָּבוֹהַּ.,His status in society is high.
 "steam, vapor",B1,masc,אד,ed,אֵד עָלָה מֵהַכּוֹס הַחַמָּה.,Steam rose from the hot cup.
 steel,B2,fem,פלדה,pladá,,
 stock market,B2,masc,שוק מניות,shuk menayót,,
@@ -1725,23 +1749,23 @@ story,A1,masc,סיפור,sipúr,אֲנִי אוֹהֵב לִקְרוֹא סִי�
 "stove, oven",A1,masc,תנור,tanúr,הַתַּנּוּר חַם מְאוֹד.,The oven is very hot.
 "straight, straight away",A2,masc,ישר,yashár,הַקִּיר יָשָׁר וּבְלִי סֶדֶקִים.,The wall is straight and without cracks.
 "strain, effort",B2,masc,מאמץ,maamáts,,
-"strange, odd",B1,adjective,מוזר,muzár,,
+"strange, odd",B1,adjective,מוזר,muzár,הַסִּפּוּר שֶׁהוּא סִפֵּר לִי הָיָה מוּזָר מְאוֹד.,The story he told me was very strange.
 strategy,B2,fem,אסטרטגיה,astratégya,הַחֶבְרָה צְרִיכָה לִגְבּוֹשׁ אִסְטְרָטֶגְיָה לְעָתִיד.,The company needs to develop a strategy for the future.
 strawberry (common),A2,masc,תות שדה,tut sadé,הִיא אָכְלָה תּוּת שָׂדֶה מָתוֹק.,She ate a sweet strawberry.
-strawberry (rare),B1,masc,תות,tut,,
+strawberry (rare),B1,masc,תות,tut,הַתּוּת הַזֶּה מָתוֹק וְטָרִי.,This strawberry is sweet and fresh.
 "stream, faction",B2,masc,פלג,péleg,,
 street,A1,masc,רחוב,reħóv,הָרְחוֹב הַזֶּה רַחָב.,This street is wide.
 street corner,B2,fem,"קרן רחוב",kéren reħóv,,
-strength,B1,masc,חוזק,ħózek,,
-"string, wire, thread",B1,masc,חוט,ħut,,
+strength,B1,masc,חוזק,ħózek,הַבֵּנְיָן הַזֶּה נִבְנָה בְּחֹזֶק רַב.,This building was built with great strength.
+"string, wire, thread",B1,masc,חוט,ħut,חָשׁוּב לִשְׁמֹר עַל הַחוט הַדָּק.,It's important to keep the thin thread intact.
 strong,A1,adjective,חזק,ħazák,הַבַּחוּר הַזֶּה חָזָק מְאוֹד.,This guy is very strong.
-student,A2,masc,סטודנט,studént,הַסְּטוּדֶנְט לוֹמֵד לִמּוּדֵי הַנָּדָסָה.,The student studies engineering.
 student,A1,masc,תלמיד,talmíd,הַתַּלְמִיד כּוֹתֵב בַּמַּחְבֶּרֶת.,The student writes in the notebook.
+student,A2,masc,סטודנט,studént,הַסְּטוּדֶנְט לוֹמֵד לִמּוּדֵי הַנָּדָסָה.,The student studies engineering.
 "studio, ulpan, Hebrew school",B1,masc,אולפן,ulpán,הוּא לוֹמֵד עִבְרִית בָּאוּלְפָּן בְּתֵל אָבִיב.,He is learning Hebrew at the ulpan in Tel Aviv.
 study of fish,C1,masc,"חקר הדגים",ħéker hadagím,,
 "study, investigate",B2,verb,חקר,ħakár,,
 "study, investigation",B2,masc,חקר,ħéker,,
-"study, studying",B1,masc,לימוד,limúd,,
+"study, studying",B1,masc,לימוד,limúd,הַלִּמּוּד בְּאֻנִּיבֶרְסִיטָה מְעַנְיֵן.,Studying at the university is interesting.
 stumbling stone,C1,fem,אבן נגף,éven négef,,
 subject,A2,masc,מקצוע,miktsóa,הַנּוֹשֵׂא בַּשִּׂיחָה הָיָה מְעַנְיֵן.,The subject of the conversation was interesting.
 subject,A2,masc,נושא,nosé,הַנּוֹשֵׂא הַיּוֹם הוּא חִנּוּךְ.,Today's subject is education.
@@ -1755,44 +1779,44 @@ summer,A1,masc,קיץ,káyits,בַּקַּיִץ הַיָּם חָם.,The sea is
 sun,A1,fem,שמש,shémesh,הַשֶּׁמֶשׁ זוֹרַחַת בַּבֹּקֶר.,The sun rises in the morning.
 Sunday,A1,masc,יום ראשון,yom rishón,הַיּוֹם יוֹם רִאשׁוֹן.,Today is Sunday.
 "sunny, solar",B2,adjective,שמשי,shimshí,,
-supreme,B1,masc,עליון,elyón,,
-surface,B1,masc,משטח,mishtáħ,,
-surfboard,B1,masc,גלשן,galshán,,
+supreme,B1,masc,עליון,elyón,הַבֵּית מִשְׁפָּט הָעֶלְיוֹן קִבֵּל אֶת הַחֲלָטָתוֹ.,The Supreme Court has made its decision.
+surface,B1,masc,משטח,mishtáħ,הַמִּשְׁטָּח צָרִיךְ לִהְיוֹת חָלָק וְיָשָׁר.,The surface needs to be smooth and straight.
+surfboard,B1,masc,גלשן,galshán,הַיֶּלֶד שָׁט עַל הַגַּלְשָׁן בַּיָּם.,The boy surfed on the surfboard in the sea.
 "surgeon, analyst",B2,masc,מנתח,mnatéaħ,,
 surgery,B2,fem,כירורגיה,ħirurgya,,
 "surgery, analysis",B2,masc,ניתוח,nitúaħ,,
 surgical,B2,adjective,כירורגי,ħirurgi,,
-surprise,B1,verb,הפתיע,hiftía,,
-surprise,B1,fem,הפתעה,haftaá,,
+surprise,B1,verb,הפתיע,hiftía,הַחָבֵר שֶׁלִּי הִפְתִּיעַ אוֹתִי בְּמַתָּנָה.,My friend surprised me with a gift.
+surprise,B1,fem,הפתעה,haftaá,הַהַפְתָּעָה הָיְתָה גְּדוֹלָה מְאוֹד.,The surprise was very big.
 surprise party,B2,fem,מסיבת הפתעה,msibát haftaá,,
 survival,B2,fem,הישרדות,hisardút,,
-survive,B1,verb,שורד‎,sarád,,
+survive,B1,verb,שורד‎,sarád,הַחַיָּל שָׂרַד אֶת הַמִּלְחָמָה הַקָּשָׁה.,The soldier survived the tough war.
 sushi,A1,masc,סושי,súshi,אֲנַחְנוּ אוֹכְלִים סוּשִׁי בַּמִּסְעָדָה.,We are eating sushi at the restaurant.
 sweet,A1,adjective,מתוק,matók,הֶעָגָה הַזֹּאת מְתוּקָה.,This cake is sweet.
 swim,A2,verb,שחה,saħá,הַיַּלְדָּה שָׂחֲתָה בַּבְּרֵכָה.,The girl swam in the pool.
 swimming,A2,fem,שחיה,sħiyá,הַשְּׁחִיָּה הִיא סְפּוֹרְט בָּרִיא.,Swimming is a healthy sport.
 swimsuit,A2,masc,בגד ים,béged yam,אֲנִי קָנִיתִי בֶּגֶד יָם חָדָשׁ.,I bought a new swimsuit.
-sword,B1,fem,חרב,ħérev,,
+sword,B1,fem,חרב,ħérev,הָחֶרֶב הָיְתָה חַדָּה וּמְסֻכֶּנֶת.,The sword was sharp and dangerous.
 synagogue,A1,masc,בית כנסת,béit knéset,אֲנַחְנוּ הוֹלְכִים לְבֵית הַכְּנֶסֶת בַּשַּׁבָּת.,We go to the synagogue on Shabbat.
 synchronize,B2,verb,סינכרן,sinħrén,,
-"system, method",B1,fem,שיטה,shitá,,
-"system, set",B1,fem,מערכת,maaréħet,,
-table,B1,fem,טבלה,tavlá,,
+"system, method",B1,fem,שיטה,shitá,זֹאת שִׁיטָה חֲדָשָׁה לְלִמּוּד עִבְרִית.,This is a new method for learning Hebrew.
+"system, set",B1,fem,מערכת,maaréħet,הַמַּעֲרֶכֶת בַּמַּחְשֵׁב חֲשׁוּבָה לְהַפְעָלַת הַתָּכְנָה.,The system in the computer is important for running the software.
 table,A1,masc,שולחן,shulħán,הַשּׁוּלְחָן בַּמִּטְבָּח גָּדוֹל.,The table in the kitchen is big.
+table,B1,fem,טבלה,tavlá,הַטַּבְלָה הַזֹּאת מַרְאֶה אֶת הַנְּתוּנִים.,This table shows the data.
 take,A1,verb,לקח,lakákh,הִיא לָקְחָה עוּגִיָּה מֵהַשֻּׁלְחָן.,She took a cookie from the table.
-"take down, download",B1,verb,הוריד,horíd,,
-"take part, participate",B1,verb,לקח חלק,lakákh khélek,,
+"take down, download",B1,verb,הוריד,horíd,הוּא הוֹרִיד אֶת הַתְּמוּנָה מֵהָאִינְטֶרְנֵט.,He downloaded the picture from the internet.
+"take part, participate",B1,verb,לקח חלק,lakákh khélek,הוּא לָקַח חֵלֶק בְּפְרוֹיֶּקְט.,He took part in the project.
 takeout (rare),C1,masc,קח ולך,kakh valékh,,
-talent,B1,masc,כישרון,kisharón,,
+talent,B1,masc,כישרון,kisharón,הַיֶּלֶד מָלֵא כִּשְׁרוֹן בַּמּוּסִיקָה.,The child is very talented in music.
 "tall, high",A1,adjective,גבוה,gavóa,הַמִּגְדָּל גָּבוֹהַּ מְאוֹד.,The tower is very tall.
 "tallness, height",A2,masc,גובה,góva,הַגֹּבַהּ שֶׁל הַבִּנְיָן הַזֶּה מֵאָה מֶטֶר.,The height of this building is one hundred meters.
-tank,B1,masc,טנק,tank,,
+tank,B1,masc,טנק,tank,הַטַּנְק הִסְתּוֹבֵב בַּשָּׂדֶה.,The tank moved across the field.
 taste,A2,masc,טעם,táam,לַלֶּחֶם הַזֶּה יֵשׁ טַעַם טוֹב.,This bread has a good taste.
 "tasty, delicious",A1,adjective,טעים,taím,הָאוֹכֶל הַזֶּה טָעִים מְאוֹד.,This food is very tasty.
-tax,B1,masc,מס,mas,,
+tax,B1,masc,מס,mas,כָּל אֶזְרָח חַיָּב לְשַׁלֵּם מַס לַמְּדִינָה.,Every citizen must pay tax to the state.
 taxi,A2,fem,מונית,monít,הִיא קָרְאָה מוֹנִית לִקְחוֹת אוֹתָנוּ לַשָּׂדֶה הַתְּעוּפָה.,She called a taxi to take us to the airport.
 tea,A1,masc,תה,te,אֲנִי שׁוֹתֶה תֵּה בַּבֹּקֶר.,I drink tea in the morning.
-teach,B1,verb,לימד,liméd,,
+teach,B1,verb,לימד,liméd,הַמּוֹרֶה לִמֵּד אֶת הַתַּלְמִידִים.,The teacher taught the students.
 teacher,A1,masc,מורה,moré,הַמּוֹרֶה מְלַמֵּד עִבְרִית.,The teacher teaches Hebrew.
 "teaching, Talmud",B2,masc,תלמוד,talmúd,,
 teeth,A1,fem,שיניים,shináyim,הַשִּׁנַּיִם שֶׁלִּי לְבָנוֹת.,My teeth are white.
@@ -1800,9 +1824,10 @@ teeth,A1,fem,שיניים,shináyim,הַשִּׁנַּיִם שֶׁלִּי לְ
 "television, TV",A1,fem,טלוויזיה,televízya,אֲנִי רוֹאֶה טֵלֶוִיזְיָה בַּסָּלוֹן.,I watch television in the living room.
 "telling, Haggadah",B2,fem,הגדה,hagadá,,
 temperament,B2,masc,מזג,mézeg,,
-temperature,B1,fem,טמפרטורה,temperatúra,,
+temperature,B1,fem,טמפרטורה,temperatúra,הַטֶּמְפֶּרָטוּרָה בַּחוּץ יוֹרֶדֶת.,The temperature outside is dropping.
+Temple Mount,A2,masc,הר הבית,har habáyit,אֲנַחְנוּ מְבַקְּרִים בְּהַר הַבַּיִת בִּירוּשָׁלַיִם.,We're visiting the Temple Mount in Jerusalem.
 ten thousand,C1,fem,רבבה,r'vavá,,
-territory,B1,fem,טריטוריה,tritoria,,
+territory,B1,fem,טריטוריה,tritoria,הַטֶּרִיטוֹרְיָה הַזֹּאת שַׁיֶּכֶת לָאֻמָּה.,This territory belongs to the nation.
 "terror, horror",B2,fem,אימה,éima,הַסֶּרֶט הַזֶּה מָלֵא בְּאֵימָה וּמוֹתֵחַ.,This movie is full of horror and suspense.
 "terrorist, saboteur",B2,masc,מחבל,mħabél,,
 test,A2,masc,מבחן,mivkhán,מָחָר יֵשׁ לִי מִבְחָן בְּמָתֶמָטִיקָה.,Tomorrow I have a test in mathematics.
@@ -1823,14 +1848,14 @@ there's,A1,phrase,יש,yesh,יֵשׁ לִי כֶּלֶב גָּדוֹל.,I have 
 there's no,A1,phrase,אין,ein,אֵין חָלָב בַּמְּקָרֵר.,There is no milk in the fridge.
 therefore,B2,,משמע,mashmá,,
 they,A1,masc,הם,hem,הֵם גָּרִים בַּכְּפָר.,They live in the village.
-thief,B1,masc,גנב,ganáv,,
+thief,B1,masc,גנב,ganáv,הַגַּנָּב נִמְלַט מִן הַחֲנוּת.,The thief escaped from the store.
 thimble,C1,masc,אצבעון,etsbaón,,
-"thin, skinny",B1,adjective,דק,dak,,
+"thin, skinny",B1,adjective,דק,dak,הַנְּיַר הַזֶּה דַּק מְאוֹד.,This paper is very thin.
 "thing, item",A1,masc,דבר,davár,יֵשׁ לִי דָּבָר חָשׁוּב לוֹמַר.,I have an important thing to say.
 think,A2,verb,חשב,ħasháv,הוּא חָשַׁב עַל הַתַּשּׁוּבָה.,He thought about the answer.
 third,A1,masc,שלישי,shlishí,הַיּוֹם הַשְּׁלִישִׁי הוּא יוֹם אֶרֹךְ.,Tuesday is a long day.
 this,A1,masc,זה,ze,זֶה הַסֵּפֶר שֶׁלִּי.,This is my book.
-thought,B1,fem,מחשבה,maħshavá,,
+thought,B1,fem,מחשבה,maħshavá,הָיְתָה לִי מַחְשָׁבָה מְיֻחֶדֶת עַל הַנּוֹשֵׂא.,I had a special thought about the topic.
 thousand,A1,masc,אלף,élef,יֵשׁ אֶלֶף אֲנָשִׁים בָּעִיר.,There are a thousand people in the city.
 threat,B2,masc,איום,iyum,,
 three,A1,fem,שלוש,shalósh,יֵשׁ לָנוּ שָׁלוֹשׁ כּוֹסוֹת.,We have three cups.
@@ -1839,7 +1864,7 @@ throne,B2,masc,כיסא מלכות,kisé malħút,,
 through,A1,preposition,דרך,déreħ,אֲנַחְנוּ נִכְנָסִים דֶּרֶךְ הַחַלּוֹן.,We are entering through the window.
 thunderclap,A2,masc,רעם,ráam,אַחֲרֵי הַבָּרָק שָׁמַעְנוּ רַעַם חָזָק.,"After the lightning, we heard a loud thunderclap."
 Thursday,A1,masc,יום חמישי,yom ħamishí,מָחָר יוֹם חֲמִישִּׁי.,Tomorrow is Thursday.
-"time, period, era",B1,fem,עת,et,,
+"time, period, era",B1,fem,עת,et,"בַּעֵת הַהִיא, הַמֶּלֶךְ מָלַךְ עַל הָאָרֶץ.","At that time, the king ruled over the land."
 "time, tense",A1,masc,זמן,zman,אֵין לִי זְמַן.,I don’t have time.
 tired,A1,adjective,עייף,ayef,אֲנִי מַרְגִּישׁ עָיֵף אַחֲרֵי הָעֲבוֹדָה.,I feel tired after work.
 to,A1,,ל,l,אֲנִי הוֹלֵךְ לַסֵּפֶרְיָה.,I am going to the library.
@@ -1856,23 +1881,23 @@ too,A2,,מדי,midái,זֶה יָקָר מִדַּי לִי.,This is too expensi
 too much,A2,,יותר מדי,yotér midái,אַתָּה אוֹכֵל יָתֵר מִדַּי מַמְתַּקִּים.,You eat too much candy.
 tooth,A1,fem,שן,shen,הַשֵּׁן כּוֹאֶבֶת לִי.,My tooth hurts.
 "Torah, teaching",A2,fem,תורה,torá,הַתּוֹרָה מָלֵאָה בְּסִפּוּרִים.,The Torah is full of stories.
-tornado,B1,masc,טורנדו,tornádo,,
-touch,B2,masc,מגע,magá,,
+tornado,B1,masc,טורנדו,tornádo,הַטּוֹרְנָדוֹ הָיָה חָזָק וּמַסְכִּן.,The tornado was strong and dangerous.
 touch,A2,verb,נגע,nagá,הַיֶּלֶד נָגַע בַּחָתוּל.,The child touched the cat.
+touch,B2,masc,מגע,magá,,
 touch combat,B2,masc,קרב מגע,krav magá,,
-tower,B1,masc,מגדל,migdál,,
+tower,B1,masc,מגדל,migdál,הַמִּגְדָּל הַזֶּה גָּבוֹהַּ מְאוֹד.,This tower is very tall.
 tradition,A2,fem,מסורת,masóret,הַמַּסֹּרֶת מַעֲבִירָה סִפּוּרִים דּוֹר לְדוֹר.,The tradition passes stories from generation to generation.
-traditional,B1,adjective,מסורתי,masortí,,
+traditional,B1,adjective,מסורתי,masortí,הַחֲתוּנָה הָיְתָה בְּאֹפֶן מָסוֹרְתִּי.,The wedding was conducted in a traditional way.
 traffic light,A2,masc,רמזור,ramzór,"הָרַמְזוֹר יָרוֹק, אָנוּ יְכוֹלִים לַעֲבֹר.","The traffic light is green, we can cross."
 train,A1,fem,רכבת,rakévet,הָרַכֶּבֶת מַגִּיעָה בְּשֵׁשׁ.,The train arrives at six.
 train station,A2,fem,תחנת רכבת,taħanát rakévet,תַּחֲנַת הָרַכֶּבֶת גָּדוֹלָה וּמְלֵאָה בָּאֲנָשִׁים.,The train station is large and full of people.
 tram,B2,fem,חשמלית,ħashmalít,,
 transcription,B2,masc,תעתיק,tatík,,
-transit,B1,fem,תחבורה,taħburá,,
-transition,B1,masc,מעבר,maavár,,
-translation (idea),B1,masc,תרגום,tirgúm,,
-translation (result),B1,masc,תרגום,targúm,,
-transparent,B1,adjective,שקוף,shakúf,,
+transit,B1,fem,תחבורה,taħburá,הַתַּחְבּוּרָה הַצִּבּוּרִית בָּעִיר מְאוֹרְגֶּנֶת טוֹב.,Public transit in the city is well-organized.
+transition,B1,masc,מעבר,maavár,הַמַּעֲבָר מִבֵּית הַסֵּפֶר לָאוּנִיבֶרְסִיטָה הוּא אֵתְגָּר.,The transition from school to university is a challenge.
+translation (idea),B1,masc,תרגום,tirgúm,הַתִּרְגּוּם שֶׁל הָרַעְיוֹן לֹא הָיָה בָּרוּר לִי.,The translation of the idea was not clear to me.
+translation (result),B1,masc,תרגום,targúm,הַתִּרְגּוּם לְאַנְגְּלִית נַעֲשָׂה בִּזְהִירוּת.,The translation into English was done carefully.
+transparent,B1,adjective,שקוף,shakúf,הַחַלּוֹן שֶׁלָּנוּ כִּמְעַט שָׁקוּף.,Our window is almost transparent.
 transparent slide,B2,masc,שקף,shékef,,
 "trash, garbage",A2,masc,זבל,zével,תַּשְׁלִיךְ אֶת הַזֶּבֶל לַפַּח.,Throw the garbage into the bin.
 trauma,B2,fem,חבלה,ħavalá,,
@@ -1880,28 +1905,28 @@ travel,A1,verb,נסע,nasá,הוּא נָסַע לְתֵל אָבִיב.,He trav
 traveler,A2,masc,נוסע,noséa,הַנּוֹסֵעַ יָשַׁב לְיַד הַחַלּוֹן.,The traveler sat by the window.
 treasure,B1,masc,אוצר,otsár,הַיָּם מַכְסִיק בְּתוֹכוֹ אוֹצָרוֹת רַבִּים.,The sea holds many treasures within it.
 "tree, wood",A1,masc,עץ,ets,הָעֵץ גָּדוֹל וּמַשִּׁיר עָלִים.,The tree is big and sheds its leaves.
-"trial, law",B1,masc,משפט,mishpát,,
+"trial, law",B1,masc,משפט,mishpát,הַמִּשְׁפָּט הִכְרִיעַ בַּתִּיק.,The trial determined the case.
 "trip, journey",A2,fem,נסיעה,nsiá,הַנְּסִיעָה לְתֵל אָבִיב לָקְחָה שָׁעָה.,The journey to Tel Aviv took an hour.
 truck,A2,fem,משאית,masaít,הַמַּשָּׂאִית עוֹמֶדֶת בַּחוּצָה.,The truck is standing outside.
 "true, truthful",A2,adjective,אמיתי,amití,זֶה סִפּוּר אֲמִתִּי וְלֹא בְּדִיּוֹן.,"This is a true story, not fiction."
 truly,A1,verb,אמן,amén,הוּא אָמַר אָמֵן אַחֲרֵי הַתְּפִלָּה.,He said amen after the prayer.
 truth,A2,fem,אמת,emét,הָאֱמֶת תָּמִיד חֲשׁוּבָה.,The truth is always important.
 Tuesday,A1,masc,יום שלישי,yom shlishí,בַּיוֹם שְׁלִישִּׁי אֲנִי לוֹמֵד עִבְרִית.,"On Tuesday, I study Hebrew."
-tune,B1,fem,נעימה,neimá,,
+tune,B1,fem,נעימה,neimá,הַנְּעִימָה הָיְתָה רַגְעָה וּמַרְגִּיעָה.,The tune was calm and soothing.
 "turn, turn around",B2,,הסתובב,histovév,,
 turtle,A2,masc,צב,tsav,הַצָּב זָז לְאַט מְאוֹד.,The turtle moves very slowly.
 two,A1,masc,שניים,shnáyim,יֵשׁ לָנוּ שְׁנַיִם כִּסְאוֹת בַּחֶדֶר.,We have two chairs in the room.
 two,A1,fem,שתיים,shtáyim,לָנוּ יֵשׁ שְׁתַּיִם כּוֹסוֹת.,We have two cups.
 "type, model",B2,masc,טיפוס,típus,,
 typewriter,B2,fem,מכונת כתיבה,meħonát ktivá,,
-ugly,B1,adjective,מכוער,mħoár,,
+ugly,B1,adjective,מכוער,mħoár,הַבִּנְיָן הַזֶּה יָשָׁן וּמְכֹעָר.,This building is old and ugly.
 ultimate,B2,adjective,אולטימטיבי,ultimatívi,,
 umbrella,A2,fem,מטריה,mitriyá,הִיא לָקְחָה מִטְרִיָּה כִּי יֵשׁ גֶּשֶׁם.,She took an umbrella because it's raining.
 unambiguous,B2,adjective,חד משמעי,ħad mashmaí,,
 understand,A1,verb,הבין,hevín,הוּא לֹא הֵבִין אוֹתִי.,He didn’t understand me.
 understanding,A2,fem,הבנה,havaná,"הַהֲבָנָה שֶׁלִּי טוֹבָה, אֲבָל קָשָׁה.","My understanding is good, but difficult."
 unicycle,B2,masc,חד אופן,ħad ófen,,
-unit,B1,fem,יחידה,yħidá,,
+unit,B1,fem,יחידה,yħidá,הַיְּחִידָה הַזֹּאת מְיֻחֶדֶת בְּמִינָהּ.,This unit is unique.
 united,B2,adjective,מאוחד,miuħád,,
 United Nations,B2,fem,האומות המאוחדות,haumót hameuħadót,,
 United States,A1,fem,ארצות הברית,artsót habrít,אַרְצוֹת הַבְּרִית הִיא מְדִינָה גְּדוֹלָה.,The United States is a big country.
@@ -1909,17 +1934,18 @@ unity,B1,fem,אחדות,aħdút,אַחְדוּת הַעַם חֲשׁוּבָה �
 university,A2,fem,אוניברסיטה,univérsita,אֲנִי לוֹמֵד בָּאוּנִיבֶרְסִיטָה בִּירוּשָׁלַיִם.,I study at a university in Jerusalem.
 unprecedented,B2,adjective,חסר תקדים,khasár takdím,,
 "until, to, by",A1,preposition,עד,ad,אֲנַחְנוּ מְחַכִּים עַד שֶׁיָּבוֹא.,We are waiting until he comes.
-urban,B1,adjective,עירוני,ironí,,
+urban,B1,adjective,עירוני,ironí,הַיִּשּׁוּב הָעִירוֹנִי גָּדֵל מִיּוֹם לְיוֹם.,Urban settlement is growing day by day.
+urge,B2,masc,דחף,dákhaf,,
 "US, the",A2,fem,ארה״ב,"arhá""v",בְּאַרְה״ב יֵשׁ הַרְבֵּה עֵרִים גְּדוֹלוֹת.,There are many big cities in the US.
 use,A2,verb,השתמש,hishtamésh,הַיֶּלֶד הִשְׁתַּמֵּשׁ בְּעִפָּרוֹן.,The boy used a pencil.
 use,A2,masc,שימוש,shimúsh,הַשִּׁמּוּשׁ בַּמְּחַשֵּׁב קַל.,The use of the computer is easy.
-useful,B1,adjective,שימושי,shimushí,,
-user,B1,masc,משתמש,mishtamésh,,
-username,B1,masc,שם משתמש,shem mishtamésh,,
+useful,B1,adjective,שימושי,shimushí,הַתָּכְנָה הַזֹּאת מְאוֹד שִׁמּוּשִׁית לַעֲבוֹדָה.,This software is very useful for work.
+user,B1,masc,משתמש,mishtamésh,הַמִּשְׁתַּמֵּשׁ צָרִיךְ לְהִזָּהֵר בְּהַזִּינוּת מֵידָע אִישִׁי.,The user must be careful when entering personal information.
+username,B1,masc,שם משתמש,shem mishtamésh,הַסִּיסְמָה צְרִיכָה לְהַכִּיל שֵׁם מִשְׁתַּמֵּשׁ וְסִימָנִים מְיֻחָדִים.,The password must contain a username and special characters.
 "usual, normal, ordinary",A2,adjective,רגיל,ragíl,זֶה יוֹם רָגִיל בַּעֲבוֹדָה.,This is a normal day at work.
 vacation,A2,fem,חופשה,ħufshá,בַּקַּיִץ אֲנַחְנוּ הוֹלְכִים לַחֻפְשָׁה.,"In the summer, we go on vacation."
-valley,B2,masc,גיא,géi,הַגַּיא הַזֶּה מָלֵא בִּצְמִיחָה.,This valley is full of vegetation.
 valley,A2,masc,עמק,émek,הָעֵמֶק מָלֵא בִּשְׁדֵי חִטָּה.,The valley is full of wheat fields.
+valley,B2,masc,גיא,géi,הַגַּיא הַזֶּה מָלֵא בִּצְמִיחָה.,This valley is full of vegetation.
 vegan,B2,adjective,טבעוני,tivoní,,
 vegetable,A2,masc,ירק,yarák,הַיָּרָק הָזֶה טָרִי וּבָרִיא.,This vegetable is fresh and healthy.
 vegetarian,A2,adjective,צמחוני,tsimħoní,הִיא אוֹכֶלֶת רַק אוֹכֶל צִמְחוֹנִי.,She eats only vegetarian food.
@@ -1937,19 +1963,19 @@ vine,B2,fem,גפן,géfen,הַגֶּפֶן מְפַרְסֶמֶת עֲנָבִי
 vinegar,A2,masc,חומץ,ħómets,הֵם שָׂמוּ חֹמֶץ בַּסָּלָט.,They put vinegar in the salad.
 violence,B1,fem,אלימות,alimút,הָאַלִּימוּת בָּעוֹלָם צְרִיכָה לְהִפְסֵק.,Violence in the world needs to stop.
 violent,B1,adjective,אלים,alím,הָאוֹנוֹת שֶׁלּוֹ הָיוּ אַלִּימוֹת מְאוֹד.,His actions were very violent.
-virgin,C1,masc,בתול,batúl,,
 virgin,B2,fem,בתולה,betulá,הַבְּתוּלָה חָלְמָה עַל אֲהָבָה רִאשׁוֹנָה.,The virgin dreamed of her first love.
+virgin,C1,masc,בתול,batúl,,
 virus,B2,masc,נגיף,nagíf,,
 "visa, permit",B1,fem,אשרה,ashrá,אַתָּה צָרִיךְ אַשְׁרָה כְּדֵי לָבוֹא לְכָאן.,You need a visa to come here.
 "vision, goal",B2,masc,חזון,ħazón,,
 void,C1,masc,בוהו,bóhu,,
-volcano,B1,masc,הר געש,har gáash,,
-"wage, fee",B1,masc,שכר,saħár,,
+volcano,B1,masc,הר געש,har gáash,הַר הַגַּעַשׁ פָּלַט לָבָה רוֹתַחַת.,The volcano erupted with hot lava.
+"wage, fee",B1,masc,שכר,saħár,הַשָּׂכָר שֶׁלִּי עָלָה אַחֲרֵי שָׁנָה בַּחֶבְרָה.,My wage increased after a year at the company.
 "walk, hike (noun)",A2,masc,טיול,tiyúl,בְּסוֹף הַשָּׁבוּעַ עָשִׂינוּ טִיּוּל בַּיַּעַר.,"On the weekend, we went on a hike in the forest."
-wall (formal),B1,masc,כותל,kótel,,
+wall (formal),B1,masc,כותל,kótel,הַכֹּתֶל הַמַּעֲרָבִי הוּא מָקוֹם מְיֻחָד.,The Western Wall is a special place.
 wall (general),A1,masc,קיר,kir,הַקִּיר לָבָן וְנָקִי.,The wall is white and clean.
 wallet,A2,masc,ארנק,arnák,הַאֲרְנָק שֶׁלִּי אָבַד בַּקָּנְיוֹן.,My wallet was lost in the mall.
-wander,B1,verb,שוטט,shotet,,
+wander,B1,verb,שוטט,shotet,הַיֶּלֶד שׁוֹטֵט בָּרְחוֹבוֹת לְלֹא מַטָּרָה.,The child wandered through the streets aimlessly.
 war,A2,fem,מלחמה,milħamá,הַמִּלְחָמָה הָיְתָה אָרוּכָּה וְקָשָׁה.,The war was long and difficult.
 war crime,B2,masc,פשע מלחמה,pésha milħamá,,
 washing,B2,fem,רחצה,raħatsá,,
@@ -1966,7 +1992,7 @@ weapon,B2,masc,כלי זין,kli záyin,,
 "wear, put on (a hat)",B2,verb,חבש,ħavásh,,
 "wear, put on (footwear)",A2,verb,נעל,naál,הוּא נָעַל נַעֲלַיִם חֲדָשׁוֹת.,He put on new shoes.
 "wear, put on (glasses)",B2,verb,הרכיב,hirkív,,
-"wear, put on (jewelry)",B1,verb,ענד,anád,,
+"wear, put on (jewelry)",B1,verb,ענד,anád,הִיא עֲנָדָה עֲנָק מַתָּנָה מֵאִמָּהּ.,She wore a necklace that was a gift from her mother.
 weather,A2,masc,מזג אוויר,mézeg avír,הַמֶּזֶג אֲווִיר נָעִים הַיּוֹם.,The weather is nice today.
 wedding,A1,fem,חתונה,khatuná,הַחֲתוּנָּה הָיְתָה יָפָה מְאוֹד.,The wedding was very beautiful.
 Wednesday,A1,masc,יום רביעי,yom rvií,אֶתְמוֹל הָיָה יוֹם רְבִיעִי.,Yesterday was Wednesday.
@@ -1994,8 +2020,8 @@ white noise,B2,masc,רעש לבן,ráash laván,,
 who,A1,,מי,mi,מִי אַתָּה?,Who are you?
 why,A1,,למה,láma,לָמָּה אַתָּה עָצוּב?,Why are you sad?
 wide,A2,adjective,רחב,raħáv,הָרְחוֹב רָחָב וְיֵשׁ מְקוֹם לְרַכָּבוֹת וְאוֹפַנִּים.,"The street is wide, with space for cars and bicycles."
-width,B1,masc,רוחב,róħav,,
-wild animal,B1,fem,חיית בר,ħayát bár,,
+width,B1,masc,רוחב,róħav,רֹחַב הָרְחוֹב מַסְפִּיק לִשְׁנֵי כְּבִישִׁים.,The width of the street is enough for two lanes.
+wild animal,B1,fem,חיית בר,ħayát bár,חַיַּת הַבַּר רָצָה בַּיַּעַר.,The wild animal ran in the forest.
 wind,A1,all,רוח,rúaħ,הָרוּחַ נוֹשֶׁבֶת בַּחוּץ.,The wind is blowing outside.
 wind instrument,B2,masc,כלי נשיפה,kli nshifá,,
 windmill,B2,fem,טחנת רוח,taħanát rúaħ,,
@@ -2005,7 +2031,7 @@ wing,A2,fem,כנף,kanáf,לַצִּפּׂור יֵשׁ כְּנָפַיִם ג�
 winter,A1,masc,חורף,ħóref,בַּחוֹרֶף קָר וְיוֹרֵד גֶּשֶׁם.,"In the winter, it’s cold and it rains."
 wireless,B1,adjective,אלחוטי,alkhutí,הַקֶּשֶׁר בֵּין הַמַּחְשֵׁב לָרֶשֶׁת אֵלְחוּטִי.,The connection between the computer and the network is wireless.
 wiring,B2,fem,חיווט,ħivút,,
-wisdom,B1,fem,חוכמה,ħoħmá,,
+wisdom,B1,fem,חוכמה,ħoħmá,הַזָּקֵן דִּבֵּר בְּחָכְמָה רַבָּה.,The old man spoke with great wisdom.
 wise,A1,masc,חכם,ħaħám,סַבָּא שֶׁלִּי חָכָם מְאוֹד.,My grandfather is very wise.
 witch,B2,fem,מכשפה,mħashefá,,
 witch hunt,B2,masc,ציד מכשפות,tsáyid mħashefá,,
@@ -2014,25 +2040,25 @@ without,A1,preposition,בלי,bli,אֲנִי רוֹצֶה קָפֶה בְּלִ�
 without,A2,preposition,בלעדי,bil'adéi,בִּלְעָדֶיךָ לֹא יָכֹלְתִּי לַעֲשׂוֹת אֶת זֶה.,"Without you, I couldn't have done this."
 wolf,A1,masc,זאב,z'év,הַזְּאֵב רָץ בַּיַּעַר.,The wolf runs in the forest.
 "woman, wife",A1,fem,אשה,ishá,הִיא אִשָּׁה חֲכָמָה.,She is a smart woman.
-"wonder, miracle",B1,masc,פלא,péle,,
+"wonder, miracle",B1,masc,פלא,péle,זֶה הָיָה פֶּלֶא שֶׁהִיא נִצְּלָה מֵהַתְּאוּנָה.,It was a miracle that she survived the accident.
 wonderful,A2,adjective,נפלא,niflá,הַסֵּפֶר הַזֶּה נִפְלָא!,This book is wonderful!
-wool,B1,masc,צמר,tsémer,,
+wool,B1,masc,צמר,tsémer,הַסְּוֶדֶר הַזֶּה עָשׂוּי מִצֶּמֶר רַךְ.,This sweater is made of soft wool.
 word,A1,fem,מילה,milá,הַמִּילָּה הַזֹּאת חֲדָשָׁה לִי.,This word is new to me.
 work,A1,verb,עבד,avád,הָאִישׁ עָבַד כָּל הַיּוֹם.,The man worked all day.
 "work, job",A1,fem,עבודה‎,avodá,הִיא אֲהֵבָה אֶת הָעֲבוֹדָה שֶׁלָּה.,She loved her job.
-worker (blue collar),B1,masc,פועל,po'él,,
+worker (blue collar),B1,masc,פועל,po'él,הַפּוֹעֵל עוֹבֵד בַּבִּנְיָן כָּל הַיּוֹם.,The worker labors in construction all day.
 worker (general),A2,masc,עובד,ovéd,הָעוֹבֵד בַּמִּשְׂרָד עָיֵף מְאוֹד.,The worker in the office is very tired.
 world,A1,masc,עולם,olám,הָעוֹלָם גָּדוֹל וּמָלֵא דְּבָרִים מְיֻחָדִים.,The world is big and full of special things.
-"world, global",B1,adjective,עולמי,olamí,,
+"world, global",B1,adjective,עולמי,olamí,הַיּוֹם הָעוֹלָמִי לְסוֹבֵלִים מִמַּחֲלָה מְצוֹיָן בְּשִׁדּוּרִים חַיִּים.,World Day for Disease Awareness is broadcast live.
 worm,A2,fem,תולעת,toláat,בַּגַּן הָיוּ הַרְבֵּה תּוֹלָעִים.,There were many worms in the garden.
 worry,A2,fem,דאגה,d'agá,"לִפְנֵי הַמִּבְחָן, הָאִשָּׁה חוֹשֶׁבֶת עַל הַדָּאַגָה שֶׁלָּהּ.","Before the exam, the woman is thinking about her worry."
 worry (intransitive),A2,verb,דאג,da'ág,הַתַּלְמִיד דָאג לְעֵת הַמִּבְחָן.,The student worried about the exam.
-worry (transitive),B1,verb,הדאיג,hid'íg,,
+worry (transitive),B1,verb,הדאיג,hid'íg,הַמִּכְתָּב שֶׁלָּהּ הִדְאִיג אוֹתִי.,Her letter worried me.
 worrying,B2,adjective,מדאיג,mad'íg,,
 worsen,C1,verb,הרע,heréa,,
 write,A1,verb,כתב,katáv,אֲנִי כָּתַבְתִּי מִכְתָּב.,I wrote a letter.
-"write down, note",B1,verb,רשם,rashám,,
-writer,B1,masc,כותב,kotév,,
+"write down, note",B1,verb,רשם,rashám,הַמּוֹרֶה רָשַׁם אֶת שְׁמוֹ שֶׁל הַתַּלְמִיד בַּפְּנְקָן.,The teacher wrote down the student’s name in the notebook.
+writer,B1,masc,כותב,kotév,הַכּוֹתֵב הִצִּיג אֶת סִפְרוֹ הֶחָדָשׁ.,The writer presented his new book.
 writing,B2,fem,כתיבה,ktivá,,
 written,A2,adjective,כתוב,katúv,"עַל הַדֶּלֶת כָּתוּב ""לְהִזָּהֵר"".","On the door, it is written ""Be careful""."
 year,A1,fem,שנה,shaná,הַשָּׁנָה הָיְתָה מְיֻחֶדֶת.,This year was special.
@@ -2048,7 +2074,7 @@ young,A1,adjective,צעיר,tsaír,הַיֶּלֶד עוֹד צָעִיר מְא
 your,A1,adjective,שלך,shelħá,הַתִּיק הַזֶּה שֶׁלְּךָ אוֹ שֶׁלָּךְ?,Is this bag yours?
 yourself,A2,fem,עצמך,atsméħ,אַתְּ צְרִיכָה לִלְמֹד לְהִסְתַּדֵּר בְּעַצְמֵךְ.,You need to learn how to manage by yourself.
 yourself,A2,masc,עצמך,atsmħá,אַתָּה צָרִיךְ לִשְׁמוֹר עַל עַצְמְךָ.,You need to take care of yourself.
-youth,B1,masc,נוער,nóar,,
-zealous,B1,adjective,קנאי,kanáy,,
+youth,B1,masc,נוער,nóar,הַנּוֹעַר הוּא עָתִיד הָאֻמָּה.,The youth are the future of the nation.
+zealous,B1,adjective,קנאי,kanáy,הוּא הָיָה קַנַּאי לְהַצְלָחָה שֶׁל אֲחֵרִים.,He was zealous about others’ success.
 zebra,A1,fem,זברה,zébra,הַזֶּבְּרָה רָצָה בַּשָּׂדֶה.,The zebra runs in the field.
 zero,A1,masc,אפס,éfes,אֶפֶס וְעוֹד אֶחָד זֶה אֶחָד.,Zero plus one is one.
