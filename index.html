@@ -2,92 +2,697 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hebrew Learning</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title>Spanish Dictionary | Search in Spanish or English</title>
+
+    <!-- Meta Description -->
+    <meta
+      name="description"
+      content="Spanish Dictionary is your resource for finding words in both Spanish and English. Search, filter by part of speech, and discover new words."
+    />
+
+    <!-- Meta Keywords -->
+    <meta
+      name="keywords"
+      content="Spanish dictionary, Spanish to English, English to Spanish, word search, language learning, part of speech filter, random words"
+    />
+
+    <!-- Open Graph for Social Media Sharing -->
+    <meta
+      property="og:title"
+      content="Spanish Dictionary | Search in Spanish or English"
+    />
+    <meta
+      property="og:description"
+      content="Use the Spanish Dictionary to find translations and definitions for words in Spanish and English."
+    />
+    <meta
+      property="og:image"
+      content="Resources/Icons/android-chrome-512x512.png"
+    />
+    <meta property="og:url" content="https://osloandrew.github.io/Spanish/" />
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css" />
     <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="Resources/Icons/apple-touch-icon.png"
     />
     <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=stylus_note"
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="Resources/Icons/favicon-32x32.png"
     />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
-    <script defer src="scripts.js"></script>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="Resources/Icons/favicon-16x16.png"
+    />
+
+    <!-- Google Fonts -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100..900&display=swap");
+    </style>
+
+    <!-- External Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-M5H81RF3DT"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-M5H81RF3DT");
+    </script>
   </head>
+
   <body>
     <header>
-      <h1 id="site-title">Hebrew Sentences</h1>
-      <p id="site-subtitle">Master Hebrew through sentences</p>
+      <h1 id="site-title" onclick="returnToLandingPage()">
+        Spanish Dictionary
+      </h1>
+      <p id="site-subtitle">Search in Spanish or English</p>
     </header>
 
-    <div class="container">
-      <div class="progress-container">
-        <div id="progress-bar" class="progress-bar"></div>
-      </div>
-      <div class="status-bar">
-        <button id="toggle-transliteration" class="toggle-btn">
-          <span class="material-symbols-outlined"> stylus_note </span>
-        </button>
-        <button id="replay-audio" class="speaker-icon">
-          <span class="material-icons">volume_up</span>
-        </button>
-      </div>
-      <div class="card">
-        <h2 id="hebrew-text-cursive" class="cursive"></h2>
-        <h2 id="hebrew-text" class="question"></h2>
-        <h2 id="hebrew-text-niqqud" class="question hidden"></h2>
-        <p id="transliteration" class="transliteration hidden"></p>
-        <div id="answers" class="answers"></div>
-      </div>
-      <div class="status-bar">
-        <div class="difficulty-container">
-          <label for="difficulty-select" class="difficulty">Difficulty: </label>
-          <select id="difficulty-select" class="difficulty-dropdown">
-            <option value="A1">A1</option>
-            <option value="A2">A2</option>
-            <option value="B1">B1</option>
-            <option value="B2">B2</option>
-            <!--<option value="C1">C1</option>
-            <option value="C2">C2</option> -->
-          </select>
-        </div>
-        <p id="available-count" class="available-count">Remaining: 0</p>
-
-        <p id="score" class="score">Score: 0</p>
-      </div>
+    <div id="sticky-header" class="hidden">
+      <button id="back-button">← Back to Stories</button>
+      <button id="toggle-english-btn" class="toggle-btn">Show English</button>
     </div>
 
+    <main>
+      <!-- Search container with full-width background -->
+      <section id="search-container">
+        <div id="search-container-inner">
+          <!-- Grouped Selectors (Type and POS) -->
+          <div class="selectors-wrapper">
+            <!-- Words/Sentences Selector -->
+            <div class="type-filter">
+              <select
+                id="type-select"
+                aria-label="Search by words or sentences"
+                onchange="handleTypeChange(this.value)"
+              >
+                <option value="words">Words</option>
+                <option value="sentences">Sentences</option>
+                <option value="stories">Stories</option>
+                <option value="word-game">Word Game</option>
+              </select>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+
+            <!-- POS Selector -->
+            <div class="pos-filter">
+              <select
+                id="pos-select"
+                onchange="search()"
+                aria-label="Filter by part of speech"
+              >
+                <option value="">Word Class</option>
+                <option value="noun">Noun</option>
+                <option value="adjective">Adjective</option>
+                <option value="verb">Verb</option>
+                <option value="expression">Expression</option>
+                <option value="adverb">Adverb</option>
+                <option value="preposition">Preposition</option>
+                <option value="numeral">Numeral</option>
+                <option value="conjunction">Conjunction</option>
+                <option value="interjection">Interjection</option>
+                <option value="pronoun">Pronoun</option>
+              </select>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+
+            <!-- Genre Selector -->
+            <div
+              class="genre-filter"
+              id="genre-filter"
+              aria-label="Filter by genre"
+              style="display: none"
+            >
+              <select id="genre-select" onchange="handleGenreChange()">
+                <option value="">Genre</option>
+                <option value="biography">Biography</option>
+                <option value="culture">Culture</option>
+                <option value="dialogue">Dialogue</option>
+                <option value="drama">Drama</option>
+                <option value="fantasy">Fantasy</option>
+                <option value="food">Food</option>
+                <option value="health">Health</option>
+                <option value="history">History</option>
+                <option value="horror">Horror</option>
+                <option value="monologue">Monologue</option>
+                <option value="philosophy">Philosophy</option>
+                <option value="politics">Politics</option>
+                <option value="psychology">Psychology</option>
+                <option value="science">Science</option>
+                <option value="science fiction">Science Fiction</option>
+                <option value="technology">Technology</option>
+                <option value="travel">Travel</option>
+              </select>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+
+            <!-- Game-English Selector -->
+            <div
+              class="game-english-filter"
+              id="game-english-filter"
+              aria-label="Show or hide English"
+              style="display: none"
+            >
+              <select id="game-english-select" onchange="toggleGameEnglish()">
+                <option value="show-english">Show English</option>
+                <option value="hide-english">Hide English</option>
+              </select>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+
+            <!-- CEFR Level Selector -->
+            <div class="cefr-filter">
+              <select
+                id="cefr-select"
+                onchange="search()"
+                aria-label="Filter by CEFR level"
+              >
+                <option value="">Level</option>
+                <option value="A1">A1</option>
+                <option value="A2">A2</option>
+                <option value="B1">B1</option>
+                <option value="B2">B2</option>
+                <option value="C">C</option>
+              </select>
+              <i class="fas fa-chevron-down"></i>
+              <i
+                id="lock-icon"
+                class="fas fa-lock-open"
+                title="Toggle level lock"
+                onclick="toggleLevelLock()"
+              ></i>
+            </div>
+          </div>
+
+          <!-- Grouped Search Bar and Random Button -->
+          <div class="search-and-random-wrapper">
+            <!-- Search Bar -->
+            <div id="search-bar-wrapper" class="search-bar-wrapper">
+              <input
+                type="text"
+                id="search-bar"
+                placeholder=" "
+                onkeydown="handleKey(event)"
+                aria-label="Search for Spanish or English words"
+              />
+              <button
+                id="clear-btn"
+                class="clear-btn"
+                aria-label="Clear search field"
+                onclick="clearInput()"
+              >
+                <i class="fas fa-xmark"></i>
+              </button>
+              <button
+                id="search-btn"
+                class="search-btn"
+                aria-label="Search for the word"
+                onclick="search()"
+              >
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+
+            <!-- Random Button -->
+            <button
+              id="random-btn"
+              class="random-btn"
+              aria-label="Generate a random word"
+              onclick="randomWord(),popChime.currentTime = 0, popChime.play()"
+              title="Generate a random word"
+            >
+              <i class="fas fa-dice"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <div id="loading-spinner" class="spinner" style="display: none"></div>
+      <!-- Moved outside the results-container -->
+      <div id="landing-card" class="definition">
+        <h2>
+          Welcome to the <br />
+          Spanish Dictionary
+        </h2>
+        <p style="text-align: center">
+          Explore Spanish vocabulary interactively. <br />
+          Click on one of the buttons below to get started.
+        </p>
+
+        <div class="landing-card-button-grid">
+          <!-- Dictionary Search Button -->
+          <div class="button-container">
+            <img
+              class="landing-card-image"
+              src="Resources/Photos/words.svg"
+              alt="Words"
+            />
+            <button class="landing-card-btn" onclick="selectType('words')">
+              Dictionary Search
+            </button>
+            <p>Discover words and their meanings with detailed examples.</p>
+          </div>
+
+          <!-- Sentence Search Button -->
+          <div class="button-container">
+            <img
+              class="landing-card-image"
+              src="Resources/Photos/sentences.svg"
+              alt="Sentences"
+            />
+            <button class="landing-card-btn" onclick="selectType('sentences')">
+              Sentence Search
+            </button>
+            <p>Explore real sentences in context using your chosen words.</p>
+          </div>
+
+          <!-- Spanish Stories Button -->
+          <div class="button-container">
+            <img
+              class="landing-card-image"
+              src="Resources/Photos/stories.svg"
+              alt="Stories"
+            />
+            <button class="landing-card-btn" onclick="selectType('stories')">
+              Spanish Stories
+            </button>
+            <p>
+              Immerse yourself in fiction and non-fiction to deepen your
+              language skills.
+            </p>
+          </div>
+
+          <!-- Word Game Button -->
+          <div class="button-container">
+            <img
+              class="landing-card-image"
+              src="Resources/Photos/word-game.svg"
+              alt="Word Games"
+            />
+            <button class="landing-card-btn" onclick="selectType('word-game')">
+              Word Game
+            </button>
+            <p>
+              Master vocabulary with an interactive game that adapts to your
+              skill level.
+            </p>
+          </div>
+
+          <!-- Pronunciation Guide Button -->
+          <div class="button-container">
+            <img
+              class="landing-card-image"
+              src="Resources/Photos/pronunciation.svg"
+              alt="Pronunciation"
+            />
+            <button
+              class="landing-card-btn"
+              id="toggle-pronunciation"
+              onclick="togglePronunciationGuide()"
+            >
+              Pronunciation Guide
+            </button>
+            <p>Perfect your pronunciation by learning Spanish sounds.</p>
+          </div>
+
+          <!-- Support Button -->
+          <div class="button-container">
+            <img
+              class="landing-card-image"
+              src="Resources/Photos/support.svg"
+              alt="Support the Project"
+            />
+            <a
+              href="https://www.buymeacoffee.com/afeinberg4l"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="text-decoration: none"
+            >
+              <button class="landing-card-btn">Support the Project</button>
+            </a>
+            <p>
+              Help keep this resource free and growing — every little bit makes
+              a difference!
+            </p>
+          </div>
+        </div>
+
+        <div class="pronunciation-wrapper hidden">
+          <h3>Spanish Pronunciation Guide for English Speakers</h3>
+          <p>
+            Spanish has five steady vowel phonemes and a small set of mostly
+            consistent consonant patterns. This guide uses IPA and notes major
+            variety differences: Peninsular/Castilian (northern–central Spain),
+            Andalusian, Canarian, Mexican, Caribbean (Cuba, Puerto Rico,
+            Dominican Republic), Colombian, Andean (Ecuador, Peru, Bolivia,
+            Paraguay highlands), Rioplatense (Argentina, Uruguay), Chilean, and
+            Central American.
+          </p>
+
+          <table class="pronunciation-table">
+            <thead>
+              <tr>
+                <th>Spanish Sound</th>
+                <th>Pronunciation Symbol</th>
+                <th>Example (Spanish)</th>
+                <th>Similar English Sound</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- VOWELS -->
+              <tr>
+                <td data-label="Spanish Sound">a</td>
+                <td data-label="Pronunciation Symbol">/a/</td>
+                <td data-label="Example (Spanish)">casa [ˈkasa]</td>
+                <td data-label="Similar English Sound">
+                  Like the first vowel in "father" but shorter and steadier
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Spanish Sound">e</td>
+                <td data-label="Pronunciation Symbol">/e/</td>
+                <td data-label="Example (Spanish)">mesa [ˈmesa]</td>
+                <td data-label="Similar English Sound">
+                  Between "bait" and "bet" without glide
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Spanish Sound">i</td>
+                <td data-label="Pronunciation Symbol">/i/</td>
+                <td data-label="Example (Spanish)">vino [ˈbino]</td>
+                <td data-label="Similar English Sound">
+                  "ee" in "machine" but shorter
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Spanish Sound">o</td>
+                <td data-label="Pronunciation Symbol">/o/</td>
+                <td data-label="Example (Spanish)">solo [ˈsolo]</td>
+                <td data-label="Similar English Sound">
+                  "o" in "story" without glide
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Spanish Sound">u</td>
+                <td data-label="Pronunciation Symbol">/u/</td>
+                <td data-label="Example (Spanish)">tú [tu]</td>
+                <td data-label="Similar English Sound">
+                  "oo" in "food" but shorter
+                </td>
+              </tr>
+
+              <!-- CONSONANTS CORE -->
+              <tr>
+                <td data-label="Spanish Sound">
+                  c before e,i (Castilian distinction)
+                </td>
+                <td data-label="Pronunciation Symbol">
+                  /θ/ (Castilian), /s/ (most of Latin America, Canaries,
+                  Andalusia: seseo)
+                </td>
+                <td data-label="Example (Spanish)">
+                  cena [ˈθena] Castilian, [ˈsena] elsewhere
+                </td>
+                <td data-label="Similar English Sound">
+                  "th" in "thin" for /θ/; "s" in "see" for /s/
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Spanish Sound">z (all positions)</td>
+                <td data-label="Pronunciation Symbol">
+                  /θ/ (Castilian), /s/ (seseo)
+                </td>
+                <td data-label="Example (Spanish)">
+                  zapato [θaˈpato] Castilian, [saˈpato] elsewhere
+                </td>
+                <td data-label="Similar English Sound">As above</td>
+              </tr>
+              <tr>
+                <td data-label="Spanish Sound">
+                  c before a,o,u; k, qu before e,i
+                </td>
+                <td data-label="Pronunciation Symbol">/k/</td>
+                <td data-label="Example (Spanish)">
+                  casa [ˈkasa], queso [ˈkeso]
+                </td>
+                <td data-label="Similar English Sound">"k" in "skate"</td>
+              </tr>
+              <tr>
+                <td data-label="Spanish Sound">g before e,i</td>
+                <td data-label="Pronunciation Symbol">
+                  /x/ (velar), often [h] in Caribbean/Andalusian
+                </td>
+                <td data-label="Example (Spanish)">
+                  gente [ˈxente] or [ˈhente]
+                </td>
+                <td data-label="Similar English Sound">
+                  Scottish "loch" or English "h"
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Spanish Sound">j</td>
+                <td data-label="Pronunciation Symbol">
+                  /x/ (often [h] in Caribbean/Andalusian)
+                </td>
+                <td data-label="Example (Spanish)">
+                  jamón [xaˈmon] or [haˈmon]
+                </td>
+                <td data-label="Similar English Sound">
+                  Scottish "loch" or English "h"
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Spanish Sound">
+                  g before a,o,u; gu before e,i
+                </td>
+                <td data-label="Pronunciation Symbol">/ɡ/ ~ [ɣ] (lenition)</td>
+                <td data-label="Example (Spanish)">
+                  gato [ˈɡato] → intervocalic [ˈɣato]
+                </td>
+                <td data-label="Similar English Sound">
+                  "g" in "go"; between vowels, softer
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Spanish Sound">b, v</td>
+                <td data-label="Pronunciation Symbol">/b/ ~ [β]</td>
+                <td data-label="Example (Spanish)">
+                  vino [ˈbino], la vida [la ˈβiða]
+                </td>
+                <td data-label="Similar English Sound">
+                  "b" in "bat"; between vowels, soft bilabial
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Spanish Sound">d</td>
+                <td data-label="Pronunciation Symbol">/d/ ~ [ð] ~ elision</td>
+                <td data-label="Example (Spanish)">
+                  cada [ˈkaða], hablado [aˈβlao] in casual Caribbean/Andalusian
+                </td>
+                <td data-label="Similar English Sound">
+                  "d" in "dog"; between vowels like "th" in "this"
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Spanish Sound">ll, y (yeísmo vs lleísmo)</td>
+                <td data-label="Pronunciation Symbol">
+                  /ʝ/ (yeísmo, most areas); /ʎ/ (lleísmo, Andean/Paraguay, rural
+                  Spain)
+                </td>
+                <td data-label="Example (Spanish)">
+                  lluvia [ˈʝuβja] or [ˈʎuβja]
+                </td>
+                <td data-label="Similar English Sound">
+                  "y" in "yes"; /ʎ/ like Italian "gli"
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Spanish Sound">y/ll in Rioplatense</td>
+                <td data-label="Pronunciation Symbol">[ʒ] or [ʃ]</td>
+                <td data-label="Example (Spanish)">
+                  yo [ʒo]/[ʃo], calle [ˈkaʒe]/[ˈkaʃe]
+                </td>
+                <td data-label="Similar English Sound">
+                  "s" in "measure" or "sh" in "shoe"
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Spanish Sound">ch</td>
+                <td data-label="Pronunciation Symbol">
+                  /t͡ʃ/ (often [ʃ] in parts of Andalusia, Chile)
+                </td>
+                <td data-label="Example (Spanish)">chico [ˈt͡ʃiko] ~ [ˈʃiko]</td>
+                <td data-label="Similar English Sound">"ch" in "church"</td>
+              </tr>
+              <tr>
+                <td data-label="Spanish Sound">r tap vs rr trill</td>
+                <td data-label="Pronunciation Symbol">/ɾ/ vs /r/</td>
+                <td data-label="Example (Spanish)">
+                  caro [ˈkaɾo] vs carro [ˈkaro]
+                </td>
+                <td data-label="Similar English Sound">
+                  Tap like quick "tt" in American "butter"; trill as in Scottish
+                  r
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Spanish Sound">s</td>
+                <td data-label="Pronunciation Symbol">
+                  /s/ → [h] or deletion syllable-final in Andalusian, Canarian,
+                  Caribbean
+                </td>
+                <td data-label="Example (Spanish)">más [mas] → [mah] → [ma]</td>
+                <td data-label="Similar English Sound">
+                  "s" in "see"; aspiration like English "h"
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Spanish Sound">n final</td>
+                <td data-label="Pronunciation Symbol">
+                  /n/ → [ŋ] word-final in Caribbean
+                </td>
+                <td data-label="Example (Spanish)">pan [pan] ~ [paŋ]</td>
+                <td data-label="Similar English Sound">"ng" in "song"</td>
+              </tr>
+
+              <!-- DIPHTHONGS AND HIATUS -->
+              <tr>
+                <td data-label="Spanish Sound">Diphthongs</td>
+                <td data-label="Pronunciation Symbol">
+                  /ai̯, ei̯, oi̯, au̯, eu̯, ui̯, iu̯/
+                </td>
+                <td data-label="Example (Spanish)">
+                  aire [ˈai̯ɾe], rey [rei̯], hoy [oi̯]
+                </td>
+                <td data-label="Similar English Sound">
+                  "eye," "ay," "oy," "ow" but shorter, steadier
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Spanish Sound">Hiatus with written accent</td>
+                <td data-label="Pronunciation Symbol">
+                  /í, ú/ breaking diphthong
+                </td>
+                <td data-label="Example (Spanish)">
+                  país [paˈis], baúl [baˈul]
+                </td>
+                <td data-label="Similar English Sound">
+                  Two clear syllables, not gliding
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4>Stress and Accent Marks</h4>
+          <p>
+            Spanish has no lexical tones. One syllable in each word carries
+            stress. If a word ends in a vowel, <em>n</em>, or <em>s</em>, stress
+            normally falls on the penultimate syllable; otherwise it falls on
+            the final syllable. Written accents show exceptions or mark hiatus.
+            Examples: <strong>cá-ma-ra</strong> [ˈka.ma.ɾa],
+            <strong>cami-nó</strong> [ka.miˈno], <strong>pa-ís</strong> [paˈis].
+          </p>
+
+          <h4>Regional Notes at a Glance</h4>
+          <p>
+            <strong>Castilian (northern–central Spain):</strong> distinction /θ/
+            vs /s/, stronger /x/.<br />
+            <strong>Andalusian:</strong> frequent /s/ aspiration or loss
+            syllable-final, /x/ ≈ [h], occasional ch→[ʃ], d-dropping in
+            participles.<br />
+            <strong>Canarian:</strong> seseo /s/, /s/ aspiration, /x/ ≈ [h],
+            Caribbean-like rhythm.<br />
+            <strong>Mexican:</strong> clear /s/, /x/ often velar [x],
+            conservative ch [t͡ʃ], stable vowels.<br />
+            <strong>Caribbean (Cuba, PR, DR):</strong> /s/ aspiration or loss,
+            word-final n→[ŋ], /x/ ≈ [h], syllable-final r may sound like [ɾ] or
+            [h].<br />
+            <strong>Colombian (highland):</strong> conservative consonants,
+            clear /s/, careful tap vs trill.<br />
+            <strong
+              >Andean (Ecuador, Peru, Bolivia, Paraguay highlands):</strong
+            >
+            pockets of lleísmo /ʎ/, clear /s/, steady vowels.<br />
+            <strong>Rioplatense (Argentina, Uruguay):</strong> y/ll as [ʒ] or
+            [ʃ], intonation with Italian influence.<br />
+            <strong>Chilean:</strong> tendency to weaken ch to [ʃ] in fast
+            speech, some vowel reduction in casual speech.<br />
+            <strong>Central American:</strong> mostly seseo, some /s/ aspiration
+            on coasts, clear highland speech inland.
+          </p>
+
+          <h4>Helpful Symbols and Conventions</h4>
+          <p>
+            IPA brackets [ ] indicate detailed sounds. Slashes / / indicate
+            phonemes. Doubled letters can indicate length in careful speech, but
+            Spanish does not contrast vowel length. Intervocalic
+            <strong>b, d, g</strong> are softened to [β, ð, ɣ]. The dieresis in
+            <strong>vergüenza</strong> forces pronouncing <em>u</em>:
+            [beɾˈɣwenθa] Castilian, [beɾˈɣwensa] elsewhere.
+          </p>
+        </div>
+      </div>
+      <section id="story-viewer" style="display: none">
+        <div id="story-content"></div>
+      </section>
+      <section id="results-container">
+        <ul id="stories" class="stories-list"></ul>
+      </section>
+    </main>
+
+    <audio id="audio-player" style="display: none" controls></audio>
+
     <footer>
-      <p class="copyright">
-        © 2024 Hebrew Learning | Inspired by Norwegian Dictionary
-      </p>
-      <div class="footer-links">
+      <p class="copyright">© 2025 Spanish Dictionary</p>
+      <div class="links">
         <a
           href="https://www.linkedin.com/in/afeinberg1/"
           target="_blank"
+          rel="noopener noreferrer"
           class="linkedin-btn"
         >
           <img
             src="Resources/Icons/linkedin-icon.png"
             alt="LinkedIn Logo"
-            class="footer-icon"
-          />
-          <span>Connect with me</span>
+            class="linkedin-icon"
+          /><span>Connect with me on LinkedIn</span>
         </a>
-        <a
-          href="https://www.buymeacoffee.com/afeinberg4l"
-          target="_blank"
-          class="coffee-btn"
-        >
+        <a href="https://www.buymeacoffee.com/afeinberg4l" class="coffee-btn">
           <img
-            src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee"
-            alt="Buy me a coffee"
-            class="footer-icon"
+            src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=afeinberg4l&button_colour=0d3a69&font_colour=ffffff&font_family=Lato&outline_colour=ffffff&coffee_colour=FFDD00"
+            class="coffee-img"
           />
         </a>
       </div>
     </footer>
+    <script src="noRandom.js" defer></script>
+    <script src="scripts.js" defer></script>
+    <script src="wordGame.js" defer></script>
+    <script src="stories.js" defer></script>
   </body>
 </html>
