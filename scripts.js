@@ -8,16 +8,16 @@ const APP_LANG = "es";
 
 // Map incoming CSV headers to the app’s canonical keys
 const SCHEMA_MAP = {
-  ord: "palabra",
-  engelsk: "inglés",
+  ord: "word",
+  engelsk: "English",
   CEFR: "CEFR",
-  gender: "artículo",
+  gender: "gender",
   uttale: null, // not in Hebrew CSV
   etymologi: null, // not in Hebrew CSV
-  definisjon: "definición",
-  eksempel: "ejemplo",
-  sentenceTranslation: "traducción",
-  region: "región", // optional extra; stored for future use
+  definisjon: null, // not in Hebrew CSV
+  eksempel: "example",
+  sentenceTranslation: "translation",
+  transliteration: "transliteration", // optional extra; stored for future use
 };
 
 // Function to show or hide the landing card
