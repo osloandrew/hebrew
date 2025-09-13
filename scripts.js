@@ -9,6 +9,7 @@ const APP_LANG = "es";
 // Map incoming CSV headers to the app’s canonical keys
 const SCHEMA_MAP = {
   ord: "word",
+  wordWithNiqqud: "wordWithNiqqud",
   engelsk: "English",
   CEFR: "CEFR",
   gender: "gender",
@@ -16,6 +17,7 @@ const SCHEMA_MAP = {
   etymologi: null, // not in Hebrew CSV
   definisjon: null, // not in Hebrew CSV
   eksempel: "example",
+  exampleWithNiqqud: "exampleWithNiqqud",
   sentenceTranslation: "translation",
   transliteration: "transliteration", // optional extra; stored for future use
 };
