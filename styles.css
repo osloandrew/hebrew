@@ -1350,6 +1350,7 @@ ul {
   border-radius: 12px 0 0 12px; /* Rounded corners on top */
   box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.1);
   direction: rtl;
+  font-family: "Noto Serif Hebrew", serif; /* Adjust to the appropriate English font */
 }
 
 .sentence-box-norwegian-hidden {
@@ -1919,6 +1920,7 @@ ul {
 
 .word-text-block {
   display: flex;
+  font-family: "Noto Serif Hebrew", serif;
   flex-direction: column;
 }
 
