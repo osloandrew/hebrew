@@ -2262,6 +2262,7 @@ ul {
     font-size: 15px;
     padding: 5px 10px 5px 38px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: right;
   }
 
   .sentence-box-norwegian {
