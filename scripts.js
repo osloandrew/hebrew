@@ -1,6 +1,7 @@
 // Global Variables
 let results = [];
 let isEnglishVisible = true;
+let isNiqqudVisible = true; // default: show niqqud
 let latestMultipleResults = null;
 const resultsContainer = document.getElementById("results-container");
 // Language + schema for Hebrew
@@ -428,6 +429,9 @@ async function randomWord() {
             <button class="sentence-btn english-toggle-btn" onclick="toggleEnglishTranslations(this)">
                 ${isEnglishVisible ? "Hide English" : "Show English"}
             </button>
+            <button onclick="toggleNiqqud()">
+            ${isNiqqudVisible ? "Hide Niqqud" : "Show Niqqud"}
+          </button>
             <div class="sentence-container">
                 <div class="sentence-box-norwegian ${
                   !isEnglishVisible ? "sentence-box-norwegian-hidden" : ""
@@ -1910,6 +1914,9 @@ function renderSentences(sentenceResults, word) {
             <button class="sentence-btn english-toggle-btn" onclick="toggleEnglishTranslations()">
                 ${isEnglishVisible ? "Hide English" : "Show English"}
             </button>    
+                        <button onclick="toggleNiqqud()">
+            ${isNiqqudVisible ? "Hide Niqqud" : "Show Niqqud"}
+          </button>
         `;
   }
 

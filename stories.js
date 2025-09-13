@@ -1,6 +1,5 @@
 let storyResults = []; // Global variable to store the stories
 let currentSpeed = 1.0; // default speed
-let isNiqqudVisible = true; // default: show niqqud
 
 // Define an object mapping genres to Font Awesome icons
 const genreIcons = {
