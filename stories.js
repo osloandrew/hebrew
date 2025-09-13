@@ -1,4 +1,5 @@
 let storyResults = []; // Global variable to store the stories
+let currentSpeed = 1.0; // default speed
 
 // Define an object mapping genres to Font Awesome icons
 const genreIcons = {
@@ -272,35 +273,6 @@ async function displayStory(titleHebrew) {
 
   clearContainer();
 
-  // Get genre icon and CEFR label (mirror JP)
-  const genreIcon = genreIcons[selectedStory.genre.toLowerCase()] || "";
-  const cefrClass = getCefrClass(selectedStory.CEFR);
-
-  const sticky = document.getElementById("sticky-header");
-  sticky.classList.remove("hidden");
-  sticky.innerHTML = `
-  <div class="sticky-detail-container">
-    <div class="sticky-row">
-      <div class="sticky-genre">
-        ${genreIcon}
-      </div>
-      <div class="sticky-cefr-label ${cefrClass}">
-        ${selectedStory.CEFR || "N/A"}
-      </div>
-    </div>
-    <button id="back-button" class="back-button">
-      <i class="fas fa-chevron-left"></i> Back
-    </button>
-  </div>
-`;
-
-  // Hide search UI while reading (mirrors JP’s “filters hidden while reading”)
-  if (searchContainer) searchContainer.style.display = "none";
-
-  // Wire the back button like JP (no inline attribute)
-  document
-    .getElementById("back-button")
-    ?.addEventListener("click", storiesBackBtn);
   // Check for the image (mirror JP: EN title only)
   const imageFileURL = await hasImageByEnglishTitle(selectedStory.titleEnglish);
 
@@ -309,7 +281,163 @@ async function displayStory(titleHebrew) {
   const audioHTML = audioFileURL
     ? `<audio controls src="${audioFileURL}" class="stories-audio-player"></audio>`
     : "";
-  const audio = new Audio(audioFileURL);
+  // Build sticky header here, just before audio is constructed
+  const genreIcon = genreIcons[selectedStory.genre.toLowerCase()] || "";
+  const cefrClass = getCefrClass(selectedStory.CEFR);
+
+  const sticky = document.getElementById("sticky-header");
+  sticky.classList.remove("hidden");
+
+  // 1) Render a stable skeleton with fixed slots so layout never reflows
+  sticky.innerHTML = `
+  <div class="sticky-detail-container">
+    <div class="sticky-row">
+      <div class="sticky-genre" id="sticky-genre-slot"></div>
+      <div class="sticky-cefr-label ${cefrClass}" id="sticky-cefr-slot">
+        ${selectedStory.CEFR || "N/A"}
+      </div>
+    </div>
+    <button id="back-button" class="back-button">
+      <i class="fas fa-chevron-left"></i> Back
+    </button>
+  </div>
+  <div id="sticky-audio-slot"></div>
+  <div id="right-controls" class="right-controls"></div>
+`;
+
+  const stickyHeaderEl = document.getElementById("sticky-header");
+  const audioSlot = document.getElementById("sticky-audio-slot");
+
+  stickyHeaderEl.style.display = "flex";
+  stickyHeaderEl.style.alignItems = "center";
+
+  // Let left and right stay their natural size, middle (audioSlot) expand
+  const left = stickyHeaderEl.querySelector(".sticky-detail-container");
+  const right = document.getElementById("right-controls");
+  if (left) left.style.flex = "0 0 auto";
+  if (right) right.style.flex = "0 0 auto";
+  if (audioSlot) {
+    audioSlot.style.flex = "1 1 auto"; // flex-grow so it fills available width
+    audioSlot.style.maxWidth = "100%"; // never overflow
+    const audioEl = audioSlot.querySelector("audio");
+    if (audioEl) {
+      audioEl.style.width = "100%"; // make the <audio> itself fill its slot
+    }
+  }
+  // 2) Fill the left-side genre slot immediately
+  const genreSlot = document.getElementById("sticky-genre-slot");
+  if (genreSlot) genreSlot.innerHTML = genreIcon;
+
+  // 3) Create the English toggle once, in its fixed slot (no later moves)
+  const rc = document.getElementById("right-controls");
+  if (rc) {
+    rc.innerHTML = `
+    <button id="toggle-english-btn" class="toggle-english-btn">
+      ${isEnglishVisible ? "Hide English" : "Show English"}
+    </button>
+  `;
+  }
+
+  // Insert a Speed button *above* the English toggle, with identical styling
+  (function addSpeedButton() {
+    const rc = document.getElementById("right-controls");
+    const engBtn = document.getElementById("toggle-english-btn");
+    if (!rc || !engBtn) return;
+
+    const speedBtn = document.createElement("button");
+    speedBtn.id = "speed-btn";
+    speedBtn.type = "button";
+    // Clone the *exact* classes from the English button for identical styling
+    speedBtn.className = engBtn.className;
+    speedBtn.textContent = "1.0×";
+    // Small vertical spacing without touching your CSS
+    speedBtn.style.marginBottom = "5px";
+
+    // Insert above the English button
+    rc.insertBefore(speedBtn, engBtn);
+
+    const rates = [0.7, 0.8, 0.9, 1];
+    let i = rates.indexOf(currentSpeed);
+    if (i === -1) i = 3; // default to 1.0×
+
+    function label(r) {
+      return "Speed: " + r.toFixed(1).replace(/\.0$/, "");
+    }
+    function applyRate(r) {
+      currentSpeed = r; // update global
+      const audio = document.querySelector("#sticky-audio-slot audio");
+      if (audio) {
+        audio.playbackRate = r;
+        audio.preservesPitch = true;
+        audio.mozPreservesPitch = true;
+        audio.webkitPreservesPitch = true;
+      }
+      speedBtn.textContent = label(r);
+      speedBtn.setAttribute("aria-label", `Playback speed ${r} times`);
+    }
+
+    speedBtn.addEventListener("click", () => {
+      i = (i + 1) % rates.length;
+      applyRate(rates[i]);
+    });
+
+    // initialize button + audio to current global speed
+    applyRate(rates[i]);
+
+    // Expose helpers so newly-created audio can reuse the current rate
+    speedBtn._getRate = () => rates[i];
+    speedBtn._applyRate = () => applyRate(rates[i]);
+
+    // Initialize
+    applyRate(rates[i]);
+  })();
+
+  document
+    .getElementById("toggle-english-btn")
+    ?.addEventListener("click", () => {
+      isEnglishVisible = !isEnglishVisible;
+      updateEnglishVisibility();
+      const b = document.getElementById("toggle-english-btn");
+      if (b) b.textContent = isEnglishVisible ? "Hide English" : "Show English";
+    });
+
+  // DIAG 2: force a visible audio control even if the real file is missing
+  // REAL AUDIO: sanitize title and set src; fallback mp3 if m4a fails
+  {
+    const slot = document.getElementById("sticky-audio-slot");
+    if (slot) {
+      // Build a sanitized filename: strip trailing '?', trim, collapse spaces
+      const rawTitle = (selectedStory.titleEnglish || "")
+        .replace(/\?+$/, "")
+        .trim()
+        .replace(/\s+/g, " ");
+      const enc = encodeURIComponent(rawTitle);
+      const player = document.createElement("audio");
+      player.controls = true;
+      player.className = "stories-audio-player";
+      player.preload = "metadata";
+      player.src = `Resources/Audio/${enc}.m4a`;
+      player.onerror = () => {
+        // try mp3, then give up quietly
+        if (player.src.endsWith(".m4a")) {
+          player.onerror = () =>
+            console.warn("[AUDIO]", "mp3 also missing for:", rawTitle);
+          player.src = `Resources/Audio/${enc}.mp3`;
+        }
+      };
+      slot.innerHTML = "";
+      slot.appendChild(player);
+      player.playbackRate = currentSpeed; // ensure it starts at the saved speed
+      console.log("[AUDIO] trying:", player.src);
+    }
+  }
+
+  if (searchContainer) searchContainer.style.display = "none";
+
+  document
+    .getElementById("back-button")
+    ?.addEventListener("click", storiesBackBtn);
+
   const imageHTML = imageFileURL
     ? `<img src="${imageFileURL}" alt="${selectedStory.titleEnglish}" class="story-image">`
     : "";
@@ -333,8 +461,6 @@ async function displayStory(titleHebrew) {
     </div>
   `;
     }
-
-    contentHTML += `</div>`;
 
     const storyViewer = document.getElementById("story-viewer");
     const storyContent = document.getElementById("story-content");
@@ -366,46 +492,11 @@ async function displayStory(titleHebrew) {
     hideSpinner(); // Hide spinner after story content is displayed
   };
 
-  // Check if the audio file exists before finalizing content
-  audio.onerror = () => {
-    console.log(`No audio file found for: ${audioFileURL}`);
-    finalizeContent(false); // Display without audio
-  };
-  audio.onloadedmetadata = () => {
-    // Mirror JP: append audio to #sticky-header
-    const stickyHeaderEl = document.getElementById("sticky-header");
-    if (stickyHeaderEl && audioHTML) {
-      const existing = stickyHeaderEl.querySelector(".stories-audio-player");
-      if (existing) existing.remove();
-      stickyHeaderEl.insertAdjacentHTML("beforeend", audioHTML);
-      // JP mirror: add the English toggle button into the sticky header
-      const toggleButtonsContainer = document.createElement("div");
-      toggleButtonsContainer.classList.add("toggle-buttons-container");
-      toggleButtonsContainer.innerHTML = `
-  <button id="toggle-english-btn" class="toggle-english-btn">
-    ${isEnglishVisible ? "Hide English" : "Show English"}
-  </button>
-`;
-      stickyHeaderEl.appendChild(toggleButtonsContainer);
-
-      // JP mirror: attach the click handler that flips state and refreshes visibility
-      document
-        .getElementById("toggle-english-btn")
-        ?.addEventListener("click", () => {
-          isEnglishVisible = !isEnglishVisible;
-          updateEnglishVisibility();
-        });
-    }
-
-    // Render content WITHOUT duplicating the audio at the top of the body
-    finalizeContent(false);
-  };
-
   // Process story text into sentences
   const standardizedHebrew = selectedStory.hebrew.replace(/[“”«»]/g, '"');
   const standardizedEnglish = selectedStory.english.replace(/[“”«»]/g, '"');
   const sentenceRegex =
-    /(?:(["]?.+?(?<!\bMr)(?<!\bMrs)(?<!\bMs)(?<!\bDr)(?<!\bProf)(?<!\bJr)(?<!\bSr)(?<!\bSt)(?<!\bMt)[.!?…]["]?)(?=\s|$)|(?:\.\.\."))/g;
+    /(?:(["]?.+?(?<!\bMr)(?<!\bMrs)(?<!\bMs)(?<!\bDr)(?<!\bProf)(?<!\bJr)(?<!\bSr)(?<!\bSt)(?<!\bMt)[.!?]["]?)(?=\s|$)|(?:\.\.\."))/g;
   let hebrewSentences = standardizedHebrew.match(sentenceRegex) || [
     standardizedHebrew,
   ];
@@ -437,6 +528,8 @@ async function displayStory(titleHebrew) {
 
   hebrewSentences = combineSentences(hebrewSentences);
   englishSentences = combineSentences(englishSentences, /\basked\b/i);
+
+  finalizeContent(false);
 }
 
 // Function to toggle the visibility of English sentences and update Hebrew box styles
