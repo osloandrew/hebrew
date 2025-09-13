@@ -1641,6 +1641,10 @@ ul {
     transform 0.2s ease; /* Subtle transitions */
 }
 
+.english-toggle-btn {
+  margin-bottom: 0px;
+}
+
 .stories-list-item:hover {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Lighter shadow for hover */
   transform: scale(1.01);

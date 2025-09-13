@@ -245,6 +245,7 @@ function parseCSVData(data) {
         // Base object in canonical shape the rest of the app expects
         const entry = {
           ord: get("ord"),
+          wordWithNiqqud: get("wordWithNiqqud"), // empty for ES
           engelsk: get("engelsk"),
           CEFR: get("CEFR").toUpperCase(),
           gender: get("gender"), // will be formatted later
@@ -252,6 +253,7 @@ function parseCSVData(data) {
           etymologi: get("etymologi"), // empty for ES
           definisjon: get("definisjon"),
           eksempel: get("eksempel"),
+          exampleWithNiqqud: get("exampleWithNiqqud"),
           sentenceTranslation: get("sentenceTranslation"),
           region: get("region"),
         };
@@ -429,13 +431,13 @@ async function randomWord() {
             <button class="sentence-btn english-toggle-btn" onclick="toggleEnglishTranslations(this)">
                 ${isEnglishVisible ? "Hide English" : "Show English"}
             </button>
-            <button onclick="toggleNiqqud()">
+            <button class="sentence-btn niqqud-toggle-btn" onclick="toggleNiqqud()">
             ${isNiqqudVisible ? "Hide Niqqud" : "Show Niqqud"}
           </button>
             <div class="sentence-container">
-                <div class="sentence-box-norwegian ${
-                  !isEnglishVisible ? "sentence-box-norwegian-hidden" : ""
-                }">
+              hasSentencesPlaceholder  <div class="sentence-box-norwegian ${
+                !isEnglishVisible ? "sentence-box-norwegian-hidden" : ""
+              }">
                     <div class="sentence-content">
                         ${cefrLabel}  <!-- Add the CEFR label in the upper-left corner -->
                         <p class="sentence">${cleanedSentence}</p>
@@ -1455,8 +1457,16 @@ function displaySearchResults(results, query = "") {
       .replace(/'/g, "\\'")
       .replace(/"/g, "&quot;")
       .replace(/\r?\n|\r/g, ""); // Escapes single quotes, double quotes, and removes newlines
-    const hasSentencesPlaceholder = `<button class="sentence-btn english-toggle-btn" style="display: none;" onclick="event.stopPropagation(); toggleEnglishTranslations('${normalizedWord}')">Show English</button>`;
-
+    const hasSentencesPlaceholder = `
+  <button class="sentence-btn english-toggle-btn" style="display: none;"
+          onclick="event.stopPropagation(); toggleEnglishTranslations('${normalizedWord}')">
+    ${isEnglishVisible ? "Hide English" : "Show English"}
+  </button>
+  <button class="sentence-btn niqqud-toggle-btn" style="display: none;"
+          onclick="event.stopPropagation(); toggleNiqqud('${normalizedWord}')">
+    ${isNiqqudVisible ? "Hide Niqqud" : "Show Niqqud"}
+  </button>
+`;
     function normalizeDefinitionText(def) {
       return def
         .split(/\r?\n+/)
@@ -1489,19 +1499,13 @@ function displaySearchResults(results, query = "") {
       .trim()}', this.querySelector('.${multipleResultsDefinitionText}')?.textContent?.trim() || '')">
                 <div class="${multipleResultsDefinitionHeader}">
                 <h2 class="word-gender ${multipleResultsWordgender}">
-                  <div class="word-text-block">
-                    ${
-                      result.ord.includes(",")
-                        ? (() => {
-                            const [first, ...rest] = result.ord.split(",");
-                            return `${first.trim()}<br><span class="alt-spelling">${rest
-                              .join(", ")
-                              .trim()}</span>`;
-                          })()
-                        : result.ord
-                    }
-                  </div>
-
+<div class="word-text-block">
+  <span class="word-text"
+        data-word-no="${result.ord}"
+        data-word-with="${result.wordWithNiqqud || result.ord}">
+    ${isNiqqudVisible ? result.wordWithNiqqud || result.ord : result.ord}
+  </span>
+</div>
                     ${
                       result.gender
                         ? `<div class="gender ${multipleResultsgenderClass}">${result.gender}</div>`
@@ -1640,6 +1644,22 @@ function toggleEnglishTranslations(wordId = null) {
   // Update all button texts to match the new state
   englishBtns.forEach((btn) => {
     btn.textContent = isEnglishVisible ? "Hide English" : "Show English";
+  });
+}
+
+function toggleNiqqud() {
+  isNiqqudVisible = !isNiqqudVisible;
+
+  // update all Niqqud buttons
+  document.querySelectorAll(".niqqud-toggle-btn").forEach((b) => {
+    b.textContent = isNiqqudVisible ? "Hide Niqqud" : "Show Niqqud";
+  });
+
+  // flip each word heading
+  document.querySelectorAll(".word-text").forEach((el) => {
+    const withNiq = el.getAttribute("data-word-with") || "";
+    const noNiq = el.getAttribute("data-word-no") || "";
+    el.textContent = isNiqqudVisible ? withNiq : noNiq;
   });
 }
 
@@ -1911,12 +1931,12 @@ function renderSentences(sentenceResults, word) {
             <div class="result-header">
                 <h2>Sentence Results for "${word}"</h2>
             </div>
-            <button class="sentence-btn english-toggle-btn" onclick="toggleEnglishTranslations()">
-                ${isEnglishVisible ? "Hide English" : "Show English"}
-            </button>    
-                        <button onclick="toggleNiqqud()">
-            ${isNiqqudVisible ? "Hide Niqqud" : "Show Niqqud"}
-          </button>
+      <button class="sentence-btn english-toggle-btn" onclick="toggleEnglishTranslations()">
+          ${isEnglishVisible ? "Hide English" : "Show English"}
+      </button>
+      <button class="sentence-btn niqqud-toggle-btn" onclick="toggleNiqqud()">
+          ${isNiqqudVisible ? "Hide Niqqud" : "Show Niqqud"}
+      </button>
         `;
   }
 
@@ -2379,6 +2399,15 @@ function fetchAndRenderSentences(word, pos, showEnglish = true) {
   if (sentenceContent) {
     sentenceContainer.innerHTML = sentenceContent;
     sentenceContainer.style.display = "block"; // Show the container
+
+    // unhide the toggle buttons when sentences load
+    const controls = sentenceContainer.previousElementSibling;
+    if (controls) {
+      const enBtn = controls.querySelector(".english-toggle-btn");
+      const nqBtn = controls.querySelector(".niqqud-toggle-btn");
+      if (enBtn) enBtn.style.display = "inline-block";
+      if (nqBtn) nqBtn.style.display = "inline-block";
+    }
 
     // Find the button and display it if sentences exist
     const englishButton = sentenceContainer.parentElement.querySelector(
