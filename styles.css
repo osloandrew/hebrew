@@ -801,7 +801,7 @@ input[type="text"]:not(:placeholder-shown) + label {
   display: -webkit-box; /* Creates a block-level flex container */
   font-family: "Noto Serif", serif; /* Japanese-specific font */
   font-weight: 350;
-  font-size: 14px;
+  font-size: 18px;
   overflow: hidden; /* Hides the overflowing text */
   text-overflow: ellipsis; /* Adds ellipses when text overflows */
   text-transform: uppercase;
@@ -1510,7 +1510,7 @@ ul {
 .sticky-title-japanese {
   color: #3c3c3c;
   direction: rtl;
-  font-size: 1.5em;
+  font-size: 2em;
   font-family: "Noto Serif", serif; /* Adjust to the appropriate English font */
   font-weight: 400;
   letter-spacing: 0.5px;
@@ -2288,7 +2288,7 @@ ul {
     gap: 5px; /* Adjust to desired spacing */
   }
   .sticky-title-japanese {
-    font-size: 1.3em;
+    font-size: 1.5em;
   }
   .sticky-title-english {
     font-size: 0.8em;

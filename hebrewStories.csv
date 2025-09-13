@@ -26,12 +26,21 @@ titleHebrew,titleEnglish,genre,CEFR,hebrew,english,hebrewNoNiqqud
 נִקָּיוֹן הַחֶדֶר שֶׁלִּי,Cleaning My Room,monologue,A1,,,
 קוֹסְטָה דֶּל סוֹל,Costa del Sol,travel,A1,,,
 הֶבְטֵי סִכּוּן שֶׁל רֶשֶׁת הַחֶבְרָתִית,Dangerous Aspects of Social Media,technology,A1,,,
-נְאוֹת מִדְבָּר,Desert Oases,science,A1,,,
+נְאוֹת מִדְבָּר,Desert Oases,science,A1,"בַּמִּדְבָּר יֵשׁ מְקוֹמוֹת מְיֻחָדִים שֶׁנִּקְרָאִים נְאוֹת מִדְבָּר.
+בַּנָּאוֶה יֵשׁ מַיִם, עֵצִים וְצִפֳּרִים.
+הָאֲנָשִׁים עוֹצְרִים בַּנָּאוֶה כְּדֵי לִשְׁתּוֹת מַיִם וְלָנוּחַ.
+זֶה מָקוֹם יָפֶה וְשֶׁקֶט בְּתוֹךְ הַחּוֹל וְהָחֹם.","In the desert there are special places called oases.
+In an oasis there is water, trees, and birds.
+People stop at the oasis to drink water and rest.
+It is a beautiful and quiet place in the middle of the sand and the heat.","במדבר יש מקומות מיוחדים שנקראים נאות מדבר.
+בנווה יש מים, עצים וציפורים.
+האנשים עוצרים בנווה כדי לשתות מים ולנוח.
+זה מקום יפה ושקט בתוך החול והחום."
 דִּיּוּן עַל אַלֶּרְגִּיָּה,Discussing an Allergy,dialogue,A1,,,
 הַאִם לַחַיּוֹת יֵשׁ אִישִׁיּוּת?,Do Animals Have Personalities?,psychology,A1,,,
 רַעֲשֵׁי אֲדָמָה,Earthquakes,science,A1,"רַעַשׁ אֲדָמָה הוּא תְּנוּעָה חֲזָקָה שֶׁל הָאֲדָמָה. כְּשֶׁהָאֲדָמָה זוֹזָה, הַבָּתִּים רוֹעֲדִים. אֲנָשִׁים רָצִים לַחוּץ וּמְחַפְּשִׂים מָקוֹם בָּטוּחַ. רַעַשׁ אֲדָמָה יָכוֹל לִהְיוֹת קָצָר אוֹ אָרוֹךְ. בַּסּוֹף הָאֲדָמָה נִרְגַּעַת, וְהָאֲנָשִׁים חוֹזְרִים לְבָתֵּיהֶם.","An earthquake is a strong movement of the ground. When the ground moves, the houses shake. People run outside and look for a safe place. An earthquake can be short or long. In the end, the ground becomes calm, and the people return to their homes.","רעש אדמה הוא תנועה חזקה של האדמה. כשהאדמה זזה, הבתים רועדים. אנשים רצים לחוץ ומחפשים מקום בטוח. רעש אדמה יכול להיות קצר או ארוך. בסוף האדמה נרגעת, והאנשים חוזרים לבתיהם."
 עֲרוּכוֹת עֶזְרָה רִאשׁוֹנָה,First Aid Kits,health,A1,,,
-מְכוֹנוֹת טִיסָה,Flying Cars,science fiction,A1,,,
+מְכוֹנוֹת טִיסָה,Flying Cars,science fiction,A1,בֶּעָתִיד יֵשׁ מְכוֹנוֹת שֶׁעוֹפוֹת בַּשָּׁמַיִם. הַמְּכוֹנִית עוֹלָה מֵהָאֲדָמָה וְטָסָה כְּמוֹ מָטוֹס קָטָן. אֲנָשִׁים נוֹסְעִים בַּמְּכוֹנִית וְרוֹאִים אֶת הָעִיר מִלְמַעְלָה. הַדֶּרֶךְ קְצָרָה וְהַנְּסִיעָה מְהֵירָה. זֶה חֲלוֹם גָּדוֹל שֶׁיִּתָּכֵן בֶּעָתִיד.,In the future there will be cars that fly in the sky. The car goes up from the ground and flies like a small airplane. People travel in the car and see the city from above. The road is short and the ride is fast. It is a big dream that may happen in the future.,בעתיד יש מכוניות שעופות בשמים. המכונית עולה מהאדמה וטסה כמו מטוס קטן. אנשים נוסעים במכונית ורואים את העיר מלמעלה. הדרך קצרה והנסיעה מהירה. זה חלום גדול שיתכן בעתיד.
 תִּסְפֹּרֶת,Getting a Haircut,dialogue,A1,,,
 תְּזוּנָה בָּרִיאָה,Healthy Eating,health,A1,"אֲנִי אוֹהֵב לֶאֱכוֹל אוֹכֶל בָּרִיא.
 בַּבֹּקֶר אֲנִי אוֹכֵל לֶחֶם וּפֵרוֹת.
@@ -49,7 +58,7 @@ Healthy food helps me feel good.","אני אוהב לאכול אוכל בריא.
 הַאִם אֲרוּחַת בֹּקֶר חֲשׁוּבָה?,Is Breakfast Important?,health,A1,,,
 לִמּוּד אֹצֶר מִלִּים חָדָשׁ,Learning New Vocabulary,monologue,A1,"שְׁמִי מִרְיָם. אֲנִי לוֹמֶדֶת עִבְרִית כִּי אֲנִי רוֹצָה לְדַבֵּר עִם חֲבֵרוֹת. כָּל יוֹם אֲנִי לוֹמֶדֶת מִלָּה חֲדָשָׁה. אֲנִי כּוֹתֶבֶת אֶת הַמִּלָּה בַּפֶּנְקָס, וַאֲנִי אוֹמֶרֶת אוֹתָהּ רַבּוֹת פְּעָמִים. כָּךְ אֲנִי זוֹכֶרֶת. כְּשֶׁאֲנִי מַכִּירָה מִלּוֹת חֲדָשׁוֹת, אֲנִי שְׂמֵחָה.","My name is Miriam. I am learning Hebrew because I want to speak with friends. Every day I learn a new word. I write the word in a notebook, and I say it many times. This way I remember. When I know new words, I am happy.","שמי מרים. אני לומדת עברית כי אני רוצה לדבר עם חברות. כל יום אני לומדת מילה חדשה. אני כותבת את המילה בפנקס, ואני אומרת אותה רבות פעמים. כך אני זוכרת. כשאני מכירה מילות חדשות, אני שמחה."
 חַיִּים עַל מַאְדִּים,Life on Mars,science fiction,A1,,,
-מַגְנֵטִים בַּחַיִּים הַיּוֹמְיוּמִיִּים,Magnets in Everyday Life,technology,A1,,,
+מַגְנֵטִים בַּחַיִּים הַיּוֹמְיוּמִיִּים,Magnets in Everyday Life,technology,A1,הַמַּגְנֵט הוּא חָפֵץ קָטָן וּמְיֻחָד. אֲנַחְנוּ רוֹאִים מַגְנֵטִים בַּבַּיִת וּבַכִּתָּה. מַגְנֵט מַחֲזִיק נְיָרוֹת עַל הַמְּקָרֵר. יֵשׁ מַגְנֵטִים בַּצַּעֲצוּעִים שֶׁל יְלָדִים. מַגְנֵט עוֹזֵר לָנוּ לִמְצֹא דְּבָרִים מִבַּרְזֶל. הַמַּגְנֵט פָּשׁוּט אֲבָל מְאֹד שִׁמּוּשִׁי.,The magnet is a small and special object. We see magnets at home and in the classroom. A magnet holds papers on the refrigerator. There are magnets in children’s toys. A magnet helps us find things made of metal. The magnet is simple but very useful.,המגנט הוא חפץ קטן ומיוחד. אנחנו רואים מגנטים בבית ובכיתה. מגנט מחזיק ניירות על המקרר. יש מגנטים בצעצועים של ילדים. מגנט עוזר לנו למצוא דברים מברזל. המגנט פשוט אבל מאוד שימושי.
 מֵטְרוֹפּוֹלִין,Metropolis,science fiction,A1,,,
 פִּטְרִיּוֹת,Mushrooms,food,A1,,,
 הַכִּתָּה שֶׁלִּי,My Classroom,monologue,A1,"זֹאת הַכִּתָּה שֶׁלִּי.
@@ -152,113 +161,164 @@ The sushi is tasty and I am happy to eat it.","אני אוהב לאכול סוש
 הַמַּרְאָה הַמְקֻלֶּלֶת,The Cursed Mirror,horror,A1,,,
 מִשְׂרַד הָרוֹפֵא,The Doctor's Office,dialogue,A1,,,
 חֲנוּת הַאֶלֶקְטְרוֹנִיקָה,The Electronics Store,dialogue,A1,,,
-הַיּוֹם הָרִאשׁוֹן בַּעֲבוֹדָה חֲדָשָׁה,The First Day at a New Job,monologue,A1,,,
+הַיּוֹם הָרִאשׁוֹן בַּעֲבוֹדָה חֲדָשָׁה,The First Day at a New Job,monologue,A1,"הַיּוֹם הָיָה הַיּוֹם הָרִאשׁוֹן שֶׁלִּי בַּעֲבוֹדָה חֲדָשָׁה.
+הִגַּעְתִּי בַּבֹּקֶר, קִבַּלְתִּי כּוֹבַע וְתוֹכוֹ נִכְתַּב הַשֵּׁם שֶׁלִּי.
+כֻּלָּם חִיְּכוּ אֵלַי וְאָמְרוּ שָׁלוֹם.
+הַמְּנַהֶלֶת הִרְאָתָה לִי אֵיפֹה הַמִּשְׁרָד שֶׁלִּי.
+הִרְגַּשְׁתִּי קְצָת חֲדָשָׁה, אֲבָל גַּם שְׂמֵחָה.
+סוֹף הַיּוֹם עָבַר בְּשָׁלוֹם, וַאֲנִי מְחַכָּה לְמָחָר.","Today was my first day at a new job.
+I arrived in the morning, I received a hat with my name written inside.
+Everyone smiled at me and said “hello.”
+The manager showed me where my office is.
+I felt a little new, but also happy.
+The day ended well, and I am waiting for tomorrow.","היום היה היום הראשון שלי בעבודה חדשה.
+הגעתי בבוקר, קיבלתי כובע ותוכו נכתב השם שלי.
+כולם חייכו אלי ואמרו שלום.
+המנהלת הראתה לי איפה המשרד שלי.
+הרגשתי קצת חדשה, אבל גם שמחה.
+סוף היום עבר בשלום, ואני מחכה למחר."
 הָאוֹצָר הַנִּסְתָּר,The Hidden Treasure,monologue,A1,,,
 קּוֹלְנוֹעַ,The Movie Theater,dialogue,A1,,,
 בֵּית הַמִּרְקַחַת,The Pharmacy,dialogue,A1,,,
 הַדֶּלֶת הַסּוֹדִית,The Secret Door,monologue,A1,,,
-הַמַּעֲרֶכֶת הַשִּׁמְשִׁית,The Solar System,science,A1,,,
+הַמַּעֲרֶכֶת הַשִּׁמְשִׁית,The Solar System,science,A1,הַשֶּׁמֶשׁ הִיא כּוֹכָב גָּדוֹל. הִיא נוֹתֶנֶת אוֹר וְחֹם. סָבִיב לַשֶּׁמֶשׁ יֵשׁ כּוֹכְבֵי לֶכֶת. כּוֹכַב הַלֶּכֶת הָרִאשׁוֹן הוּא מֶרְקוּרִי. אַחֲרָיו נוֹגַהּ. אַחֲרֵי נוֹגַהּ יֵשׁ אֶת הָאָרֶץ. בָּאָרֶץ אָנוּ גָּרִים. אַחֲרֵי הָאָרֶץ בָּא מַאֲדִים. יֵשׁ גַּם כּוֹכְבֵי לֶכֶת גְּדוֹלִים כְּמוֹ יְרוֹפִיטֶר וְשַׁבְתַּאי. הַשֶּׁמֶשׁ וְכָל הַכּוֹכָבִים הֵם הַמַּעֲרֶכֶת הַשִּׁמְשִׁית.,The sun is a big star. It gives light and heat. Around the sun there are planets. The first planet is Mercury. After it comes Venus. After Venus there is the Earth. On Earth we live. After Earth comes Mars. There are also big planets like Jupiter and Saturn. The sun and all the planets are the solar system.,השמש היא כוכב גדול. היא נותנת אור וחום. סביב לשמש יש כוכבי לכת. כוכב הלכת הראשון הוא מרקורי. אחריו נוגה. אחרי נוגה יש את הארץ. בארץ אנו גרים. אחרי הארץ בא מאדים. יש גם כוכבי לכת גדולים כמו ירופיטר ושבתאי. השמש וכל הכוכבים הם המערכת השמשית.
 הַמּוֹנִית,The Taxi,dialogue,A1,,,
 הַפְּגִישָּׁה הַנּוֹרָאָה,The Terrible Date,dialogue,A1,,,
 תַּחֲנַת הָרַכֶּבֶת,The Train Station,dialogue,A1,,,
 תְּקוּפַת הַוִיקִּינְגִּים,The Viking Age,history,A1,,,
-מֶזֶג הָאֲוִיר הַיּוֹמִי,Today's Weather,monologue,A1,,,
+מֶזֶג הָאֲוִיר הַיּוֹמִי,Today's Weather,monologue,A1,הַיּוֹם מֵזֶג הָאֲוִיר חַמָּה וְיָפֶה. הַשֶּׁמֶשׁ זוֹרַחַת בַּשָּׁמַיִם וְהַשָּׁמַיִם כְּחוּלִים. אֵין עָנָן גָּדוֹל. אֲנִי לוֹבֵשׁ חֻלְצָה קַלָּה וּמוֹצֵא כּוֹבַע. הַיּוֹם טוֹב לָלֶכֶת בַּגָּן.,Today the weather is warm and nice. The sun is shining in the sky and the sky is blue. There is no big cloud. I wear a light shirt and find a hat. Today is a good day to walk in the garden.,היום מזג האוויר חמה ויפה. השמש זורחת בשמים והשמים כחולים. אין ענן גדול. אני לובש חולצה קלה ומוצא כובע. היום טוב ללכת בגן.
 לִהְיוֹת לָכֻד בִּפְנִים,Trapped Inside,horror,A1,,,
 ,Typically Israeli,culture,A1,,,
-בִּקּוּר בְּמוּזֵיאוֹן,Visiting a Museum,monologue,A1,,,
+בִּקּוּר בְּמוּזֵיאוֹן,Visiting a Museum,monologue,A1,"הַיּוֹם אֲנִי הוֹלֵך לְמוּזֵיאוֹן. אֲנִי מְאֹד שָׂמֵחַ. בַּמּוּזֵיאוֹן יֵשׁ תְּמוּנוֹת גְּדוֹלוֹת, פְּסָלִים יָפִים וְכֵלִים עַתִּיקִים. אֲנִי רוֹאֶה תְּמוּנָה יָפָה שֶׁל נוֹף, וַאֲנִי חוֹשֵׁב עָלֶיהָ הַרְבֵּה. אֲנִי הוֹלֵך מֵחָדָר לַחָדָר וְרוֹאֶה דְּבָרִים חֲדָשִׁים. בַּסּוֹף אֲנִי עוֹצֵר בַּחֲנוּת קְטַנָּה וְקוֹנֶה גַּלְיוֹנִית. אֲנִי מְאוֹד מְאוֹד מְאוּשָּׁר.","Today I go to the museum. I am very happy. In the museum there are big paintings, beautiful statues, and ancient objects. I see a beautiful picture of a landscape, and I think about it a lot. I walk from room to room and see new things. At the end I stop in a small shop and buy a postcard. I am very, very happy.","היום אני הולך למוזיאון. אני מאוד שמח. במוזיאון יש תמונות גדולות, פסלים יפים וכלים עתיקים. אני רואה תמונה יפה של נוף, ואני חושב עליה הרבה. אני הולך מחדר לחדר ורואה דברים חדשים. בסוף אני עוצר בחנות קטנה וקונה גליוֹנית. אני מאוד מאוד מאושר."
 בִּקּוּר בְּאַקְוַרְיוּם,Visiting an Aquarium,monologue,A1,,,
 מַה הִיא טוֹב־לֵבָבוּת?,What is Kindness?,psychology,A1,,,
-מַה הִיא פּוֹלִיטִיקָה?,What is Politics?,politics,A1,,,
+מַה הִיא פּוֹלִיטִיקָה?,What is Politics?,politics,A1,"פּוֹלִיטִיקָה הִיא חַיִּים שֶׁל אֲנָשִׁים בְּיַחַד.
+אֲנָשִׁים מַחֲלִיטִים מִי מְנַהֵל אֶת הָעִיר אוֹ אֶת הַמְּדִינָה.
+בַּפּוֹלִיטִיקָה יֵשׁ דֵּעוֹת שׁוֹנוֹת, וַאֲנָשִׁים מְדַבְּרִים עַל זֶה.
+פּוֹלִיטִיקָה מְדַבֶּרֶת עַל כֹּחַ, כֶּסֶף, וְחֹק.
+הִיא חֶלְקָה חֲשׁוּבָה בְּחַיִּים שֶׁל כֻּלָּנוּ.","Politics is the life of people together.
+People decide who manages the city or the country.
+In politics there are different opinions, and people talk about it.
+Politics talks about power, money, and law.
+It is an important part of life for all of us.","פוליטיקה היא חיים של אנשים ביחד.
+אנשים מחליטים מי מנהל את העיר או את המדינה.
+בפוליטיקה יש דעות שונות, ואנשים מדברים על זה.
+פוליטיקה מדברת על כוח, כסף, וחוק.
+היא חלקה חשובה בחיים של כולנו."
 מַה הוּא וַי־פַי?,What is Wi-Fi?,technology,A1,,,
 מַדּוּעַ חַיּוֹת מְשַׂמְּחוֹת אוֹתָנוּ?,Why Do Animals Make Us Happy?,psychology,A1,,,
 מַדּוּעַ יִשְׂרָאֵל כָּל כָּךְ חַמָּה?,Why Is Israel So Hot?,science,A1,"יִשְׂרָאֵל חַמָּה מְאֹד. הַשֶּׁמֶשׁ זוֹרַחַת בָּרוֹב הַיָּמִים. יִשְׂרָאֵל קְרוֹבָה לַמִּדְבָּר, וְלָכֵן הָאֲוִיר חַם. בַּקַּיִץ הַטֶּמְפֶּרָטוּרָה גְּבוֹהָה מְאֹד. בָּעִיר תֵּל־אָבִיב חַם וְלַח, וּבְאֵלַת חַם וְיָבֵשׁ. הָאֲנָשִׁים שׁוֹתִים מַיִם וְלוֹבְשִׁים בְּגָדִים קַלִּים כְּדֵי לְהִתְקַיֵּם בַּחֹם.","Israel is very hot. The sun shines on most days. Israel is close to the desert, and therefore the air is hot. In summer the temperature is very high. In the city of Tel Aviv it is hot and humid, and in Eilat it is hot and dry. People drink water and wear light clothes in order to manage in the heat.","ישראל חמה מאד. השמש זורחת ברוב הימים. ישראל קרובה למדבר, ולכן האוויר חם. בקיץ הטמפרטורה גבוהה מאד. בעיר תל־אביב חם ולח, ובאילת חם ויבש. האנשים שותים מים ולובשים בגדים קלים כדי להתקיים בחום."
 מַדּוּעַ צְמָחִים צְרִיכִים אוֹר שֶׁמֶשׁ,Why Plants Need Sunlight,science,A1,,,
-,A Day at the Library,monologue,A2,,,
-,A Dinner for Two,dialogue,A2,,,
-,Albert Einstein,biography,A2,,,
-,Artificial Intelligence,technology,A2,,,
-,Barcelona,travel,A2,,,
-,Basque,language,A2,,,
-,Blue Whales,science,A2,,,
-,Budget Travel Tips,travel,A2,,,
-,Buying Souvenirs,dialogue,A2,,,
-,Capsule Hotels,travel,A2,,,
-,Catalan,language,A2,,,
-,City Parks,travel,A2,,,
-,Comfort Food,food,A2,,,
-,Compasses,technology,A2,,,
-,Conveyor Belt Sushi,food,A2,,,
-,Córdoba,travel,A2,,,
-,Dinosaurs,science,A2,,,
-,Don Quixote,drama,A2,,,
-,Exploring a Forest,monologue,A2,,,
-,Exploring Paris,monologue,A2,,,
-,Formal Spanish,language,A2,,,
-,Gazpacho,food,A2,,,
-,George Orwell,biography,A2,,,
-,GPS,technology,A2,,,
-,Guernica,culture,A2,,,
-,Hibernation,science,A2,,,
-,Homage to Catalonia,history,A2,,,
-,How Colors Affect Emotions,psychology,A2,,,
-,How Stars Are Born,science,A2,,,
-,Indian Spices,food,A2,,,
-,Instant Ramen,food,A2,,,
-,Intergalactic Communication,science fiction,A2,,,
-,January in Spain,culture,A2,,,
-,June in Spain,culture,A2,,,
-,Ladino,language,A2,,,
-,London,travel,A2,,,
-,Madrid,travel,A2,,,
-,May in Spain,culture,A2,,,
-,Miguel de Cervantes,biography,A2,,,
-,October in Spain,culture,A2,,,
-,Pablo Picasso,biography,A2,,,
-,Paella,food,A2,,,
-,People-Watching in a Train Station,monologue,A2,,,
-,Pizza,food,A2,,,
-,Political Parties in Spain,politics,A2,,,
-,Preparing for an Exam,monologue,A2,,,
-,Recycling,technology,A2,,,
-,Regional Differences in Spanish,language,A2,,,
-,Rome,travel,A2,,,
-,Sagrada Família,culture,A2,,,
-,Salvador Dalí,biography,A2,,,
-,Self-Driving Cars,technology,A2,,,
-,Seoul,travel,A2,,,
-,September in Spain,culture,A2,,,
-,Shopping for Clothes,dialogue,A2,,,
-,Simple Pleasures,monologue,A2,,,
-,Smart Homes,technology,A2,,,
-,Solar Power in Spain,technology,A2,,,
-,Spanish Breakfast,food,A2,,,
-,Spanish Dinner,food,A2,,,
-,Spanish Lunch,food,A2,,,
-,Street Food,food,A2,,,
-,Symbolism in Everyday Objects,drama,A2,,,
-,Tapas,food,A2,,,
-,The Beatles,culture,A2,,,
-,The Grand Canyon,travel,A2,,,
-,The Great Wall of China,travel,A2,,,
-,The Lost Wallet,dialogue,A2,,,
-,The Mediterranean Diet,health,A2,,,
-,The Old City of Jerusalem,travel,A2,,,
-,The Post Office,dialogue,A2,,,
-,The Restaurant,dialogue,A2,,,
-,The Role of Luck in History,history,A2,,,
-,The Zombie,horror,A2,,,
-,Traveling Alone in Spain,monologue,A2,,,
-,Utopias and Dystopias,drama,A2,,,
-,Volcanoes,science,A2,,,
-,Weekend Plans,dialogue,A2,,,
-,Why the Sky is Blue,science,A2,,,
-,Why We Dream,psychology,A2,,,
+יוֹם בַּסִּפְרִיָּה,A Day at the Library,monologue,A2,,,
+אֲרוּחַת עֶרֶב לִשְׁנַיִם,A Dinner for Two,dialogue,A2,,,
+אָלְבֶּרְט אַיְנְשְׁטַיְן,Albert Einstein,biography,A2,,,
+בִּינָה מְלָאכוּתִית,Artificial Intelligence,technology,A2,"הַיּוֹם כָּל אָדָם שׁוֹמֵעַ עַל בִּינָּה מְלָאכוּתִית. זֹאת טֶכְנוֹלוֹגְיָה שֶׁמַּחְשֵׁבִים וְטֶלֶפוֹנִים חֲכָמִים מִשְׁתַּמְּשִׁים בָּהּ. בִּינָּה מְלָאכוּתִית יוֹדַעַת לִלְמוֹד מִדְּבָרִים שֶׁאֲנָשִׁים כּוֹתְבִים וְאוֹמְרִים. הִיא עוֹזֶרֶת לָנוּ לְתַרְגֵּם שָׂפוֹת, לִמְצֹא מֵידָע בָּאִינְטֶרְנֵט, וּגַם לְדַבֵּר עִם הַמַּחְשֵׁב כְּמוֹ עִם חָבֵר. יֵשׁ אֲנָשִׁים שֶׁחוֹשְׁבִים שֶׁזֶּה מַפְחִיד, אֲבָל רַבִּים חוֹשְׁבִים שֶׁזֶּה מַשֶּׁהוּ טוֹב וְחָשׁוּב לָעֲתִיד.","Today everyone hears about Artificial Intelligence. It is a technology that computers and smartphones use. Artificial Intelligence can learn from things that people write and say. It helps us translate languages, find information on the internet, and also talk to the computer like a friend. Some people think it is scary, but many believe it is something good and important for the future.","היום כל אדם שומע על בינה מלאכותית. זאת טכנולוגיה שמחשבים וטלפונים חכמים משתמשים בה. בינה מלאכותית יודעת ללמוד מדברים שאנשים כותבים ואומרים. היא עוזרת לנו לתרגם שפות, למצוא מידע באינטרנט, וגם לדבר עם המחשב כמו עם חבר. יש אנשים שחושבים שזה מפחיד, אבל רבים חושבים שזה משהו טוב וחשוב לעתיד."
+בַּרְסֵלוֹנָה,Barcelona,travel,A2,,,
+,Yiddish,language,A2,,,
+לִוְיָתָנִים כְּחוּלִים,Blue Whales,science,A2,,,
+עֵצוֹת לְטִיּוּל בְּתַקְצִיב מֻגְבָּל,Budget Travel Tips,travel,A2,,,
+קְנִיַּת מַזְכָּרוֹת,Buying Souvenirs,dialogue,A2,,,
+מָלוֹנוֹת קַפְּסוּלָה,Capsule Hotels,travel,A2,,,
+קָטָלָאנִית,Catalan,language,A2,,,
+פַּארְקֵי עִיר,City Parks,travel,A2,,,
+מַאֲכָלִים מְנַחֲמִים,Comfort Food,food,A2,,,
+מַצְפֵּנִים,Compasses,technology,A2,,,
+סוּשִׁי עַל מְסִלַּת מוֹסָע,Conveyor Belt Sushi,food,A2,,,
+קוֹרְדוֹבָה,Córdoba,travel,A2,,,
+דִּינוֹזַאוּרִים,Dinosaurs,science,A2,,,
+דוֹן קִישׁוֹט,Don Quixote,drama,A2,,,
+חֲקִירַת יַעַר,Exploring a Forest,monologue,A2,,,
+חֲקִירַת פָּארִיס,Exploring Paris,monologue,A2,,,
+סְפָרַדִית רִשְׁמִית,Formal Spanish,language,A2,,,
+גַּסְפָּאצ’וֹ,Gazpacho,food,A2,,,
+גּ’וֹרְג’ אוֹרוֶול,George Orwell,biography,A2,,,
+גִּ’יפִּי אֶס,GPS,technology,A2,,,
+גֶּרְנִיקָה,Guernica,culture,A2,,,
+תַּרְדֵּמַת חֹרֶף,Hibernation,science,A2,,,
+מַסֵּד לְקָטָלוֹנְיָה,Homage to Catalonia,history,A2,,,
+אֵיךְ צְבָעִים מַשְׁפִּיעִים עַל רְגָשׁוֹת,How Colors Affect Emotions,psychology,A2,,,
+אֵיךְ נוֹלָדִים כּוֹכָבִים,How Stars Are Born,science,A2,,,
+תַּבְלִינִים הוֹדוּיִים,Indian Spices,food,A2,,,
+רָאמֵן מָיָדִי,Instant Ramen,food,A2,,,
+תִּקְשֹׁרֶת בֵּין־גַּלַּקְטִית,Intergalactic Communication,science fiction,A2,,,
+,January in Israel,culture,A2,,,
+,June in Israel,culture,A2,,,
+לָדִינוֹ,Ladino,language,A2,,,
+לוֹנְדוֹן,London,travel,A2,"לוֹנְדוֹן הִיא עִיר גְּדוֹלָה בְּאַנְגְּלִיָּה. בְּלוֹנְדוֹן יֵשׁ רַכֶּבֶת תַּחְתִּית, אוֹטוֹבּוּסִים אֲדוּמִּים, וְכָל יוֹם רַבִּים הוֹלְכִים לַעֲבוֹדָה. בָּעִיר יֵשׁ גַּם גַּנִּים יָפִים וְאַרְמוֹנוֹת. הַתַּיָּרִים אוֹהֲבִים לִרְאוֹת אֶת הַבִּיג בֶּן וְאֶת גֶּשֶׁר טַאוֶור. בַּקַּיִץ יֵשׁ שָׁם שֶׁמֶשׁ, אֲבָל בְּחֹרֶף יֵשׁ רֶגֶשׁ וְגֶשֶׁם רַב. לוֹנְדוֹן הִיא עִיר מְעַנְיֶינֶת וְכָל אֶחָד מוֹצֵא מַשֶּׁהוּ לַעֲשׂוֹת שָׁם.","London is a big city in England. In London there is an underground train, red buses, and every day many people go to work. The city also has beautiful gardens and palaces. Tourists like to see Big Ben and Tower Bridge. In the summer there is sun, but in the winter it is cold and there is a lot of rain. London is an interesting city, and everyone can find something to do there.","לונדון היא עיר גדולה באנגליה. בלונדון יש רכבת תחתית, אוטובוסים אדומים, וכל יום רבים הולכים לעבודה. בעיר יש גם גנים יפים וארמונות. התיירים אוהבים לראות את הביג בן ואת גשר טאוור. בקיץ יש שם שמש, אבל בחורף יש רגש וגשם רב. לונדון היא עיר מעניינת וכל אחד מוצא משהו לעשות שם."
+מַדְרִיד,Madrid,travel,A2,,,
+,May in Israel,culture,A2,,,
+מִיגֵּל דֶּה סֶרְבַנְטֵס,Miguel de Cervantes,biography,A2,,,
+,October in Israel,culture,A2,,,
+פַּאבְלוֹ פִּיקַּאסוֹ,Pablo Picasso,biography,A2,,,
+פַּאֶיָּה,Paella,food,A2,,,
+צְפִיַּת אֲנָשִׁים בְּתַחֲנַת רַכֶּבֶת,People-Watching in a Train Station,monologue,A2,,,
+פִּיצָּה,Pizza,food,A2,"בַּסּוֹף שֶׁל הַשָּׁבוּעַ אֲנִי וַחֲבֵרִים שֶׁלִּי הוֹלְכִים לֶאֱכוֹל פִּיצָה.
+יֵשׁ בָּעִיר שֶׁלָּנוּ מִסְעָדָה קְטַנָּה וּמַיּוּחֶדֶת.
+הַפִּיצָה שָׁם חַמָּה, רֵיחָהּ טוֹב, וְיֵשׁ לָנוּ הַרְבֵּה בְּחִירוֹת.
+יֵשׁ פִּיצָה עִם גְּבִינָה וְיֵשׁ פִּיצָה עִם יְרָקוֹת.
+אֲנִי אוֹהֵב לָשִׂים עַל הַפִּיצָה פִּטְרִיּוֹת וְזַיִתִים.
+אַחֲרֵי הָאֹכֶל אֲנַחְנוּ יוֹשְׁבִים וּמְדַבְּרִים, זֶה תָּמִיד מְשַׂמֵּחַ אוֹתִי.","At the end of the week my friends and I go to eat pizza.
+In our city there is a small and special restaurant.
+The pizza there is hot, it smells good, and we have many choices.
+There is pizza with cheese and pizza with vegetables.
+I like to put mushrooms and olives on my pizza.
+After the meal we sit and talk, and it always makes me happy.","בסוף של השבוע אני וחברים שלי הולכים לאכול פיצה.
+יש בעיר שלנו מסעדה קטנה ומיוחדת.
+הפיצה שם חמה, ריחה טוב, ויש לנו הרבה בחירות.
+יש פיצה עם גבינה ויש פיצה עם ירקות.
+אני אוהב לשים על הפיצה פטריות וזיתים.
+אחרי האוכל אנחנו יושבים ומדברים, זה תמיד משמח אותי."
+מִפְלָגוֹת פּוֹלִיטִיּוֹת בְּיִשְׂרָאֵל,Political Parties in Israel,politics,A2,,,
+הִכּוֹנוּת לִבְחִינָה,Preparing for an Exam,monologue,A2,,,
+מִחְזוּר,Recycling,technology,A2,,,
+הֶבְדֵּלִים אֵזוֹרִיִּים בַּסְּפָרַדִית,Regional Differences in Spanish,language,A2,,,
+רוֹמָה,Rome,travel,A2,רוֹמָה הִיא עִיר יְפֵה וְעַתִּיקָה. בָּעִיר יֵשׁ רַבִּים מְקוֹמוֹת מְיֻחָדִים כְּמוֹ הַקוֹלוֹסֵיאוּם וְהַפּוֹרוּם הָרוֹמִי. בָּרְחוֹבוֹת יֵשׁ בָּתֵּי קָפֶה קְטַנִּים שֶׁבָּהֶם אֲנָשִׁים שׁוֹתִים אֶסְפְּרֶסוֹ וְאוֹכְלִים פִּיצָּה. תַּיָּרִים מִכָּל הָעוֹלָם מְבַקְּרִים בָּרוֹמָה כְּדֵי לִרְאוֹת אֶת הַאֲתָרִים וְלָלֶכֶת בְּסִימְטָאוֹת הַצְּפוּפוֹת. זֶה מָקוֹם מְעַנְיֵן לְלִמּוּד הִסְטוֹרְיָה וּלְבִילּוּי.,Rome is a beautiful and ancient city. In the city there are many special places such as the Colosseum and the Roman Forum. In the streets there are small cafés where people drink espresso and eat pizza. Tourists from all over the world visit Rome to see the sites and walk in the narrow alleys. It is an interesting place for learning history and for leisure.,רומא היא עיר יפה ועתיקה. בעיר יש רבים מקומות מיוחדים כמו הקולוסיאום והפורום הרומי. ברחובות יש בתי קפה קטנים שבהם אנשים שותים אספרסו ואוכלים פיצה. תיירים מכל העולם מבקרים ברומא כדי לראות את האתרים וללכת בסמטאות הצפופות. זה מקום מעניין ללימוד היסטוריה ולבילוי.
+סָגְרָדָה פָאמִילְיָה,Sagrada Família,culture,A2,,,
+סַלְוָדוֹר דָּאלִי,Salvador Dalí,biography,A2,,,
+מְכוֹנוֹת נוֹהֲגוֹת עַצְמָאִית,Self-Driving Cars,technology,A2,,,
+סֵאוּל,Seoul,travel,A2,,,
+סֶפְּטֶמְבֶּר בְּיִשְׂרָאֵל,September in Israel,culture,A2,,,
+קְנִיַּת בְּגָדִים,Shopping for Clothes,dialogue,A2,,,
+תַּעֲנוּגוֹת פְּשׁוּטִים,Simple Pleasures,monologue,A2,,,
+בָּתִּים חֲכָמִים,Smart Homes,technology,A2,"בַּיִת חָכָם הוּא בַּיִת שֶׁמִּשְׁתַּמֵּשׁ בְּטֶכְנוֹלוֹגְיָה כְּדֵי לַעֲזוֹר לָאָדָם.
+יֵשׁ בַּבַּיִת חָכָם אוֹרוֹת שֶׁנִּדְלָקִים וְנִכְבִּים בְּעֶזְרַת טֵלֵפוֹן נַיָּד.
+יֵשׁ גַּם מַעֲרֶכֶת חוּם וְקוֹר שֶׁשּׁוֹלְטִים בָּהּ מֵהַמִּטָּה.
+כָּךְ הַחַיִּים נַעֲשִׂים קַלִּים יוֹתֵר וְנֹחִים יוֹתֵר.","A smart home is a home that uses technology to help a person.
+In a smart home there are lights that turn on and off with the help of a mobile phone.
+There is also a heating and cooling system that can be controlled from the bed.
+This way, life becomes easier and more comfortable.","בית חכם הוא בית שמשתמש בטכנולוגיה כדי לעזור לאדם.
+יש בבית חכם אורות שנדלקים ונכבים בעזרת טלפון נייד.
+יש גם מערכת חום וקור ששולטים בה מהמיטה.
+כך החיים נעשים קלים יותר ונוחים יותר."
+אֶנֶרְגִּיָּה שִׁמְשִׁית בְּסְפָרַד,Solar Power in Spain,technology,A2,,,
+,Israeli Breakfast,food,A2,,,
+,Israeli Dinner,food,A2,,,
+,Israeli Lunch,food,A2,,,
+אוֹכֶל רְחוֹב,Street Food,food,A2,,,
+סִימְלוּת בַּחֲפָצִים יוֹמְיוּמִיִּים,Symbolism in Everyday Objects,drama,A2,,,
+טַפָּס,Tapas,food,A2,,,
+הַבִּיטְלְס,The Beatles,culture,A2,,,
+הַקָּנְיוֹן הַגָּדוֹל,The Grand Canyon,travel,A2,,,
+חוֹמַת סִין הַגְּדוֹלָה,The Great Wall of China,travel,A2,,,
+הָאַרְנָק הָאָבוּד,The Lost Wallet,dialogue,A2,,,
+הַדִּיֵּיטָה הַיָּם־תִּיכוֹנִית,The Mediterranean Diet,health,A2,,,
+הָעִיר הָעַתִּיקָה שֶׁל יְרוּשָׁלַיִם,The Old City of Jerusalem,travel,A2,,,
+הַדּוֹאַר,The Post Office,dialogue,A2,,,
+הַמִּסְעָדָה,The Restaurant,dialogue,A2,,,
+תַּפְקִיד הַמַּזָּל בַּהִסְטוֹרְיָה,The Role of Luck in History,history,A2,,,
+הַזּוֹמְבִּי,The Zombie,horror,A2,,,
+,Traveling Alone in Israel,monologue,A2,,,
+אוּטוֹפְּיוֹת וְדִיסְטוֹפְּיוֹת,Utopias and Dystopias,drama,A2,,,
+הָרִים פּוֹעֲלִים,Volcanoes,science,A2,,,
+תָּכְנִיּוֹת לַסּוֹף שָׁבוּעַ,Weekend Plans,dialogue,A2,,,
+מַדּוּעַ הַשָּׁמַיִם כְּחוּלִים,Why the Sky is Blue,science,A2,,,
+מַדּוּעַ אָנוּ חוֹלְמִים,Why We Dream,psychology,A2,,,
 ,A Song of Ice and Fire,fantasy,B1,,,
 ,Animal Crossing,culture,B1,,,
 ,Antiheroes,drama,B1,,,
-,April in Spain,culture,B1,,,
+,April in Israel,culture,B1,,,
 ,Atomic Habits,psychology,B1,,,
-,August in Spain,culture,B1,,,
+,August in Israel,culture,B1,,,
 ,Berlin,travel,B1,,,
 ,Biohacking,health,B1,,,
 ,Bioluminescent Animals,science,B1,,,
@@ -271,12 +331,12 @@ The sushi is tasty and I am happy to eat it.","אני אוהב לאכול סוש
 ,Confessions of a Bored Vampire,monologue,B1,,,
 ,Cooking in a Hostel Kitchen,monologue,B1,,,
 ,Dead Languages,language,B1,,,
-,December in Spain,culture,B1,,,
+,December in Israel,culture,B1,,,
 ,Democracy in Ancient Athens,history,B1,,,
 ,Digital Detoxes,health,B1,,,
 ,Domestication,science,B1,,,
 ,Dracula,horror,B1,,,
-,February in Spain,culture,B1,,,
+,February in Israel,culture,B1,,,
 ,Flavor Pairing,food,B1,,,
 ,Frankenstein,horror,B1,,,
 ,Fungi,science,B1,,,
@@ -285,15 +345,15 @@ The sushi is tasty and I am happy to eat it.","אני אוהב לאכול סוש
 ,Hannah Arendt,biography,B1,,,
 ,Impostor Syndrome,psychology,B1,,,
 ,Introducing Myself,monologue,B1,,,
-,July in Spain,culture,B1,,,
+,July in Israel,culture,B1,,,
 ,Learning a New Language,monologue,B1,,,
 ,Liminality,drama,B1,,,
 ,Magic Wands,fantasy,B1,,,
 ,Making Friends While Traveling,travel,B1,,,
-,March in Spain,culture,B1,,,
+,March in Israel,culture,B1,,,
 ,Minimalism,philosophy,B1,,,
 ,Nintendo,culture,B1,,,
-,November in Spain,culture,B1,,,
+,November in Israel,culture,B1,,,
 ,Oslo,travel,B1,,,
 ,Planning a Day of Adventure,monologue,B1,,,
 ,Public Transit Maps,travel,B1,,,
@@ -381,7 +441,7 @@ The sushi is tasty and I am happy to eat it.","אני אוהב לאכול סוש
 ,Personality Traits,psychology,B2,,,
 ,Phoenixes,fantasy,B2,,,
 ,Procrastination,psychology,B2,,,
-,Queer Life in Spain,culture,B2,,,
+,Queer Life in Israel,culture,B2,,,
 ,Sapiens,history,B2,,,
 ,Scandinavian Design,culture,B2,,,
 ,Smartphones,technology,B2,,,
