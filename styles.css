@@ -792,6 +792,7 @@ input[type="text"]:not(:placeholder-shown) + label {
   color: black; /* Set a color for Japanese text */
   direction: rtl;
   font-family: "Noto Serif", serif; /* Adjust to the appropriate English font */
+  font-size: 20px;
 }
 
 .japanese-title {
@@ -1347,6 +1348,7 @@ ul {
 .sentence-box-norwegian {
   border-radius: 12px 0 0 12px; /* Rounded corners on top */
   box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.1);
+  direction: rtl;
 }
 
 .sentence-box-norwegian-hidden {
