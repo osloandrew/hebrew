@@ -435,9 +435,9 @@ async function randomWord() {
             ${isNiqqudVisible ? "Hide Niqqud" : "Show Niqqud"}
           </button>
             <div class="sentence-container">
-              hasSentencesPlaceholder  <div class="sentence-box-norwegian ${
-                !isEnglishVisible ? "sentence-box-norwegian-hidden" : ""
-              }">
+            <div class="sentence-box-norwegian ${
+              !isEnglishVisible ? "sentence-box-norwegian-hidden" : ""
+            }">
                     <div class="sentence-content">
                         ${cefrLabel}  <!-- Add the CEFR label in the upper-left corner -->
                         <p class="sentence">${cleanedSentence}</p>
