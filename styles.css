@@ -303,6 +303,7 @@ li {
 }
 
 .english-sentence {
+  text-align: end;
   color: gray; /* Set a different color for English text */
   font-family: "Noto Serif", serif; /* Adjust to the appropriate English font */
 }
@@ -789,6 +790,7 @@ input[type="text"]:not(:placeholder-shown) + label {
 
 .japanese-sentence {
   color: black; /* Set a color for Japanese text */
+  direction: rtl;
   font-family: "Noto Serif", serif; /* Adjust to the appropriate English font */
 }
 
