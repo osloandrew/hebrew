@@ -797,6 +797,7 @@ input[type="text"]:not(:placeholder-shown) + label {
 
 .japanese-title {
   color: #3c3c3c;
+  direction: rtl;
   display: -webkit-box; /* Creates a block-level flex container */
   font-family: "Noto Serif", serif; /* Japanese-specific font */
   font-weight: 350;
@@ -1508,6 +1509,7 @@ ul {
 
 .sticky-title-japanese {
   color: #3c3c3c;
+  direction: rtl;
   font-size: 1.5em;
   font-family: "Noto Serif", serif; /* Adjust to the appropriate English font */
   font-weight: 400;
