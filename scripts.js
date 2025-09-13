@@ -1661,6 +1661,15 @@ function toggleNiqqud() {
     const noNiq = el.getAttribute("data-word-no") || "";
     el.textContent = isNiqqudVisible ? withNiq : noNiq;
   });
+
+  // flip each example sentence
+  document.querySelectorAll(".sentence").forEach((el) => {
+    const withNiq = el.getAttribute("data-example-with") || "";
+    const noNiq = el.getAttribute("data-example-no") || "";
+    if (withNiq || noNiq) {
+      el.textContent = isNiqqudVisible ? withNiq : noNiq;
+    }
+  });
 }
 
 // Function to find the gender of a word
@@ -2376,8 +2385,17 @@ function fetchAndRenderSentences(word, pos, showEnglish = true) {
                 }">
                     <div class="sentence-content">
                         ${cefrLabel}
-                        <p class="sentence">${sentence}</p>
-                    </div>
+                <p class="sentence"
+                  data-example-no="${sentence.replace(/<[^>]+>/g, "")}"
+                  data-example-with="${(
+                    result.exampleWithNiqqud || sentence
+                  ).replace(/<[^>]+>/g, "")}">
+                  ${
+                    isNiqqudVisible
+                      ? result.exampleWithNiqqud || sentence
+                      : sentence
+                  }
+                </p>  </div>
                 </div>
                 ${
                   translations[index]

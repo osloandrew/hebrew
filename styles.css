@@ -1642,7 +1642,7 @@ ul {
 }
 
 .english-toggle-btn {
-  margin-bottom: 0px;
+  margin-bottom: 0px !important;
 }
 
 .stories-list-item:hover {
