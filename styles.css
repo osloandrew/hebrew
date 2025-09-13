@@ -791,15 +791,15 @@ input[type="text"]:not(:placeholder-shown) + label {
 .japanese-sentence {
   color: black; /* Set a color for Japanese text */
   direction: rtl;
-  font-family: "Noto Serif", serif; /* Adjust to the appropriate English font */
-  font-size: 20px;
+  font-family: "Noto Serif Hebrew", serif; /* Adjust to the appropriate English font */
+  font-size: 24px;
 }
 
 .japanese-title {
   color: #3c3c3c;
   direction: rtl;
   display: -webkit-box; /* Creates a block-level flex container */
-  font-family: "Noto Serif", serif; /* Japanese-specific font */
+  font-family: "Noto Serif Hebrew", serif; /* Adjust to the appropriate English font */
   font-weight: 350;
   font-size: 18px;
   overflow: hidden; /* Hides the overflowing text */
@@ -1511,7 +1511,7 @@ ul {
   color: #3c3c3c;
   direction: rtl;
   font-size: 2em;
-  font-family: "Noto Serif", serif; /* Adjust to the appropriate English font */
+  font-family: "Noto Serif Hebrew", serif; /* Adjust to the appropriate English font */
   font-weight: 400;
   letter-spacing: 0.5px;
   margin: 0 auto;
