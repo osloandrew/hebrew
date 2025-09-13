@@ -1347,10 +1347,12 @@ ul {
 }
 
 .sentence-box-norwegian {
+  text-align: right;
   border-radius: 12px 0 0 12px; /* Rounded corners on top */
   box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.1);
   direction: rtl;
   font-family: "Noto Serif Hebrew", serif; /* Adjust to the appropriate English font */
+  font-size: 20px;
 }
 
 .sentence-box-norwegian-hidden {
@@ -2251,13 +2253,13 @@ ul {
 
   .sentence-box-english,
   .sentence-box-norwegian {
-    font-size: 15px;
     margin-bottom: 2px !important;
     width: auto;
   }
 
   .sentence-box-english {
     border-radius: 0 0 12px 12px; /* Rounded corners on bottom */
+    font-size: 15px;
     padding: 5px 10px 5px 38px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
