@@ -1358,7 +1358,8 @@ ul {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.sentence-container {
+.sentence-container,
+.sentence-controls {
   display: flex;
   gap: 3px; /* Adds space between the boxes */
   justify-content: space-between;
@@ -1641,10 +1642,6 @@ ul {
     transform 0.2s ease; /* Subtle transitions */
 }
 
-.english-toggle-btn {
-  margin-bottom: 0px !important;
-}
-
 .stories-list-item:hover {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Lighter shadow for hover */
   transform: scale(1.01);
@@ -1863,6 +1860,14 @@ ul {
 
 #toggle-niqqud-btn {
   margin-top: 5px;
+}
+
+.english-toggle-btn {
+  border-radius: 12px 0 0 12px; /* Rounded corners on bottom */
+}
+
+.niqqud-toggle-btn {
+  border-radius: 0 12px 12px 0; /* Rounded corners on bottom */
 }
 
 /* Gray out both the select text and the arrow when disabled */

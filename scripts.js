@@ -1458,15 +1458,17 @@ function displaySearchResults(results, query = "") {
       .replace(/"/g, "&quot;")
       .replace(/\r?\n|\r/g, ""); // Escapes single quotes, double quotes, and removes newlines
     const hasSentencesPlaceholder = `
-  <button class="sentence-btn english-toggle-btn" style="display: none;"
-          onclick="event.stopPropagation(); toggleEnglishTranslations('${normalizedWord}')">
-    ${isEnglishVisible ? "Hide English" : "Show English"}
-  </button>
-  <button class="sentence-btn niqqud-toggle-btn" style="display: none;"
-          onclick="event.stopPropagation(); toggleNiqqud('${normalizedWord}')">
-    ${isNiqqudVisible ? "Hide Niqqud" : "Show Niqqud"}
-  </button>
-`;
+      <div class="sentence-controls">
+        <button class="sentence-btn english-toggle-btn" style="display: none;"
+                onclick="event.stopPropagation(); toggleEnglishTranslations('${normalizedWord}')">
+          ${isEnglishVisible ? "Hide English" : "Show English"}
+        </button>
+        <button class="sentence-btn niqqud-toggle-btn" style="display: none;"
+                onclick="event.stopPropagation(); toggleNiqqud('${normalizedWord}')">
+          ${isNiqqudVisible ? "Hide Niqqud" : "Show Niqqud"}
+        </button>
+      </div>
+    `;
     function normalizeDefinitionText(def) {
       return def
         .split(/\r?\n+/)
@@ -1937,16 +1939,18 @@ function renderSentences(sentenceResults, word) {
   if (combinedMatches.length > 0) {
     // Generate the header card
     htmlString += `
-            <div class="result-header">
-                <h2>Sentence Results for "${word}"</h2>
-            </div>
-      <button class="sentence-btn english-toggle-btn" onclick="toggleEnglishTranslations()">
-          ${isEnglishVisible ? "Hide English" : "Show English"}
-      </button>
-      <button class="sentence-btn niqqud-toggle-btn" onclick="toggleNiqqud()">
-          ${isNiqqudVisible ? "Hide Niqqud" : "Show Niqqud"}
-      </button>
-        `;
+        <div class="result-header">
+            <h2>Sentence Results for "${word}"</h2>
+        </div>
+        <div class="sentence-controls">
+          <button class="sentence-btn english-toggle-btn" onclick="toggleEnglishTranslations()">
+              ${isEnglishVisible ? "Hide English" : "Show English"}
+          </button>
+          <button class="sentence-btn niqqud-toggle-btn" onclick="toggleNiqqud()">
+              ${isNiqqudVisible ? "Hide Niqqud" : "Show Niqqud"}
+          </button>
+        </div>
+    `;
   }
 
   combinedMatches.forEach((match) => {
