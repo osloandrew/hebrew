@@ -217,6 +217,8 @@ button:disabled i {
 }
 
 #cloze-sentence {
+  direction: rtl;
+  font-family: "Noto Serif Hebrew", serif;
   font-weight: normal;
   font-size: 1.2em;
   line-height: 1.35; /* Preferred */
@@ -634,7 +636,7 @@ footer .copyright {
   border-radius: 10px; /* Same rounded corners */
   padding: 15px; /* Reduced padding to make the cards less bulky */
   text-align: center; /* Centered text */
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Noto Serif Hebrew", serif;
   font-size: 1.2em !important; /* Consistent font size */
   color: #333; /* Same text color */
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Same shadow */
@@ -662,7 +664,7 @@ footer .copyright {
 
 .game-word h2 {
   margin: 0;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Noto Serif Hebrew", serif;
   font-weight: 400 !important;
 }
 
@@ -958,7 +960,6 @@ li {
 }
 
 #lock-icon {
-  color: white;
   font-size: 16px;
   margin: 0 5px 0 5px; /* Space between the icon and the text */
   cursor: pointer;
@@ -969,12 +970,10 @@ li {
 }
 
 #lock-icon.locked {
-  color: #c7e3b6; /* light green for locked */
   transform: scale(1.1);
 }
 
 #lock-icon.unlocked {
-  color: white; /* default white */
   transform: scale(1);
 }
 
