@@ -1610,7 +1610,7 @@ ul {
   align-items: center; /* Align CEFR and genre vertically */
   display: flex;
   gap: 5px; /* Add spacing between genre and CEFR */
-  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .stories-genre {
@@ -1638,13 +1638,14 @@ ul {
 }
 
 .stories-list-item {
+  align-items: center; /* Vertically center the items */
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  direction: rtl;
   margin: 0 0 15px 0;
   display: flex;
   justify-content: space-between; /* Space between title/genre and CEFR */
-  align-items: center; /* Vertically center the items */
   cursor: pointer;
   padding: 7.5px 12.5px;
   min-height: 60px;
@@ -1866,6 +1867,10 @@ ul {
   height: 40px;
   margin-bottom: 10px;
   width: 40px;
+}
+
+.title-container {
+  text-align: right;
 }
 
 #toggle-niqqud-btn {
