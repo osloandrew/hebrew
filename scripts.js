@@ -423,29 +423,42 @@ async function randomWord() {
       "$1"
     );
 
-    // Build the sentence HTML
+    // Prepare niqqud + plain text for the selected sentence (strip any markup)
+    const withArray = randomResult.exampleWithNiqqud
+      ? randomResult.exampleWithNiqqud.split(/(?<=[.!?])\s+/)
+      : [];
+    const selectedWith = withArray[randomIndex] || selectedSentence || "";
+
+    const noNiq = cleanedSentence.replace(/<[^>]+>/g, "").trim();
+    const withNiq = selectedWith.replace(/<[^>]+>/g, "").trim();
+
+    // Build the sentence HTML with data attributes for the niqqud toggle
     let sentenceHTML = `
-            <div class="result-header">
-                <h2>Random Sentence</h2>
-            </div>
-            <div class="sentence-controls">
-            <button class="sentence-btn english-toggle-btn" onclick="toggleEnglishTranslations(this)">
-                ${isEnglishVisible ? "Hide English" : "Show English"}
-            </button>
-            <button class="sentence-btn niqqud-toggle-btn" onclick="toggleNiqqud()">
-            ${isNiqqudVisible ? "Hide Niqqud" : "Show Niqqud"}
-          </button>
-          </div>
-            <div class="sentence-container">
-            <div class="sentence-box-norwegian ${
-              !isEnglishVisible ? "sentence-box-norwegian-hidden" : ""
-            }">
-                    <div class="sentence-content">
-                        ${cefrLabel}  <!-- Add the CEFR label in the upper-left corner -->
-                        <p class="sentence">${cleanedSentence}</p>
-                    </div>
-                </div>
-        `;
+  <div class="result-header">
+    <h2>Random Sentence</h2>
+  </div>
+  <div class="sentence-controls">
+    <button class="sentence-btn english-toggle-btn" onclick="toggleEnglishTranslations(this)">
+      ${isEnglishVisible ? "Hide English" : "Show English"}
+    </button>
+    <button class="sentence-btn niqqud-toggle-btn" onclick="toggleNiqqud()">
+      ${isNiqqudVisible ? "Hide Niqqud" : "Show Niqqud"}
+    </button>
+  </div>
+  <div class="sentence-container">
+    <div class="sentence-box-norwegian ${
+      !isEnglishVisible ? "sentence-box-norwegian-hidden" : ""
+    }">
+      <div class="sentence-content">
+        ${cefrLabel}
+        <p class="sentence"
+           data-example-no="${noNiq}"
+           data-example-with="${withNiq}">
+          ${isNiqqudVisible ? withNiq : noNiq}
+        </p>
+      </div>
+    </div>
+`;
 
     if (selectedTranslation) {
       sentenceHTML += `
@@ -1848,144 +1861,138 @@ function renderSentence(sentenceResult) {
 function renderSentences(sentenceResults, word) {
   clearContainer(); // Clear previous results
 
-  const query = word.trim().toLowerCase(); // Trim and lower-case the search term for consistency
-  let exactMatches = [];
-  let partialMatches = [];
-  let uniqueSentences = new Set(); // Track unique sentences
-
+  const query = word.trim().toLowerCase();
+  const exactMatches = [];
+  const partialMatches = [];
+  const uniqueSentences = new Set();
   const regexExactMatch = new RegExp(`\\b${query}\\b`, "i");
 
+  // Helper: make CEFR pill
+  function cefrPill(cefr) {
+    if (cefr === "A1" || cefr === "A2")
+      return '<div class="sentence-cefr-label easy">' + cefr + "</div>";
+    if (cefr === "B1" || cefr === "B2")
+      return '<div class="sentence-cefr-label medium">' + cefr + "</div>";
+    if (cefr === "C") return '<div class="sentence-cefr-label hard">C</div>';
+    return "";
+  }
+
+  // Build exact/partial arrays with both niqqud/no-niqqud versions preserved
   sentenceResults.forEach((result) => {
-    // Split example sentences by common sentence delimiters (period, question mark, exclamation mark)
-    const sentences = result.eksempel.match(/[^.!?]+[.!?]*/g) || [
-      result.eksempel,
-    ];
-    const translations = result.sentenceTranslation
-      ? result.sentenceTranslation.match(/[^.!?]+[.!?]*/g)
-      : [];
+    // Split example/translation/niqqud into aligned arrays (strip nulls)
+    const sentences = (result.eksempel || "").match(/[^.!?]+[.!?]*/g) || [];
+    const translations =
+      (result.sentenceTranslation || "").match(/[^.!?]+[.!?]*/g) || [];
+    const withArray =
+      (result.exampleWithNiqqud || "").match(/[^.!?]+[.!?]*/g) || [];
 
-    // Generate the CEFR label based on the result's CEFR value
-    let cefrLabel = "";
-    if (result.CEFR === "A1") {
-      cefrLabel = '<div class="sentence-cefr-label easy">A1</div>';
-    } else if (result.CEFR === "A2") {
-      cefrLabel = '<div class="sentence-cefr-label easy">A2</div>';
-    } else if (result.CEFR === "B1") {
-      cefrLabel = '<div class="sentence-cefr-label medium">B1</div>';
-    } else if (result.CEFR === "B2") {
-      cefrLabel = '<div class="sentence-cefr-label medium">B2</div>';
-    } else if (result.CEFR === "C") {
-      cefrLabel = '<div class="sentence-cefr-label hard">C</div>';
-    }
-
-    // Iterate through each sentence and match it with its translation
     sentences.forEach((sentence, index) => {
-      const trimmedSentence = sentence.trim();
-      const translation = translations[index] || "";
+      const noNiq = (sentence || "").replace(/<[^>]+>/g, "").trim();
+      const withNiq = (withArray[index] || sentence || "")
+        .replace(/<[^>]+>/g, "")
+        .trim();
+      const translation = (translations[index] || "").trim();
 
-      if (!uniqueSentences.has(trimmedSentence)) {
-        // Only add unique sentences
-        uniqueSentences.add(trimmedSentence);
+      if (!noNiq) return; // nothing to show
 
-        // Check for exact match (whole word match) in both the Hebrew sentence and English translation
-        if (
-          regexExactMatch.test(sentence.toLowerCase()) ||
-          regexExactMatch.test(translation.toLowerCase())
-        ) {
-          exactMatches.push({
-            cefrLabel,
-            sentence: highlightQuery(sentence, query),
-            translation: highlightQuery(translation, query),
-          });
-        }
-        // Check for partial match in both Hebrew sentence and English translation
-        else if (
-          sentence.toLowerCase().includes(query) ||
-          translation.toLowerCase().includes(query)
-        ) {
-          partialMatches.push({
-            cefrLabel,
-            sentence: highlightQuery(sentence, query),
-            translation: highlightQuery(translation, query),
-          });
-        }
-      }
+      // Uniqueness by the plain Hebrew sentence
+      if (uniqueSentences.has(noNiq)) return;
+      uniqueSentences.add(noNiq);
+
+      const cefrLabel = cefrPill(result.CEFR);
+      const displayHebrew = highlightQuery(noNiq, query); // highlight only for initial render (toggle will clear spans)
+      const displayEnglish = translation
+        ? highlightQuery(translation, query)
+        : "";
+
+      // Classify as exact or partial using the plain texts
+      const isExact =
+        regexExactMatch.test(noNiq.toLowerCase()) ||
+        (translation && regexExactMatch.test(translation.toLowerCase()));
+
+      const item = {
+        cefrLabel,
+        noNiq,
+        withNiq,
+        displayHebrew, // highlighted for first render
+        displayEnglish, // highlighted for first render
+        hasEnglish: !!translation,
+      };
+
+      if (isExact) exactMatches.push(item);
+      else if (
+        noNiq.toLowerCase().includes(query) ||
+        translation.toLowerCase().includes(query)
+      )
+        partialMatches.push(item);
     });
   });
 
-  // Combine exact matches first, then partial matches
-  const combinedMatches = [...exactMatches, ...partialMatches].slice(0, 10);
+  // Merge and cap at 10
+  const combined = [...exactMatches, ...partialMatches].slice(0, 10);
 
-  // Debugging log
-  console.log("Exact Matches:", exactMatches);
-  console.log("Partial Matches:", partialMatches);
-  console.log("Combined Matches:", combinedMatches);
-
-  // Check if no results found
-  if (combinedMatches.length === 0) {
+  if (combined.length === 0) {
     document.getElementById("results-container").innerHTML = `
-            <div class="definition error-message">
-                <h2 class="word-gender">
-                    Error <span class="gender">No Matching Sentences</span>
-                </h2>
-                <p>No sentences found containing "${query}".</p>
-            </div>
-        `;
-    return; // Exit early since there's nothing to render
-  }
-
-  // Generate HTML for the combined matches
-  let htmlString = "";
-
-  if (combinedMatches.length > 0) {
-    // Generate the header card
-    htmlString += `
-        <div class="result-header">
-            <h2>Sentence Results for "${word}"</h2>
-        </div>
-        <div class="sentence-controls">
-          <button class="sentence-btn english-toggle-btn" onclick="toggleEnglishTranslations()">
-              ${isEnglishVisible ? "Hide English" : "Show English"}
-          </button>
-          <button class="sentence-btn niqqud-toggle-btn" onclick="toggleNiqqud()">
-              ${isNiqqudVisible ? "Hide Niqqud" : "Show Niqqud"}
-          </button>
-        </div>
+      <div class="definition error-message">
+        <h2 class="word-gender">
+          Error <span class="gender">No Matching Sentences</span>
+        </h2>
+        <p>No sentences found containing "${query}".</p>
+      </div>
     `;
+    return;
   }
 
-  combinedMatches.forEach((match) => {
+  // Header + controls
+  let htmlString = `
+    <div class="result-header">
+      <h2>Sentence Results for "${word}"</h2>
+    </div>
+    <div class="sentence-controls">
+      <button class="sentence-btn english-toggle-btn" onclick="toggleEnglishTranslations()">
+        ${isEnglishVisible ? "Hide English" : "Show English"}
+      </button>
+      <button class="sentence-btn niqqud-toggle-btn" onclick="toggleNiqqud()">
+        ${isNiqqudVisible ? "Hide Niqqud" : "Show Niqqud"}
+      </button>
+    </div>
+  `;
+
+  // Cards
+  combined.forEach((m) => {
+    // Initial Hebrew content = highlighted plain (no niqqud). We still include both data attributes so the toggle works.
+    const initialHebrew = isNiqqudVisible ? m.withNiq : m.noNiq;
+
     htmlString += `
-            <div class="sentence-container">
-                <div class="sentence-box-norwegian ${
-                  !isEnglishVisible ? "sentence-box-norwegian-hidden" : ""
-                }">
-                    <div class="sentence-content">
-                        ${match.cefrLabel}
-                        <p class="sentence">${match.sentence}</p>
-                    </div>
-                </div>
-        `;
-
-    // Only add the English translation box if it exists
-    if (match.translation) {
-      htmlString += `
-            <div class="sentence-box-english" style="display: ${
-              isEnglishVisible ? "block" : "none"
-            };">
-                    <p class="sentence">${match.translation}</p>
-                </div>
-            `;
-    }
-
-    htmlString += "</div>"; // Close the sentence-container div
+      <div class="sentence-container">
+        <div class="sentence-box-norwegian ${
+          !isEnglishVisible ? "sentence-box-norwegian-hidden" : ""
+        }">
+          <div class="sentence-content">
+            ${m.cefrLabel}
+            <p class="sentence"
+               data-example-no="${m.noNiq}"
+               data-example-with="${m.withNiq}">
+              ${initialHebrew === m.noNiq ? m.displayHebrew : m.withNiq}
+            </p>
+          </div>
+        </div>
+        ${
+          m.hasEnglish
+            ? `
+          <div class="sentence-box-english" style="display: ${
+            isEnglishVisible ? "block" : "none"
+          };">
+            <p class="sentence-translation">${m.displayEnglish}</p>
+          </div>`
+            : ""
+        }
+      </div>
+    `;
   });
 
-  // Insert the generated HTML into the results container
   document.getElementById("results-container").innerHTML = htmlString;
-}
-
-// Highlight search query in text, accounting for Hebrew characters (å, æ, ø) and verb variations
+} // Highlight search query in text, accounting for Hebrew characters (å, æ, ø) and verb variations
 function highlightQuery(sentence, query) {
   if (!query) return sentence; // If no query, return sentence as is.
 
