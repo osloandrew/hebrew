@@ -546,8 +546,38 @@
             class="coffee-img"
           />
         </a>
+
+        <!-- Site switcher -->
+        <select id="site-switcher" aria-label="Go to another site">
+          <option value="">Other Languages</option>
+          <option value="hebrew">Hebrew</option>
+          <option value="japanese">Japanese</option>
+          <option value="norwegian">Norwegian</option>
+          <option value="spanish">Spanish</option>
+        </select>
       </div>
     </footer>
+    <script>
+      // Language site switcher -> navigates to https://osloandrew.github.io/{slug}/
+      document.addEventListener("DOMContentLoaded", () => {
+        const switcher = document.getElementById("site-switcher");
+        if (!switcher) return;
+
+        // Preselect current site if path matches one of the slugs
+        const currentSlug = (
+          location.pathname.split("/").filter(Boolean)[0] || ""
+        ).toLowerCase();
+        const known = new Set(["hebrew", "japanese", "norwegian", "spanish"]);
+        if (known.has(currentSlug)) switcher.value = currentSlug;
+
+        switcher.addEventListener("change", () => {
+          const slug = switcher.value;
+          if (!slug) return;
+          // Always go to the root-level language folder
+          location.href = `${location.origin}/${slug}/`;
+        });
+      });
+    </script>
     <script src="noRandom.js" defer></script>
     <script src="scripts.js" defer></script>
     <script src="wordGame.js" defer></script>
