@@ -292,7 +292,9 @@ async function startWordGame() {
 
   // Check if all available words have been answered correctly
   const totalWords = results.filter(
-    (r) => r.CEFR === currentCEFR && !noRandom.includes(r.ord.toLowerCase())
+    (r) =>
+      r.CEFR === currentCEFR &&
+      !noRandom.includes(r.wordWithNiqqud.toLowerCase())
   );
   if (correctlyAnsweredWords.length >= totalWords.length) {
     console.log(
@@ -318,7 +320,7 @@ async function startWordGame() {
       );
 
       // Reintroduce the word
-      currentWord = firstWordInQueue.wordObj.ord;
+      currentWord = firstWordInQueue.wordObj.wordWithNiqqud;
       correctTranslation = firstWordInQueue.wordObj.engelsk;
 
       // Log wordObj being passed to renderWordGameUI
@@ -329,14 +331,18 @@ async function startWordGame() {
 
       if (firstWordInQueue.wasCloze) {
         const randomWordObj = firstWordInQueue.wordObj;
-        const baseWord = randomWordObj.ord.split(",")[0].trim().toLowerCase();
+        const baseWord = randomWordObj.wordWithNiqqud
+          .split(",")[0]
+          .trim()
+          .toLowerCase();
         const matchingEntry = results.find(
           (r) =>
-            r.ord.toLowerCase() === randomWordObj.ord.toLowerCase() &&
+            r.wordWithNiqqud.toLowerCase() ===
+              randomWordObj.wordWithNiqqud.toLowerCase() &&
             r.gender === randomWordObj.gender &&
             r.CEFR === randomWordObj.CEFR
         );
-        const exampleText = matchingEntry?.eksempel || "";
+        const exampleText = matchingEntry?.exampleWithNiqqud || "";
         const firstSentence = exampleText.split(/(?<=[.!?])\s+/)[0];
         const tokens = firstSentence.match(/\p{L}+/gu) || [];
 
@@ -457,18 +463,22 @@ async function startWordGame() {
 
   console.log(
     "Showing " + (isClozeQuestion ? "CLOZE" : "FLASHCARD") + " question for:",
-    randomWordObj.ord
+    randomWordObj.wordWithNiqqud
   );
 
   if (isClozeQuestion) {
-    const baseWord = randomWordObj.ord.split(",")[0].trim().toLowerCase();
+    const baseWord = randomWordObj.wordWithNiqqud
+      .split(",")[0]
+      .trim()
+      .toLowerCase();
     const matchingEntry = results.find(
       (r) =>
-        r.ord.toLowerCase() === randomWordObj.ord.toLowerCase() &&
+        r.wordWithNiqqud.toLowerCase() ===
+          randomWordObj.wordWithNiqqud.toLowerCase() &&
         r.gender === randomWordObj.gender &&
         r.CEFR === randomWordObj.CEFR
     );
-    const exampleText = matchingEntry?.eksempel || "";
+    const exampleText = matchingEntry?.exampleWithNiqqud || "";
     const firstSentence = exampleText.split(/(?<=[.!?])\s+/)[0];
     const tokens = firstSentence.match(/\p{L}+/gu) || [];
 
@@ -533,7 +543,7 @@ async function startWordGame() {
         clozedForm = fallbackClozed;
       } else {
         console.warn("❌ CLOZE fallback triggered!");
-        console.warn("Word:", randomWordObj.ord);
+        console.warn("Word:", randomWordObj.wordWithNiqqud);
         console.warn("Sentence:", firstSentence);
         console.warn("Base word for matching:", baseWord);
         console.warn("Tokens analyzed:", cleanedTokens);
@@ -611,7 +621,7 @@ function fetchIncorrectTranslations(gender, correctTranslation, currentCEFR) {
       r.engelsk !== correctTranslation &&
       r.CEFR === currentCEFR && // Ensure CEFR matches
       isMatchingCase && // Ensure the case matches
-      !noRandom.includes(r.ord.toLowerCase())
+      !noRandom.includes(r.wordWithNiqqud.toLowerCase())
     );
   });
 
@@ -645,7 +655,7 @@ function fetchIncorrectTranslations(gender, correctTranslation, currentCEFR) {
         r.gender === gender &&
         r.engelsk !== correctTranslation && // Exclude the correct translation
         isMatchingCase && // Ensure the case matches
-        !noRandom.includes(r.ord.toLowerCase()) &&
+        !noRandom.includes(r.wordWithNiqqud.toLowerCase()) &&
         !displayedTranslationsSet.has(r.engelsk.split(",")[0].trim())
       ); // Ensure no duplicates
     });
@@ -672,7 +682,7 @@ function fetchIncorrectTranslations(gender, correctTranslation, currentCEFR) {
       return (
         r.engelsk !== correctTranslation && // Exclude the correct translation
         isMatchingCase && // Ensure the case matches
-        !noRandom.includes(r.ord.toLowerCase()) &&
+        !noRandom.includes(r.wordWithNiqqud.toLowerCase()) &&
         !displayedTranslationsSet.has(r.engelsk.split(",")[0].trim())
       ); // Ensure no duplicates
     });
@@ -699,12 +709,12 @@ function fetchIncorrectNorwegianWords(correctWord, CEFR, gender) {
   const baseWord = correctWord.split(",")[0].trim().toLowerCase();
 
   let incorrectResults = results.filter((r) => {
-    const word = r.ord.split(",")[0].trim().toLowerCase();
+    const word = r.wordWithNiqqud.split(",")[0].trim().toLowerCase();
     return (
       word !== baseWord &&
       r.CEFR === CEFR &&
       r.gender === gender &&
-      !noRandom.includes(r.ord.toLowerCase())
+      !noRandom.includes(r.wordWithNiqqud.toLowerCase())
     );
   });
 
@@ -718,7 +728,7 @@ function fetchIncorrectNorwegianWords(correctWord, CEFR, gender) {
     i < incorrectResults.length && incorrectWords.length < 3;
     i++
   ) {
-    const word = incorrectResults[i].ord.split(",")[0].trim();
+    const word = incorrectResults[i].wordWithNiqqud.split(",")[0].trim();
     if (!seen.has(word)) {
       seen.add(word);
       incorrectWords.push(word);
@@ -749,7 +759,7 @@ function renderWordGameUI(wordObj, translations, isReintroduced = false) {
   const wordId = wordDataStore.push(wordObj) - 1;
 
   // Split the word at the comma and use the first part
-  let displayedWord = wordObj.ord.split(",")[0].trim();
+  let displayedWord = wordObj.wordWithNiqqud.split(",")[0].trim();
   let displayedGender = wordObj.gender;
 
   if (wordObj.gender.startsWith("noun")) {
@@ -893,14 +903,14 @@ function renderClozeGameUI(
     cefrLabel = '<div class="game-cefr-label hard">C</div>';
   }
   correctTranslation = clozedWordForm;
-  const baseWord = wordObj.ord.split(",")[0].trim().toLowerCase();
+  const baseWord = wordObj.wordWithNiqqud.split(",")[0].trim().toLowerCase();
   const matchingEntry = results.find(
     (r) =>
-      r.ord.toLowerCase() === wordObj.ord.toLowerCase() &&
+      r.wordWithNiqqud.toLowerCase() === wordObj.wordWithNiqqud.toLowerCase() &&
       r.gender === wordObj.gender &&
       r.CEFR === wordObj.CEFR
   );
-  const exampleText = matchingEntry?.eksempel || "";
+  const exampleText = matchingEntry?.exampleWithNiqqud || "";
   const englishText = wordObj.sentenceTranslation || "";
 
   const norwegianSentences = exampleText
@@ -1188,16 +1198,17 @@ async function handleTranslationClick(
     correctLevelAnswers++; // Increment correct count for this level
     updateRecentAnswers(true); // Track this correct answer
     // Add the word to the correctly answered words array to exclude it from future questions
-    correctlyAnsweredWords.push(wordObj.ord);
+    correctlyAnsweredWords.push(wordObj.wordWithNiqqud);
 
     if (isCloze) {
       const fullSentence =
         results.find(
           (r) =>
-            r.ord.toLowerCase() === wordObj.ord.toLowerCase() &&
+            r.wordWithNiqqud.toLowerCase() ===
+              wordObj.wordWithNiqqud.toLowerCase() &&
             r.gender === wordObj.gender &&
             r.CEFR === wordObj.CEFR
-        )?.eksempel || "";
+        )?.exampleWithNiqqud || "";
 
       const firstSentence = fullSentence.split(/(?<=[.!?])\s+/)[0];
       const sentenceElement = document.getElementById("cloze-sentence");
@@ -1209,7 +1220,8 @@ async function handleTranslationClick(
     // If the word was in the review queue and the user answered it correctly, remove it
     const indexInQueue = incorrectWordQueue.findIndex(
       (incorrectWord) =>
-        incorrectWord.wordObj.ord === wordObj.ord && incorrectWord.shown
+        incorrectWord.wordObj.wordWithNiqqud === wordObj.wordWithNiqqud &&
+        incorrectWord.shown
     );
     if (indexInQueue !== -1) {
       incorrectWordQueue.splice(indexInQueue, 1); // Remove from review queue once answered correctly
@@ -1245,10 +1257,11 @@ async function handleTranslationClick(
       const fullSentence =
         results.find(
           (r) =>
-            r.ord.toLowerCase() === wordObj.ord.toLowerCase() &&
+            r.wordWithNiqqud.toLowerCase() ===
+              wordObj.wordWithNiqqud.toLowerCase() &&
             r.gender === wordObj.gender &&
             r.CEFR === wordObj.CEFR
-        )?.eksempel || "";
+        )?.exampleWithNiqqud || "";
 
       const firstSentence = fullSentence.split(/(?<=[.!?])\s+/)[0];
       const sentenceElement = document.getElementById("cloze-sentence");
@@ -1264,12 +1277,12 @@ async function handleTranslationClick(
     if (!inQueueAlready) {
       incorrectWordQueue.push({
         wordObj: {
-          ord: wordObj.ord, // explicitly using wordObj.ord here
+          wordWithNiqqud: wordObj.wordWithNiqqud,
           engelsk: correctTranslation,
           gender: wordObj.gender,
           CEFR: wordObj.CEFR,
           uttale: wordObj.uttale,
-          eksempel: wordObj.eksempel, // needed to rebuild sentence
+          exampleWithNiqqud: wordObj.exampleWithNiqqud,
         },
         counter: 0, // Start counter for this word
         wasCloze: isCloze,
@@ -1307,7 +1320,7 @@ async function handleTranslationClick(
 
     document.querySelector(".game-cefr-spacer").innerHTML = `
       <div class="sentence-pair">
-        <p>${completedSentence}</p>
+        <p class="game-hebrew-sentence">${completedSentence}</p>
         ${translationHTML}
       </div>
     `;
@@ -1335,7 +1348,7 @@ async function fetchExampleSentence(wordObj) {
   console.log("Fetching example sentence for:", wordObj);
 
   // Ensure gender and CEFR are defined before performing the search
-  if (!wordObj.gender || !wordObj.CEFR || !wordObj.ord) {
+  if (!wordObj.gender || !wordObj.CEFR || !wordObj.wordWithNiqqud) {
     console.warn("Missing required fields for search:", wordObj);
     return null;
   }
@@ -1343,7 +1356,8 @@ async function fetchExampleSentence(wordObj) {
   // Find the exact matching word object based on 'ord', 'definisjon', 'gender', and 'CEFR'
   let matchingEntry = results.find(
     (result) =>
-      result.ord.toLowerCase() === wordObj.ord.toLowerCase() &&
+      result.wordWithNiqqud.toLowerCase() ===
+        wordObj.wordWithNiqqud.toLowerCase() &&
       result.gender === wordObj.gender &&
       result.CEFR === wordObj.CEFR
   );
@@ -1351,42 +1365,44 @@ async function fetchExampleSentence(wordObj) {
   // Log the matching entry or lack thereof
   if (matchingEntry) {
     console.log("Matching entry found:", matchingEntry);
-    console.log("Example sentence found:", matchingEntry.eksempel);
+    console.log("Example sentence found:", matchingEntry.exampleWithNiqqud);
   } else {
-    console.warn(`No matching entry found for word: ${wordObj.ord}`);
+    console.warn(`No matching entry found for word: ${wordObj.wordWithNiqqud}`);
   }
 
   // Step 2: Check if the matching entry has an example sentence
   if (
     !matchingEntry ||
-    !matchingEntry.eksempel ||
-    matchingEntry.eksempel.trim() === ""
+    !matchingEntry.exampleWithNiqqud ||
+    matchingEntry.exampleWithNiqqud.trim() === ""
   ) {
     console.log(
-      `No example sentence available for word: ${wordObj.ord} with specified gender and CEFR.`
+      `No example sentence available for word: ${wordObj.wordWithNiqqud} with specified gender and CEFR.`
     );
 
     // Step 3: Search for another entry with the same 'ord' but without considering 'gender' or 'CEFR'
     matchingEntry = results.find(
       (result) =>
-        result.eksempel &&
-        result.eksempel.toLowerCase().startsWith(wordObj.ord.toLowerCase())
+        result.exampleWithNiqqud &&
+        result.exampleWithNiqqud
+          .toLowerCase()
+          .startsWith(wordObj.wordWithNiqqud.toLowerCase())
     );
     if (matchingEntry) {
       console.log(
         "Found example sentence from another word entry:",
-        matchingEntry.eksempel
+        matchingEntry.exampleWithNiqqud
       );
     } else {
       console.warn(
-        `No example sentence found in the entire dataset containing the word: ${wordObj.ord}`
+        `No example sentence found in the entire dataset containing the word: ${wordObj.wordWithNiqqud}`
       );
       return null; // No example sentence found at all
     }
   }
 
   // Split example sentences and remove any empty entries
-  const exampleSentences = matchingEntry.eksempel
+  const exampleSentences = matchingEntry.exampleWithNiqqud
     .split(/(?<=[.!?])\s+/)
     .filter((sentence) => sentence.trim() !== "");
 
@@ -1423,10 +1439,10 @@ async function fetchRandomWord() {
   let filteredResults = results.filter(
     (r) =>
       r.engelsk &&
-      !noRandom.includes(r.ord.toLowerCase()) &&
-      r.ord !== previousWord &&
+      !noRandom.includes(r.wordWithNiqqud.toLowerCase()) &&
+      r.wordWithNiqqud !== previousWord &&
       r.CEFR === cefrLevel && // Ensure the word belongs to the same CEFR level
-      !correctlyAnsweredWords.includes(r.ord) // Exclude words already answered correctly
+      !correctlyAnsweredWords.includes(r.wordWithNiqqud) // Exclude words already answered correctly
   );
 
   if (selectedPOS) {
@@ -1458,7 +1474,7 @@ async function fetchRandomWord() {
   // Filter out words where the Norwegian word and its English translation are identical
   filteredResults = filteredResults.filter((r) => {
     // Split and trim the Norwegian word (handle comma-separated words)
-    const norwegianWord = r.ord.split(",")[0].trim().toLowerCase();
+    const norwegianWord = r.wordWithNiqqud.split(",")[0].trim().toLowerCase();
 
     // Split and trim the English translation (handle comma-separated translations)
     const englishTranslation = r.engelsk.split(",")[0].trim().toLowerCase();
@@ -1477,15 +1493,17 @@ async function fetchRandomWord() {
   const randomResult =
     filteredResults[Math.floor(Math.random() * filteredResults.length)];
 
-  previousWord = randomResult.ord; // Update the previous word
+  previousWord = randomResult.wordWithNiqqud; // Update the previous word
 
   return {
     ord: randomResult.ord,
+    wordWithNiqqud: randomResult.wordWithNiqqud,
     engelsk: randomResult.engelsk,
     gender: randomResult.gender, // Add gender
     CEFR: randomResult.CEFR, // Make sure CEFR is returned here
     uttale: randomResult.uttale, // Ensure uttale is included here
-    eksempel: randomResult.eksempel, // ⬅️ ADD THIS LINE
+    eksempel: randomResult.exampleWithNiqqud, // ⬅️ ADD THIS LINE
+    exampleWithNiqqud: randomResult.exampleWithNiqqud,
   };
 }
 
@@ -1721,7 +1739,7 @@ function generateClozeDistractors(baseWord, clozedForm, CEFR, gender) {
   let strictDistractors = [];
 
   const baseCandidates = results.filter((r) => {
-    const ord = r.ord.split(",")[0].trim().toLowerCase();
+    const ord = r.wordWithNiqqud.split(",")[0].trim().toLowerCase();
     if (!ord || ord === formattedBase) return false;
     if (ord.includes(" ")) return false;
     if (ord.length < 3 || ord.length > 12) return false;
@@ -1738,7 +1756,7 @@ function generateClozeDistractors(baseWord, clozedForm, CEFR, gender) {
 
   const inflected = baseCandidates
     .map((r) => {
-      const raw = r.ord.split(",")[0].trim().toLowerCase();
+      const raw = r.wordWithNiqqud.split(",")[0].trim().toLowerCase();
       return isUninflected
         ? raw
         : applyInflection(raw, formattedClozed, gender);
@@ -1755,7 +1773,7 @@ function generateClozeDistractors(baseWord, clozedForm, CEFR, gender) {
   if (strictDistractors.length < 3) {
     const relaxed = results
       .filter((r) => {
-        const raw = r.ord.split(",")[0].trim().toLowerCase();
+        const raw = r.wordWithNiqqud.split(",")[0].trim().toLowerCase();
         return (
           raw !== formattedBase &&
           r.gender === gender &&
@@ -1763,7 +1781,7 @@ function generateClozeDistractors(baseWord, clozedForm, CEFR, gender) {
         );
       })
       .map((r) => {
-        const raw = r.ord.split(",")[0].trim().toLowerCase();
+        const raw = r.wordWithNiqqud.split(",")[0].trim().toLowerCase();
         return isUninflected
           ? raw
           : applyInflection(raw, formattedClozed, gender);
@@ -1783,7 +1801,7 @@ function generateClozeDistractors(baseWord, clozedForm, CEFR, gender) {
   if (strictDistractors.length < 3) {
     const extra = results
       .map((r) => {
-        const raw = r.ord.split(",")[0].trim();
+        const raw = r.wordWithNiqqud.split(",")[0].trim();
         return isUninflected
           ? raw
           : applyInflection(raw.toLowerCase(), formattedClozed, gender);

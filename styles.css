@@ -498,6 +498,12 @@ footer .copyright {
   user-select: none; /* Prevent text selection */
 }
 
+.game-hebrew-sentence {
+  direction: rtl;
+  font-family: "Noto Serif Hebrew", serif !important;
+  letter-spacing: 0.5px !important;
+}
+
 .game-incorrect-card {
   background-color: #e9a895 !important; /* Lighter clay red for incorrect */
   color: white;
