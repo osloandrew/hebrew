@@ -563,12 +563,8 @@
         const switcher = document.getElementById("site-switcher");
         if (!switcher) return;
 
-        // Preselect current site if path matches one of the slugs
-        const currentSlug = (
-          location.pathname.split("/").filter(Boolean)[0] || ""
-        ).toLowerCase();
-        const known = new Set(["hebrew", "japanese", "norwegian", "spanish"]);
-        if (known.has(currentSlug)) switcher.value = currentSlug;
+        // Always start on the default (blank) option
+        switcher.value = "";
 
         switcher.addEventListener("change", () => {
           const slug = switcher.value;

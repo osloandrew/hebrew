@@ -1405,6 +1405,15 @@ ul {
   margin-bottom: 0px;
 }
 
+#site-switcher {
+  padding: 5px;
+  border: 1px solid #ccd3db;
+  border-radius: 6px;
+  font: inherit;
+  background: #fff;
+  cursor: pointer;
+}
+
 #site-title {
   color: #2e2e2e;
   cursor: pointer;
