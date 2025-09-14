@@ -312,6 +312,7 @@ li {
 
 .english-title {
   color: #666;
+  direction: ltr;
   font-family: "Noto Sans", sans-serif; /* English-specific font */
   font-size: 12.5px;
   -webkit-box-orient: vertical; /* Specifies vertical stacking of lines */
