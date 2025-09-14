@@ -428,12 +428,14 @@ async function randomWord() {
             <div class="result-header">
                 <h2>Random Sentence</h2>
             </div>
+            <div class="sentence-controls">
             <button class="sentence-btn english-toggle-btn" onclick="toggleEnglishTranslations(this)">
                 ${isEnglishVisible ? "Hide English" : "Show English"}
             </button>
             <button class="sentence-btn niqqud-toggle-btn" onclick="toggleNiqqud()">
             ${isNiqqudVisible ? "Hide Niqqud" : "Show Niqqud"}
           </button>
+          </div>
             <div class="sentence-container">
             <div class="sentence-box-norwegian ${
               !isEnglishVisible ? "sentence-box-norwegian-hidden" : ""
@@ -1607,11 +1609,10 @@ function toggleEnglishTranslations(wordId = null) {
     ? `#sentences-container-${safeWordId}`
     : ".sentence-container";
   const sentenceContainer = isButton
-    ? wordId.nextElementSibling // Update to directly select the next sibling after the button
+    ? wordId.closest(".sentence-controls")?.nextElementSibling || null
     : wordId
     ? document.querySelector(sentenceContainerSelector)
     : document; // Global context if no wordId
-
   if (!sentenceContainer) return;
 
   const englishSentenceDivs = wordId
