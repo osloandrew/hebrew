@@ -554,15 +554,23 @@ async function search(queryOverride = null) {
   const query =
     variations.find((base) =>
       results.some((r) => {
-        const ordList = r.ord
+        const ordList = (r.ord || "")
           .toLowerCase()
           .split(",")
           .map((s) => s.trim());
-        const engelskList = r.engelsk
+        const niqqudList = (r.wordWithNiqqud || "")
           .toLowerCase()
           .split(",")
           .map((s) => s.trim());
-        return ordList.includes(base) || engelskList.includes(base);
+        const engelskList = (r.engelsk || "")
+          .toLowerCase()
+          .split(",")
+          .map((s) => s.trim());
+        return (
+          ordList.includes(base) ||
+          niqqudList.includes(base) ||
+          engelskList.includes(base)
+        );
       })
     ) || originalQuery;
   const isInexactMatch = originalQuery !== query;
@@ -644,12 +652,22 @@ async function search(queryOverride = null) {
     // If searching sentences, look for matches in both 'eksempel' and 'sentenceTranslation' fields
     matchingResults = cleanResults.filter((r) => {
       return normalizedQueries.some((normQuery) => {
-        const hebrewSentenceMatch =
-          r.eksempel && r.eksempel.toLowerCase().includes(normQuery); // Match in 'eksempel'
+        const hebrewSentenceMatchNoNiq =
+          r.eksempel && r.eksempel.toLowerCase().includes(normQuery);
+
+        const hebrewSentenceMatchWithNiq =
+          r.exampleWithNiqqud &&
+          r.exampleWithNiqqud.toLowerCase().includes(normQuery);
+
         const englishTranslationMatch =
           r.sentenceTranslation &&
-          r.sentenceTranslation.toLowerCase().includes(normQuery); // Match in 'sentenceTranslation'
-        return hebrewSentenceMatch || englishTranslationMatch;
+          r.sentenceTranslation.toLowerCase().includes(normQuery);
+
+        return (
+          hebrewSentenceMatchNoNiq ||
+          hebrewSentenceMatchWithNiq ||
+          englishTranslationMatch
+        );
       });
     });
 
@@ -689,18 +707,26 @@ async function search(queryOverride = null) {
     matchingResults = cleanResults.filter((r) => {
       // Exact and partial match logic
       const matchesQuery = normalizedQueries.some((variation) => {
-        const exactRegex = new RegExp(`\\b${variation}\\b`, "i"); // Exact match regex for whole word
-        const partialRegex = new RegExp(variation, "i"); // Partial match for larger words like "bevegelsesfrihet"
-        const wordMatch =
-          exactRegex.test(r.ord.toLowerCase()) ||
-          partialRegex.test(r.ord.toLowerCase());
-        const englishValues = r.engelsk
+        const exactRegex = new RegExp(`\\b${variation}\\b`, "i");
+        const partialRegex = new RegExp(variation, "i");
+
+        const ordText = (r.ord || "").toLowerCase();
+        const niqqudText = (r.wordWithNiqqud || "").toLowerCase();
+        const engelskValues = (r.engelsk || "")
           .toLowerCase()
           .split(",")
           .map((e) => e.trim());
-        const englishMatch = englishValues.some(
+
+        const wordMatch =
+          exactRegex.test(ordText) ||
+          partialRegex.test(ordText) ||
+          exactRegex.test(niqqudText) ||
+          partialRegex.test(niqqudText);
+
+        const englishMatch = engelskValues.some(
           (eng) => exactRegex.test(eng) || partialRegex.test(eng)
         );
+
         return wordMatch || englishMatch;
       });
 
@@ -747,23 +773,27 @@ async function search(queryOverride = null) {
 
       // Now search for results using these inexact queries
       let inexactWordMatches = results.filter((r) => {
-        const matchesInexact = inexactWordQueries.some(
-          (inexactQuery) =>
-            r.ord.toLowerCase().includes(inexactQuery) ||
-            r.engelsk.toLowerCase().includes(inexactQuery)
+        const ordText = (r.ord || "").toLowerCase();
+        const niqqudText = (r.wordWithNiqqud || "").toLowerCase();
+        const engelskText = (r.engelsk || "").toLowerCase();
+
+        const matchesInexact = inexactWordQueries.some((inexactQuery) =>
+          [ordText, niqqudText, engelskText].some((t) =>
+            t.includes(inexactQuery)
+          )
         );
+
         return (
           matchesInexact &&
           (!selectedPOS ||
             (selectedPOS === "noun" &&
               ["noun", "masculine", "feminine"].some((gender) =>
-                r.gender.toLowerCase().includes(gender)
+                (r.gender || "").toLowerCase().includes(gender)
               )) ||
-            r.gender.toLowerCase().includes(selectedPOS)) &&
+            (r.gender || "").toLowerCase().includes(selectedPOS)) &&
           (!selectedCEFR || r.CEFR === selectedCEFR)
         );
       });
-
       // 🧠 Sort the inexact matches using the same prioritization logic
       inexactWordMatches = prioritizeResults(inexactWordMatches, query, "ord");
 
@@ -848,24 +878,41 @@ async function search(queryOverride = null) {
       const queryLower = query.toLowerCase();
 
       // 1. Prioritize exact match in the Hebrew or English term
+      const aOrdList = (a.ord || "")
+        .toLowerCase()
+        .split(",")
+        .map((s) => s.trim());
+      const aNiqList = (a.wordWithNiqqud || "")
+        .toLowerCase()
+        .split(",")
+        .map((s) => s.trim());
+      const aEngList = (a.engelsk || "")
+        .toLowerCase()
+        .split(",")
+        .map((s) => s.trim());
+
+      const bOrdList = (b.ord || "")
+        .toLowerCase()
+        .split(",")
+        .map((s) => s.trim());
+      const bNiqList = (b.wordWithNiqqud || "")
+        .toLowerCase()
+        .split(",")
+        .map((s) => s.trim());
+      const bEngList = (b.engelsk || "")
+        .toLowerCase()
+        .split(",")
+        .map((s) => s.trim());
+
       const isExactMatchA =
-        a.ord
-          .toLowerCase()
-          .split(",")
-          .map((str) => str.trim())
-          .includes(queryLower) ||
-        a.engelsk
-          .toLowerCase()
-          .split(",")
-          .map((str) => str.trim())
-          .includes(queryLower);
+        aOrdList.includes(queryLower) ||
+        aNiqList.includes(queryLower) ||
+        aEngList.includes(queryLower);
+
       const isExactMatchB =
-        b.ord.toLowerCase() === queryLower ||
-        b.engelsk
-          .toLowerCase()
-          .split(",")
-          .map((str) => str.trim())
-          .includes(queryLower);
+        bOrdList.includes(queryLower) ||
+        bNiqList.includes(queryLower) ||
+        bEngList.includes(queryLower);
       if (isExactMatchA && !isExactMatchB) {
         return -1;
       }
