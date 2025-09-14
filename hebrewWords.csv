@@ -1303,7 +1303,7 @@ metal,B1,feminine,מתכת,מַתֶּכֶת,matéħet,המתכת הזאת קשה
 metallic,B2,adjective,מתכתי,מַתַּכְתִּי,mataħtí,,,
 "math, maths",A2,masculine,מתמטיקה,מַתֵּימָטִיקָה,matemátika,בבית הספר אנו לומדים מתמטיקה.,בְּבֵית הַסֵּפֶר אָנוּ לוֹמְדִים מָתֶמָטִיקָה.,"At school, we learn mathematics."
 "gift, present",A1,feminine,מתנה,מַתָּנָה,mataná,קיבלתי מתנה ליום הולדת.,קִבַּלְתִּי מַתָּנָה לַיּוֹם הֻלֶּדֶת.,I got a gift for my birthday.
-advanced,A2,adjective,מתקדם,מִתְקַדֵּם,mitkadém,השיעור הזה מתקדם יותר מהרגיל.,הַשִּׁעוּר הַזֶּה מִתְקַדֵּם יוֹתֵר מֵהָרָגִיל.,This lesson is more advanced than usual.
+advanced,A2,adjective,מתקדם,מִתְקַדֵּם,mitkadém,השעור הזה מתקדם יותר מהרגיל.,הַשִּׁעוּר הַזֶּה מִתְקַדֵּם יוֹתֵר מֵהָרָגִיל.,This lesson is more advanced than usual.
 handsome,B2,adjective,נאה,נָאֶה,naé,,,
 "faithful, loyal",B1,adjective,נאמן,נֶאֱמָן,neemán,הכלב הנאמן לא עוזב את בעלו.,הֶכֶּלֶב הַנֶּאֱמָן לֹא עוֹזֵב אֶת בַּעֲלוֹ.,The loyal dog never leaves its owner.
 loyalty,B2,feminine,נאמנות,נֶאֱמָנוּת,neemanút,,,
@@ -1457,7 +1457,7 @@ lobster,B2,masculine,סרטן ים,סַרְטָן יָם,sartán yám,,,
 "fall, autumn",A2,masculine,סתיו,סְתָיו,stav,בסתיו העלים נופלים מהעצים.,בַּסְּתָיו הָעֲלִים נוֹפְלִים מֵהָעֵצִים.,"In autumn, the leaves fall from the trees."
 work,A1,verb,עבד,עֶבֶד,avád,האיש עבד כל היום.,הָאִישׁ עָבַד כָּל הַיּוֹם.,The man worked all day.
 slave,A2,masculine,עבד,עֶבֶד,éved,העבד עבד בשדות החוטים.,הָעֶבֶד עָבַד בְּשָׂדוֹת הַחוּטִים.,The slave worked in the cotton fields.
-slavery,B1,feminine,עבדות,עַבְדוּת,avdút,"העבדות בוטלה בעבר, אבל עוולה עדיין קיימת.","הָעַבְדוּת בֻּטְּלָה בָּעֶבֶר, אֲבָל עֲוֵלָה עֲדַיִן קַיֶּמֶת.","Slavery was abolished in the past, but injustice still exists."
+slavery,B1,feminine,עבדות,עַבְדוּת,avdút,"העבדות בטלה בעבר, אבל עולה עדין קימת.","הָעַבְדוּת בֻּטְּלָה בָּעֶבֶר, אֲבָל עֲוֵלָה עֲדַיִן קַיֶּמֶת.","Slavery was abolished in the past, but injustice still exists."
 "work, job",A1,feminine,עבודה‎,עֲבוֹדָה,avodá,היא אהבה את העבודה שלה.,הִיא אֲהֵבָה אֶת הָעֲבוֹדָה שֶׁלָּה.,She loved her job.
 past,A2,masculine,עבר,עָבַר,avár,העבר שלו מסובך.,הֶעָבָר שֶׁלּוֹ מְסֻבָּךְ.,His past is complicated.
 Hebrew,B1,adjective,עברי,עִבְרִי,ivrí,הספר הזה כתוב בסגנון עברי ישן.,הַסֵּפֶר הַזֶּה כָּתוּב בְּסִגְנוֹן עִבְרִי יָשָׁן.,This book is written in an old Hebrew style.
@@ -1472,7 +1472,7 @@ cookie,A2,feminine,עוגייה,עוּגִיָּה,ugiyá,היא אכלה עוג
 cheesecake,A2,feminine,עוגת גבינה,עוּגַת גְּבִינָה,ugát gviná,העוגה הזאת עוגת גבינה טעימה.,הָעֻגָּה הַזֹּאת עוּגַת גְּבִינָה טְעִימָה.,This cake is a delicious cheesecake.
 world,A1,masculine,עולם,עוֹלָם,olám,העולם גדול ומלא דברים מיוחדים.,הָעוֹלָם גָּדוֹל וּמָלֵא דְּבָרִים מְיֻחָדִים.,The world is big and full of special things.
 "world, global",B1,adjective,עולמי,עוֹלָמִי,olamí,היום העולמי לסובלים ממחלה מצוין בשידורים חיים.,הַיּוֹם הָעוֹלָמִי לְסוֹבֵלִים מִמַּחֲלָה מְצוֹיָן בְּשִׁדּוּרִים חַיִּים.,World Day for Disease Awareness is broadcast live.
-depth,B1,masculine,עומק,עוֹמֶק,omek,הים עמוק מאוד.,הַיָּם עָמֹק מְאֹד.,The sea is very deep.
+depth,B1,masculine,עומק,עוֹמֶק,omek,הים עמק מאד.,הַיָּם עָמֹק מְאֹד.,The sea is very deep.
 "joy, pleasure",B2,masculine,עונג,עֹנֶג,óneg,,,
 season,A2,feminine,עונה,עוֹנָה,oná,העונה האהובה עלי היא אביב.,הָעֹנָה הַאָהוּבָה עָלַי הִיא אָבִיב.,My favorite season is spring.
 chicken (meat),A1,masculine,עוף,עוֹף,of,אנחנו אוכלים עוף בארוחה.,אֲנַחְנוּ אוֹכְלִים עוֹף בַּאֲרוּחָה.,We are eating chicken for the meal.
@@ -1775,7 +1775,7 @@ touch combat,B2,masculine,קרב מגע,קְרַב מַגָּע,krav magá,,,
 ice,A2,masculine,קרח,קֶרַח,kéraħ,במקרר יש קרח למשקה.,בַּמִּקְרֵר יֵשׁ קֶרַח לַמַּשְׁקֶה.,There is ice in the fridge for the drink.
 iceberg,B2,masculine,קרחון,קַרְחוֹן,karħon,,,
 reading,A2,feminine,קריאה,קְרִיאָה,kiriá,הקריאה שלה מהירה וברורה.,הַקְּרִיאָה שֶׁלָּהּ מְהִירָה וּבָרוּרָה.,Her reading is fast and clear.
-career,A2,feminine,קריירה,קַרְיֵירָה,karyéra,האשה מתחלת קריירה חדשה.,הָאִשָּׁה מְתַחֶלֶת קַרְיֵרָה חֲדָשָׁה.,The woman is starting a new career.
+career,A2,feminine,קריירה,קַרְיֵירָה,karyéra,האשה מתחלת קרירה חדשה.,הָאִשָּׁה מְתַחֶלֶת קַרְיֵרָה חֲדָשָׁה.,The woman is starting a new career.
 "corner, horn",B1,feminine,קרן,קֶרֶן,kéren,האור יצא מהקרן של המנורה.,הָאוֹר יָצָא מֵהַקֶּרֶן שֶׁל הַמְּנֹרָה.,The light came from the corner of the lamp.
 street corner,B2,feminine,"קרן רחוב",קֶרֶן רְחוֹב,kéren reħóv,,,
 ground,B1,feminine,קרקע,קַרְקָע,karká,הקרקעה לעיתים רטובה אחרי הגשם.,הַקַּרְקָעָה לַעִתִּים רְטֻבָּה אַחֲרֵי הַגֶּשֶׁם.,The ground is sometimes wet after the rain.
@@ -1959,7 +1959,7 @@ my,A1,all,שלי,שֶׁלִּי,shelí,הספר הזה שלי.,הַסֵּפֶר 
 ruler,B2,masculine,שליט,שַׁלִּיט,shalít,,,
 third,A1,masculine,שלישי,שְׁלִישִׁי,shlishí,היום השלישי הוא יום ארוך.,הַיּוֹם הַשְּׁלִישִׁי הוּא יוֹם אֶרֹךְ.,Tuesday is a long day.
 your,A1,adjective,שלך,שֶׁלְּךָ / שֶׁלָּךְ,shelħá,התיק הזה שלך או שלך?,הַתִּיק הַזֶּה שֶׁלְּךָ אוֹ שֶׁלָּךְ?,Is this bag yours?
-complete,A2,verb,שלם,שָׁלֵם,shalém,התיקון הזה שלם ולא חסר דבר.,הַתִּקּוּן הַזֶּה שָׁלֵם וְלֹא חָסֵר דָּבָר.,This repair is complete and nothing is missing.
+complete,A2,verb,שלם,שָׁלֵם,shalém,התקון הזה שלם ולא חסר דבר.,הַתִּקּוּן הַזֶּה שָׁלֵם וְלֹא חָסֵר דָּבָר.,This repair is complete and nothing is missing.
 perfection,B2,feminine,שלמות,שְׁלֵמוּת,shlemút,,,
 our,A1,all,שלנו,שֶׁלָּנוּ,shelánu,הבית הזה שלנו.,הַבַּיִת הַזֶּה שֶׁלָּנוּ.,This house is ours.
 "put, place",A1,verb,שם,שֵׁם,sam,הוא שם את הכוס על השולחן.,הוּא שָׂם אֶת הַכּוֹס עַל הַשּׁוּלְחָן.,He put the glass on the table.
