@@ -320,7 +320,7 @@ async function startWordGame() {
       );
 
       // Reintroduce the word
-      currentWord = firstWordInQueue.wordObj.wordWithNiqqud;
+      currentWord = firstWordInQueue.wordObj;
       correctTranslation = firstWordInQueue.wordObj.engelsk;
 
       // Log wordObj being passed to renderWordGameUI
@@ -1272,7 +1272,8 @@ async function handleTranslationClick(
 
     // If the word isn't already in the review queue, add it
     const inQueueAlready = incorrectWordQueue.some(
-      (incorrectWord) => incorrectWord.wordObj.ord === wordObj.ord
+      (incorrectWord) =>
+        incorrectWord.wordObj.wordWithNiqqud === wordObj.wordWithNiqqud
     );
     if (!inQueueAlready) {
       incorrectWordQueue.push({
