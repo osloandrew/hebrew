@@ -1320,18 +1320,16 @@ function handleCEFRChange() {
 function makeDefinitionClickable(defText) {
   if (!defText) return "";
 
-  // Normalize: trim, lowercase first alpha, remove trailing sentence-ending punctuation
+  // normalize: lowercase first letter, strip trailing punctuation
   defText = defText
     .split(/\r?\n+/)
     .map((line) => {
       line = line.trim();
       if (!line) return "";
-      // lowercase the first alphabetic char after any opening punctuation
       line = line.replace(
-        /^([(\s"«“¡¿]*)?([A-ZÁÉÍÓÚÜÑÇÀÈÌÒÙÂÊÎÔÛÄËÏÖÜÅÆØŒ])/u,
+        /^([(\s"«“¡¿]*)?(\p{L})/u,
         (m, pre = "", ch) => pre + ch.toLowerCase()
       );
-      // strip trailing . ! ? …
       line = line.replace(/\s*[.!?…]\s*$/u, "");
       return line;
     })
@@ -1339,94 +1337,40 @@ function makeDefinitionClickable(defText) {
     .join(" ");
 
   function wrapToken(token) {
-    // Håndter sammensatte ord med parentes, som (språk)gruppe eller språk(gruppe)
-    const complexParenMatch = token.match(
-      /^([\p{L}\-']*)\(([\p{L}\-']+)\)([\p{L}\-']*)([.,;!?]*)$/u
-    );
-    if (complexParenMatch) {
-      const [, before, inside, after, punctuation] = complexParenMatch;
-      const parts = [];
-
-      if (before) {
-        parts.push(
-          `<span class="clickable-definition-word" data-word="${before}">${before}</span>`
-        );
-      }
-
-      parts.push("(");
-      parts.push(
-        `<span class="clickable-definition-word" data-word="${inside}">${inside}</span>`
-      );
-      parts.push(")");
-
-      if (after) {
-        parts.push(
-          `<span class="clickable-definition-word" data-word="${after}">${after}</span>`
-        );
-      }
-
-      parts.push(punctuation || "");
-      return parts.join("");
+    // Match a word (letters + niqqud marks) with optional punctuation around it
+    const match = token.match(/^(\()?([\p{L}\p{M}\-']+)(\))?([:.,;!?]*)$/u);
+    if (!match) {
+      return token; // not a word (just punctuation etc.)
     }
 
-    // Opprinnelig logikk for alt annet
-    const match = token.match(
-      /^(\()?(?<prefix>[\p{L}\-']+)?(\))?(?<base>[\p{L}\-']+)?([:.,;!?]*)$/u
+    const open = match[1] || "";
+    const word = match[2] || "";
+    const close = match[3] || "";
+    const punctuation = match[4] || "";
+
+    if (!word) return token;
+
+    return (
+      open +
+      `<span class="clickable-definition-word" data-word="${word}">${word}</span>` +
+      close +
+      punctuation
     );
-
-    if (!match || !match.groups) return token;
-
-    const { prefix, base } = match.groups;
-    const punctuationMatch = token.match(/[:.,;!?]+$/);
-    const punctuation = punctuationMatch ? punctuationMatch[0] : "";
-    const open = token.startsWith("(") ? "(" : "";
-    const close = token.includes(")") ? ")" : "";
-
-    const parts = [];
-
-    // 👇 Check for trailing hyphen outside the word
-    const endsWithHyphen = token.endsWith("-");
-
-    const word = (prefix || base || "").replace(/-$/, "");
-
-    if (word) {
-      parts.push(
-        `${open}<span class="clickable-definition-word" data-word="${word}">${word}</span>${
-          endsWithHyphen ? "-" : ""
-        }${close}`
-      );
-    } else if (open || close) {
-      parts.push(`${open}${close}`);
-    }
-
-    return parts.join("") + punctuation;
   }
 
+  // Handle lists separated by semicolons
   if (defText.includes(";")) {
-    const items = defText
-      .split(";")
-      .map((item) =>
-        item
-          .split(/\r?\n+/)
-          .map((s) => {
-            s = s.trim();
-            if (!s) return "";
-            s = s.replace(
-              /^([(\s"«“¡¿]*)?([A-ZÁÉÍÓÚÜÑÇÀÈÌÒÙÂÊÎÔÛÄËÏÖÜÅÆØŒ])/u,
-              (m, pre = "", ch) => pre + ch.toLowerCase()
-            );
-            s = s.replace(/\s*[.!?…]\s*$/u, "");
-            return s;
-          })
-          .filter(Boolean)
-          .join(" ")
-      )
-      .filter(Boolean);
-
+    const items = defText.split(";").map((item) => item.trim());
     return (
       `<ul class="definition-list">` +
       items
-        .map((item) => `<li>${item.split(/\s+/).map(wrapToken).join(" ")}</li>`)
+        .map(
+          (item) =>
+            `<li>${item
+              .split(/\s+/)
+              .map((tok) => wrapToken(tok))
+              .join(" ")}</li>`
+        )
         .join("") +
       `</ul>`
     );
@@ -1434,19 +1378,9 @@ function makeDefinitionClickable(defText) {
 
   return defText
     .split(/\s+/)
-    .map((token) => {
-      if (token.includes("/") && !token.startsWith("http")) {
-        return token
-          .split("/")
-          .map((subToken) => wrapToken(subToken))
-          .join("/");
-      } else {
-        return wrapToken(token);
-      }
-    })
+    .map((tok) => wrapToken(tok))
     .join(" ");
 }
-
 // Render a list of results (words)
 function displaySearchResults(results, query = "") {
   query = query.toLowerCase().trim(); // Ensure the query is lowercased and trimmed

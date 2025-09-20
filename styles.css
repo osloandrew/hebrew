@@ -206,7 +206,7 @@ button:disabled i {
   color: #3c88d4;
   text-decoration: underline;
   text-decoration-thickness: 1px;
-  text-underline-offset: 4px;
+  text-underline-offset: 8px;
   text-decoration-color: rgba(60, 136, 212, 0.4);
   transition: color 0.2s ease, text-decoration-color 0.2s ease;
 }
