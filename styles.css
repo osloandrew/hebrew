@@ -204,6 +204,7 @@ button:disabled i {
 .clickable-definition-word {
   cursor: pointer;
   color: #3c88d4;
+  font-family: "Noto Serif Hebrew", serif;
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 8px;
@@ -1060,10 +1061,6 @@ ul {
   margin-block-start: 0px;
   margin-block-end: 0px;
   padding-inline-start: 20px;
-}
-
-p {
-  font-family: "Noto Serif Hebrew", serif;
 }
 
 /* Basic styling for the table */
