@@ -1062,6 +1062,10 @@ ul {
   padding-inline-start: 20px;
 }
 
+p {
+  font-family: "Noto Serif Hebrew", serif;
+}
+
 /* Basic styling for the table */
 .pronunciation-table {
   width: 100%;

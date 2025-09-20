@@ -16,7 +16,7 @@ const SCHEMA_MAP = {
   gender: "gender",
   uttale: null, // not in Hebrew CSV
   etymologi: null, // not in Hebrew CSV
-  definisjon: null, // not in Hebrew CSV
+  definisjon: "definition", // not in Hebrew CSV
   eksempel: "example",
   exampleWithNiqqud: "exampleWithNiqqud",
   sentenceTranslation: "translation",
