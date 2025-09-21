@@ -480,66 +480,141 @@ async function randomWord() {
   hideSpinner(); // Hide the spinner
 }
 
-// Function to generate potential inexact matches by removing plural endings, etc.
+// Function to generate potential inexact matches for Hebrew
 function generateInexactMatches(query) {
-  const variations = [query.toLowerCase().trim()]; // Always include the base query
+  const base = String(query).toLowerCase().trim();
+  const variations = new Set([base]);
 
-  // Handle common suffixes like 'ing', 'ed', etc.
-  const suffixes = [
-    // plurals
-    "s",
-    "es",
-    // adverbs
-    "mente",
-    // adjective gender/number
-    "o",
-    "a",
-    "os",
-    "as",
-    // common diminutives
-    "ito",
-    "ita",
-    "itos",
-    "itas",
-    // participles and gerunds
-    "ado",
-    "ada",
-    "ados",
-    "adas",
-    "ido",
-    "ida",
-    "idos",
-    "idas",
-    "ando",
-    "iendo",
-    // very common present/preterite endings (short list for recall)
-    "o",
-    "as",
-    "a",
-    "amos",
-    "an",
-    "es",
-    "e",
-    "emos",
-    "en",
-    "í",
-    "iste",
-    "ió",
-    "imos",
-    "ieron",
-    // infinitive recovery helper
-    "r",
-    "ar",
-    "er",
-    "ir",
+  // --- 1) Peel common Hebrew prefixes (longest first) ---
+  const prefixChars = [
+    "וּ",
+    "ו",
+    "בּ",
+    "בְ",
+    "בִ",
+    "בָ",
+    "ב",
+    "כּ",
+    "כְ",
+    "כִ",
+    "כָ",
+    "כ",
+    "לְ",
+    "לִ",
+    "לָ",
+    "ל",
+    "מְ",
+    "מִ",
+    "מָ",
+    "מ",
+    "שׁ",
+    "שְ",
+    "שִ",
+    "שָ",
+    "ש",
+    "הַ",
+    "הָ",
+    "הֶ",
+    "ה",
+    "אֲ",
+    "אֱ",
+    "אִ",
+    "אָ",
+    "א",
+    "תְ",
+    "תִ",
+    "תּ",
+    "ת",
+    "יִ",
+    "יְ",
+    "י",
+    "נְ",
+    "נִ",
+    "נָ",
+    "נ",
+  ].sort((a, b) => b.length - a.length); // longest-first
+
+  (function peelPrefixes(word) {
+    let w = word;
+    for (let i = 0; i < 3 && w.length > 2; i++) {
+      const match = prefixChars.find((p) => w.startsWith(p));
+      if (!match) break;
+      w = w.slice(match.length);
+      if (w.length >= 2) variations.add(w);
+    }
+  })(base);
+
+  // --- 2) Strip common Hebrew suffixes (longest first) ---
+  const pluralish = ["ים", "יִים", "ות", "וֹת", "יות", "יוֹת", "יים", "אִים"];
+  const verbPast = ["תי", "תּי", "ת", "תּ", "נו", "נוּ", "ו", "וּ", "תם", "תן"];
+  const pronominal = [
+    "יהם",
+    "יהן",
+    "יכם",
+    "יכן",
+    "ינו",
+    "יו",
+    "יה",
+    "י",
+    "ִי",
+    "יּ",
+    "ךָ",
+    "ֵךְ",
+    "ך",
+    "כם",
+    "כֶם",
+    "כן",
+    "כֶן",
+    "וֹ",
+    "וּ",
+    "ו",
+    "ה",
+    "ָה",
+    "נו",
+    "ֵנוּ",
+    "ם",
+    "ָם",
+    "ן",
+    "ָן",
   ];
-  suffixes.forEach((suffix) => {
-    if (query.endsWith(suffix)) {
-      variations.push(query.slice(0, -suffix.length));
+  const basicFem = ["ָה", "ה", "ִית", "ית", "ֶת", "ָת", "ת"];
+
+  const allSuffixes = Array.from(
+    new Set([...pluralish, ...verbPast, ...pronominal, ...basicFem])
+  ).sort((a, b) => b.length - a.length); // longest-first
+
+  function stripOneSuffix(word) {
+    allSuffixes.forEach((suf) => {
+      if (word.endsWith(suf) && word.length - suf.length >= 2) {
+        variations.add(word.slice(0, -suf.length));
+      }
+    });
+  }
+
+  Array.from(variations).forEach(stripOneSuffix);
+  Array.from(variations).forEach(stripOneSuffix);
+
+  // --- 3) Alternations / normalizations ---
+  Array.from(variations).forEach((w) => {
+    if (w.endsWith("ויות") && w.length > 4) {
+      variations.add(w.slice(0, -4) + "ות");
+    }
+    if (w.endsWith("יות") && w.length > 3) {
+      variations.add(w.slice(0, -3) + "ית");
+      variations.add(w.slice(0, -3) + "יה");
+    }
+    if (w.endsWith("יים") && w.length > 3) {
+      variations.add(w.slice(0, -3));
+    }
+    if (w.endsWith("יי") && w.length > 2) {
+      variations.add(w.slice(0, -2) + "י");
+    }
+    if (w.endsWith("ת") && w.length > 2) {
+      variations.add(w.slice(0, -1) + "ה");
     }
   });
 
-  return variations;
+  return Array.from(variations).filter((v) => v && v.length >= 2);
 }
 
 // Perform a search based on the input query and selected POS
@@ -1705,118 +1780,20 @@ function getCefrColor(cefrLevel) {
 
 // Utility function to generate word variations for verbs ending in -ere and handle adjective/noun forms
 function generateWordVariationsForSentences(word, pos) {
-  const variations = [];
+  const variations = [word]; // always include the base word
 
-  // Split the word into parts in case it's a phrase (e.g., "vedtatt sannhet")
-  const wordParts = word.split(" ");
-
-  // Handle phrases with slashes (e.g., "være/vær så snill", "logge inn/på")
-  if (word.includes("/")) {
-    // Split on the slash and create variations for both parts
-    const [firstPart, secondPart] = word.split("/");
-    const restOfPhrase = word.split(" ").slice(1).join(" "); // Get the rest of the phrase after the first word
-
-    variations.push(`${firstPart} ${restOfPhrase}`); // Add the first part with the rest of the phrase
-    variations.push(`${secondPart} ${restOfPhrase}`); // Add the second part with the rest of the phrase
-    return variations;
+  // Nouns → add plural forms
+  if (pos === "noun") {
+    variations.push(word + "ים"); // masculine plural
+    variations.push(word + "ות"); // feminine plural
   }
 
-  // Reflexive pronouns to handle reflexive verbs with variations (e.g., "seg", "deg", "meg", "oss", etc.)
-  const reflexivePronouns = ["me", "te", "se", "nos", "os"];
-
-  // If it's a single word
-  if (wordParts.length === 1) {
-    const singleWord = wordParts[0];
-    let stem = singleWord;
-    let gender = getWordGender(singleWord);
-
-    if (singleWord.length <= 2) {
-      // Handle the case where the word is too short to generate meaningful variations
-      console.warn(`Word "${singleWord}" is too short to generate variations.`);
-      variations.push(singleWord); // Just return the word as is
-      return variations;
-    }
-
-    if (pos === "noun" && gender.includes("ei")) {
-      if (singleWord.endsWith("e")) {
-        stem = singleWord.slice(0, -1); // Remove the final -e from the word
-      }
-      variations.push(
-        `${stem}`, // setning
-        `${stem}e`, // jente
-        `${stem}a`, // jenta
-        `${stem}en`, // jenten
-        `${stem}er`, // jenter
-        `${stem}ene` // jentene
-      );
-      // Handle verb variations if the word is a verb and ends with "e"
-    } else if (pos === "verb") {
-      if (singleWord.endsWith("e")) {
-        stem = singleWord.slice(0, -1); // Remove the final -e from the verb
-      }
-      variations.push(
-        `${stem}`, // imperative: anglifiser
-        `${stem}a`, // past tense: snakka
-        `${stem}e`, // infinitive: anglifisere
-        `${stem}er`, // present tense: anglifiserer
-        `${stem}es`, // passive: anglifiseres
-        `${stem}et`, // past tense: snakket
-        `${stem}r`, // present tense: bor
-        `${stem}t`, // past participle: anglifisert
-        `${stem}te` // past tense: anglifiserte
-      );
-    } else {
-      // For non-verbs, just add the word itself as a variation
-      variations.push(singleWord);
-    }
-
-    // If it's a phrase (e.g., "vedtatt sannhet"), handle each part separately
-  } else if (wordParts.length >= 2) {
-    const [firstWord, secondWord, ...restOfPhrase] = wordParts;
-    const remainingPhrase = restOfPhrase.join(" ");
-
-    // Handle reflexive verbs like "beklage seg" with variations for reflexive pronouns
-    if (reflexivePronouns.includes(secondWord)) {
-      let stem;
-      // Only remove the final 'e' if it exists; otherwise, use the full word (e.g., for "bry")
-      if (firstWord.endsWith("e")) {
-        stem = firstWord.slice(0, -1); // Remove the final -e from the verb
-      } else {
-        stem = firstWord; // Use the full word if it doesn't end with 'e'
-      }
-      // Add variations for all reflexive pronouns (seg, deg, meg, etc.)
-      reflexivePronouns.forEach((reflexive) => {
-        variations.push(
-          `${stem}e ${reflexive} ${remainingPhrase}`, // infinitive
-          `${stem}er ${reflexive} ${remainingPhrase}`, // present tense
-          `${stem}te ${reflexive} ${remainingPhrase}`, // past tense
-          `${stem}t ${reflexive} ${remainingPhrase}`, // past participle
-          `${stem}et ${reflexive} ${remainingPhrase}`, // past tense/past participle
-          `${stem}a ${reflexive} ${remainingPhrase}`, // past tense/past participle
-          `${stem} ${reflexive} ${remainingPhrase}`, // imperative
-          `${stem}es ${reflexive} ${remainingPhrase}` // passive
-        );
-      });
-    } else if (wordParts.length === 2) {
-      // Handle adjective inflection (e.g., "vedtatt" -> "vedtatte")
-      const adjectiveVariations = [firstWord, firstWord.replace(/t$/, "te")]; // Add plural/adjective form
-
-      // Handle noun pluralization (e.g., "sannhet" -> "sannheter")
-      const nounVariations = [secondWord, secondWord + "er"]; // Add plural form for nouns
-
-      // Combine all variations of adjective and noun
-      adjectiveVariations.forEach((adj) => {
-        nounVariations.forEach((noun) => {
-          variations.push(`${adj} ${noun}`);
-        });
-      });
-    } else {
-      // For other longer phrases, just return the phrase as is
-      variations.push(word);
-    }
-  } else {
-    // Add the original phrase as a variation (no transformation needed for long phrases)
-    variations.push(word);
+  // Verbs → add a few simple conjugation suffixes
+  if (pos === "verb") {
+    variations.push(word + "תי"); // I ...
+    variations.push(word + "ת"); // you ...
+    variations.push(word + "נו"); // we ...
+    variations.push(word + "ו"); // they ...
   }
 
   return variations;

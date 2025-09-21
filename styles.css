@@ -1014,6 +1014,7 @@ main {
 .multiple-results-definition-text {
   display: -webkit-box;
   flex: 1;
+  font-family: "Noto Serif Hebrew", serif;
   font-size: 18px !important;
   margin-left: 20px; /* Space between the gender/word and definition */
   line-clamp: 4;
