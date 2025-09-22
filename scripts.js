@@ -1780,23 +1780,60 @@ function getCefrColor(cefrLevel) {
 
 // Utility function to generate word variations for verbs ending in -ere and handle adjective/noun forms
 function generateWordVariationsForSentences(word, pos) {
-  const variations = [word]; // always include the base word
+  const variations = new Set([word]); // always include the base word
 
-  // Nouns → add plural forms
+  // Nouns → plural & construct state
   if (pos === "noun") {
-    variations.push(word + "ים"); // masculine plural
-    variations.push(word + "ות"); // feminine plural
+    if (word.endsWith("ה")) {
+      // feminine sg → add ות, ותיים
+      variations.add(word.slice(0, -1) + "ות");
+      variations.add(word.slice(0, -1) + "יות");
+    } else if (word.endsWith("י")) {
+      // e.g. תלמיד → תלמידים
+      variations.add(word + "ים");
+    } else {
+      // masculine default
+      variations.add(word + "ים");
+      variations.add(word + "ות");
+    }
   }
 
-  // Verbs → add a few simple conjugation suffixes
+  // Adjectives → gender + plural
+  if (pos === "adjective") {
+    if (word.endsWith("י")) {
+      variations.add(word + "ה"); // fem sg
+      variations.add(word + "ים"); // masc pl
+      variations.add(word + "ות"); // fem pl
+    } else if (word.endsWith("ה")) {
+      variations.add(word.slice(0, -1) + "י"); // masc sg
+      variations.add(word.slice(0, -1) + "ות"); // fem pl
+    }
+  }
+
+  // Verbs → cover present, past, infinitive, imperative fragments
   if (pos === "verb") {
-    variations.push(word + "תי"); // I ...
-    variations.push(word + "ת"); // you ...
-    variations.push(word + "נו"); // we ...
-    variations.push(word + "ו"); // they ...
+    const base = word;
+    // infinitive pattern: ל־
+    variations.add("ל" + base);
+
+    // Past tense (אני, אתה/את, אנחנו, הם/הן)
+    variations.add(base + "תי");
+    variations.add(base + "ת");
+    variations.add(base + "נו");
+    variations.add(base + "ו");
+
+    // Present (ms, fs, mp, fp)
+    variations.add(base + "ה"); // e.g. עושה
+    variations.add(base + "ים");
+    variations.add(base + "ות");
+
+    // Imperative/prefix forms (very rough)
+    variations.add("ת" + base);
+    variations.add("י" + base);
+    variations.add("נ" + base);
   }
 
-  return variations;
+  return Array.from(variations);
 }
 
 // Render a single sentence
