@@ -1552,6 +1552,11 @@ ul {
   display: none !important; /* hide when toggled */
 }
 
+.sentence-box-english p {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
 .sentence-box-norwegian {
   border-radius: 12px 0 0 12px; /* Rounded corners on top */
   box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.1);
@@ -1561,7 +1566,6 @@ ul {
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-
 .sentence-container {
   display: flex;
   gap: 3px; /* Adds space between the boxes */

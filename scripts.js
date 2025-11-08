@@ -685,13 +685,13 @@ async function search(queryOverride = null) {
     } else {
       // Filter stories based on the query in both 'titleHebrew' and 'titleEnglish'
       matchingResults = storyResults.filter((story) => {
-        const spanishTitleMatch = story.titleHebrew
+        const hebrewTitleMatch = story.titleHebrew
           .toLowerCase()
           .includes(query);
         const englishTitleMatch = story.titleEnglish
           .toLowerCase()
           .includes(query);
-        return spanishTitleMatch || englishTitleMatch;
+        return hebrewTitleMatch || englishTitleMatch;
       });
     }
 
@@ -1754,7 +1754,7 @@ function toggleEnglishTranslations(wordId = null) {
   const englishSentenceDivs = wordId
     ? sentenceContainer.querySelectorAll(".sentence-box-english")
     : document.querySelectorAll(".sentence-box-english"); // Global if no wordId
-  const spanishSentenceDivs = wordId
+  const hebrewSentenceDivs = wordId
     ? sentenceContainer.querySelectorAll(".sentence-box-norwegian")
     : document.querySelectorAll(".sentence-box-norwegian"); // Global if no wordId
 
@@ -1776,7 +1776,7 @@ function toggleEnglishTranslations(wordId = null) {
     div.classList.toggle("hidden", !isEnglishVisible);
   });
 
-  spanishSentenceDivs.forEach((div) => {
+  hebrewSentenceDivs.forEach((div) => {
     div.classList.toggle("sentence-box-norwegian-hidden", !isEnglishVisible);
   });
 
@@ -2192,9 +2192,9 @@ function highlightQuery(sentence, query) {
   );
 
   // Define a regex pattern that includes Hebrew characters and dynamically inserts the query
-  const spanishLetters = "[\\wčćđšžČĆĐŠŽ]"; // Include Hebrew letters in the pattern
+  const hebrewLetters = "[\\wčćđšžČĆĐŠŽ]"; // Include Hebrew letters in the pattern
   const regex = new RegExp(
-    `(${spanishLetters}*${query}${spanishLetters}*)`,
+    `(${hebrewLetters}*${query}${hebrewLetters}*)`,
     "gi"
   );
 
@@ -2236,8 +2236,8 @@ function highlightQuery(sentence, query) {
 
   // Apply highlighting for all word variations in sequence
   wordVariations.forEach((variation) => {
-    const spanishWordBoundary = `\\b${variation}\\b`;
-    const regex = new RegExp(spanishWordBoundary, "gi");
+    const hebrewWordBoundary = `\\b${variation}\\b`;
+    const regex = new RegExp(hebrewWordBoundary, "gi");
     cleanSentence = cleanSentence.replace(
       regex,
       '<span style="color: #3c88d4;">$&</span>'
@@ -2273,9 +2273,9 @@ function renderSentencesHTML(sentenceResults, wordVariations) {
 
         if (matchedVariation) {
           // Use a regular expression to match the full word containing any of the variations
-          const spanishPattern = "[\\wčćđšžČĆĐŠŽ]"; // Pattern including Hebrew letters
+          const hebrewPattern = "[\\wčćđšžČĆĐŠŽ]"; // Pattern including Hebrew letters
           const regex = new RegExp(
-            `(${spanishPattern}*${matchedVariation}${spanishPattern}*)`,
+            `(${hebrewPattern}*${matchedVariation}${hebrewPattern}*)`,
             "gi"
           );
 
