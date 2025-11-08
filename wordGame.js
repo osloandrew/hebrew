@@ -849,9 +849,6 @@ async function serveNewWord() {
   }
 
   renderStats();
-  if (questionType !== "cloze") {
-    displayPronunciation(currentWord);
-  }
 }
 
 async function startWordGame() {
