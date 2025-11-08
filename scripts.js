@@ -137,7 +137,7 @@ function filterResultsByPOS(results, selectedPOS) {
 function formatGender(gender) {
   if (!gender) return "";
   const g = gender.toLowerCase().trim();
-  // If it starts with a Spanish gender, mark as noun
+  // If it starts with a Hebrew gender, mark as noun
   if (["masculine", "feminine", "neuter"].some((x) => g.startsWith(x))) {
     return "noun - " + gender;
   }
@@ -440,7 +440,7 @@ async function randomWord() {
   }
 
   if (type === "sentences") {
-    // Split the Spanish and English sentences
+    // Split the Hebrew and English sentences
     const sentences = randomResult.eksempel.split(/(?<=[.!?])\s+/); // Split by sentence delimiters
     const translations = randomResult.sentenceTranslation
       ? randomResult.sentenceTranslation.split(/(?<=[.!?])\s+/)
@@ -508,7 +508,7 @@ async function randomWord() {
   hideSpinner(); // Hide the spinner
 }
 
-// Comprehensive Spanish inexact-match generator
+// Comprehensive Hebrew inexact-match generator
 function generateInexactMatches(query) {
   const q = query.toLowerCase().trim();
   const variations = new Set([q]);
@@ -683,9 +683,9 @@ async function search(queryOverride = null) {
     if (!query) {
       matchingResults = storyResults;
     } else {
-      // Filter stories based on the query in both 'titleSpanish' and 'titleEnglish'
+      // Filter stories based on the query in both 'titleHebrew' and 'titleEnglish'
       matchingResults = storyResults.filter((story) => {
-        const spanishTitleMatch = story.titleSpanish
+        const spanishTitleMatch = story.titleHebrew
           .toLowerCase()
           .includes(query);
         const englishTitleMatch = story.titleEnglish
@@ -840,7 +840,7 @@ async function search(queryOverride = null) {
     if (matchingResults.length === 1) {
       // Update URL and title for a single result
       const singleResult = matchingResults[0];
-      updateURL(null, type, selectedPOS, null, singleResult.ord); // Set word parameter with the result's Spanish term
+      updateURL(null, type, selectedPOS, null, singleResult.ord); // Set word parameter with the result's Hebrew term
       // Display this single result directly
       displaySearchResults([singleResult]); // Display only this single result
       hideSpinner(); // Hide the spinner
@@ -965,7 +965,7 @@ async function search(queryOverride = null) {
     matchingResults = matchingResults.sort((a, b) => {
       const queryLower = query.toLowerCase();
 
-      // 1. Prioritize exact match in the Spanish or English term
+      // 1. Prioritize exact match in the Hebrew or English term
       const isExactMatchA =
         a.ord
           .toLowerCase()
@@ -991,7 +991,7 @@ async function search(queryOverride = null) {
         return 1;
       }
 
-      // 2. Prioritize by CEFR level if both English translations or Spanish words are identical
+      // 2. Prioritize by CEFR level if both English translations or Hebrew words are identical
       const cefrOrder = { A1: 1, A2: 2, B1: 3, B2: 4, C: 5 };
       const aCEFRValue = cefrOrder[a.CEFR] || 99; // Use high default if CEFR is missing
       const bCEFRValue = cefrOrder[b.CEFR] || 99;
@@ -1019,7 +1019,7 @@ async function search(queryOverride = null) {
         }
       }
 
-      // Check for identical Spanish words
+      // Check for identical Hebrew words
       if (a.ord.toLowerCase() === b.ord.toLowerCase()) {
         if (aCEFRValue !== bCEFRValue) {
           return aCEFRValue - bCEFRValue; // Lower CEFR value appears first
@@ -1733,7 +1733,7 @@ function displaySearchResults(results, query = "") {
   }
 }
 
-// Function to toggle the visibility of English sentences and update Spanish box styles
+// Function to toggle the visibility of English sentences and update Hebrew box styles
 function toggleEnglishTranslations(wordId = null) {
   // Determine if wordId is a button element
   const isButton = wordId instanceof HTMLElement;
@@ -1821,7 +1821,7 @@ function getCefrColor(cefrLevel) {
 }
 
 function generateWordVariationsForSentences(word, pos) {
-  // Purpose: cast a wide net for surface-form matching in Spanish example sentences.
+  // Purpose: cast a wide net for surface-form matching in Hebrew example sentences.
   // NOTE: This is NOT a full morphological engine—it's a high-coverage heuristic set.
 
   const v = new Set([word]); // always include lemma/base as given
@@ -1931,7 +1931,7 @@ function generateWordVariationsForSentences(word, pos) {
     irregulars[w].forEach((f) => v.add(f));
   }
 
-  // --- crude stems for Spanish (heuristic, not full morphology) ---
+  // --- crude stems for Hebrew (heuristic, not full morphology) ---
   let verbStem = w;
   let adjStem = w;
   let nounStem = w;
@@ -2181,7 +2181,7 @@ function renderSentenceMatchesFromCorpus(rows, query) {
   document.getElementById("results-container").innerHTML = html;
 }
 
-// Highlight search query in text, accounting for Spanish characters (å, æ, ø) and verb variations
+// Highlight search query in text, accounting for Hebrew characters (å, æ, ø) and verb variations
 function highlightQuery(sentence, query) {
   if (!query) return sentence; // If no query, return sentence as is.
 
@@ -2191,8 +2191,8 @@ function highlightQuery(sentence, query) {
     "$1"
   );
 
-  // Define a regex pattern that includes Spanish characters and dynamically inserts the query
-  const spanishLetters = "[\\wčćđšžČĆĐŠŽ]"; // Include Spanish letters in the pattern
+  // Define a regex pattern that includes Hebrew characters and dynamically inserts the query
+  const spanishLetters = "[\\wčćđšžČĆĐŠŽ]"; // Include Hebrew letters in the pattern
   const regex = new RegExp(
     `(${spanishLetters}*${query}${spanishLetters}*)`,
     "gi"
@@ -2209,7 +2209,7 @@ function highlightQuery(sentence, query) {
 
   // Highlight each query variation in the sentence
   queries.forEach((q) => {
-    // Define a regex pattern that includes Spanish characters and dynamically inserts the query
+    // Define a regex pattern that includes Hebrew characters and dynamically inserts the query
     const regex = new RegExp(`(\\b${q}\\b|\\b${q}(?![\\wčćđšžČĆĐŠŽ]))`, "gi");
 
     // Highlight all occurrences of the query variation in the sentence
@@ -2273,7 +2273,7 @@ function renderSentencesHTML(sentenceResults, wordVariations) {
 
         if (matchedVariation) {
           // Use a regular expression to match the full word containing any of the variations
-          const spanishPattern = "[\\wčćđšžČĆĐŠŽ]"; // Pattern including Spanish letters
+          const spanishPattern = "[\\wčćđšžČĆĐŠŽ]"; // Pattern including Hebrew letters
           const regex = new RegExp(
             `(${spanishPattern}*${matchedVariation}${spanishPattern}*)`,
             "gi"
@@ -2755,7 +2755,7 @@ function updateURL(query, type, selectedPOS, story = null, word = null) {
   // Set the word parameter if a specific word entry is clicked
   if (word) {
     url.searchParams.set("word", word);
-    document.title = `${word} - Spanish Dictionary`; // Set title to the word
+    document.title = `${word} - Hebrew Dictionary`; // Set title to the word
     // Update the URL without reloading the page
     window.history.pushState({}, "", url);
     return; // Stop further execution to keep this title
@@ -2763,15 +2763,15 @@ function updateURL(query, type, selectedPOS, story = null, word = null) {
 
   // Update the page title based on the context, if no specific word is provided
   if (story) {
-    document.title = `${decodeURIComponent(story)} - Spanish Story`;
+    document.title = `${decodeURIComponent(story)} - Hebrew Story`;
   } else if (query) {
     document.title = `${query} - ${capitalizeType(
       type
-    )} Search - Spanish Dictionary`;
+    )} Search - Hebrew Dictionary`;
   } else if (type) {
-    document.title = `${capitalizeType(type)} - Spanish Dictionary`;
+    document.title = `${capitalizeType(type)} - Hebrew Dictionary`;
   } else {
-    document.title = "Spanish Dictionary";
+    document.title = "Hebrew Dictionary";
   }
 
   // Update the URL without reloading the page
@@ -2808,7 +2808,7 @@ function loadStateFromURL() {
 
   // If there's a story in the URL, display that story and exit
   if (storyTitle) {
-    document.title = `${decodeURIComponent(storyTitle)} - Spanish Story`;
+    document.title = `${decodeURIComponent(storyTitle)} - Hebrew Story`;
     displayStory(decodeURIComponent(storyTitle)); // Display the specific story
     return; // Exit function as story is being displayed
   }
@@ -2819,7 +2819,7 @@ function loadStateFromURL() {
       // Check if dictionary data is loaded
       if (word) {
         // Set title to the word
-        document.title = `${word} - Spanish Dictionary`;
+        document.title = `${word} - Hebrew Dictionary`;
         showLandingCard(false);
         resultsContainer.innerHTML = "";
 
@@ -2849,7 +2849,7 @@ function loadStateFromURL() {
       if (query) {
         search();
       } else if (type === "words") {
-        document.title = "Spanish Dictionary | Search in Spanish or English";
+        document.title = "Hebrew Dictionary | Search in Hebrew or English";
         clearContainer();
         showLandingCard(true);
       }

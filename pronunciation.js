@@ -3,7 +3,7 @@ function buildPronAudioUrl(sentenceText) {
     window.location.hostname === "localhost" ||
     window.location.hostname === "127.0.0.1"
       ? "" // local dev server
-      : "/spanish"; // GitHub Pages repo name
+      : "/hebrew"; // GitHub Pages repo name
 
   return `${base}/Resources/Sentences/${sentenceText
     .trim()
@@ -15,7 +15,7 @@ function buildWordAudioUrl(wordText) {
     window.location.hostname === "localhost" ||
     window.location.hostname === "127.0.0.1"
       ? "" // local dev server
-      : "/spanish"; // GitHub Pages repo name
+      : "/hebrew"; // GitHub Pages repo name
 
   return `${base}/Resources/Words/${wordText.trim()}.m4a`;
 }

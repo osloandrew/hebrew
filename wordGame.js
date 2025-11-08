@@ -976,22 +976,6 @@ function fetchIncorrectTranslations(gender, correctTranslation, currentCEFR) {
   return incorrectTranslations;
 }
 
-function displayPronunciation(word) {
-  const pronunciationContainer = document.querySelector(
-    "#game-banner-placeholder"
-  );
-  if (pronunciationContainer && word.uttale) {
-    const uttaleText = word.uttale.split(",")[0].trim(); // Get the part before the first comma
-    pronunciationContainer.innerHTML = `
-      <p class="game-pronunciation">${uttaleText}</p>
-    `;
-  } else if (pronunciationContainer) {
-    pronunciationContainer.innerHTML = ""; // Clear if no pronunciation
-  } else {
-    console.log("No container found.");
-  }
-}
-
 // ───────────────── 5) UI Builders ─────────────────
 
 function buildCEFRLabel(level) {
@@ -1176,9 +1160,7 @@ function renderGameUI({
     playWordAudio(wordObj);
   } else if (mode === "flashcard") {
     playWordAudio(wordObj); // ✅ restore word audio for flashcards
-    displayPronunciation(wordObj);
   } else {
-    displayPronunciation(wordObj);
   }
 }
 
@@ -1927,7 +1909,7 @@ function matchesInflectedForm(base, token, gender) {
   // --- 2. Skip prefix heuristics for short words (avoid "a" → "al") ---
   if (lowerBase.length <= 2) return false;
 
-  // --- 3. Nouns (comprehensive Spanish gender/number patterns) ---
+  // --- 3. Nouns (comprehensive Hebrew gender/number patterns) ---
   if (
     gender.startsWith("masculine") ||
     gender.startsWith("feminine") ||
@@ -1994,7 +1976,7 @@ function matchesInflectedForm(base, token, gender) {
       return true;
   }
 
-  // --- 5. Verbs (comprehensive Spanish conjugation logic) ---
+  // --- 5. Verbs (comprehensive Hebrew conjugation logic) ---
   if (gender.startsWith("verb")) {
     const verbEndings = [
       "ar",
@@ -2175,7 +2157,7 @@ function applyInflection(base, gender, targetTokenInSentence) {
   const strip = (s, re) => s.replace(re, "");
   const pick = (arr, i) => (i >= 0 && i < arr.length ? arr[i] : arr[0]);
 
-  // -------------------- Spanish feature guessers --------------------
+  // -------------------- Hebrew feature guessers --------------------
   function guessVerbFeatures(tok) {
     if (!tok) return null;
     // present indicative endings
@@ -2317,7 +2299,7 @@ function applyInflection(base, gender, targetTokenInSentence) {
   // =============== NOUN INFLECTION ====================
   // ====================================================
   function nounForms(lem, g) {
-    // returns a minimal number system for Spanish nouns
+    // returns a minimal number system for Hebrew nouns
     const forms = { sg: {}, pl: {} };
     if (/(a|o|e)$/.test(lem)) {
       const s = lem;
