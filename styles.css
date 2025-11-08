@@ -301,6 +301,7 @@ button:disabled i {
 .clickable-definition-word {
   cursor: pointer;
   color: #3c88d4;
+  font-family: "Noto Serif Hebrew", serif;
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 4px;
@@ -314,6 +315,9 @@ button:disabled i {
 }
 
 #cloze-sentence {
+  direction: rtl;
+  font-family: "Noto Serif Hebrew", serif;
+
   font-weight: normal;
   font-size: 1.2em;
   line-height: 1.35; /* Preferred */
@@ -400,12 +404,14 @@ li {
 }
 
 .english-sentence {
+  text-align: end;
   color: gray; /* Set a different color for English text */
   font-family: "Noto Serif", serif; /* Adjust to the appropriate English font */
 }
 
 .english-title {
   color: #666;
+  direction: ltr;
   font-family: "Noto Sans", sans-serif; /* English-specific font */
   font-size: 12.5px;
   -webkit-box-orient: vertical; /* Specifies vertical stacking of lines */
@@ -603,6 +609,11 @@ footer .copyright {
   user-select: none; /* Prevent text selection */
 }
 
+.game-hebrew-sentence {
+  direction: rtl;
+  font-family: "Noto Serif Hebrew", serif !important;
+  letter-spacing: 0.5px !important;
+}
 .game-incorrect-card {
   background-color: #e9a895 !important; /* Lighter clay red for incorrect */
   color: white;
@@ -769,7 +780,7 @@ footer .copyright {
 
 .game-word h2 {
   margin: 0;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Noto Serif Hebrew", serif;
   font-weight: 400 !important;
 }
 
@@ -898,15 +909,19 @@ input[type="text"]:not(:placeholder-shown) + label {
 
 .japanese-sentence {
   color: black; /* Set a color for Japanese text */
-  font-family: "Noto Serif", serif; /* Adjust to the appropriate English font */
+  direction: rtl;
+  font-family: "Noto Serif Hebrew", serif; /* Adjust to the appropriate English font */
+  font-size: 22px;
+  letter-spacing: 0.25px;
 }
 
 .japanese-title {
   color: #3c3c3c;
+  direction: rtl;
   display: -webkit-box; /* Creates a block-level flex container */
-  font-family: "Noto Serif", serif; /* Japanese-specific font */
+  font-family: "Noto Serif Hebrew", serif; /* Adjust to the appropriate English font */
   font-weight: 350;
-  font-size: 14px;
+  font-size: 18px;
   overflow: hidden; /* Hides the overflowing text */
   text-overflow: ellipsis; /* Adds ellipses when text overflows */
   text-transform: uppercase;
@@ -1111,6 +1126,7 @@ main {
 .multiple-results-definition-text {
   display: -webkit-box;
   flex: 1;
+  font-family: "Noto Serif Hebrew", serif;
   font-size: 18px !important;
   margin-left: 20px; /* Space between the gender/word and definition */
   line-clamp: 4;
@@ -1158,6 +1174,10 @@ ul {
   margin-block-start: 0px;
   margin-block-end: 0px;
   padding-inline-start: 20px;
+}
+
+.pronunciation {
+  font-family: "Noto Serif Hebrew", serif;
 }
 
 /* Basic styling for the table */
@@ -1408,6 +1428,12 @@ ul {
   text-align: center; /* center under the row */
 }
 
+.sentence {
+  direction: rtl;
+  font-family: "Noto Serif Hebrew", serif;
+  text-align: right;
+}
+
 .sentence-audio-icon {
   display: inline-flex !important; /* Flexbox to center the icon */
   align-items: center !important; /* Vertical centering */
@@ -1545,9 +1571,10 @@ ul {
 }
 
 .sentence-content {
-  display: flex;
   align-items: center;
+  display: flex;
   gap: 20px; /* Adds space between the Norwegian and English sentences */
+  flex-direction: row-reverse;
   width: 100%;
 }
 
@@ -1691,8 +1718,9 @@ ul {
 
 .sticky-title-japanese {
   color: #3c3c3c;
+  direction: rtl;
   font-size: 1.5em;
-  font-family: "Noto Serif", serif; /* Adjust to the appropriate English font */
+  font-family: "Noto Serif Hebrew", serif; /* Adjust to the appropriate English font */
   font-weight: 400;
   letter-spacing: 0.5px;
   margin: 0 auto;
@@ -1810,6 +1838,7 @@ ul {
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  direction: rtl;
   margin: 0 0 15px 0;
   display: flex;
   justify-content: space-between; /* Space between title/genre and CEFR */
@@ -2037,6 +2066,10 @@ ul {
   width: 40px;
 }
 
+.title-container {
+  text-align: right;
+}
+
 /* Gray out both the select text and the arrow when disabled */
 .cefr-filter.disabled select,
 .type-filter.disabled select,
@@ -2096,6 +2129,7 @@ ul {
 
 .word-text-block {
   display: flex;
+  font-family: "Noto Serif Hebrew", serif;
   flex-direction: column;
 }
 
@@ -2425,9 +2459,10 @@ ul {
   }
 
   .sentence-box-english {
+    flex-direction: row-reverse;
     border-radius: 0 0 12px 12px; /* Rounded corners on bottom */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 6px 9px 6px 49px;
+    padding: 6px 49px 6px 9px;
   }
 
   .sentence-box-norwegian {
@@ -2455,6 +2490,10 @@ ul {
 
   .sentence-content {
     gap: 10px; /* Adds space between the Norwegian and English sentences */
+  }
+
+  .sentence-translation {
+    text-align: end;
   }
 
   .sticky-cefr-label {

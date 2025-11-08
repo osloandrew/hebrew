@@ -166,7 +166,7 @@ function clearInput() {
 async function fetchAndLoadDictionaryData() {
   try {
     console.log("Attempting to load data from local CSV file...");
-    const localResponse = await fetch("HebrewWords.csv");
+    const localResponse = await fetch("hebrewWords.csv");
     if (!localResponse.ok)
       throw new Error(`HTTP error! Status: ${localResponse.status}`);
     const localData = await localResponse.text();
