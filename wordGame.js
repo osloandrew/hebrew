@@ -1231,7 +1231,7 @@ async function renderClozeGameUI(
     sentenceWithBlank = sentenceWithBlank.replace(re, "___");
   }
 
-  // 4) Make sure the evaluator compares Croatian→Croatian
+  // 4) Make sure the evaluator compares
   wordObj.clozeAnswer = clozedWordForm;
 
   // 5) Delegate to the unified renderer
@@ -1421,7 +1421,7 @@ async function handleTranslationClick(
 
     document.querySelector(".game-cefr-spacer").innerHTML = `
       <div class="sentence-pair">
-        <p>${completedSentence}</p>
+        <p class="game-hebrew-sentence">${completedSentence}</p>
         ${translationHTML}
       </div>
     `;
@@ -1551,7 +1551,7 @@ async function handleListeningAnswer(selectedTranslation, wordObj) {
 
       cefrSpacer.innerHTML = `
       <div class="sentence-pair">
-        <p class="game-croatian-sentence">${exampleSentence}</p>
+        <p class="game-hebrew-sentence">${exampleSentence}</p>
         ${translationHTML}
       </div>
     `;
@@ -1700,16 +1700,16 @@ async function fetchRandomWord() {
     );
   }
 
-  // Filter out words where the Croatian word and its English translation are identical
+  // Filter out words where the Hebrew word and its English translation are identical
   filteredResults = filteredResults.filter((r) => {
-    // Split and trim the Croatian word (handle comma-separated words)
-    const croatianWord = r.ord.split(",")[0].trim().toLowerCase();
+    // Split and trim the Hebrew word (handle comma-separated words)
+    const hebrewWord = r.ord.split(",")[0].trim().toLowerCase();
 
     // Split and trim the English translation (handle comma-separated translations)
     const englishTranslation = r.engelsk.split(",")[0].trim().toLowerCase();
 
-    // Return true if the Croatian and English words are not the same
-    return croatianWord !== englishTranslation;
+    // Return true if the Hebrew and English words are not the same
+    return hebrewWord !== englishTranslation;
   });
 
   // If no words match the filters, return a message
