@@ -392,37 +392,6 @@ async function displayStory(titleHebrew) {
     applyRate(rates[i]);
   })();
 
-  (function addNiqqudButton() {
-    const rc = document.getElementById("right-controls");
-    const engBtn = document.getElementById("toggle-english-btn");
-    if (!rc || !engBtn) return;
-
-    // If there is no no-niqqud column, quietly skip adding the toggle
-    const hasNoNiqqud =
-      typeof selectedStory.hebrewNoNiqqud === "string" &&
-      selectedStory.hebrewNoNiqqud.trim().length > 0;
-    if (!hasNoNiqqud) return;
-
-    const nqBtn = document.createElement("button");
-    nqBtn.id = "toggle-niqqud-btn";
-    nqBtn.type = "button";
-    nqBtn.className = engBtn.className; // identical styling
-    nqBtn.textContent = isNiqqudVisible ? "Hide Niqqud" : "Show Niqqud";
-
-    // Place it directly under the English button
-    engBtn.insertAdjacentElement("afterend", nqBtn);
-
-    nqBtn.addEventListener("click", () => {
-      isNiqqudVisible = !isNiqqudVisible;
-      const hebNodes = document.querySelectorAll(".japanese-sentence");
-      const src = isNiqqudVisible ? hebrewSentencesWith : hebrewSentencesNo;
-      hebNodes.forEach((node, i) => {
-        node.textContent = src[i] || "";
-      });
-      nqBtn.textContent = isNiqqudVisible ? "Hide Niqqud" : "Show Niqqud";
-    });
-  })();
-
   document
     .getElementById("toggle-english-btn")
     ?.addEventListener("click", () => {
@@ -479,9 +448,8 @@ async function displayStory(titleHebrew) {
       contentHTML = audioHTML + contentHTML;
     }
 
-    for (let i = 0; i < hebrewSentencesWith.length; i++) {
-      const src = isNiqqudVisible ? hebrewSentencesWith : hebrewSentencesNo;
-      const hebrewSentence = (src[i] || "").trim();
+    for (let i = 0; i < hebrewSentences.length; i++) {
+      const hebrewSentence = hebrewSentences[i].trim();
       const englishSentence = englishSentences[i]
         ? englishSentences[i].trim()
         : "";
@@ -524,33 +492,14 @@ async function displayStory(titleHebrew) {
     hideSpinner(); // Hide spinner after story content is displayed
   };
 
-  // Process story text into sentences (with and without niqqud)
-  const standardizedHebrew = (selectedStory.hebrew || "").replace(
-    /[“”«»]/g,
-    '"'
-  );
-  const standardizedHebrewNo = (selectedStory.hebrewNoNiqqud || "").replace(
-    /[“”«»]/g,
-    '"'
-  );
-  const standardizedEnglish = (selectedStory.english || "").replace(
-    /[“”«»]/g,
-    '"'
-  );
-
+  // Process story text into sentences
+  const standardizedHebrew = selectedStory.hebrew.replace(/[“”«»]/g, '"');
+  const standardizedEnglish = selectedStory.english.replace(/[“”«»]/g, '"');
   const sentenceRegex =
     /(?:(["]?.+?(?<!\bMr)(?<!\bMrs)(?<!\bMs)(?<!\bDr)(?<!\bProf)(?<!\bJr)(?<!\bSr)(?<!\bSt)(?<!\bMt)[.!?]["]?)(?=\s|$)|(?:\.\.\."))/g;
-
-  let hebrewSentencesWith = standardizedHebrew.match(sentenceRegex) || [
+  let hebrewSentences = standardizedHebrew.match(sentenceRegex) || [
     standardizedHebrew,
   ];
-
-  let hebrewSentencesNo =
-    // fallback to WITH niqqud if the no-niqqud column is missing
-    (standardizedHebrewNo || standardizedHebrew).match(sentenceRegex) || [
-      standardizedHebrew,
-    ];
-
   let englishSentences = standardizedEnglish.match(sentenceRegex) || [
     standardizedEnglish,
   ];
@@ -559,6 +508,8 @@ async function displayStory(titleHebrew) {
     return sentences.reduce((acc, sentence) => {
       const trimmedSentence = sentence.trim();
       const lastSentence = acc[acc.length - 1] || "";
+
+      // Check if the previous sentence ends with a quote and the current sentence contains 'asked'
       if (
         acc.length > 0 &&
         combineIfContains &&
@@ -575,19 +526,9 @@ async function displayStory(titleHebrew) {
     }, []);
   };
 
-  hebrewSentencesWith = combineSentences(hebrewSentencesWith);
-  hebrewSentencesNo = combineSentences(hebrewSentencesNo);
+  hebrewSentences = combineSentences(hebrewSentences);
   englishSentences = combineSentences(englishSentences, /\basked\b/i);
 
-  // Keep arrays the same length to make swapping text safe
-  const maxLen = Math.max(
-    hebrewSentencesWith.length,
-    hebrewSentencesNo.length,
-    englishSentences.length
-  );
-  while (hebrewSentencesWith.length < maxLen) hebrewSentencesWith.push("");
-  while (hebrewSentencesNo.length < maxLen) hebrewSentencesNo.push("");
-  while (englishSentences.length < maxLen) englishSentences.push("");
   finalizeContent(false);
 }
 
