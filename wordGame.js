@@ -723,81 +723,41 @@ async function renderClozeQuestion(randomWordObj, uniqueDisplayedTranslations) {
   const exampleText = matchingEntry?.eksempel || "";
   const firstSentence = exampleText.split(/(?<=[.!?])\s+/)[0];
   const tokens = firstSentence.match(/\p{L}+/gu) || [];
-
-  // --- Direct match for exact single-token Hebrew phrases ---
-  for (const tok of tokens) {
-    if (normalizeHebrew(tok) === normalizeHebrew(baseWord)) {
-      clozedForm = tok;
-      break;
-    }
-  }
-
-  let clozedForm = null;
-  const baseWordTokens = baseWord.split(/\s+/);
-
   const baseNorm = normalizeHebrew(baseWord);
+  let clozedForm = null;
 
+  // Try exact and inflected matches across tokens
   for (let start = 0; start < tokens.length; start++) {
-    for (let end = start + 1; end <= tokens.length; end++) {
-      const group = tokens.slice(start, end);
-      const joinedWithSpace = group.join(" ");
-      const joinedWithHyphen = group.join("-");
+    for (
+      let end = start + 1;
+      end <= Math.min(tokens.length, start + 3);
+      end++
+    ) {
+      const slice = tokens.slice(start, end);
+      const joinedSpace = slice.join(" ");
+      const joinedHyphen = slice.join("-");
 
-      const tokenNormSpace = normalizeHebrew(joinedWithSpace);
-      const tokenNormHyphen = normalizeHebrew(joinedWithHyphen);
+      const normSpace = normalizeHebrew(joinedSpace);
+      const normHyphen = normalizeHebrew(joinedHyphen);
 
       if (
-        matchesInflectedForm(baseNorm, tokenNormSpace, randomWordObj.gender)
+        normalizeHebrew(tokens[start]) === baseNorm ||
+        matchesInflectedForm(baseNorm, normSpace, randomWordObj.gender) ||
+        matchesInflectedForm(baseNorm, normHyphen, randomWordObj.gender)
       ) {
-        clozedForm = group.join(" ");
-        break;
-      }
-      if (
-        matchesInflectedForm(baseNorm, tokenNormHyphen, randomWordObj.gender)
-      ) {
-        clozedForm = group.join("-");
+        clozedForm = slice.join(" ");
         break;
       }
     }
     if (clozedForm) break;
   }
 
+  console.log("CLOZE DEBUG → matched clozedForm:", clozedForm);
+
+  // If absolutely nothing matches, bail out to flashcard
   if (!clozedForm) {
-    const cleanedTokens = tokens.map((t) =>
-      t.toLowerCase().replace(/[.,!?;:()"]/g, "")
-    );
-    const normalizedTokens = cleanedTokens;
-    const normalizedBase = baseWord;
-
-    let fallbackClozed = null;
-    for (let len = normalizedBase.length; len > 2; len--) {
-      const prefix = normalizedBase.slice(0, len);
-      const matchIndex = normalizedTokens.findIndex((t) =>
-        t.startsWith(prefix)
-      );
-      if (matchIndex !== -1) {
-        const endIndex = matchIndex + baseWordTokens.length - 1;
-        const matchedTokens = tokens.slice(matchIndex, endIndex + 1);
-
-        const restOfBase = baseWordTokens.slice(1).join(" ");
-        const restOfSentence = matchedTokens.slice(1).join(" ").toLowerCase();
-
-        if (restOfSentence === restOfBase) {
-          fallbackClozed = matchedTokens.join(" ");
-        } else {
-          fallbackClozed = tokens[matchIndex];
-        }
-        break;
-      }
-    }
-
-    if (fallbackClozed) {
-      clozedForm = fallbackClozed;
-    } else {
-      // fallback to flashcard if cloze not possible
-      renderWordGameUI(randomWordObj, uniqueDisplayedTranslations, false);
-      return;
-    }
+    renderWordGameUI(randomWordObj, uniqueDisplayedTranslations, false);
+    return;
   }
 
   const formatCase = (w) => w.charAt(0).toLowerCase() + w.slice(1);
@@ -1267,21 +1227,13 @@ async function renderClozeGameUI(
 
     for (const c of candidates) {
       // Match any inflected or hyphenated form containing the base
-      const re = new RegExp(`\\b${escapeRegExp(c)}\\p{L}*\\b`, "iu");
+      // Hebrew "word boundary" safe version
+      const re = new RegExp(`(^|\\s)${escapeRegExp(c)}(?=\\s|[.,!?]|$)`, "u");
       if (re.test(s)) {
-        s = s.replace(re, "___");
+        s = s.replace(re, " ___"); // note leading space
         break;
       }
     }
-
-    // Guarantee at least one blank
-    if (!s.includes("___")) {
-      const words = s.split(/\s+/);
-      if (words.length > 0) {
-        s = s.replace(words[0], "___");
-      }
-    }
-
     sentenceWithBlank = s || "";
   }
 
@@ -1293,8 +1245,7 @@ async function renderClozeGameUI(
 
   // ✅ Ensure sentenceWithBlank really contains the blank
   if (sentenceWithBlank && !sentenceWithBlank.includes("___")) {
-    const base = clozedWordForm || wordObj.ord.split(",")[0].trim();
-    const re = new RegExp(`\\b${escapeRegExp(base)}\\b`, "i");
+    const re = new RegExp(`(^|\\s)${escapeRegExp(c)}(?=\\s|[.,!?]|$)`, "u");
     sentenceWithBlank = sentenceWithBlank.replace(re, "___");
   }
 
