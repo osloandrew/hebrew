@@ -657,6 +657,61 @@ function pickQuestionType(cefr) {
   return "flashcard";
 }
 
+// Hebrew normalization (keep even if you don’t store niqqud)
+function normalizeHebrew(s) {
+  return (s || "")
+    .normalize("NFKC")
+    .replace(/[\u05B0-\u05BC\u05C1\u05C2\u05C4\u05C5\u05C7]/g, "") // niqqud
+    .replace(/ך/g, "כ")
+    .replace(/ם/g, "מ")
+    .replace(/ן/g, "נ")
+    .replace(/ף/g, "פ")
+    .replace(/ץ/g, "צ");
+}
+
+// strip surrounding punctuation but keep inner hyphens/maqaf for later splitting
+function trimHebPunct(s) {
+  return (s || "").replace(
+    /^[\u200e\u200f\s.,!?:"'(){}\[\]…]+|[\u200e\u200f\s.,!?:"'(){}\[\]…]+$/g,
+    ""
+  );
+}
+
+// Split on ASCII hyphen and Hebrew maqaf (U+05BE), return non-empty parts
+function splitOnHyphens(s) {
+  return trimHebPunct(s)
+    .split(/[-\u05BE]/)
+    .filter(Boolean);
+}
+
+// Generate candidates by stripping stacked Hebrew prefixes (up to 3)
+const H_PREFIX = new Set(["ו", "ב", "כ", "ל", "מ", "ש", "ה"]);
+function prefixStrips(word) {
+  const out = [word];
+  let w = word;
+  for (let i = 0; i < 3; i++) {
+    const c = w.charAt(0);
+    if (!H_PREFIX.has(c)) break;
+    w = w.slice(1);
+    if (w) out.push(w);
+  }
+  return out;
+}
+
+// Build all candidate variants for a surface token:
+// - exact part
+// - parts after hyphen/maqaf split
+// - each with 0..3 prefixes stripped
+function candidateVariants(surfaceToken) {
+  const parts = splitOnHyphens(surfaceToken);
+  const bases = parts.length ? parts : [trimHebPunct(surfaceToken)];
+  const variants = new Set();
+  for (const b of bases) {
+    for (const v of prefixStrips(b)) variants.add(normalizeHebrew(v));
+  }
+  return Array.from(variants);
+}
+
 async function renderClozeQuestion(randomWordObj, uniqueDisplayedTranslations) {
   const baseWord = randomWordObj.ord.split(",")[0].trim().toLowerCase();
   const matchingEntry = results.find(
@@ -669,24 +724,36 @@ async function renderClozeQuestion(randomWordObj, uniqueDisplayedTranslations) {
   const firstSentence = exampleText.split(/(?<=[.!?])\s+/)[0];
   const tokens = firstSentence.match(/\p{L}+/gu) || [];
 
+  // --- Direct match for exact single-token Hebrew phrases ---
+  for (const tok of tokens) {
+    if (normalizeHebrew(tok) === normalizeHebrew(baseWord)) {
+      clozedForm = tok;
+      break;
+    }
+  }
+
   let clozedForm = null;
   const baseWordTokens = baseWord.split(/\s+/);
 
-  // original nested search
+  const baseNorm = normalizeHebrew(baseWord);
+
   for (let start = 0; start < tokens.length; start++) {
     for (let end = start + 1; end <= tokens.length; end++) {
       const group = tokens.slice(start, end);
-      const joinedWithSpace = group.join(" ").toLowerCase();
-      const joinedWithHyphen = group.join("-").toLowerCase();
+      const joinedWithSpace = group.join(" ");
+      const joinedWithHyphen = group.join("-");
+
+      const tokenNormSpace = normalizeHebrew(joinedWithSpace);
+      const tokenNormHyphen = normalizeHebrew(joinedWithHyphen);
 
       if (
-        matchesInflectedForm(baseWord, joinedWithSpace, randomWordObj.gender)
+        matchesInflectedForm(baseNorm, tokenNormSpace, randomWordObj.gender)
       ) {
         clozedForm = group.join(" ");
         break;
       }
       if (
-        matchesInflectedForm(baseWord, joinedWithHyphen, randomWordObj.gender)
+        matchesInflectedForm(baseNorm, tokenNormHyphen, randomWordObj.gender)
       ) {
         clozedForm = group.join("-");
         break;
@@ -1897,247 +1964,141 @@ function getEndingPattern(form) {
 function matchesInflectedForm(base, token, gender) {
   if (!base || !token) return false;
 
-  const lowerBase = base.toLowerCase();
-  const lowerToken = token.toLowerCase();
+  const lemma = base.trim();
+  const form = token.trim();
 
   // --- 1. Exact match ---
-  if (lowerToken === lowerBase) return true;
+  if (lemma === form) return true;
 
-  // --- 2. Skip prefix heuristics for short words (avoid "a" → "al") ---
-  if (lowerBase.length <= 2) return false;
+  // --- 2. Short lemmas: skip prefix heuristics ---
+  if (lemma.length <= 1) return false;
 
-  // --- 3. Nouns (comprehensive Hebrew gender/number patterns) ---
+  // Normalize for comparison (remove niqqud, final form equivalence)
+  const normalize = (s) =>
+    s
+      .normalize("NFKC")
+      .replace(/[\u05B0-\u05BC\u05C1\u05C2\u05C4\u05C5\u05C7]/g, "") // remove vowels & cantillation
+      .replace(/ך/g, "כ")
+      .replace(/ם/g, "מ")
+      .replace(/ן/g, "נ")
+      .replace(/ף/g, "פ")
+      .replace(/ץ/g, "צ");
+  const baseNorm = normalize(lemma);
+  const tokenNorm = normalize(form);
+
+  // --- 3. Nouns and adjectives ---
   if (
+    gender.startsWith("noun") ||
     gender.startsWith("masculine") ||
     gender.startsWith("feminine") ||
-    gender.startsWith("neuter")
+    gender.startsWith("adjective")
   ) {
-    const lemma = lowerBase;
-    const token = lowerToken;
+    const base = baseNorm;
 
-    // feminine -a nouns (casa → casas)
-    if (lemma.endsWith("a") && gender.startsWith("feminine")) {
-      const stem = lemma.slice(0, -1);
-      const femEndings = [
-        "a", // singular
-        "as", // plural
-      ];
-      if (femEndings.some((e) => token === stem + e)) return true;
+    // Common plural endings
+    const pluralEndings = ["ים", "ות"];
+    for (const end of pluralEndings) {
+      if (tokenNorm === base + end) return true;
     }
 
-    // masculine -o nouns (libro → libros)
-    if (lemma.endsWith("o") && gender.startsWith("masculine")) {
-      const stem = lemma.slice(0, -1);
-      const mascEndings = ["o", "os"];
-      if (mascEndings.some((e) => token === stem + e)) return true;
-    }
-
-    // nouns ending in -e (calle → calles)
-    if (lemma.endsWith("e")) {
-      const stem = lemma.slice(0, -1);
-      const eEndings = ["e", "es"];
-      if (eEndings.some((e) => token === stem + e)) return true;
-    }
-
-    // consonant-ending nouns (papel → papeles, mujer → mujeres)
-    if (/[bcdfghjklmnñpqrstvwxyz]$/.test(lemma)) {
-      const mascConEndings = ["", "es"];
-      if (mascConEndings.some((e) => token === lemma + e)) return true;
-      // handle z → c change (luz → luces)
-      if (lemma.endsWith("z") && token === lemma.slice(0, -1) + "ces")
-        return true;
-    }
-
-    // fallback catch-all: common plural variants
-    const genericEndings = ["", "s", "es", "ces"];
-    if (genericEndings.some((e) => token === lemma + e)) return true;
-  }
-
-  // --- 4. Adjectives ---
-  if (gender.startsWith("adjective")) {
-    const adjStem = lowerBase.replace(/(o|a|e|os|as|es)$/, "");
-    const adjEndings = [
-      "",
-      "o",
-      "a",
-      "os",
-      "as",
-      "e",
-      "es",
-      "ísimo",
-      "ísima",
-      "ísimos",
-      "ísimas",
-    ];
-    if (adjEndings.some((ending) => lowerToken === adjStem + ending))
+    // Feminine alternations (ending ה / ת)
+    if (base.endsWith("ה") && tokenNorm === base.slice(0, -1) + "ות")
       return true;
-  }
-
-  // --- 5. Verbs (comprehensive Hebrew conjugation logic) ---
-  if (gender.startsWith("verb")) {
-    const verbEndings = [
-      "ar",
-      "er",
-      "ir",
-      "ando",
-      "iendo",
-      "ado",
-      "ido",
-      "é",
-      "aste",
-      "ó",
-      "amos",
-      "aron",
-      "í",
-      "iste",
-      "ió",
-      "imos",
-      "ieron",
-      "aba",
-      "abas",
-      "aba",
-      "ábamos",
-      "aban",
-      "ía",
-      "ías",
-      "ía",
-      "íamos",
-      "ían",
-      "aré",
-      "arás",
-      "ará",
-      "aremos",
-      "arán",
-      "eré",
-      "erás",
-      "erá",
-      "eremos",
-      "erán",
-      "iré",
-      "irás",
-      "irá",
-      "iremos",
-      "irán",
-      "aría",
-      "arías",
-      "aríamos",
-      "arían",
-      "ería",
-      "erías",
-      "eríamos",
-      "erían",
-      "iría",
-      "irías",
-      "iríamos",
-      "irían",
-      "e",
-      "es",
-      "emos",
-      "éis",
-      "en",
-      "a",
-      "as",
-      "amos",
-      "áis",
-      "an",
-    ];
-
-    // --- 5a. Identify infinitive group ---
-    let baseStem = lowerBase.replace(/(ar|er|ir)$/, "");
-
-    // --- 5b. Simple conjugations ---
-    if (verbEndings.some((end) => lowerToken === baseStem + end)) return true;
-
-    // --- 5c. Stem-changing verbs (e→ie, o→ue, e→i) ---
-    const stemChanges = [
-      { from: "e", to: "ie" },
-      { from: "o", to: "ue" },
-      { from: "e", to: "i" },
-    ];
-    for (const { from, to } of stemChanges) {
-      const idx = baseStem.lastIndexOf(from);
-      if (idx !== -1) {
-        const changedStem =
-          baseStem.slice(0, idx) + to + baseStem.slice(idx + 1);
-        if (verbEndings.some((end) => lowerToken === changedStem + end))
-          return true;
-      }
-    }
-
-    // --- 5d. Orthographic changes (buscar → busqué, pagar → pagué, empezar → empecé) ---
-    const orthoPatterns = [
-      { regex: /car$/, repl: "qué" },
-      { regex: /gar$/, repl: "gué" },
-      { regex: /zar$/, repl: "cé" },
-    ];
-    for (const pat of orthoPatterns) {
-      if (pat.regex.test(lowerBase) && lowerToken.endsWith(pat.repl))
-        return true;
-    }
-
-    // --- 5e. Irregular verb families ---
-    const irregularMap = {
-      ser: [
-        "soy",
-        "eres",
-        "es",
-        "somos",
-        "sois",
-        "son",
-        "fui",
-        "fuiste",
-        "fue",
-        "fuimos",
-        "fueron",
-      ],
-      estar: [
-        "estoy",
-        "estás",
-        "está",
-        "estamos",
-        "están",
-        "estuve",
-        "estuvo",
-        "estuvieron",
-      ],
-      ir: ["voy", "vas", "va", "vamos", "vais", "van", "fui", "fue", "fueron"],
-      tener: [
-        "tengo",
-        "tienes",
-        "tiene",
-        "tenemos",
-        "tienen",
-        "tuve",
-        "tuvimos",
-      ],
-      venir: ["vengo", "vienes", "viene", "venimos", "vienen"],
-      poder: ["puedo", "puedes", "puede", "podemos", "pueden", "pude", "podía"],
-      hacer: ["hago", "haces", "hace", "hacemos", "hacen", "hizo", "hecho"],
-      decir: ["digo", "dices", "dice", "decimos", "dicen", "dije", "dicho"],
-      poner: ["pongo", "pones", "pone", "pusimos", "puso", "puesto"],
-      saber: ["sé", "sabes", "sabe", "supimos", "supe", "sabía"],
-      querer: ["quiero", "quieres", "quiere", "queremos", "quieren", "quise"],
-      ver: ["veo", "ves", "ve", "vemos", "ven", "vio", "visto"],
-      dar: ["doy", "das", "da", "damos", "dan", "di", "dio", "dado"],
-      oír: ["oigo", "oyes", "oye", "oímos", "oyen", "oí", "oía", "oído"],
-    };
-    if (irregularMap[lowerBase] && irregularMap[lowerBase].includes(lowerToken))
+    if (base.endsWith("ת") && tokenNorm === base.slice(0, -1) + "יות")
       return true;
+    if (base.endsWith("י") && tokenNorm === base + "ות") return true;
 
-    // --- 5f. Reflexive forms (lavarse → me lavo, te lavas, se lava, etc.) ---
-    const reflPronouns = ["me ", "te ", "se ", "nos ", "os "];
+    // Masculine alternations
+    if (base.endsWith("ן") && tokenNorm === base.slice(0, -1) + "נים")
+      return true;
+    if (base.endsWith("י") && tokenNorm === base + "ים") return true;
+
+    // Construct state (סמיכות) — remove final ה / ת / י
+    const constructVariants = [
+      base.slice(0, -1),
+      base.slice(0, -1) + "ת",
+      base.slice(0, -1) + "י",
+    ];
+    if (constructVariants.includes(tokenNorm)) return true;
+
+    // Possessive suffixes (simplified common ones)
+    const possessiveSuffixes = [
+      "י", // שלי
+      "ך", // שלך
+      "ו", // שלו
+      "ה", // שלה
+      "נו", // שלנו
+      "כם",
+      "כן", // שלכם / שלכן
+      "ם",
+      "ן", // שלהם / שלהן
+    ];
+    for (const suf of possessiveSuffixes) {
+      if (tokenNorm === base + suf) return true;
+    }
+
+    // Dual nouns (יים)
+    if (tokenNorm === base + "יים") return true;
+
+    // Catch-all: starts with same 3 letters and differs by plural or suffix
     if (
-      reflPronouns.some((p) => lowerToken.startsWith(p)) &&
-      matchesInflectedForm(
-        base,
-        lowerToken.replace(/^(me|te|se|nos|os)\s+/, ""),
-        "verb"
-      )
+      tokenNorm.startsWith(base.slice(0, 3)) &&
+      Math.abs(tokenNorm.length - base.length) <= 3
     )
       return true;
+  }
 
-    // --- 5g. Fallback heuristic (shared stem prefix) ---
-    if (lowerToken.startsWith(baseStem.slice(0, -1))) return true;
+  // --- 4. Verbs ---
+  if (gender.startsWith("verb")) {
+    const base = baseNorm;
+
+    // Infinitive patterns: ל + root (ex: ללכת, לאכול)
+    if (tokenNorm.startsWith("ל") && tokenNorm.endsWith(base.slice(-2)))
+      return true;
+
+    // Present tense (ms, fs, mp, fp)
+    const presentEndings = ["", "ת", "ים", "ות"];
+    for (const end of presentEndings) {
+      if (tokenNorm === base + end) return true;
+    }
+
+    // Past tense (common suffixes)
+    const pastEndings = [
+      "תי", // אני
+      "ת", // אתה/את
+      "ה", // הוא
+      "ה", // היא (with different vocalization)
+      "נו", // אנחנו
+      "תם",
+      "תן",
+      "ו", // הם/הן
+    ];
+    for (const end of pastEndings) {
+      if (tokenNorm === base + end) return true;
+    }
+
+    // Future tense prefixes
+    const futurePrefixes = ["א", "ת", "י", "נ"];
+    for (const pre of futurePrefixes) {
+      if (tokenNorm.startsWith(pre + base.slice(1))) return true;
+    }
+
+    // Imperative forms (shortened root)
+    if (tokenNorm.length === base.length - 1 && base.startsWith(tokenNorm))
+      return true;
+
+    // Hitpael prefix pattern
+    if (tokenNorm.startsWith("הת") && base.startsWith(tokenNorm.slice(2)))
+      return true;
+
+    // Binian prefixes (simple heuristic)
+    const binyanPrefixes = ["מ", "ה", "נ", "י"];
+    for (const pre of binyanPrefixes) {
+      if (tokenNorm.startsWith(pre + base.slice(1))) return true;
+    }
+
+    // Catch-all: share root skeleton (same first 2–3 consonants)
+    if (tokenNorm.slice(0, 3) === base.slice(0, 3)) return true;
   }
 
   return false;
@@ -2146,245 +2107,185 @@ function matchesInflectedForm(base, token, gender) {
 function applyInflection(base, gender, targetTokenInSentence) {
   if (!base) return base;
 
-  let lemma = base.toLowerCase().trim();
-  const token = targetTokenInSentence?.toLowerCase?.() || null;
+  const lemma = base.trim();
+  const token = targetTokenInSentence?.trim() || null;
 
-  // -------------------- helpers --------------------
-  const endsWithCons = (s) => /[bcdfghjklmnñpqrstvwxyz]$/.test(s);
-  const strip = (s, re) => s.replace(re, "");
-  const pick = (arr, i) => (i >= 0 && i < arr.length ? arr[i] : arr[0]);
+  // -------------------- Normalizer --------------------
+  const normalize = (s) =>
+    s
+      .normalize("NFKC")
+      .replace(/[\u05B0-\u05BC\u05C1\u05C2\u05C4\u05C5\u05C7]/g, "") // remove niqqud
+      .replace(/ך/g, "כ")
+      .replace(/ם/g, "מ")
+      .replace(/ן/g, "נ")
+      .replace(/ף/g, "פ")
+      .replace(/ץ/g, "צ");
 
-  // -------------------- Hebrew feature guessers --------------------
+  const baseNorm = normalize(lemma);
+  const tokenNorm = token ? normalize(token) : null;
+
+  // -------------------- Guessers --------------------
   function guessVerbFeatures(tok) {
-    if (!tok) return null;
-    // present indicative endings
-    if (/(amos|emos|imos)$/.test(tok))
-      return { tense: "pres", person: 1, number: "pl" };
-    if (/(áis|éis|ís)$/.test(tok))
-      return { tense: "pres", person: 2, number: "pl" };
-    if (/(an|en)$/.test(tok)) return { tense: "pres", person: 3, number: "pl" };
-    if (/(o|oy)$/.test(tok)) return { tense: "pres", person: 1, number: "sg" };
-    if (/(as|es)$/.test(tok)) return { tense: "pres", person: 2, number: "sg" };
-    if (/(a|e)$/.test(tok)) return { tense: "pres", person: 3, number: "sg" };
-    // simple past
-    if (/(é|í)$/.test(tok)) return { tense: "past", person: 1, number: "sg" };
-    if (/(aste|iste)$/.test(tok))
-      return { tense: "past", person: 2, number: "sg" };
-    if (/(ó|ió)$/.test(tok)) return { tense: "past", person: 3, number: "sg" };
-    if (/(aron|ieron)$/.test(tok))
-      return { tense: "past", person: 3, number: "pl" };
-    // participle
-    if (/(ado|ido)$/.test(tok)) return { tense: "pp" };
-    // infinitive
-    if (/(ar|er|ir)$/.test(tok)) return { tense: "inf" };
-    return null;
+    if (!tok) return { tense: "pres", person: 3, number: "sg", gender: "m" };
+
+    // prefix-based heuristics (future tense)
+    if (/^א/.test(tok)) return { tense: "fut", person: 1, number: "sg" };
+    if (/^ת/.test(tok)) return { tense: "fut", person: 2, number: "sg" };
+    if (/^י/.test(tok)) return { tense: "fut", person: 3, number: "sg" };
+    if (/^נ/.test(tok)) return { tense: "fut", person: 1, number: "pl" };
+
+    // suffix-based heuristics (past tense)
+    if (/תי$/.test(tok)) return { tense: "past", person: 1, number: "sg" };
+    if (/ת$/.test(tok)) return { tense: "past", person: 2, number: "sg" };
+    if (/נו$/.test(tok)) return { tense: "past", person: 1, number: "pl" };
+    if (/ו$/.test(tok)) return { tense: "past", person: 3, number: "pl" };
+
+    // present tense markers
+    if (/ים$/.test(tok)) return { tense: "pres", number: "pl", gender: "m" };
+    if (/ות$/.test(tok)) return { tense: "pres", number: "pl", gender: "f" };
+    if (/ת$/.test(tok)) return { tense: "pres", number: "sg", gender: "f" };
+    return { tense: "pres", number: "sg", gender: "m" };
   }
 
   function guessNounFeatures(tok) {
-    if (!tok) return null;
-    if (/s$/.test(tok)) return { number: "pl" };
+    if (!tok) return { number: "sg" };
+    if (/ים$/.test(tok) || /ות$/.test(tok)) return { number: "pl" };
     return { number: "sg" };
   }
 
   function guessAdjFeatures(tok) {
-    if (!tok) return null;
-    if (/os$/.test(tok)) return { gender: "m", number: "pl" };
-    if (/as$/.test(tok)) return { gender: "f", number: "pl" };
-    if (/o$/.test(tok)) return { gender: "m", number: "sg" };
-    if (/a$/.test(tok)) return { gender: "f", number: "sg" };
-    if (/es$/.test(tok)) return { gender: "x", number: "pl" };
-    if (/e$/.test(tok)) return { gender: "x", number: "sg" };
-    return null;
+    if (!tok) return { gender: "m", number: "sg" };
+    if (/ים$/.test(tok)) return { gender: "m", number: "pl" };
+    if (/ות$/.test(tok)) return { gender: "f", number: "pl" };
+    if (/ה$/.test(tok) || /ת$/.test(tok)) return { gender: "f", number: "sg" };
+    return { gender: "m", number: "sg" };
   }
 
-  // -------------------- reflexives --------------------
-  if (lemma.endsWith("se")) {
-    const v = lemma.replace(/se$/, "");
-    const features = guessVerbFeatures(token);
-    const inf = inflectVerb(v, features);
-    const seFirst = token && /^se\b/.test(token);
-    return seFirst ? `se ${inf}` : `${inf}se`;
-  }
-
-  // ====================================================
-  // ================ VERB INFLECTION ===================
-  // ====================================================
-  function classifyVerb(lem) {
-    if (/ar$/.test(lem)) return { cls: "AR", stem: lem.slice(0, -2) };
-    if (/er$/.test(lem)) return { cls: "ER", stem: lem.slice(0, -2) };
-    if (/ir$/.test(lem)) return { cls: "IR", stem: lem.slice(0, -2) };
-    return { cls: "OTHER", stem: lem.replace(/(ar|er|ir)$/, "") };
-  }
-
-  function buildPresent(lem) {
-    const irregularPresent = {
-      ser: ["soy", "eres", "es", "somos", "sois", "son"],
-      estar: ["estoy", "estás", "está", "estamos", "estáis", "están"],
-      ir: ["voy", "vas", "va", "vamos", "vais", "van"],
-      tener: ["tengo", "tienes", "tiene", "tenemos", "tenéis", "tienen"],
-      venir: ["vengo", "vienes", "viene", "venimos", "venís", "vienen"],
-      poder: ["puedo", "puedes", "puede", "podemos", "podéis", "pueden"],
-      hacer: ["hago", "haces", "hace", "hacemos", "hacéis", "hacen"],
-      decir: ["digo", "dices", "dice", "decimos", "decís", "dicen"],
-      poner: ["pongo", "pones", "pone", "ponemos", "ponéis", "ponen"],
-      saber: ["sé", "sabes", "sabe", "sabemos", "sabéis", "saben"],
-      querer: ["quiero", "quieres", "quiere", "queremos", "queréis", "quieren"],
-      ver: ["veo", "ves", "ve", "vemos", "veis", "ven"],
-      dar: ["doy", "das", "da", "damos", "dais", "dan"],
-      oír: ["oigo", "oyes", "oye", "oímos", "oís", "oyen"],
-    };
-    if (irregularPresent[lem]) return irregularPresent[lem].slice();
-
-    const { cls, stem } = classifyVerb(lem);
-    if (cls === "AR")
-      return [
-        stem + "o",
-        stem + "as",
-        stem + "a",
-        stem + "amos",
-        stem + "áis",
-        stem + "an",
-      ];
-    if (cls === "ER")
-      return [
-        stem + "o",
-        stem + "es",
-        stem + "e",
-        stem + "emos",
-        stem + "éis",
-        stem + "en",
-      ];
-    if (cls === "IR")
-      return [
-        stem + "o",
-        stem + "es",
-        stem + "e",
-        stem + "imos",
-        stem + "ís",
-        stem + "en",
-      ];
-    return [
-      stem + "o",
-      stem + "es",
-      stem + "e",
-      stem + "emos",
-      stem + "éis",
-      stem + "en",
-    ];
-  }
-
-  function buildParticiple(lem) {
-    const { cls, stem } = classifyVerb(lem);
-    if (cls === "AR") return stem + "ado";
-    if (cls === "ER" || cls === "IR") return stem + "ido";
-    return stem + "ado";
-  }
-
-  function inflectVerb(lem, feat) {
-    const present = buildPresent(lem);
-    if (feat && feat.tense === "pres") {
-      const idx = feat.person - 1 + (feat.number === "pl" ? 3 : 0);
-      return pick(present, idx);
-    }
-    if (feat && feat.tense === "pp") return buildParticiple(lem);
-    if (feat && feat.tense === "inf") return lem;
-    // default: 1sg present
-    return present[0];
-  }
-
-  // ====================================================
-  // =============== NOUN INFLECTION ====================
-  // ====================================================
+  // -------------------- Nouns --------------------
   function nounForms(lem, g) {
-    // returns a minimal number system for Hebrew nouns
+    const b = normalize(lem);
     const forms = { sg: {}, pl: {} };
-    if (/(a|o|e)$/.test(lem)) {
-      const s = lem;
-      forms.sg.nom = s;
-      if (/z$/.test(lem)) {
-        forms.pl.nom = lem.slice(0, -1) + "ces";
-      } else if (endsWithCons(lem)) {
-        forms.pl.nom = lem + "es";
+
+    // masculine pattern
+    forms.sg.nom = b;
+    forms.pl.nom = b + "ים";
+
+    // feminine pattern
+    if (g.startsWith("feminine")) {
+      if (b.endsWith("ה")) {
+        forms.pl.nom = b.slice(0, -1) + "ות";
+      } else if (b.endsWith("ת")) {
+        forms.pl.nom = b.slice(0, -1) + "יות";
       } else {
-        forms.pl.nom = lem + "s";
+        forms.pl.nom = b + "ות";
       }
-      return forms;
     }
-    if (endsWithCons(lem)) {
-      forms.sg.nom = lem;
-      forms.pl.nom = lem + "es";
-      return forms;
-    }
-    forms.sg.nom = lem;
-    forms.pl.nom = lem + "s";
+
+    // construct state (no vowel change, but remove ה occasionally)
+    forms.sg.cs = b.endsWith("ה") ? b.slice(0, -1) : b;
+
+    // dual nouns (יים)
+    forms.dual = b + "יים";
     return forms;
   }
 
-  // ====================================================
-  // ============== ADJECTIVE ENDINGS ===================
-  // ====================================================
+  // -------------------- Adjectives --------------------
   function adjForms(lem) {
-    const base = lem.replace(/(o|a|e|os|as|es)$/, "");
-    const out = { sg: { m: {}, f: {} }, pl: { m: {}, f: {} } };
+    const b = normalize(lem);
+    const forms = {
+      sg: { m: b, f: "" },
+      pl: { m: "", f: "" },
+    };
 
-    out.sg.m.nom = base + "o";
-    out.sg.f.nom = base + "a";
-    out.pl.m.nom = base + "os";
-    out.pl.f.nom = base + "as";
+    // feminine singular
+    if (b.endsWith("י")) forms.sg.f = b + "ת";
+    else if (b.endsWith("ה")) forms.sg.f = b;
+    else forms.sg.f = b + "ה";
 
-    // adjectives ending in -e or consonant are invariable for gender
-    if (/(e|ista)$/.test(lem) || endsWithCons(lem)) {
-      out.sg.m.nom = base + "e";
-      out.sg.f.nom = base + "e";
-      out.pl.m.nom = base + "es";
-      out.pl.f.nom = base + "es";
-    }
+    // plurals
+    forms.pl.m = b + "ים";
+    forms.pl.f = b + "ות";
 
-    return out;
+    return forms;
   }
 
-  // ====================================================
-  // =============== MAIN DISPATCH ======================
-  // ====================================================
+  // -------------------- Verbs --------------------
+  function verbForms(lem) {
+    const b = normalize(lem);
+    const forms = { pres: {}, past: {}, fut: {} };
+
+    // infinitive
+    forms.inf = "ל" + b;
+
+    // present tense
+    forms.pres.m_sg = b;
+    forms.pres.f_sg = b + "ת";
+    forms.pres.m_pl = b + "ים";
+    forms.pres.f_pl = b + "ות";
+
+    // past tense (simple heuristic)
+    forms.past["1sg"] = b + "תי";
+    forms.past["2sg"] = b + "ת";
+    forms.past["3sg"] = b + "ה";
+    forms.past["1pl"] = b + "נו";
+    forms.past["3pl"] = b + "ו";
+
+    // future tense (prefixes)
+    forms.fut["1sg"] = "א" + b;
+    forms.fut["2sg"] = "ת" + b;
+    forms.fut["3sg"] = "י" + b;
+    forms.fut["1pl"] = "נ" + b;
+
+    return forms;
+  }
+
+  // -------------------- Dispatch --------------------
   if (gender.startsWith("verb")) {
-    const feat = guessVerbFeatures(token) || {
-      tense: "pres",
-      person: 1,
-      number: "sg",
-    };
-    return inflectVerb(lemma, feat);
+    const feat = guessVerbFeatures(tokenNorm);
+    const grid = verbForms(baseNorm);
+
+    if (feat.tense === "inf") return grid.inf;
+    if (feat.tense === "pres") {
+      if (feat.gender === "f" && feat.number === "pl") return grid.pres.f_pl;
+      if (feat.gender === "m" && feat.number === "pl") return grid.pres.m_pl;
+      if (feat.gender === "f") return grid.pres.f_sg;
+      return grid.pres.m_sg;
+    }
+    if (feat.tense === "past") {
+      if (feat.number === "pl") return grid.past["3pl"];
+      if (feat.person === 1) return grid.past["1sg"];
+      return grid.past["3sg"];
+    }
+    if (feat.tense === "fut") {
+      return grid.fut["1sg"];
+    }
+    return grid.pres.m_sg;
   }
 
   if (
+    gender.startsWith("noun") ||
     gender.startsWith("masculine") ||
-    gender.startsWith("feminine") ||
-    gender.startsWith("neuter")
+    gender.startsWith("feminine")
   ) {
-    const grid = nounForms(lemma, gender);
-    const nf = token ? guessNounFeatures(token) : null;
-    if (nf && nf.number === "pl") return grid.pl.nom || lemma;
-    return grid.sg.nom || lemma;
+    const nf = token ? guessNounFeatures(tokenNorm) : { number: "sg" };
+    const grid = nounForms(baseNorm, gender);
+    if (nf.number === "pl") return grid.pl.nom;
+    return grid.sg.nom;
   }
 
   if (gender.startsWith("adjective")) {
-    const grid = adjForms(lemma);
-    const af = token ? guessAdjFeatures(token) : null;
-    if (af) {
-      if (af.number === "pl") {
-        return af.gender === "f"
-          ? grid.pl.f.nom
-          : grid.pl.m.nom || grid.pl.f.nom;
-      } else {
-        return af.gender === "f"
-          ? grid.sg.f.nom
-          : grid.sg.m.nom || grid.sg.f.nom;
-      }
+    const af = token
+      ? guessAdjFeatures(tokenNorm)
+      : { gender: "m", number: "sg" };
+    const grid = adjForms(baseNorm);
+    if (af.number === "pl") {
+      return af.gender === "f" ? grid.pl.f : grid.pl.m;
+    } else {
+      return af.gender === "f" ? grid.sg.f : grid.sg.m;
     }
-    // default masculine singular
-    return grid.sg.m.nom;
   }
 
-  return lemma;
+  return baseNorm;
 }
 
 function generateClozeDistractors(baseWord, clozedForm, CEFR, gender) {
