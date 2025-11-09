@@ -1810,7 +1810,7 @@ ul {
 .stories-detail-container {
   display: flex; /* Use flexbox layout */
   gap: 5px;
-  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .stories-genre {
