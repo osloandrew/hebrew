@@ -1228,7 +1228,10 @@ async function renderClozeGameUI(
     for (const c of candidates) {
       // Match any inflected or hyphenated form containing the base
       // Hebrew "word boundary" safe version
-      const re = new RegExp(`(^|\\s)${escapeRegExp(c)}(?=\\s|[.,!?]|$)`, "u");
+      const re = new RegExp(
+        `(?<!\\p{L})${escapeRegExp(c)}\\p{L}*(?!\\p{L})`,
+        "iu"
+      );
       if (re.test(s)) {
         s = s.replace(re, " ___"); // note leading space
         break;
